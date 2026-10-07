@@ -114,6 +114,8 @@ class Parser {
         return { k: 'neg', a: this.expr(BP_NEG) };
       case '+':
         return this.expr(BP_NEG);
+      case '±':
+        return { k: 'pm', a: { k: 'num', v: Rational.ZERO }, b: this.expr(BP_NEG) };
       case '(': {
         if (this.peek().type === ')')
           throw new ParseError('unexpected-token', this.peek().pos, { text: ')' });

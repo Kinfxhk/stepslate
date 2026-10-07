@@ -61,6 +61,8 @@ export function toText(e: Expr): string {
     case 'sub':
       return `${wrap(e, e.a, 'a')} - ${wrap(e, e.b, 'b')}`;
     case 'pm':
+      if (e.a.k === 'num' && e.a.v.isZero() && e.a.text === undefined)
+        return `±${needsParens(e, e.b, 'b') || e.b.k === 'neg' ? `(${toText(e.b)})` : toText(e.b)}`;
       return `${wrap(e, e.a, 'a')} ± ${wrap(e, e.b, 'b')}`;
     case 'mul': {
       const l = wrap(e, e.a, 'a');
@@ -155,6 +157,8 @@ function latexInner(e: Expr, opts: LatexOptions): string {
     case 'sub':
       return `${wrap(e, e.a, 'a')} - ${wrap(e, e.b, 'b')}`;
     case 'pm':
+      if (e.a.k === 'num' && e.a.v.isZero() && e.a.text === undefined)
+        return `\\pm ${needsParens(e, e.b, 'b') ? paren(L(e.b)) : L(e.b)}`;
       return `${wrap(e, e.a, 'a')} \\pm ${wrap(e, e.b, 'b')}`;
     case 'mul': {
       const l = wrap(e, e.a, 'a');

@@ -14,6 +14,8 @@ import { Run, StopTooLarge, StopUnverified, type StepTamper } from './run';
 import { solveArithmetic } from './t1';
 import { solvePolynomial } from './t2';
 import { solveLinear } from './t3';
+import { solveQuadratic } from './t4';
+import { solveSystem } from './t5';
 
 export type Status = 'solved' | 'unsupported' | 'error' | 'unverified';
 
@@ -93,6 +95,8 @@ const STRATEGIES: Partial<Record<ProblemType, Strategy>> = {
     if (p.kind === 'expr') solvePolynomial(run, p.expr, vars);
   },
   T3: solveLinear,
+  T4: solveQuadratic,
+  T5: solveSystem,
 };
 
 /** Register a strategy (used by later modules). */

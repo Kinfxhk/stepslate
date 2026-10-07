@@ -1,0 +1,1469 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`T4 golden solutions > (2x+1)^2=(x+2)^2 1`] = `
+"(2x + 1)^2 = (x + 2)^2
+1. Write the power as a repeated product: (2x + 1)^2 = (2x + 1)(2x + 1).
+   (2x + 1)(2x + 1) = (x + 2)^2
+2. Multiply every term in the first bracket by every term in the second.
+   2x(2x) + 2x*1 + 1(2x) + 1*1 = (x + 2)^2
+3. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   4x^2 + 2x + 2x + 1 = (x + 2)^2
+4. Combine like terms by adding their coefficients.
+   4x^2 + 4x + 1 = (x + 2)^2
+5. Write the power as a repeated product: (x + 2)^2 = (x + 2)(x + 2).
+   4x^2 + 4x + 1 = (x + 2)(x + 2)
+6. Multiply every term in the first bracket by every term in the second.
+   4x^2 + 4x + 1 = x*x + x*2 + 2x + 2*2
+7. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   4x^2 + 4x + 1 = x^2 + 2x + 2x + 4
+8. Combine like terms by adding their coefficients.
+   4x^2 + 4x + 1 = x^2 + 4x + 4
+9. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   4x^2 + 4x - x^2 - 4x = 4 - 1
+10. Put like terms next to each other, in descending powers.
+   4x^2 - x^2 + 4x - 4x = 4 - 1
+11. Combine like terms by adding their coefficients.
+   3x^2 = 4 - 1
+12. Subtract: 4 - 1 = 3.
+   3x^2 = 3
+13. Divide both sides by 3.
+   x^2 = 1
+14. Take the square root of both sides. Remember the ± sign: there are two roots.
+   x = ±sqrt(1)
+15. Simplify the square root: sqrt(1) = 1.
+   x = ±1
+16. Check: substitute x = -1 into the original equation. Both sides are equal.
+   (2(-1) + 1)^2 = 1;  (-1 + 2)^2 = 1
+17. Check: substitute x = 1 into the original equation. Both sides are equal.
+   (2*1 + 1)^2 = 9;  (1 + 2)^2 = 9"
+`;
+
+exports[`T4 golden solutions > (2x+1)^2=(x+2)^2 2`] = `
+"(2x + 1)^2 = (x + 2)^2
+1. 把乘方寫成連乘：(2x + 1)^2 = (2x + 1)(2x + 1)。
+   (2x + 1)(2x + 1) = (x + 2)^2
+2. 把第一個括號的每一項，乘以第二個括號的每一項。
+   2x(2x) + 2x*1 + 1(2x) + 1*1 = (x + 2)^2
+3. 化簡每一項：數字相乘，相同字母的指數相加。
+   4x^2 + 2x + 2x + 1 = (x + 2)^2
+4. 合併同類項：把係數相加。
+   4x^2 + 4x + 1 = (x + 2)^2
+5. 把乘方寫成連乘：(x + 2)^2 = (x + 2)(x + 2)。
+   4x^2 + 4x + 1 = (x + 2)(x + 2)
+6. 把第一個括號的每一項，乘以第二個括號的每一項。
+   4x^2 + 4x + 1 = x*x + x*2 + 2x + 2*2
+7. 化簡每一項：數字相乘，相同字母的指數相加。
+   4x^2 + 4x + 1 = x^2 + 2x + 2x + 4
+8. 合併同類項：把係數相加。
+   4x^2 + 4x + 1 = x^2 + 4x + 4
+9. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   4x^2 + 4x - x^2 - 4x = 4 - 1
+10. 把同類項排在一起，並按降冪排列。
+   4x^2 - x^2 + 4x - 4x = 4 - 1
+11. 合併同類項：把係數相加。
+   3x^2 = 4 - 1
+12. 相減：4 - 1 = 3。
+   3x^2 = 3
+13. 兩邊同時除以 3。
+   x^2 = 1
+14. 兩邊開平方根。記得加上 ±：方程有兩個根。
+   x = ±sqrt(1)
+15. 化簡根式：sqrt(1) = 1。
+   x = ±1
+16. 驗算：把 x = -1 代入原方程，左右兩邊相等。
+   (2(-1) + 1)^2 = 1;  (-1 + 2)^2 = 1
+17. 驗算：把 x = 1 代入原方程，左右兩邊相等。
+   (2*1 + 1)^2 = 9;  (1 + 2)^2 = 9"
+`;
+
+exports[`T4 golden solutions > (2x-1)(x+3)=0 1`] = `
+"(2x - 1)(x + 3) = 0
+1. If a product is 0, then one of the factors must be 0.
+   2x - 1 = 0 or x + 3 = 0
+2. Solve each linear equation.
+   x = 1/2 or x = -3
+3. Check: substitute x = -3 into the original equation. Both sides are equal.
+   (2(-3) - 1)(-3 + 3) = 0;  0 = 0
+4. Check: substitute x = 1/2 into the original equation. Both sides are equal.
+   (2(1/2) - 1)(1/2 + 3) = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > (2x-1)(x+3)=0 2`] = `
+"(2x - 1)(x + 3) = 0
+1. 若兩個因式之積等於 0，則其中一個因式等於 0。
+   2x - 1 = 0 或 x + 3 = 0
+2. 分別解每條一次方程。
+   x = 1/2 或 x = -3
+3. 驗算：把 x = -3 代入原方程，左右兩邊相等。
+   (2(-3) - 1)(-3 + 3) = 0;  0 = 0
+4. 驗算：把 x = 1/2 代入原方程，左右兩邊相等。
+   (2(1/2) - 1)(1/2 + 3) = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > (x+1)^2=4x 1`] = `
+"(x + 1)^2 = 4x
+1. Write the power as a repeated product: (x + 1)^2 = (x + 1)(x + 1).
+   (x + 1)(x + 1) = 4x
+2. Multiply every term in the first bracket by every term in the second.
+   x*x + x*1 + 1x + 1*1 = 4x
+3. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   x^2 + x + x + 1 = 4x
+4. Combine like terms by adding their coefficients.
+   x^2 + 2x + 1 = 4x
+5. Move every term to the left side so that the right side is 0. A term changes sign when it moves to the other side.
+   x^2 + 2x + 1 - 4x = 0
+6. Put like terms next to each other, in descending powers.
+   x^2 + 2x - 4x + 1 = 0
+7. Combine like terms by adding their coefficients.
+   x^2 - 2x + 1 = 0
+8. Factorise the left side.
+   (x - 1)^2 = 0
+9. A square is 0 only when the expression inside the brackets is 0.
+   x - 1 = 0
+10. Solve the linear equation.
+   x = 1
+11. Check: substitute x = 1 into the original equation. Both sides are equal.
+   (1 + 1)^2 = 4;  4*1 = 4"
+`;
+
+exports[`T4 golden solutions > (x+1)^2=4x 2`] = `
+"(x + 1)^2 = 4x
+1. 把乘方寫成連乘：(x + 1)^2 = (x + 1)(x + 1)。
+   (x + 1)(x + 1) = 4x
+2. 把第一個括號的每一項，乘以第二個括號的每一項。
+   x*x + x*1 + 1x + 1*1 = 4x
+3. 化簡每一項：數字相乘，相同字母的指數相加。
+   x^2 + x + x + 1 = 4x
+4. 合併同類項：把係數相加。
+   x^2 + 2x + 1 = 4x
+5. 把所有項移到左邊，令右邊等於 0。項移到另一邊時要變號。
+   x^2 + 2x + 1 - 4x = 0
+6. 把同類項排在一起，並按降冪排列。
+   x^2 + 2x - 4x + 1 = 0
+7. 合併同類項：把係數相加。
+   x^2 - 2x + 1 = 0
+8. 把左邊因式分解。
+   (x - 1)^2 = 0
+9. 平方等於 0，即括號內的式子等於 0。
+   x - 1 = 0
+10. 解這條一次方程。
+   x = 1
+11. 驗算：把 x = 1 代入原方程，左右兩邊相等。
+   (1 + 1)^2 = 4;  4*1 = 4"
+`;
+
+exports[`T4 golden solutions > (x+1)^2=x^2+3 1`] = `
+"(x + 1)^2 = x^2 + 3
+1. Write the power as a repeated product: (x + 1)^2 = (x + 1)(x + 1).
+   (x + 1)(x + 1) = x^2 + 3
+2. Multiply every term in the first bracket by every term in the second.
+   x*x + x*1 + 1x + 1*1 = x^2 + 3
+3. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   x^2 + x + x + 1 = x^2 + 3
+4. Combine like terms by adding their coefficients.
+   x^2 + 2x + 1 = x^2 + 3
+5. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   x^2 + 2x - x^2 = 3 - 1
+6. Put like terms next to each other, in descending powers.
+   x^2 - x^2 + 2x = 3 - 1
+7. Combine like terms by adding their coefficients.
+   2x = 3 - 1
+8. Subtract: 3 - 1 = 2.
+   2x = 2
+9. Divide both sides by 2.
+   x = 1
+10. Check: substitute x = 1 into the original equation. Both sides are equal.
+   (1 + 1)^2 = 4;  1^2 + 3 = 4"
+`;
+
+exports[`T4 golden solutions > (x+1)^2=x^2+3 2`] = `
+"(x + 1)^2 = x^2 + 3
+1. 把乘方寫成連乘：(x + 1)^2 = (x + 1)(x + 1)。
+   (x + 1)(x + 1) = x^2 + 3
+2. 把第一個括號的每一項，乘以第二個括號的每一項。
+   x*x + x*1 + 1x + 1*1 = x^2 + 3
+3. 化簡每一項：數字相乘，相同字母的指數相加。
+   x^2 + x + x + 1 = x^2 + 3
+4. 合併同類項：把係數相加。
+   x^2 + 2x + 1 = x^2 + 3
+5. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   x^2 + 2x - x^2 = 3 - 1
+6. 把同類項排在一起，並按降冪排列。
+   x^2 - x^2 + 2x = 3 - 1
+7. 合併同類項：把係數相加。
+   2x = 3 - 1
+8. 相減：3 - 1 = 2。
+   2x = 2
+9. 兩邊同時除以 2。
+   x = 1
+10. 驗算：把 x = 1 代入原方程，左右兩邊相等。
+   (1 + 1)^2 = 4;  1^2 + 3 = 4"
+`;
+
+exports[`T4 golden solutions > (x+2)(x-5)=8 1`] = `
+"(x + 2)(x - 5) = 8
+1. Multiply every term in the first bracket by every term in the second.
+   x*x - x*5 + 2x - 2*5 = 8
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   x^2 - 5x + 2x - 10 = 8
+3. Combine like terms by adding their coefficients.
+   x^2 - 3x - 10 = 8
+4. Move every term to the left side so that the right side is 0. A term changes sign when it moves to the other side.
+   x^2 - 3x - 10 - 8 = 0
+5. Combine like terms by adding their coefficients.
+   x^2 - 3x - 18 = 0
+6. Factorise the left side.
+   (x + 3)(x - 6) = 0
+7. If a product is 0, then one of the factors must be 0.
+   x + 3 = 0 or x - 6 = 0
+8. Solve each linear equation.
+   x = -3 or x = 6
+9. Check: substitute x = -3 into the original equation. Both sides are equal.
+   (-3 + 2)(-3 - 5) = 8;  8 = 8
+10. Check: substitute x = 6 into the original equation. Both sides are equal.
+   (6 + 2)(6 - 5) = 8;  8 = 8"
+`;
+
+exports[`T4 golden solutions > (x+2)(x-5)=8 2`] = `
+"(x + 2)(x - 5) = 8
+1. 把第一個括號的每一項，乘以第二個括號的每一項。
+   x*x - x*5 + 2x - 2*5 = 8
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   x^2 - 5x + 2x - 10 = 8
+3. 合併同類項：把係數相加。
+   x^2 - 3x - 10 = 8
+4. 把所有項移到左邊，令右邊等於 0。項移到另一邊時要變號。
+   x^2 - 3x - 10 - 8 = 0
+5. 合併同類項：把係數相加。
+   x^2 - 3x - 18 = 0
+6. 把左邊因式分解。
+   (x + 3)(x - 6) = 0
+7. 若兩個因式之積等於 0，則其中一個因式等於 0。
+   x + 3 = 0 或 x - 6 = 0
+8. 分別解每條一次方程。
+   x = -3 或 x = 6
+9. 驗算：把 x = -3 代入原方程，左右兩邊相等。
+   (-3 + 2)(-3 - 5) = 8;  8 = 8
+10. 驗算：把 x = 6 代入原方程，左右兩邊相等。
+   (6 + 2)(6 - 5) = 8;  8 = 8"
+`;
+
+exports[`T4 golden solutions > (x-1)^2=0 1`] = `
+"(x - 1)^2 = 0
+1. A square is 0 only when the expression inside the brackets is 0.
+   x - 1 = 0
+2. Solve the linear equation.
+   x = 1
+3. Check: substitute x = 1 into the original equation. Both sides are equal.
+   (1 - 1)^2 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > (x-1)^2=0 2`] = `
+"(x - 1)^2 = 0
+1. 平方等於 0，即括號內的式子等於 0。
+   x - 1 = 0
+2. 解這條一次方程。
+   x = 1
+3. 驗算：把 x = 1 代入原方程，左右兩邊相等。
+   (1 - 1)^2 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > (x-3)^2=2 1`] = `
+"(x - 3)^2 = 2
+1. Write the power as a repeated product: (x - 3)^2 = (x - 3)(x - 3).
+   (x - 3)(x - 3) = 2
+2. Multiply every term in the first bracket by every term in the second.
+   x*x - x*3 - 3x + 3*3 = 2
+3. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   x^2 - 3x - 3x + 9 = 2
+4. Combine like terms by adding their coefficients.
+   x^2 - 6x + 9 = 2
+5. Move every term to the left side so that the right side is 0. A term changes sign when it moves to the other side.
+   x^2 - 6x + 9 - 2 = 0
+6. Combine like terms by adding their coefficients.
+   x^2 - 6x + 7 = 0
+7. Work out the discriminant Δ = b² - 4ac with a = 1, b = -6, c = 7: Δ = 8.
+   Δ = (-6)^2 - 4*1*7 = 8
+8. Use the quadratic formula x = (-b ± √Δ) / (2a).
+   x = (-(-6) ± sqrt(8))/(2*1)
+9. Work out the numbers.
+   x = (6 ± sqrt(8))/2
+10. Simplify the square root: sqrt(8) = 2*sqrt(2).
+   x = (6 ± 2*sqrt(2))/2
+11. Divide the top and the bottom by 2.
+   x = 3 ± sqrt(2)
+12. Check: substitute x = 3 - sqrt(2) into the original equation. Both sides are equal.
+   (3 - sqrt(2) - 3)^2 = 2;  2 = 2
+13. Check: substitute x = 3 + sqrt(2) into the original equation. Both sides are equal.
+   (3 + sqrt(2) - 3)^2 = 2;  2 = 2"
+`;
+
+exports[`T4 golden solutions > (x-3)^2=2 2`] = `
+"(x - 3)^2 = 2
+1. 把乘方寫成連乘：(x - 3)^2 = (x - 3)(x - 3)。
+   (x - 3)(x - 3) = 2
+2. 把第一個括號的每一項，乘以第二個括號的每一項。
+   x*x - x*3 - 3x + 3*3 = 2
+3. 化簡每一項：數字相乘，相同字母的指數相加。
+   x^2 - 3x - 3x + 9 = 2
+4. 合併同類項：把係數相加。
+   x^2 - 6x + 9 = 2
+5. 把所有項移到左邊，令右邊等於 0。項移到另一邊時要變號。
+   x^2 - 6x + 9 - 2 = 0
+6. 合併同類項：把係數相加。
+   x^2 - 6x + 7 = 0
+7. 計算判別式 Δ = b² - 4ac，其中 a = 1、b = -6、c = 7：Δ = 8。
+   Δ = (-6)^2 - 4*1*7 = 8
+8. 代入二次公式 x = (-b ± √Δ) / (2a)。
+   x = (-(-6) ± sqrt(8))/(2*1)
+9. 計算數值。
+   x = (6 ± sqrt(8))/2
+10. 化簡根式：sqrt(8) = 2*sqrt(2)。
+   x = (6 ± 2*sqrt(2))/2
+11. 分子和分母同時除以 2。
+   x = 3 ± sqrt(2)
+12. 驗算：把 x = 3 - sqrt(2) 代入原方程，左右兩邊相等。
+   (3 - sqrt(2) - 3)^2 = 2;  2 = 2
+13. 驗算：把 x = 3 + sqrt(2) 代入原方程，左右兩邊相等。
+   (3 + sqrt(2) - 3)^2 = 2;  2 = 2"
+`;
+
+exports[`T4 golden solutions > -2x^2+8x-6=0 1`] = `
+"-2x^2 + 8x - 6 = 0
+1. Multiply both sides by -1 so that the x² term is positive.
+   2x^2 - 8x + 6 = 0
+2. Divide both sides by 2, a common factor of all the coefficients.
+   x^2 - 4x + 3 = 0
+3. Factorise the left side.
+   (x - 1)(x - 3) = 0
+4. If a product is 0, then one of the factors must be 0.
+   x - 1 = 0 or x - 3 = 0
+5. Solve each linear equation.
+   x = 1 or x = 3
+6. Check: substitute x = 1 into the original equation. Both sides are equal.
+   -2*1^2 + 8*1 - 6 = 0;  0 = 0
+7. Check: substitute x = 3 into the original equation. Both sides are equal.
+   -2*3^2 + 8*3 - 6 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > -2x^2+8x-6=0 2`] = `
+"-2x^2 + 8x - 6 = 0
+1. 兩邊同時乘以 -1，令 x² 項的係數是正數。
+   2x^2 - 8x + 6 = 0
+2. 兩邊同時除以所有係數的公因數 2。
+   x^2 - 4x + 3 = 0
+3. 把左邊因式分解。
+   (x - 1)(x - 3) = 0
+4. 若兩個因式之積等於 0，則其中一個因式等於 0。
+   x - 1 = 0 或 x - 3 = 0
+5. 分別解每條一次方程。
+   x = 1 或 x = 3
+6. 驗算：把 x = 1 代入原方程，左右兩邊相等。
+   -2*1^2 + 8*1 - 6 = 0;  0 = 0
+7. 驗算：把 x = 3 代入原方程，左右兩邊相等。
+   -2*3^2 + 8*3 - 6 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > -x^2+x+2=0 1`] = `
+"-x^2 + x + 2 = 0
+1. Multiply both sides by -1 so that the x² term is positive.
+   x^2 - x - 2 = 0
+2. Factorise the left side.
+   (x + 1)(x - 2) = 0
+3. If a product is 0, then one of the factors must be 0.
+   x + 1 = 0 or x - 2 = 0
+4. Solve each linear equation.
+   x = -1 or x = 2
+5. Check: substitute x = -1 into the original equation. Both sides are equal.
+   -(-1)^2 + (-1) + 2 = 0;  0 = 0
+6. Check: substitute x = 2 into the original equation. Both sides are equal.
+   -2^2 + 2 + 2 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > -x^2+x+2=0 2`] = `
+"-x^2 + x + 2 = 0
+1. 兩邊同時乘以 -1，令 x² 項的係數是正數。
+   x^2 - x - 2 = 0
+2. 把左邊因式分解。
+   (x + 1)(x - 2) = 0
+3. 若兩個因式之積等於 0，則其中一個因式等於 0。
+   x + 1 = 0 或 x - 2 = 0
+4. 分別解每條一次方程。
+   x = -1 或 x = 2
+5. 驗算：把 x = -1 代入原方程，左右兩邊相等。
+   -(-1)^2 + (-1) + 2 = 0;  0 = 0
+6. 驗算：把 x = 2 代入原方程，左右兩邊相等。
+   -2^2 + 2 + 2 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > 0.1x^2-0.5x+0.6=0 1`] = `
+"0.1x^2 - 0.5x + 0.6 = 0
+1. Write each decimal as a fraction so that the arithmetic stays exact.
+   (1/10)x^2 - (1/2)x + 3/5 = 0
+2. Multiply both sides by 10 to clear the fractions.
+   x^2 - 5x + 6 = 0
+3. Factorise the left side.
+   (x - 2)(x - 3) = 0
+4. If a product is 0, then one of the factors must be 0.
+   x - 2 = 0 or x - 3 = 0
+5. Solve each linear equation.
+   x = 2 or x = 3
+6. Check: substitute x = 2 into the original equation. Both sides are equal.
+   0.1*2^2 - 0.5*2 + 0.6 = 0;  0 = 0
+7. Check: substitute x = 3 into the original equation. Both sides are equal.
+   0.1*3^2 - 0.5*3 + 0.6 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > 0.1x^2-0.5x+0.6=0 2`] = `
+"0.1x^2 - 0.5x + 0.6 = 0
+1. 先把每個小數寫成分數，令計算保持準確。
+   (1/10)x^2 - (1/2)x + 3/5 = 0
+2. 兩邊同時乘以 10，消去分母。
+   x^2 - 5x + 6 = 0
+3. 把左邊因式分解。
+   (x - 2)(x - 3) = 0
+4. 若兩個因式之積等於 0，則其中一個因式等於 0。
+   x - 2 = 0 或 x - 3 = 0
+5. 分別解每條一次方程。
+   x = 2 或 x = 3
+6. 驗算：把 x = 2 代入原方程，左右兩邊相等。
+   0.1*2^2 - 0.5*2 + 0.6 = 0;  0 = 0
+7. 驗算：把 x = 3 代入原方程，左右兩邊相等。
+   0.1*3^2 - 0.5*3 + 0.6 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > 0.5x^2=x+1 1`] = `
+"0.5x^2 = x + 1
+1. Write each decimal as a fraction so that the arithmetic stays exact.
+   (1/2)x^2 = x + 1
+2. Move every term to the left side so that the right side is 0. A term changes sign when it moves to the other side.
+   (1/2)x^2 - x - 1 = 0
+3. Multiply both sides by 2 to clear the fractions.
+   x^2 - 2x - 2 = 0
+4. Work out the discriminant Δ = b² - 4ac with a = 1, b = -2, c = -2: Δ = 12.
+   Δ = (-2)^2 - 4*1(-2) = 12
+5. Use the quadratic formula x = (-b ± √Δ) / (2a).
+   x = (-(-2) ± sqrt(12))/(2*1)
+6. Work out the numbers.
+   x = (2 ± sqrt(12))/2
+7. Simplify the square root: sqrt(12) = 2*sqrt(3).
+   x = (2 ± 2*sqrt(3))/2
+8. Divide the top and the bottom by 2.
+   x = 1 ± sqrt(3)
+9. Check: substitute x = 1 - sqrt(3) into the original equation. Both sides are equal.
+   0.5(1 - sqrt(3))^2 = 2 - sqrt(3);  1 - sqrt(3) + 1 = 2 - sqrt(3)
+10. Check: substitute x = 1 + sqrt(3) into the original equation. Both sides are equal.
+   0.5(1 + sqrt(3))^2 = 2 + sqrt(3);  1 + sqrt(3) + 1 = 2 + sqrt(3)"
+`;
+
+exports[`T4 golden solutions > 0.5x^2=x+1 2`] = `
+"0.5x^2 = x + 1
+1. 先把每個小數寫成分數，令計算保持準確。
+   (1/2)x^2 = x + 1
+2. 把所有項移到左邊，令右邊等於 0。項移到另一邊時要變號。
+   (1/2)x^2 - x - 1 = 0
+3. 兩邊同時乘以 2，消去分母。
+   x^2 - 2x - 2 = 0
+4. 計算判別式 Δ = b² - 4ac，其中 a = 1、b = -2、c = -2：Δ = 12。
+   Δ = (-2)^2 - 4*1(-2) = 12
+5. 代入二次公式 x = (-b ± √Δ) / (2a)。
+   x = (-(-2) ± sqrt(12))/(2*1)
+6. 計算數值。
+   x = (2 ± sqrt(12))/2
+7. 化簡根式：sqrt(12) = 2*sqrt(3)。
+   x = (2 ± 2*sqrt(3))/2
+8. 分子和分母同時除以 2。
+   x = 1 ± sqrt(3)
+9. 驗算：把 x = 1 - sqrt(3) 代入原方程，左右兩邊相等。
+   0.5(1 - sqrt(3))^2 = 2 - sqrt(3);  1 - sqrt(3) + 1 = 2 - sqrt(3)
+10. 驗算：把 x = 1 + sqrt(3) 代入原方程，左右兩邊相等。
+   0.5(1 + sqrt(3))^2 = 2 + sqrt(3);  1 + sqrt(3) + 1 = 2 + sqrt(3)"
+`;
+
+exports[`T4 golden solutions > 2x^2+3x=2 1`] = `
+"2x^2 + 3x = 2
+1. Move every term to the left side so that the right side is 0. A term changes sign when it moves to the other side.
+   2x^2 + 3x - 2 = 0
+2. Factorise the left side.
+   (x + 2)(2x - 1) = 0
+3. If a product is 0, then one of the factors must be 0.
+   x + 2 = 0 or 2x - 1 = 0
+4. Solve each linear equation.
+   x = -2 or x = 1/2
+5. Check: substitute x = -2 into the original equation. Both sides are equal.
+   2(-2)^2 + 3(-2) = 2;  2 = 2
+6. Check: substitute x = 1/2 into the original equation. Both sides are equal.
+   2(1/2)^2 + 3(1/2) = 2;  2 = 2"
+`;
+
+exports[`T4 golden solutions > 2x^2+3x=2 2`] = `
+"2x^2 + 3x = 2
+1. 把所有項移到左邊，令右邊等於 0。項移到另一邊時要變號。
+   2x^2 + 3x - 2 = 0
+2. 把左邊因式分解。
+   (x + 2)(2x - 1) = 0
+3. 若兩個因式之積等於 0，則其中一個因式等於 0。
+   x + 2 = 0 或 2x - 1 = 0
+4. 分別解每條一次方程。
+   x = -2 或 x = 1/2
+5. 驗算：把 x = -2 代入原方程，左右兩邊相等。
+   2(-2)^2 + 3(-2) = 2;  2 = 2
+6. 驗算：把 x = 1/2 代入原方程，左右兩邊相等。
+   2(1/2)^2 + 3(1/2) = 2;  2 = 2"
+`;
+
+exports[`T4 golden solutions > 2x^2-3x+5=0 1`] = `
+"2x^2 - 3x + 5 = 0
+1. Work out the discriminant Δ = b² - 4ac with a = 2, b = -3, c = 5: Δ = -31.
+   Δ = (-3)^2 - 4*2*5 = -31
+2. Δ is negative, so the equation has no real roots.
+   There is no real solution."
+`;
+
+exports[`T4 golden solutions > 2x^2-3x+5=0 2`] = `
+"2x^2 - 3x + 5 = 0
+1. 計算判別式 Δ = b² - 4ac，其中 a = 2、b = -3、c = 5：Δ = -31。
+   Δ = (-3)^2 - 4*2*5 = -31
+2. Δ 是負數，所以方程沒有實數根。
+   沒有實數解。"
+`;
+
+exports[`T4 golden solutions > 2x^2-6x+1=0 1`] = `
+"2x^2 - 6x + 1 = 0
+1. Work out the discriminant Δ = b² - 4ac with a = 2, b = -6, c = 1: Δ = 28.
+   Δ = (-6)^2 - 4*2*1 = 28
+2. Use the quadratic formula x = (-b ± √Δ) / (2a).
+   x = (-(-6) ± sqrt(28))/(2*2)
+3. Work out the numbers.
+   x = (6 ± sqrt(28))/4
+4. Simplify the square root: sqrt(28) = 2*sqrt(7).
+   x = (6 ± 2*sqrt(7))/4
+5. Divide the top and the bottom by 2.
+   x = (3 ± sqrt(7))/2
+6. Check: substitute x = (3 - sqrt(7))/2 into the original equation. Both sides are equal.
+   2((3 - sqrt(7))/2)^2 - 6((3 - sqrt(7))/2) + 1 = 0;  0 = 0
+7. Check: substitute x = (3 + sqrt(7))/2 into the original equation. Both sides are equal.
+   2((3 + sqrt(7))/2)^2 - 6((3 + sqrt(7))/2) + 1 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > 2x^2-6x+1=0 2`] = `
+"2x^2 - 6x + 1 = 0
+1. 計算判別式 Δ = b² - 4ac，其中 a = 2、b = -6、c = 1：Δ = 28。
+   Δ = (-6)^2 - 4*2*1 = 28
+2. 代入二次公式 x = (-b ± √Δ) / (2a)。
+   x = (-(-6) ± sqrt(28))/(2*2)
+3. 計算數值。
+   x = (6 ± sqrt(28))/4
+4. 化簡根式：sqrt(28) = 2*sqrt(7)。
+   x = (6 ± 2*sqrt(7))/4
+5. 分子和分母同時除以 2。
+   x = (3 ± sqrt(7))/2
+6. 驗算：把 x = (3 - sqrt(7))/2 代入原方程，左右兩邊相等。
+   2((3 - sqrt(7))/2)^2 - 6((3 - sqrt(7))/2) + 1 = 0;  0 = 0
+7. 驗算：把 x = (3 + sqrt(7))/2 代入原方程，左右兩邊相等。
+   2((3 + sqrt(7))/2)^2 - 6((3 + sqrt(7))/2) + 1 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > 2x^2-7x+3=0 1`] = `
+"2x^2 - 7x + 3 = 0
+1. Factorise the left side.
+   (2x - 1)(x - 3) = 0
+2. If a product is 0, then one of the factors must be 0.
+   2x - 1 = 0 or x - 3 = 0
+3. Solve each linear equation.
+   x = 1/2 or x = 3
+4. Check: substitute x = 1/2 into the original equation. Both sides are equal.
+   2(1/2)^2 - 7(1/2) + 3 = 0;  0 = 0
+5. Check: substitute x = 3 into the original equation. Both sides are equal.
+   2*3^2 - 7*3 + 3 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > 2x^2-7x+3=0 2`] = `
+"2x^2 - 7x + 3 = 0
+1. 把左邊因式分解。
+   (2x - 1)(x - 3) = 0
+2. 若兩個因式之積等於 0，則其中一個因式等於 0。
+   2x - 1 = 0 或 x - 3 = 0
+3. 分別解每條一次方程。
+   x = 1/2 或 x = 3
+4. 驗算：把 x = 1/2 代入原方程，左右兩邊相等。
+   2(1/2)^2 - 7(1/2) + 3 = 0;  0 = 0
+5. 驗算：把 x = 3 代入原方程，左右兩邊相等。
+   2*3^2 - 7*3 + 3 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > 3x^2+5x-2=0 1`] = `
+"3x^2 + 5x - 2 = 0
+1. Factorise the left side.
+   (x + 2)(3x - 1) = 0
+2. If a product is 0, then one of the factors must be 0.
+   x + 2 = 0 or 3x - 1 = 0
+3. Solve each linear equation.
+   x = -2 or x = 1/3
+4. Check: substitute x = -2 into the original equation. Both sides are equal.
+   3(-2)^2 + 5(-2) - 2 = 0;  0 = 0
+5. Check: substitute x = 1/3 into the original equation. Both sides are equal.
+   3(1/3)^2 + 5(1/3) - 2 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > 3x^2+5x-2=0 2`] = `
+"3x^2 + 5x - 2 = 0
+1. 把左邊因式分解。
+   (x + 2)(3x - 1) = 0
+2. 若兩個因式之積等於 0，則其中一個因式等於 0。
+   x + 2 = 0 或 3x - 1 = 0
+3. 分別解每條一次方程。
+   x = -2 或 x = 1/3
+4. 驗算：把 x = -2 代入原方程，左右兩邊相等。
+   3(-2)^2 + 5(-2) - 2 = 0;  0 = 0
+5. 驗算：把 x = 1/3 代入原方程，左右兩邊相等。
+   3(1/3)^2 + 5(1/3) - 2 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > 3x^2=5 1`] = `
+"3x^2 = 5
+1. Divide both sides by 3.
+   x^2 = 5/3
+2. Take the square root of both sides. Remember the ± sign: there are two roots.
+   x = ±sqrt(5/3)
+3. Simplify the square root: sqrt(5/3) = sqrt(15)/3.
+   x = ±sqrt(15)/3
+4. Check: substitute x = (-sqrt(15))/3 into the original equation. Both sides are equal.
+   3((-sqrt(15))/3)^2 = 5;  5 = 5
+5. Check: substitute x = sqrt(15)/3 into the original equation. Both sides are equal.
+   3(sqrt(15)/3)^2 = 5;  5 = 5"
+`;
+
+exports[`T4 golden solutions > 3x^2=5 2`] = `
+"3x^2 = 5
+1. 兩邊同時除以 3。
+   x^2 = 5/3
+2. 兩邊開平方根。記得加上 ±：方程有兩個根。
+   x = ±sqrt(5/3)
+3. 化簡根式：sqrt(5/3) = sqrt(15)/3。
+   x = ±sqrt(15)/3
+4. 驗算：把 x = (-sqrt(15))/3 代入原方程，左右兩邊相等。
+   3((-sqrt(15))/3)^2 = 5;  5 = 5
+5. 驗算：把 x = sqrt(15)/3 代入原方程，左右兩邊相等。
+   3(sqrt(15)/3)^2 = 5;  5 = 5"
+`;
+
+exports[`T4 golden solutions > 3x^2-2x-2=0 1`] = `
+"3x^2 - 2x - 2 = 0
+1. Work out the discriminant Δ = b² - 4ac with a = 3, b = -2, c = -2: Δ = 28.
+   Δ = (-2)^2 - 4*3(-2) = 28
+2. Use the quadratic formula x = (-b ± √Δ) / (2a).
+   x = (-(-2) ± sqrt(28))/(2*3)
+3. Work out the numbers.
+   x = (2 ± sqrt(28))/6
+4. Simplify the square root: sqrt(28) = 2*sqrt(7).
+   x = (2 ± 2*sqrt(7))/6
+5. Divide the top and the bottom by 2.
+   x = (1 ± sqrt(7))/3
+6. Check: substitute x = (1 - sqrt(7))/3 into the original equation. Both sides are equal.
+   3((1 - sqrt(7))/3)^2 - 2((1 - sqrt(7))/3) - 2 = 0;  0 = 0
+7. Check: substitute x = (1 + sqrt(7))/3 into the original equation. Both sides are equal.
+   3((1 + sqrt(7))/3)^2 - 2((1 + sqrt(7))/3) - 2 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > 3x^2-2x-2=0 2`] = `
+"3x^2 - 2x - 2 = 0
+1. 計算判別式 Δ = b² - 4ac，其中 a = 3、b = -2、c = -2：Δ = 28。
+   Δ = (-2)^2 - 4*3(-2) = 28
+2. 代入二次公式 x = (-b ± √Δ) / (2a)。
+   x = (-(-2) ± sqrt(28))/(2*3)
+3. 計算數值。
+   x = (2 ± sqrt(28))/6
+4. 化簡根式：sqrt(28) = 2*sqrt(7)。
+   x = (2 ± 2*sqrt(7))/6
+5. 分子和分母同時除以 2。
+   x = (1 ± sqrt(7))/3
+6. 驗算：把 x = (1 - sqrt(7))/3 代入原方程，左右兩邊相等。
+   3((1 - sqrt(7))/3)^2 - 2((1 - sqrt(7))/3) - 2 = 0;  0 = 0
+7. 驗算：把 x = (1 + sqrt(7))/3 代入原方程，左右兩邊相等。
+   3((1 + sqrt(7))/3)^2 - 2((1 + sqrt(7))/3) - 2 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > 4x^2-1=0 1`] = `
+"4x^2 - 1 = 0
+1. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   4x^2 = 1
+2. Divide both sides by 4.
+   x^2 = 1/4
+3. Take the square root of both sides. Remember the ± sign: there are two roots.
+   x = ±sqrt(1/4)
+4. Simplify the square root: sqrt(1/4) = 1/2.
+   x = ±1/2
+5. Check: substitute x = -1/2 into the original equation. Both sides are equal.
+   4(-1/2)^2 - 1 = 0;  0 = 0
+6. Check: substitute x = 1/2 into the original equation. Both sides are equal.
+   4(1/2)^2 - 1 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > 4x^2-1=0 2`] = `
+"4x^2 - 1 = 0
+1. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   4x^2 = 1
+2. 兩邊同時除以 4。
+   x^2 = 1/4
+3. 兩邊開平方根。記得加上 ±：方程有兩個根。
+   x = ±sqrt(1/4)
+4. 化簡根式：sqrt(1/4) = 1/2。
+   x = ±1/2
+5. 驗算：把 x = -1/2 代入原方程，左右兩邊相等。
+   4(-1/2)^2 - 1 = 0;  0 = 0
+6. 驗算：把 x = 1/2 代入原方程，左右兩邊相等。
+   4(1/2)^2 - 1 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > 4x^2-12x+9=0 1`] = `
+"4x^2 - 12x + 9 = 0
+1. Factorise the left side.
+   (2x - 3)^2 = 0
+2. A square is 0 only when the expression inside the brackets is 0.
+   2x - 3 = 0
+3. Solve the linear equation.
+   x = 3/2
+4. Check: substitute x = 3/2 into the original equation. Both sides are equal.
+   4(3/2)^2 - 12(3/2) + 9 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > 4x^2-12x+9=0 2`] = `
+"4x^2 - 12x + 9 = 0
+1. 把左邊因式分解。
+   (2x - 3)^2 = 0
+2. 平方等於 0，即括號內的式子等於 0。
+   2x - 3 = 0
+3. 解這條一次方程。
+   x = 3/2
+4. 驗算：把 x = 3/2 代入原方程，左右兩邊相等。
+   4(3/2)^2 - 12(3/2) + 9 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > 5=3x^2 1`] = `
+"5 = 3x^2
+1. Swap the two sides so that the unknown is on the left.
+   3x^2 = 5
+2. Divide both sides by 3.
+   x^2 = 5/3
+3. Take the square root of both sides. Remember the ± sign: there are two roots.
+   x = ±sqrt(5/3)
+4. Simplify the square root: sqrt(5/3) = sqrt(15)/3.
+   x = ±sqrt(15)/3
+5. Check: substitute x = (-sqrt(15))/3 into the original equation. Both sides are equal.
+   5 = 5;  3((-sqrt(15))/3)^2 = 5
+6. Check: substitute x = sqrt(15)/3 into the original equation. Both sides are equal.
+   5 = 5;  3(sqrt(15)/3)^2 = 5"
+`;
+
+exports[`T4 golden solutions > 5=3x^2 2`] = `
+"5 = 3x^2
+1. 把左右兩邊對調，令未知數在左邊。
+   3x^2 = 5
+2. 兩邊同時除以 3。
+   x^2 = 5/3
+3. 兩邊開平方根。記得加上 ±：方程有兩個根。
+   x = ±sqrt(5/3)
+4. 化簡根式：sqrt(5/3) = sqrt(15)/3。
+   x = ±sqrt(15)/3
+5. 驗算：把 x = (-sqrt(15))/3 代入原方程，左右兩邊相等。
+   5 = 5;  3((-sqrt(15))/3)^2 = 5
+6. 驗算：把 x = sqrt(15)/3 代入原方程，左右兩邊相等。
+   5 = 5;  3(sqrt(15)/3)^2 = 5"
+`;
+
+exports[`T4 golden solutions > 6x^2-x-2=0 1`] = `
+"6x^2 - x - 2 = 0
+1. Factorise the left side.
+   (2x + 1)(3x - 2) = 0
+2. If a product is 0, then one of the factors must be 0.
+   2x + 1 = 0 or 3x - 2 = 0
+3. Solve each linear equation.
+   x = -1/2 or x = 2/3
+4. Check: substitute x = -1/2 into the original equation. Both sides are equal.
+   6(-1/2)^2 - (-1/2) - 2 = 0;  0 = 0
+5. Check: substitute x = 2/3 into the original equation. Both sides are equal.
+   6(2/3)^2 - 2/3 - 2 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > 6x^2-x-2=0 2`] = `
+"6x^2 - x - 2 = 0
+1. 把左邊因式分解。
+   (2x + 1)(3x - 2) = 0
+2. 若兩個因式之積等於 0，則其中一個因式等於 0。
+   2x + 1 = 0 或 3x - 2 = 0
+3. 分別解每條一次方程。
+   x = -1/2 或 x = 2/3
+4. 驗算：把 x = -1/2 代入原方程，左右兩邊相等。
+   6(-1/2)^2 - (-1/2) - 2 = 0;  0 = 0
+5. 驗算：把 x = 2/3 代入原方程，左右兩邊相等。
+   6(2/3)^2 - 2/3 - 2 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > 10x^2-5x=0 1`] = `
+"10x^2 - 5x = 0
+1. Divide both sides by 5, a common factor of all the coefficients.
+   2x^2 - x = 0
+2. Factorise the left side.
+   x(2x - 1) = 0
+3. If a product is 0, then one of the factors must be 0.
+   x = 0 or 2x - 1 = 0
+4. Solve each linear equation.
+   x = 0 or x = 1/2
+5. Check: substitute x = 0 into the original equation. Both sides are equal.
+   10*0^2 - 5*0 = 0;  0 = 0
+6. Check: substitute x = 1/2 into the original equation. Both sides are equal.
+   10(1/2)^2 - 5(1/2) = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > 10x^2-5x=0 2`] = `
+"10x^2 - 5x = 0
+1. 兩邊同時除以所有係數的公因數 5。
+   2x^2 - x = 0
+2. 把左邊因式分解。
+   x(2x - 1) = 0
+3. 若兩個因式之積等於 0，則其中一個因式等於 0。
+   x = 0 或 2x - 1 = 0
+4. 分別解每條一次方程。
+   x = 0 或 x = 1/2
+5. 驗算：把 x = 0 代入原方程，左右兩邊相等。
+   10*0^2 - 5*0 = 0;  0 = 0
+6. 驗算：把 x = 1/2 代入原方程，左右兩邊相等。
+   10(1/2)^2 - 5(1/2) = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > x(x+1)=12 1`] = `
+"x(x + 1) = 12
+1. Multiply each term in the bracket by x.
+   x*x + x*1 = 12
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   x^2 + x = 12
+3. Move every term to the left side so that the right side is 0. A term changes sign when it moves to the other side.
+   x^2 + x - 12 = 0
+4. Factorise the left side.
+   (x + 4)(x - 3) = 0
+5. If a product is 0, then one of the factors must be 0.
+   x + 4 = 0 or x - 3 = 0
+6. Solve each linear equation.
+   x = -4 or x = 3
+7. Check: substitute x = -4 into the original equation. Both sides are equal.
+   (-4)(-4 + 1) = 12;  12 = 12
+8. Check: substitute x = 3 into the original equation. Both sides are equal.
+   3(3 + 1) = 12;  12 = 12"
+`;
+
+exports[`T4 golden solutions > x(x+1)=12 2`] = `
+"x(x + 1) = 12
+1. 把括號內每一項都乘以 x。
+   x*x + x*1 = 12
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   x^2 + x = 12
+3. 把所有項移到左邊，令右邊等於 0。項移到另一邊時要變號。
+   x^2 + x - 12 = 0
+4. 把左邊因式分解。
+   (x + 4)(x - 3) = 0
+5. 若兩個因式之積等於 0，則其中一個因式等於 0。
+   x + 4 = 0 或 x - 3 = 0
+6. 分別解每條一次方程。
+   x = -4 或 x = 3
+7. 驗算：把 x = -4 代入原方程，左右兩邊相等。
+   (-4)(-4 + 1) = 12;  12 = 12
+8. 驗算：把 x = 3 代入原方程，左右兩邊相等。
+   3(3 + 1) = 12;  12 = 12"
+`;
+
+exports[`T4 golden solutions > x(x-3)=0 1`] = `
+"x(x - 3) = 0
+1. If a product is 0, then one of the factors must be 0.
+   x = 0 or x - 3 = 0
+2. Solve each linear equation.
+   x = 0 or x = 3
+3. Check: substitute x = 0 into the original equation. Both sides are equal.
+   0(0 - 3) = 0;  0 = 0
+4. Check: substitute x = 3 into the original equation. Both sides are equal.
+   3(3 - 3) = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > x(x-3)=0 2`] = `
+"x(x - 3) = 0
+1. 若兩個因式之積等於 0，則其中一個因式等於 0。
+   x = 0 或 x - 3 = 0
+2. 分別解每條一次方程。
+   x = 0 或 x = 3
+3. 驗算：把 x = 0 代入原方程，左右兩邊相等。
+   0(0 - 3) = 0;  0 = 0
+4. 驗算：把 x = 3 代入原方程，左右兩邊相等。
+   3(3 - 3) = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > x^2+2x+1=0 1`] = `
+"x^2 + 2x + 1 = 0
+1. Factorise the left side.
+   (x + 1)^2 = 0
+2. A square is 0 only when the expression inside the brackets is 0.
+   x + 1 = 0
+3. Solve the linear equation.
+   x = -1
+4. Check: substitute x = -1 into the original equation. Both sides are equal.
+   (-1)^2 + 2(-1) + 1 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > x^2+2x+1=0 2`] = `
+"x^2 + 2x + 1 = 0
+1. 把左邊因式分解。
+   (x + 1)^2 = 0
+2. 平方等於 0，即括號內的式子等於 0。
+   x + 1 = 0
+3. 解這條一次方程。
+   x = -1
+4. 驗算：把 x = -1 代入原方程，左右兩邊相等。
+   (-1)^2 + 2(-1) + 1 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > x^2+3x=x^2+6 1`] = `
+"x^2 + 3x = x^2 + 6
+1. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   x^2 + 3x - x^2 = 6
+2. Put like terms next to each other, in descending powers.
+   x^2 - x^2 + 3x = 6
+3. Combine like terms by adding their coefficients.
+   3x = 6
+4. Divide both sides by 3.
+   x = 2
+5. Check: substitute x = 2 into the original equation. Both sides are equal.
+   2^2 + 3*2 = 10;  2^2 + 6 = 10"
+`;
+
+exports[`T4 golden solutions > x^2+3x=x^2+6 2`] = `
+"x^2 + 3x = x^2 + 6
+1. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   x^2 + 3x - x^2 = 6
+2. 把同類項排在一起，並按降冪排列。
+   x^2 - x^2 + 3x = 6
+3. 合併同類項：把係數相加。
+   3x = 6
+4. 兩邊同時除以 3。
+   x = 2
+5. 驗算：把 x = 2 代入原方程，左右兩邊相等。
+   2^2 + 3*2 = 10;  2^2 + 6 = 10"
+`;
+
+exports[`T4 golden solutions > x^2+4x=0 1`] = `
+"x^2 + 4x = 0
+1. Factorise the left side.
+   x(x + 4) = 0
+2. If a product is 0, then one of the factors must be 0.
+   x = 0 or x + 4 = 0
+3. Solve each linear equation.
+   x = 0 or x = -4
+4. Check: substitute x = -4 into the original equation. Both sides are equal.
+   (-4)^2 + 4(-4) = 0;  0 = 0
+5. Check: substitute x = 0 into the original equation. Both sides are equal.
+   0^2 + 4*0 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > x^2+4x=0 2`] = `
+"x^2 + 4x = 0
+1. 把左邊因式分解。
+   x(x + 4) = 0
+2. 若兩個因式之積等於 0，則其中一個因式等於 0。
+   x = 0 或 x + 4 = 0
+3. 分別解每條一次方程。
+   x = 0 或 x = -4
+4. 驗算：把 x = -4 代入原方程，左右兩邊相等。
+   (-4)^2 + 4(-4) = 0;  0 = 0
+5. 驗算：把 x = 0 代入原方程，左右兩邊相等。
+   0^2 + 4*0 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > x^2+5x+6=0 1`] = `
+"x^2 + 5x + 6 = 0
+1. Factorise the left side.
+   (x + 3)(x + 2) = 0
+2. If a product is 0, then one of the factors must be 0.
+   x + 3 = 0 or x + 2 = 0
+3. Solve each linear equation.
+   x = -3 or x = -2
+4. Check: substitute x = -3 into the original equation. Both sides are equal.
+   (-3)^2 + 5(-3) + 6 = 0;  0 = 0
+5. Check: substitute x = -2 into the original equation. Both sides are equal.
+   (-2)^2 + 5(-2) + 6 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > x^2+5x+6=0 2`] = `
+"x^2 + 5x + 6 = 0
+1. 把左邊因式分解。
+   (x + 3)(x + 2) = 0
+2. 若兩個因式之積等於 0，則其中一個因式等於 0。
+   x + 3 = 0 或 x + 2 = 0
+3. 分別解每條一次方程。
+   x = -3 或 x = -2
+4. 驗算：把 x = -3 代入原方程，左右兩邊相等。
+   (-3)^2 + 5(-3) + 6 = 0;  0 = 0
+5. 驗算：把 x = -2 代入原方程，左右兩邊相等。
+   (-2)^2 + 5(-2) + 6 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > x^2+6x+4=0 1`] = `
+"x^2 + 6x + 4 = 0
+1. Work out the discriminant Δ = b² - 4ac with a = 1, b = 6, c = 4: Δ = 20.
+   Δ = 6^2 - 4*1*4 = 20
+2. Use the quadratic formula x = (-b ± √Δ) / (2a).
+   x = (-6 ± sqrt(20))/(2*1)
+3. Work out the numbers.
+   x = (-6 ± sqrt(20))/2
+4. Simplify the square root: sqrt(20) = 2*sqrt(5).
+   x = (-6 ± 2*sqrt(5))/2
+5. Divide the top and the bottom by 2.
+   x = -3 ± sqrt(5)
+6. Check: substitute x = -3 - sqrt(5) into the original equation. Both sides are equal.
+   (-3 - sqrt(5))^2 + 6(-3 - sqrt(5)) + 4 = 0;  0 = 0
+7. Check: substitute x = -3 + sqrt(5) into the original equation. Both sides are equal.
+   (-3 + sqrt(5))^2 + 6(-3 + sqrt(5)) + 4 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > x^2+6x+4=0 2`] = `
+"x^2 + 6x + 4 = 0
+1. 計算判別式 Δ = b² - 4ac，其中 a = 1、b = 6、c = 4：Δ = 20。
+   Δ = 6^2 - 4*1*4 = 20
+2. 代入二次公式 x = (-b ± √Δ) / (2a)。
+   x = (-6 ± sqrt(20))/(2*1)
+3. 計算數值。
+   x = (-6 ± sqrt(20))/2
+4. 化簡根式：sqrt(20) = 2*sqrt(5)。
+   x = (-6 ± 2*sqrt(5))/2
+5. 分子和分母同時除以 2。
+   x = -3 ± sqrt(5)
+6. 驗算：把 x = -3 - sqrt(5) 代入原方程，左右兩邊相等。
+   (-3 - sqrt(5))^2 + 6(-3 - sqrt(5)) + 4 = 0;  0 = 0
+7. 驗算：把 x = -3 + sqrt(5) 代入原方程，左右兩邊相等。
+   (-3 + sqrt(5))^2 + 6(-3 + sqrt(5)) + 4 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > x^2+9=0 1`] = `
+"x^2 + 9 = 0
+1. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   x^2 = -9
+2. A square is never negative, so the equation has no real roots.
+   There is no real solution."
+`;
+
+exports[`T4 golden solutions > x^2+9=0 2`] = `
+"x^2 + 9 = 0
+1. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   x^2 = -9
+2. 平方不可能是負數，所以方程沒有實數根。
+   沒有實數解。"
+`;
+
+exports[`T4 golden solutions > x^2+x+1=0 1`] = `
+"x^2 + x + 1 = 0
+1. Work out the discriminant Δ = b² - 4ac with a = 1, b = 1, c = 1: Δ = -3.
+   Δ = 1^2 - 4*1*1 = -3
+2. Δ is negative, so the equation has no real roots.
+   There is no real solution."
+`;
+
+exports[`T4 golden solutions > x^2+x+1=0 2`] = `
+"x^2 + x + 1 = 0
+1. 計算判別式 Δ = b² - 4ac，其中 a = 1、b = 1、c = 1：Δ = -3。
+   Δ = 1^2 - 4*1*1 = -3
+2. Δ 是負數，所以方程沒有實數根。
+   沒有實數解。"
+`;
+
+exports[`T4 golden solutions > x^2+x-1=0 1`] = `
+"x^2 + x - 1 = 0
+1. Work out the discriminant Δ = b² - 4ac with a = 1, b = 1, c = -1: Δ = 5.
+   Δ = 1^2 - 4*1(-1) = 5
+2. Use the quadratic formula x = (-b ± √Δ) / (2a).
+   x = (-1 ± sqrt(5))/(2*1)
+3. Work out the numbers.
+   x = (-1 ± sqrt(5))/2
+4. Check: substitute x = (-1 - sqrt(5))/2 into the original equation. Both sides are equal.
+   ((-1 - sqrt(5))/2)^2 + (-1 - sqrt(5))/2 - 1 = 0;  0 = 0
+5. Check: substitute x = (-1 + sqrt(5))/2 into the original equation. Both sides are equal.
+   ((-1 + sqrt(5))/2)^2 + (-1 + sqrt(5))/2 - 1 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > x^2+x-1=0 2`] = `
+"x^2 + x - 1 = 0
+1. 計算判別式 Δ = b² - 4ac，其中 a = 1、b = 1、c = -1：Δ = 5。
+   Δ = 1^2 - 4*1(-1) = 5
+2. 代入二次公式 x = (-b ± √Δ) / (2a)。
+   x = (-1 ± sqrt(5))/(2*1)
+3. 計算數值。
+   x = (-1 ± sqrt(5))/2
+4. 驗算：把 x = (-1 - sqrt(5))/2 代入原方程，左右兩邊相等。
+   ((-1 - sqrt(5))/2)^2 + (-1 - sqrt(5))/2 - 1 = 0;  0 = 0
+5. 驗算：把 x = (-1 + sqrt(5))/2 代入原方程，左右兩邊相等。
+   ((-1 + sqrt(5))/2)^2 + (-1 + sqrt(5))/2 - 1 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > x^2/2-x=4 1`] = `
+"x^2/2 - x = 4
+1. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   (1/2)x^2 - x = 4
+2. Move every term to the left side so that the right side is 0. A term changes sign when it moves to the other side.
+   (1/2)x^2 - x - 4 = 0
+3. Multiply both sides by 2 to clear the fractions.
+   x^2 - 2x - 8 = 0
+4. Factorise the left side.
+   (x + 2)(x - 4) = 0
+5. If a product is 0, then one of the factors must be 0.
+   x + 2 = 0 or x - 4 = 0
+6. Solve each linear equation.
+   x = -2 or x = 4
+7. Check: substitute x = -2 into the original equation. Both sides are equal.
+   (-2)^2/2 - (-2) = 4;  4 = 4
+8. Check: substitute x = 4 into the original equation. Both sides are equal.
+   4^2/2 - 4 = 4;  4 = 4"
+`;
+
+exports[`T4 golden solutions > x^2/2-x=4 2`] = `
+"x^2/2 - x = 4
+1. 化簡每一項：數字相乘，相同字母的指數相加。
+   (1/2)x^2 - x = 4
+2. 把所有項移到左邊，令右邊等於 0。項移到另一邊時要變號。
+   (1/2)x^2 - x - 4 = 0
+3. 兩邊同時乘以 2，消去分母。
+   x^2 - 2x - 8 = 0
+4. 把左邊因式分解。
+   (x + 2)(x - 4) = 0
+5. 若兩個因式之積等於 0，則其中一個因式等於 0。
+   x + 2 = 0 或 x - 4 = 0
+6. 分別解每條一次方程。
+   x = -2 或 x = 4
+7. 驗算：把 x = -2 代入原方程，左右兩邊相等。
+   (-2)^2/2 - (-2) = 4;  4 = 4
+8. 驗算：把 x = 4 代入原方程，左右兩邊相等。
+   4^2/2 - 4 = 4;  4 = 4"
+`;
+
+exports[`T4 golden solutions > x^2/3+x/2=1/6 1`] = `
+"x^2/3 + x/2 = 1/6
+1. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   (1/3)x^2 + (1/2)x = 1/6
+2. Move every term to the left side so that the right side is 0. A term changes sign when it moves to the other side.
+   (1/3)x^2 + (1/2)x - 1/6 = 0
+3. Multiply both sides by 6 to clear the fractions.
+   2x^2 + 3x - 1 = 0
+4. Work out the discriminant Δ = b² - 4ac with a = 2, b = 3, c = -1: Δ = 17.
+   Δ = 3^2 - 4*2(-1) = 17
+5. Use the quadratic formula x = (-b ± √Δ) / (2a).
+   x = (-3 ± sqrt(17))/(2*2)
+6. Work out the numbers.
+   x = (-3 ± sqrt(17))/4
+7. Check: substitute x = (-3 - sqrt(17))/4 into the original equation. Both sides are equal.
+   ((-3 - sqrt(17))/4)^2/3 + (-3 - sqrt(17))/4/2 = 1/6;  1/6 = 1/6
+8. Check: substitute x = (-3 + sqrt(17))/4 into the original equation. Both sides are equal.
+   ((-3 + sqrt(17))/4)^2/3 + (-3 + sqrt(17))/4/2 = 1/6;  1/6 = 1/6"
+`;
+
+exports[`T4 golden solutions > x^2/3+x/2=1/6 2`] = `
+"x^2/3 + x/2 = 1/6
+1. 化簡每一項：數字相乘，相同字母的指數相加。
+   (1/3)x^2 + (1/2)x = 1/6
+2. 把所有項移到左邊，令右邊等於 0。項移到另一邊時要變號。
+   (1/3)x^2 + (1/2)x - 1/6 = 0
+3. 兩邊同時乘以 6，消去分母。
+   2x^2 + 3x - 1 = 0
+4. 計算判別式 Δ = b² - 4ac，其中 a = 2、b = 3、c = -1：Δ = 17。
+   Δ = 3^2 - 4*2(-1) = 17
+5. 代入二次公式 x = (-b ± √Δ) / (2a)。
+   x = (-3 ± sqrt(17))/(2*2)
+6. 計算數值。
+   x = (-3 ± sqrt(17))/4
+7. 驗算：把 x = (-3 - sqrt(17))/4 代入原方程，左右兩邊相等。
+   ((-3 - sqrt(17))/4)^2/3 + (-3 - sqrt(17))/4/2 = 1/6;  1/6 = 1/6
+8. 驗算：把 x = (-3 + sqrt(17))/4 代入原方程，左右兩邊相等。
+   ((-3 + sqrt(17))/4)^2/3 + (-3 + sqrt(17))/4/2 = 1/6;  1/6 = 1/6"
+`;
+
+exports[`T4 golden solutions > x^2=0 1`] = `
+"x^2 = 0
+1. Only 0 squared gives 0.
+   x = 0
+2. Check: substitute x = 0 into the original equation. Both sides are equal.
+   0^2 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > x^2=0 2`] = `
+"x^2 = 0
+1. 只有 0 的平方是 0。
+   x = 0
+2. 驗算：把 x = 0 代入原方程，左右兩邊相等。
+   0^2 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > x^2=2 1`] = `
+"x^2 = 2
+1. Take the square root of both sides. Remember the ± sign: there are two roots.
+   x = ±sqrt(2)
+2. Check: substitute x = -sqrt(2) into the original equation. Both sides are equal.
+   (-sqrt(2))^2 = 2;  2 = 2
+3. Check: substitute x = sqrt(2) into the original equation. Both sides are equal.
+   sqrt(2)^2 = 2;  2 = 2"
+`;
+
+exports[`T4 golden solutions > x^2=2 2`] = `
+"x^2 = 2
+1. 兩邊開平方根。記得加上 ±：方程有兩個根。
+   x = ±sqrt(2)
+2. 驗算：把 x = -sqrt(2) 代入原方程，左右兩邊相等。
+   (-sqrt(2))^2 = 2;  2 = 2
+3. 驗算：把 x = sqrt(2) 代入原方程，左右兩邊相等。
+   sqrt(2)^2 = 2;  2 = 2"
+`;
+
+exports[`T4 golden solutions > x^2=3x 1`] = `
+"x^2 = 3x
+1. Move every term to the left side so that the right side is 0. A term changes sign when it moves to the other side.
+   x^2 - 3x = 0
+2. Factorise the left side.
+   x(x - 3) = 0
+3. If a product is 0, then one of the factors must be 0.
+   x = 0 or x - 3 = 0
+4. Solve each linear equation.
+   x = 0 or x = 3
+5. Check: substitute x = 0 into the original equation. Both sides are equal.
+   0^2 = 0;  3*0 = 0
+6. Check: substitute x = 3 into the original equation. Both sides are equal.
+   3^2 = 9;  3*3 = 9"
+`;
+
+exports[`T4 golden solutions > x^2=3x 2`] = `
+"x^2 = 3x
+1. 把所有項移到左邊，令右邊等於 0。項移到另一邊時要變號。
+   x^2 - 3x = 0
+2. 把左邊因式分解。
+   x(x - 3) = 0
+3. 若兩個因式之積等於 0，則其中一個因式等於 0。
+   x = 0 或 x - 3 = 0
+4. 分別解每條一次方程。
+   x = 0 或 x = 3
+5. 驗算：把 x = 0 代入原方程，左右兩邊相等。
+   0^2 = 0;  3*0 = 0
+6. 驗算：把 x = 3 代入原方程，左右兩邊相等。
+   3^2 = 9;  3*3 = 9"
+`;
+
+exports[`T4 golden solutions > x^2=4 1`] = `
+"x^2 = 4
+1. Take the square root of both sides. Remember the ± sign: there are two roots.
+   x = ±sqrt(4)
+2. Simplify the square root: sqrt(4) = 2.
+   x = ±2
+3. Check: substitute x = -2 into the original equation. Both sides are equal.
+   (-2)^2 = 4;  4 = 4
+4. Check: substitute x = 2 into the original equation. Both sides are equal.
+   2^2 = 4;  4 = 4"
+`;
+
+exports[`T4 golden solutions > x^2=4 2`] = `
+"x^2 = 4
+1. 兩邊開平方根。記得加上 ±：方程有兩個根。
+   x = ±sqrt(4)
+2. 化簡根式：sqrt(4) = 2。
+   x = ±2
+3. 驗算：把 x = -2 代入原方程，左右兩邊相等。
+   (-2)^2 = 4;  4 = 4
+4. 驗算：把 x = 2 代入原方程，左右兩邊相等。
+   2^2 = 4;  4 = 4"
+`;
+
+exports[`T4 golden solutions > x^2=9/4 1`] = `
+"x^2 = 9/4
+1. Multiply both sides by 4 to clear the fractions.
+   4x^2 = 9
+2. Divide both sides by 4.
+   x^2 = 9/4
+3. Take the square root of both sides. Remember the ± sign: there are two roots.
+   x = ±sqrt(9/4)
+4. Simplify the square root: sqrt(9/4) = 3/2.
+   x = ±3/2
+5. Check: substitute x = -3/2 into the original equation. Both sides are equal.
+   (-3/2)^2 = 9/4;  9/4 = 9/4
+6. Check: substitute x = 3/2 into the original equation. Both sides are equal.
+   (3/2)^2 = 9/4;  9/4 = 9/4"
+`;
+
+exports[`T4 golden solutions > x^2=9/4 2`] = `
+"x^2 = 9/4
+1. 兩邊同時乘以 4，消去分母。
+   4x^2 = 9
+2. 兩邊同時除以 4。
+   x^2 = 9/4
+3. 兩邊開平方根。記得加上 ±：方程有兩個根。
+   x = ±sqrt(9/4)
+4. 化簡根式：sqrt(9/4) = 3/2。
+   x = ±3/2
+5. 驗算：把 x = -3/2 代入原方程，左右兩邊相等。
+   (-3/2)^2 = 9/4;  9/4 = 9/4
+6. 驗算：把 x = 3/2 代入原方程，左右兩邊相等。
+   (3/2)^2 = 9/4;  9/4 = 9/4"
+`;
+
+exports[`T4 golden solutions > x^2-2x+3=0 1`] = `
+"x^2 - 2x + 3 = 0
+1. Work out the discriminant Δ = b² - 4ac with a = 1, b = -2, c = 3: Δ = -8.
+   Δ = (-2)^2 - 4*1*3 = -8
+2. Δ is negative, so the equation has no real roots.
+   There is no real solution."
+`;
+
+exports[`T4 golden solutions > x^2-2x+3=0 2`] = `
+"x^2 - 2x + 3 = 0
+1. 計算判別式 Δ = b² - 4ac，其中 a = 1、b = -2、c = 3：Δ = -8。
+   Δ = (-2)^2 - 4*1*3 = -8
+2. Δ 是負數，所以方程沒有實數根。
+   沒有實數解。"
+`;
+
+exports[`T4 golden solutions > x^2-4x+1=0 1`] = `
+"x^2 - 4x + 1 = 0
+1. Work out the discriminant Δ = b² - 4ac with a = 1, b = -4, c = 1: Δ = 12.
+   Δ = (-4)^2 - 4*1*1 = 12
+2. Use the quadratic formula x = (-b ± √Δ) / (2a).
+   x = (-(-4) ± sqrt(12))/(2*1)
+3. Work out the numbers.
+   x = (4 ± sqrt(12))/2
+4. Simplify the square root: sqrt(12) = 2*sqrt(3).
+   x = (4 ± 2*sqrt(3))/2
+5. Divide the top and the bottom by 2.
+   x = 2 ± sqrt(3)
+6. Check: substitute x = 2 - sqrt(3) into the original equation. Both sides are equal.
+   (2 - sqrt(3))^2 - 4(2 - sqrt(3)) + 1 = 0;  0 = 0
+7. Check: substitute x = 2 + sqrt(3) into the original equation. Both sides are equal.
+   (2 + sqrt(3))^2 - 4(2 + sqrt(3)) + 1 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > x^2-4x+1=0 2`] = `
+"x^2 - 4x + 1 = 0
+1. 計算判別式 Δ = b² - 4ac，其中 a = 1、b = -4、c = 1：Δ = 12。
+   Δ = (-4)^2 - 4*1*1 = 12
+2. 代入二次公式 x = (-b ± √Δ) / (2a)。
+   x = (-(-4) ± sqrt(12))/(2*1)
+3. 計算數值。
+   x = (4 ± sqrt(12))/2
+4. 化簡根式：sqrt(12) = 2*sqrt(3)。
+   x = (4 ± 2*sqrt(3))/2
+5. 分子和分母同時除以 2。
+   x = 2 ± sqrt(3)
+6. 驗算：把 x = 2 - sqrt(3) 代入原方程，左右兩邊相等。
+   (2 - sqrt(3))^2 - 4(2 - sqrt(3)) + 1 = 0;  0 = 0
+7. 驗算：把 x = 2 + sqrt(3) 代入原方程，左右兩邊相等。
+   (2 + sqrt(3))^2 - 4(2 + sqrt(3)) + 1 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > x^2-5x+3=0 1`] = `
+"x^2 - 5x + 3 = 0
+1. Work out the discriminant Δ = b² - 4ac with a = 1, b = -5, c = 3: Δ = 13.
+   Δ = (-5)^2 - 4*1*3 = 13
+2. Use the quadratic formula x = (-b ± √Δ) / (2a).
+   x = (-(-5) ± sqrt(13))/(2*1)
+3. Work out the numbers.
+   x = (5 ± sqrt(13))/2
+4. Check: substitute x = (5 - sqrt(13))/2 into the original equation. Both sides are equal.
+   ((5 - sqrt(13))/2)^2 - 5((5 - sqrt(13))/2) + 3 = 0;  0 = 0
+5. Check: substitute x = (5 + sqrt(13))/2 into the original equation. Both sides are equal.
+   ((5 + sqrt(13))/2)^2 - 5((5 + sqrt(13))/2) + 3 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > x^2-5x+3=0 2`] = `
+"x^2 - 5x + 3 = 0
+1. 計算判別式 Δ = b² - 4ac，其中 a = 1、b = -5、c = 3：Δ = 13。
+   Δ = (-5)^2 - 4*1*3 = 13
+2. 代入二次公式 x = (-b ± √Δ) / (2a)。
+   x = (-(-5) ± sqrt(13))/(2*1)
+3. 計算數值。
+   x = (5 ± sqrt(13))/2
+4. 驗算：把 x = (5 - sqrt(13))/2 代入原方程，左右兩邊相等。
+   ((5 - sqrt(13))/2)^2 - 5((5 - sqrt(13))/2) + 3 = 0;  0 = 0
+5. 驗算：把 x = (5 + sqrt(13))/2 代入原方程，左右兩邊相等。
+   ((5 + sqrt(13))/2)^2 - 5((5 + sqrt(13))/2) + 3 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > x^2-5x+6=0 1`] = `
+"x^2 - 5x + 6 = 0
+1. Factorise the left side.
+   (x - 2)(x - 3) = 0
+2. If a product is 0, then one of the factors must be 0.
+   x - 2 = 0 or x - 3 = 0
+3. Solve each linear equation.
+   x = 2 or x = 3
+4. Check: substitute x = 2 into the original equation. Both sides are equal.
+   2^2 - 5*2 + 6 = 0;  0 = 0
+5. Check: substitute x = 3 into the original equation. Both sides are equal.
+   3^2 - 5*3 + 6 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > x^2-5x+6=0 2`] = `
+"x^2 - 5x + 6 = 0
+1. 把左邊因式分解。
+   (x - 2)(x - 3) = 0
+2. 若兩個因式之積等於 0，則其中一個因式等於 0。
+   x - 2 = 0 或 x - 3 = 0
+3. 分別解每條一次方程。
+   x = 2 或 x = 3
+4. 驗算：把 x = 2 代入原方程，左右兩邊相等。
+   2^2 - 5*2 + 6 = 0;  0 = 0
+5. 驗算：把 x = 3 代入原方程，左右兩邊相等。
+   3^2 - 5*3 + 6 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > x^2-9=0 1`] = `
+"x^2 - 9 = 0
+1. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   x^2 = 9
+2. Take the square root of both sides. Remember the ± sign: there are two roots.
+   x = ±sqrt(9)
+3. Simplify the square root: sqrt(9) = 3.
+   x = ±3
+4. Check: substitute x = -3 into the original equation. Both sides are equal.
+   (-3)^2 - 9 = 0;  0 = 0
+5. Check: substitute x = 3 into the original equation. Both sides are equal.
+   3^2 - 9 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > x^2-9=0 2`] = `
+"x^2 - 9 = 0
+1. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   x^2 = 9
+2. 兩邊開平方根。記得加上 ±：方程有兩個根。
+   x = ±sqrt(9)
+3. 化簡根式：sqrt(9) = 3。
+   x = ±3
+4. 驗算：把 x = -3 代入原方程，左右兩邊相等。
+   (-3)^2 - 9 = 0;  0 = 0
+5. 驗算：把 x = 3 代入原方程，左右兩邊相等。
+   3^2 - 9 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > x^2-x-6=0 1`] = `
+"x^2 - x - 6 = 0
+1. Factorise the left side.
+   (x + 2)(x - 3) = 0
+2. If a product is 0, then one of the factors must be 0.
+   x + 2 = 0 or x - 3 = 0
+3. Solve each linear equation.
+   x = -2 or x = 3
+4. Check: substitute x = -2 into the original equation. Both sides are equal.
+   (-2)^2 - (-2) - 6 = 0;  0 = 0
+5. Check: substitute x = 3 into the original equation. Both sides are equal.
+   3^2 - 3 - 6 = 0;  0 = 0"
+`;
+
+exports[`T4 golden solutions > x^2-x-6=0 2`] = `
+"x^2 - x - 6 = 0
+1. 把左邊因式分解。
+   (x + 2)(x - 3) = 0
+2. 若兩個因式之積等於 0，則其中一個因式等於 0。
+   x + 2 = 0 或 x - 3 = 0
+3. 分別解每條一次方程。
+   x = -2 或 x = 3
+4. 驗算：把 x = -2 代入原方程，左右兩邊相等。
+   (-2)^2 - (-2) - 6 = 0;  0 = 0
+5. 驗算：把 x = 3 代入原方程，左右兩邊相等。
+   3^2 - 3 - 6 = 0;  0 = 0"
+`;

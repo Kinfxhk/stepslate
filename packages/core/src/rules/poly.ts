@@ -254,7 +254,9 @@ export function nextPolyStep(e: Expr, vars: readonly string[]): PolyDraft | null
   if (vf) {
     const sub0 = getAt(e, vf);
     const drafts = nextArithmetic(sub0);
-    const d = drafts[0];
+    // A two-part macro (common denominator, then combine) is shown as one step here,
+    // otherwise the next search would reduce the rewritten fraction straight back.
+    const d = drafts.at(-1);
     if (d) {
       return {
         expr: replaceAt(e, vf, d.expr),
