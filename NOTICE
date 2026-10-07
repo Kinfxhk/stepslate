@@ -1,0 +1,22 @@
+StepSlate (步步解)
+Copyright (C) 2026 StepSlate contributors
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU Affero General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any
+later version. See the LICENSE file for the full text.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.
+
+StepSlate is an educational tool for learning and checking your own work. Every
+displayed step is checked by an automatic verifier, but software can still have
+bugs: verify important answers yourself and do not use it to cheat in tests.
+
+StepSlate is an independent project. It is not affiliated with, endorsed by, or
+sponsored by Symbolab, Mathway, Photomath or any other maths-solver product or
+company. All product names are trademarks of their respective owners and are
+used only for plain factual reference.
+
+Third-party components and their notices are listed in THIRD_PARTY_NOTICES.md.
