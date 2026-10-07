@@ -1,6 +1,8 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # Publish the static site to GitHub Pages when a release is published (or on demand).
 # One-time setup: Settings → Pages → Source: "GitHub Actions".
+# Also allow tags matching `v*` in Settings → Environments → github-pages, because release
+# runs deploy from the tag ref and the default policy only allows the main branch.
 name: Pages
 
 on:

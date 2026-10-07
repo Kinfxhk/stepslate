@@ -8,6 +8,7 @@ is never displayed. No account, no ads, no tracking, no subscription.
 
 ![StepSlate solving x² − 4x + 1 = 0 step by step](docs/screenshot.png)
 
+- Try it online (GitHub Pages): <https://kinfxhk.github.io/stepslate/>
 - Repository: <https://github.com/Kinfxhk/stepslate>
 - Licence: [AGPL-3.0-or-later](LICENSE)
 - Support the project: <https://buymeacoffee.com/kinfxhk>
@@ -176,5 +177,6 @@ does this for the original). Third-party components are listed in
 （AGPL-3.0-or-later）。如你修改後透過網絡提供予他人使用，須向使用者提供相應原始碼。
 第三方元件見 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
+- 網上版（GitHub Pages）：<https://kinfxhk.github.io/stepslate/>
 - 原始碼：<https://github.com/Kinfxhk/stepslate>
 - 支持項目：<https://buymeacoffee.com/kinfxhk>

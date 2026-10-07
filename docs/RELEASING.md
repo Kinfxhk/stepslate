@@ -14,4 +14,7 @@ Maintainer checklist. Nothing here runs automatically.
    a GitHub release from `release/notes.md` and attach the zip and checksum.
 8. GitHub Pages uses the `pages.yml` workflow (source: GitHub Actions). It runs when a release is
    published, or by hand from the Actions tab.
+   One-time setup: enable Pages with source "GitHub Actions", then allow tags matching `v*` to
+   deploy to the `github-pages` environment (Settings → Environments → github-pages → deployment
+   branches and tags). By default only `main` may deploy, so a release-triggered run is rejected.
 9. After the first push, confirm the CI jobs (check, e2e, docker) are green and the Pages site opens.
