@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'"
+    />
+    <meta name="referrer" content="no-referrer" />
+    <meta
+      name="description"
+      content="StepSlate: free, offline step-by-step maths solver. Every step is checked by an exact verifier. Educational use only."
+    />
+    <meta name="theme-color" content="#2f4858" />
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <title>StepSlate · 步步解</title>
+  </head>
+  <body>
+    <a class="skip" href="#problem" data-i18n="a11y.skip">Skip to the problem box</a>
+    <header class="app">
+      <div class="brand">
+        <img src="./icon.svg" alt="" width="28" height="28" />
+        <span>StepSlate</span>
+        <small lang="zh-Hant">步步解</small>
+      </div>
+      <nav class="tabs" aria-label="Main" data-i18n-aria="nav.label">
+        <button type="button" data-view="solve" data-i18n="nav.solve" aria-current="page">
+          Solve
+        </button>
+        <button type="button" data-view="practice" data-i18n="nav.practice">Practice</button>
+      </nav>
+      <div class="spacer"></div>
+      <div class="settings">
+        <button type="button" class="ghost" id="lang-toggle" lang="zh-Hant">中文</button>
+        <button
+          type="button"
+          class="ghost"
+          id="theme-toggle"
+          aria-pressed="false"
+          data-i18n="settings.dark"
+        >
+          Dark
+        </button>
+        <button
+          type="button"
+          class="ghost"
+          id="large-toggle"
+          aria-pressed="false"
+          data-i18n="settings.large"
+        >
+          Large text
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="view active" id="view-solve" aria-labelledby="h-solve">
+        <h1 id="h-solve" class="visually-hidden" data-i18n="solve.heading">Solve a problem</h1>
+        <form id="solve-form" class="card input-card" autocomplete="off">
+          <label for="problem" data-i18n="input.label"
+            >Type a sum, an expression or an equation</label
+          >
+          <div class="input-row">
+            <input
+              id="problem"
+              name="problem"
+              type="text"
+              inputmode="text"
+              spellcheck="false"
+              autocapitalize="off"
+              maxlength="200"
+              aria-describedby="input-help preview-status"
+              data-i18n-placeholder="input.placeholder"
+              placeholder="e.g. 2(x+3)=5x-4"
+            />
+            <button type="submit" id="solve-btn" class="primary" data-i18n="input.solve">
+              Solve
+            </button>
+            <button type="button" id="clear-btn" class="ghost" data-i18n="input.clear">
+              Clear
+            </button>
+          </div>
+          <p id="input-help" class="help" data-i18n="input.help">
+            Use ^ for powers, / for fractions and ; between two equations.
+          </p>
+          <div
+            class="keyboard"
+            role="group"
+            aria-label="Maths keyboard"
+            data-i18n-aria="kbd.label"
+          ></div>
+          <div class="examples">
+            <span data-i18n="examples.label">Examples:</span>
+            <span id="example-list"></span>
+          </div>
+        </form>
+
+        <section class="card preview" aria-labelledby="h-preview">
+          <h2 id="h-preview" data-i18n="preview.label">I read this as</h2>
+          <div id="preview-math" class="math-block" aria-live="polite"></div>
+          <p id="preview-status" class="status" aria-live="polite"></p>
+        </section>
+
+        <section class="card steps" id="steps-card" aria-labelledby="h-steps" hidden>
+          <div class="steps-head">
+            <h2 id="h-steps" data-i18n="steps.title">Steps</h2>
+            <span id="step-count" class="muted" aria-live="polite"></span>
+            <div class="spacer"></div>
+            <button type="button" id="share-btn" class="ghost" data-i18n="share.button">
+              Copy share link
+            </button>
+            <button type="button" id="print-btn" class="ghost" data-i18n="print.button">
+              Print
+            </button>
+          </div>
+          <p id="result-message" class="status"></p>
+          <ol id="step-list" class="step-list"></ol>
+          <div class="step-actions">
+            <button type="button" id="next-btn" class="primary" data-i18n="steps.next">
+              Next step
+            </button>
+            <button type="button" id="all-btn" class="ghost" data-i18n="steps.all">
+              Show all steps
+            </button>
+          </div>
+          <div id="answer" class="answer" hidden>
+            <h3 data-i18n="answer.title">Answer</h3>
+            <div id="answer-math" class="math-block"></div>
+          </div>
+          <p id="share-status" class="muted" aria-live="polite"></p>
+        </section>
+      </section>
+
+      <section class="view" id="view-practice" aria-labelledby="h-practice" hidden>
+        <h1 id="h-practice" class="visually-hidden" data-i18n="practice.heading">Practice</h1>
+        <div id="practice-root" class="card"></div>
+      </section>
+    </main>
+
+    <footer class="app">
+      <p class="disclaimer" data-i18n="footer.disclaimer">
+        Educational tool. Always check the answers yourself and ask a teacher if you are unsure.
+      </p>
+      <p class="links">
+        <a
+          id="source-link"
+          href="https://github.com/Kinfxhk/stepslate"
+          rel="noopener noreferrer"
+          data-i18n="footer.source"
+          >Source code (AGPL-3.0-or-later)</a
+        >
+        <span aria-hidden="true">·</span>
+        <a href="./licenses/" data-i18n="footer.licences">Licences</a>
+        <span aria-hidden="true">·</span>
+        <a
+          href="https://buymeacoffee.com/kinfxhk"
+          rel="noopener noreferrer"
+          data-i18n="footer.coffee"
+          >Buy me a coffee</a
+        >
+      </p>
+      <p class="muted small" data-i18n="footer.independent">
+        StepSlate is an independent open-source project, not affiliated with any other maths app,
+        publisher or exam board.
+      </p>
+    </footer>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>

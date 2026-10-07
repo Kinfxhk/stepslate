@@ -4,3 +4,4 @@ export * from './engine';
 export * from './explain';
 export * from './run';
 export * from './render';
+export * from './latex';

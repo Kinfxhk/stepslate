@@ -1,0 +1,167 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+import AxeBuilder from '@axe-core/playwright';
+import { expect, test, type Page } from '@playwright/test';
+
+/** Fail the test if the page ever requests anything from another origin. */
+function trackExternal(page: Page, baseURL: string): string[] {
+  const external: string[] = [];
+  page.on('request', (req) => {
+    const url = req.url();
+    if (!url.startsWith(baseURL) && !url.startsWith('data:') && !url.startsWith('blob:'))
+      external.push(url);
+  });
+  return external;
+}
+
+test.beforeEach(async ({ page }) => {
+  await page.addInitScript(() => {
+    if (!sessionStorage.getItem('e2e-init')) {
+      localStorage.clear();
+      sessionStorage.setItem('e2e-init', '1');
+    }
+  });
+});
+
+test('type → preview → step by step → show all → answer, with no external requests', async ({
+  page,
+  baseURL,
+}) => {
+  const external = trackExternal(page, baseURL!);
+  const errors: string[] = [];
+  page.on('console', (m) => {
+    if (m.type() === 'error') errors.push(m.text());
+  });
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto('/');
+  await expect(page.locator('#preview-status')).toContainText('Type a problem');
+  await page.locator('#problem').fill('2(x+3)=5x-4');
+  await expect(page.locator('#preview-math .katex')).toBeVisible();
+  await expect(page.locator('#preview-status')).toContainText('Linear equation');
+  await page.locator('#solve-btn').click();
+  await expect(page.locator('#steps-card')).toBeVisible();
+  await expect(page.locator('#step-list > li')).toHaveCount(0);
+  await page.locator('#next-btn').click();
+  await expect(page.locator('#step-list > li')).toHaveCount(1);
+  await expect(page.locator('#step-list > li').first()).toContainText('Checked');
+  await page.locator('#next-btn').click();
+  await expect(page.locator('#step-list > li')).toHaveCount(2);
+  await page.locator('#all-btn').click();
+  const steps = page.locator('#step-list > li');
+  expect(await steps.count()).toBeGreaterThan(3);
+  await expect(steps.last()).toHaveAttribute('data-rule', 'check');
+  await expect(page.locator('#answer')).toBeVisible();
+  await expect(page.locator('#answer-math')).toContainText('x');
+  await expect(page.locator('#next-btn')).toBeHidden();
+  // the problem is in the URL fragment for sharing
+  expect(decodeURIComponent(new URL(page.url()).hash)).toBe('#q=2(x+3)=5x-4');
+  expect(external).toEqual([]);
+  expect(errors).toEqual([]); // includes Content-Security-Policy violations
+});
+
+test('language switch translates the UI and the explanations', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('#problem').fill('x^2-5x+6=0');
+  await page.locator('#solve-btn').click();
+  await page.locator('#all-btn').click();
+  await expect(page.locator('#step-list')).toContainText('Factorise');
+  await page.locator('#lang-toggle').click();
+  await expect(page.locator('html')).toHaveAttribute('lang', 'zh-Hant-HK');
+  await expect(page.locator('#solve-btn')).toHaveText('解題');
+  await expect(page.locator('#step-list')).toContainText('因式分解');
+  await expect(page.locator('#answer h3')).toHaveText('答案');
+  // the choice is remembered
+  await page.reload();
+  await expect(page.locator('#solve-btn')).toHaveText('解題');
+  await page.locator('#lang-toggle').click();
+  await expect(page.locator('#solve-btn')).toHaveText('Solve');
+});
+
+test('shared link opens the problem and its steps', async ({ page }) => {
+  await page.goto('/#q=' + encodeURIComponent('2x+y=7; x-y=2'));
+  await expect(page.locator('#problem')).toHaveValue('2x+y=7; x-y=2');
+  await expect(page.locator('#preview-status')).toContainText('Simultaneous');
+  await page.locator('#all-btn').click();
+  await expect(page.locator('#answer')).toBeVisible();
+  await expect(page.locator('#step-list > li').last()).toHaveAttribute('data-rule', 'check');
+});
+
+test('ambiguous input gets a warning; bad input shows where the problem is', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('#problem').fill('1/2x');
+  await expect(page.locator('[data-warning="ambiguous-division"]')).toBeVisible();
+  await page.locator('#problem').fill('2x+');
+  await expect(page.locator('#preview-status')).toHaveClass(/error/);
+  await expect(page.locator('#preview-math mark')).toBeVisible();
+  await page.locator('#problem').fill('x^3=8');
+  await page.locator('#solve-btn').click();
+  await expect(page.locator('#result-message')).toHaveClass(/warn/);
+});
+
+test('on-screen keyboard and examples', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('#problem').click();
+  for (const key of ['x', '^2']) await page.getByRole('button', { name: key, exact: true }).click();
+  await page.locator('#problem').pressSequentially('=9');
+  await expect(page.locator('#problem')).toHaveValue('x^2=9');
+  await page.locator('#key-backspace').click();
+  await expect(page.locator('#problem')).toHaveValue('x^2=');
+  await page.locator('.chip').first().click();
+  await expect(page.locator('#steps-card')).toBeVisible();
+});
+
+test('keyboard only: Enter solves, buttons reachable', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('#problem').focus();
+  await page.keyboard.type('3x+5=20');
+  await page.keyboard.press('Enter');
+  await expect(page.locator('#steps-card')).toBeVisible();
+  await page.locator('#next-btn').focus();
+  await page.keyboard.press('Enter');
+  await expect(page.locator('#step-list > li')).toHaveCount(1);
+});
+
+test('dark theme and large text toggles', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('#theme-toggle').click();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await page.locator('#large-toggle').click();
+  await expect(page.locator('html')).toHaveAttribute('data-large', 'true');
+  await expect(page.locator('#large-toggle')).toHaveAttribute('aria-pressed', 'true');
+});
+
+test('KaTeX outputs MathML for screen readers', async ({ page }) => {
+  await page.goto('/#q=' + encodeURIComponent('x^2-4x+1=0'));
+  await page.locator('#all-btn').click();
+  expect(await page.locator('#step-list math').count()).toBeGreaterThan(3);
+});
+
+test('works offline after the first visit (service worker)', async ({ page, context }) => {
+  await page.goto('/');
+  await page.evaluate(async () => {
+    await navigator.serviceWorker.ready;
+  });
+  // make sure the page is controlled before going offline
+  await page.reload();
+  await expect.poll(() => page.evaluate(() => !!navigator.serviceWorker.controller)).toBe(true);
+  await context.setOffline(true);
+  await page.reload();
+  await page.locator('#problem').fill('x^2=2');
+  await page.locator('#solve-btn').click();
+  await page.locator('#all-btn').click();
+  await expect(page.locator('#answer')).toBeVisible();
+  await expect(page.locator('#step-list .katex').first()).toBeVisible();
+  await context.setOffline(false);
+});
+
+for (const theme of ['light', 'dark'] as const) {
+  test(`no serious accessibility problems (axe-core, ${theme})`, async ({ page }) => {
+    await page.goto('/#q=' + encodeURIComponent('x^2-5x+6=0'));
+    if (theme === 'dark') await page.locator('#theme-toggle').click();
+    await page.locator('#all-btn').click();
+    const results = await new AxeBuilder({ page }).exclude('.katex-html').analyze();
+    const serious = results.violations.filter((v) =>
+      ['serious', 'critical'].includes(v.impact ?? ''),
+    );
+    expect(serious.map((v) => `${v.id}: ${v.help}`)).toEqual([]);
+  });
+}

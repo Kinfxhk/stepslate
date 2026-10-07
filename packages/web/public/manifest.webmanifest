@@ -1,0 +1,11 @@
+{
+  "name": "StepSlate · 步步解",
+  "short_name": "StepSlate",
+  "description": "Free, offline step-by-step maths solver. Every step is checked by an exact verifier. Educational use only.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f4ef",
+  "theme_color": "#2f4858",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

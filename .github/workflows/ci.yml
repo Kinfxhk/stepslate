@@ -63,3 +63,22 @@ jobs:
 
       - name: Secret scan
         run: npm run check:secrets
+
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Install Chromium for Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: Browser tests (solve flow, language, offline, no external requests, axe-core)
+        run: npm run test:e2e
