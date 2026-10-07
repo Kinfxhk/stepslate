@@ -37,6 +37,8 @@ export const T1_GOLDEN = [
   '1/2+1/4',
   '1/2+3/4',
   '2/3-3/4',
+  '1/3 - 5/3 * 2',
+  '1/4 - 7/4',
   '5/6+1/6',
   '3-1/2',
   '1/2+1/3+1/6',
@@ -270,5 +272,19 @@ describe('T1 mutation tests', () => {
       expect(sol.status, input).toBe('unverified');
     }
     expect(wrongMutants).toBeGreaterThan(0);
+  });
+});
+
+describe('T1 final answers are in lowest terms', () => {
+  it.each(T1_GOLDEN)('%s', (input) => {
+    const sol = solve(input);
+    if (sol.answer?.kind !== 'value') return;
+    let e = sol.answer.expr;
+    if (e.k === 'neg') e = e.a;
+    if (e.k === 'div' && e.a.k === 'num' && e.b.k === 'num') {
+      const g = (a: bigint, b: bigint): bigint => (b === 0n ? a : g(b, a % b));
+      expect(e.b.v.n).not.toBe(1n);
+      expect(g(e.a.v.n, e.b.v.n)).toBe(1n);
+    }
   });
 });

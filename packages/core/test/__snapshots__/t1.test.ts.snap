@@ -55,13 +55,17 @@ exports[`T1 golden solutions > (-2/3)^3 2`] = `
 exports[`T1 golden solutions > (-6)/4 1`] = `
 "(-6)/4
 1. Write the division as a fraction: (-6)/4 = -6/4.
-   -6/4"
+   -6/4
+2. Simplify 6/4: divide the top and bottom by 2 to get 3/2.
+   -3/2"
 `;
 
 exports[`T1 golden solutions > (-6)/4 2`] = `
 "(-6)/4
 1. 把除法寫成分數：(-6)/4 = -6/4。
-   -6/4"
+   -6/4
+2. 約簡 6/4：分子和分母同時除以 2，得 3/2。
+   -3/2"
 `;
 
 exports[`T1 golden solutions > (1+2)^3 1`] = `
@@ -167,13 +171,17 @@ exports[`T1 golden solutions > -(1/2-3/4) 2`] = `
 exports[`T1 golden solutions > -1/2*4 1`] = `
 "-1/2*4
 1. Multiply the numerators together and the denominators together: 1/2*4 = 4/2.
-   -4/2"
+   -4/2
+2. This fraction is a whole number: 4/2 = 2.
+   -2"
 `;
 
 exports[`T1 golden solutions > -1/2*4 2`] = `
 "-1/2*4
 1. 分子乘分子，分母乘分母：1/2*4 = 4/2。
-   -4/2"
+   -4/2
+2. 這個分數是整數：4/2 = 2。
+   -2"
 `;
 
 exports[`T1 golden solutions > -2^2 1`] = `
@@ -376,6 +384,26 @@ exports[`T1 golden solutions > 1/2+3/4 2`] = `
    5/4"
 `;
 
+exports[`T1 golden solutions > 1/3 - 5/3 * 2 1`] = `
+"1/3 - 5/3*2
+1. Multiply the numerators together and the denominators together: 5/3*2 = 10/3.
+   1/3 - 10/3
+2. The denominators are both 3, so subtract the numerators: 1/3 - 10/3 = -9/3.
+   -9/3
+3. This fraction is a whole number: 9/3 = 3.
+   -3"
+`;
+
+exports[`T1 golden solutions > 1/3 - 5/3 * 2 2`] = `
+"1/3 - 5/3*2
+1. 分子乘分子，分母乘分母：5/3*2 = 10/3。
+   1/3 - 10/3
+2. 分母都是 3，所以分子相減：1/3 - 10/3 = -9/3。
+   -9/3
+3. 這個分數是整數：9/3 = 3。
+   -3"
+`;
+
 exports[`T1 golden solutions > 1/3+0.5 1`] = `
 "1/3 + 0.5
 1. Write each decimal as a fraction so that the arithmetic stays exact.
@@ -394,6 +422,22 @@ exports[`T1 golden solutions > 1/3+0.5 2`] = `
    2/6 + 3/6
 3. 分母都是 6，所以分子相加：2/6 + 3/6 = 5/6。
    5/6"
+`;
+
+exports[`T1 golden solutions > 1/4 - 7/4 1`] = `
+"1/4 - 7/4
+1. The denominators are both 4, so subtract the numerators: 1/4 - 7/4 = -6/4.
+   -6/4
+2. Simplify 6/4: divide the top and bottom by 2 to get 3/2.
+   -3/2"
+`;
+
+exports[`T1 golden solutions > 1/4 - 7/4 2`] = `
+"1/4 - 7/4
+1. 分母都是 4，所以分子相減：1/4 - 7/4 = -6/4。
+   -6/4
+2. 約簡 6/4：分子和分母同時除以 2，得 3/2。
+   -3/2"
 `;
 
 exports[`T1 golden solutions > 2*(3+4) 1`] = `
@@ -719,13 +763,17 @@ exports[`T1 golden solutions > 7-10 2`] = `
 exports[`T1 golden solutions > 8/(-12) 1`] = `
 "8/(-12)
 1. Write the division as a fraction: 8/(-12) = -8/12.
-   -8/12"
+   -8/12
+2. Simplify 8/12: divide the top and bottom by 4 to get 2/3.
+   -2/3"
 `;
 
 exports[`T1 golden solutions > 8/(-12) 2`] = `
 "8/(-12)
 1. 把除法寫成分數：8/(-12) = -8/12。
-   -8/12"
+   -8/12
+2. 約簡 8/12：分子和分母同時除以 4，得 2/3。
+   -2/3"
 `;
 
 exports[`T1 golden solutions > 10-(4-3) 1`] = `

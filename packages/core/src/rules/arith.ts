@@ -83,6 +83,11 @@ function candidates(root: Expr): Candidate[] {
       return;
     }
     if (e.k === 'num' || e.k === 'var') return;
+    if (e.k === 'neg' && reducible(e.a)) {
+      // -(9/3): reduce the fraction under the minus sign
+      out.push({ path: [...path, 'a'], node: e.a, group: 0, depth, rank: 0, order });
+      return;
+    }
     if (isAtom(e)) return;
     const kids: Side[] = 'b' in e ? ['a', 'b'] : ['a'];
     if (kids.every((s) => isAtom((e as { a: Expr; b: Expr })[s]))) {
