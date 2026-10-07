@@ -1,0 +1,1237 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`T3 golden solutions > (2x-1)/3=(x+2)/4 1`] = `
+"(2x - 1)/3 = (x + 2)/4
+1. Divide each term in the bracket by 3.
+   2x/3 - 1/3 = (x + 2)/4
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   (2/3)x - 1/3 = (x + 2)/4
+3. Divide each term in the bracket by 4.
+   (2/3)x - 1/3 = x/4 + 2/4
+4. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   (2/3)x - 1/3 = (1/4)x + 1/2
+5. Multiply both sides by 12 to clear the fractions.
+   8x - 4 = 3x + 6
+6. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   8x - 3x = 6 + 4
+7. Combine like terms by adding their coefficients.
+   5x = 6 + 4
+8. Add: 6 + 4 = 10.
+   5x = 10
+9. Divide both sides by 5.
+   x = 2
+10. Check: substitute x = 2 into the original equation. Both sides are equal.
+   (2*2 - 1)/3 = 1;  (2 + 2)/4 = 1"
+`;
+
+exports[`T3 golden solutions > (2x-1)/3=(x+2)/4 2`] = `
+"(2x - 1)/3 = (x + 2)/4
+1. 把括號內每一項都除以 3。
+   2x/3 - 1/3 = (x + 2)/4
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   (2/3)x - 1/3 = (x + 2)/4
+3. 把括號內每一項都除以 4。
+   (2/3)x - 1/3 = x/4 + 2/4
+4. 化簡每一項：數字相乘，相同字母的指數相加。
+   (2/3)x - 1/3 = (1/4)x + 1/2
+5. 兩邊同時乘以 12，消去分母。
+   8x - 4 = 3x + 6
+6. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   8x - 3x = 6 + 4
+7. 合併同類項：把係數相加。
+   5x = 6 + 4
+8. 相加：6 + 4 = 10。
+   5x = 10
+9. 兩邊同時除以 5。
+   x = 2
+10. 驗算：把 x = 2 代入原方程，左右兩邊相等。
+   (2*2 - 1)/3 = 1;  (2 + 2)/4 = 1"
+`;
+
+exports[`T3 golden solutions > (x+1)/2=x/3 1`] = `
+"(x + 1)/2 = x/3
+1. Divide each term in the bracket by 2.
+   x/2 + 1/2 = x/3
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   (1/2)x + 1/2 = x/3
+3. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   (1/2)x + 1/2 = (1/3)x
+4. Multiply both sides by 6 to clear the fractions.
+   3x + 3 = 2x
+5. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   3x - 2x = -3
+6. Combine like terms by adding their coefficients.
+   x = -3
+7. Check: substitute x = -3 into the original equation. Both sides are equal.
+   (-3 + 1)/2 = -1;  (-3)/3 = -1"
+`;
+
+exports[`T3 golden solutions > (x+1)/2=x/3 2`] = `
+"(x + 1)/2 = x/3
+1. 把括號內每一項都除以 2。
+   x/2 + 1/2 = x/3
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   (1/2)x + 1/2 = x/3
+3. 化簡每一項：數字相乘，相同字母的指數相加。
+   (1/2)x + 1/2 = (1/3)x
+4. 兩邊同時乘以 6，消去分母。
+   3x + 3 = 2x
+5. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   3x - 2x = -3
+6. 合併同類項：把係數相加。
+   x = -3
+7. 驗算：把 x = -3 代入原方程，左右兩邊相等。
+   (-3 + 1)/2 = -1;  (-3)/3 = -1"
+`;
+
+exports[`T3 golden solutions > (x+1)^2=x^2+5 1`] = `
+"(x + 1)^2 = x^2 + 5
+1. Write the power as a repeated product: (x + 1)^2 = (x + 1)(x + 1).
+   (x + 1)(x + 1) = x^2 + 5
+2. Multiply every term in the first bracket by every term in the second.
+   x*x + x*1 + 1x + 1*1 = x^2 + 5
+3. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   x^2 + x + x + 1 = x^2 + 5
+4. Combine like terms by adding their coefficients.
+   x^2 + 2x + 1 = x^2 + 5
+5. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   x^2 + 2x - x^2 = 5 - 1
+6. Put like terms next to each other, in descending powers.
+   x^2 - x^2 + 2x = 5 - 1
+7. Combine like terms by adding their coefficients.
+   2x = 5 - 1
+8. Subtract: 5 - 1 = 4.
+   2x = 4
+9. Divide both sides by 2.
+   x = 2
+10. Check: substitute x = 2 into the original equation. Both sides are equal.
+   (2 + 1)^2 = 9;  2^2 + 5 = 9"
+`;
+
+exports[`T3 golden solutions > (x+1)^2=x^2+5 2`] = `
+"(x + 1)^2 = x^2 + 5
+1. 把乘方寫成連乘：(x + 1)^2 = (x + 1)(x + 1)。
+   (x + 1)(x + 1) = x^2 + 5
+2. 把第一個括號的每一項，乘以第二個括號的每一項。
+   x*x + x*1 + 1x + 1*1 = x^2 + 5
+3. 化簡每一項：數字相乘，相同字母的指數相加。
+   x^2 + x + x + 1 = x^2 + 5
+4. 合併同類項：把係數相加。
+   x^2 + 2x + 1 = x^2 + 5
+5. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   x^2 + 2x - x^2 = 5 - 1
+6. 把同類項排在一起，並按降冪排列。
+   x^2 - x^2 + 2x = 5 - 1
+7. 合併同類項：把係數相加。
+   2x = 5 - 1
+8. 相減：5 - 1 = 4。
+   2x = 4
+9. 兩邊同時除以 2。
+   x = 2
+10. 驗算：把 x = 2 代入原方程，左右兩邊相等。
+   (2 + 1)^2 = 9;  2^2 + 5 = 9"
+`;
+
+exports[`T3 golden solutions > (x-2)(x+2)=x^2+2x 1`] = `
+"(x - 2)(x + 2) = x^2 + 2x
+1. Multiply every term in the first bracket by every term in the second.
+   x*x + x*2 - 2x - 2*2 = x^2 + 2x
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   x^2 + 2x - 2x - 4 = x^2 + 2x
+3. Combine like terms by adding their coefficients.
+   x^2 - 4 = x^2 + 2x
+4. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   x^2 - x^2 - 2x = 4
+5. Combine like terms by adding their coefficients.
+   -2x = 4
+6. Divide both sides by -2.
+   x = -2
+7. Check: substitute x = -2 into the original equation. Both sides are equal.
+   (-2 - 2)(-2 + 2) = 0;  (-2)^2 + 2(-2) = 0"
+`;
+
+exports[`T3 golden solutions > (x-2)(x+2)=x^2+2x 2`] = `
+"(x - 2)(x + 2) = x^2 + 2x
+1. 把第一個括號的每一項，乘以第二個括號的每一項。
+   x*x + x*2 - 2x - 2*2 = x^2 + 2x
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   x^2 + 2x - 2x - 4 = x^2 + 2x
+3. 合併同類項：把係數相加。
+   x^2 - 4 = x^2 + 2x
+4. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   x^2 - x^2 - 2x = 4
+5. 合併同類項：把係數相加。
+   -2x = 4
+6. 兩邊同時除以 -2。
+   x = -2
+7. 驗算：把 x = -2 代入原方程，左右兩邊相等。
+   (-2 - 2)(-2 + 2) = 0;  (-2)^2 + 2(-2) = 0"
+`;
+
+exports[`T3 golden solutions > -(x-4)=2x+1 1`] = `
+"-(x - 4) = 2x + 1
+1. Remove the brackets. A minus sign in front of a bracket changes the sign of every term inside it.
+   -x + 4 = 2x + 1
+2. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   -x - 2x = 1 - 4
+3. Combine like terms by adding their coefficients.
+   -3x = 1 - 4
+4. Subtract: 1 - 4 = -3.
+   -3x = -3
+5. Divide both sides by -3.
+   x = 1
+6. Check: substitute x = 1 into the original equation. Both sides are equal.
+   -(1 - 4) = 3;  2*1 + 1 = 3"
+`;
+
+exports[`T3 golden solutions > -(x-4)=2x+1 2`] = `
+"-(x - 4) = 2x + 1
+1. 去括號。括號前面是負號時，括號內每一項都要變號。
+   -x + 4 = 2x + 1
+2. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   -x - 2x = 1 - 4
+3. 合併同類項：把係數相加。
+   -3x = 1 - 4
+4. 相減：1 - 4 = -3。
+   -3x = -3
+5. 兩邊同時除以 -3。
+   x = 1
+6. 驗算：把 x = 1 代入原方程，左右兩邊相等。
+   -(1 - 4) = 3;  2*1 + 1 = 3"
+`;
+
+exports[`T3 golden solutions > -2x-6=0 1`] = `
+"-2x - 6 = 0
+1. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   -2x = 6
+2. Divide both sides by -2.
+   x = -3
+3. Check: substitute x = -3 into the original equation. Both sides are equal.
+   -2(-3) - 6 = 0;  0 = 0"
+`;
+
+exports[`T3 golden solutions > -2x-6=0 2`] = `
+"-2x - 6 = 0
+1. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   -2x = 6
+2. 兩邊同時除以 -2。
+   x = -3
+3. 驗算：把 x = -3 代入原方程，左右兩邊相等。
+   -2(-3) - 6 = 0;  0 = 0"
+`;
+
+exports[`T3 golden solutions > -x=4 1`] = `
+"-x = 4
+1. Multiply both sides by -1.
+   x = -4
+2. Check: substitute x = -4 into the original equation. Both sides are equal.
+   -(-4) = 4;  4 = 4"
+`;
+
+exports[`T3 golden solutions > -x=4 2`] = `
+"-x = 4
+1. 兩邊同時乘以 -1。
+   x = -4
+2. 驗算：把 x = -4 代入原方程，左右兩邊相等。
+   -(-4) = 4;  4 = 4"
+`;
+
+exports[`T3 golden solutions > 0.5x-1=0.25x 1`] = `
+"0.5x - 1 = 0.25x
+1. Write each decimal as a fraction so that the arithmetic stays exact.
+   (1/2)x - 1 = (1/4)x
+2. Multiply both sides by 4 to clear the fractions.
+   2x - 4 = x
+3. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   2x - x = 4
+4. Combine like terms by adding their coefficients.
+   x = 4
+5. Check: substitute x = 4 into the original equation. Both sides are equal.
+   0.5*4 - 1 = 1;  0.25*4 = 1"
+`;
+
+exports[`T3 golden solutions > 0.5x-1=0.25x 2`] = `
+"0.5x - 1 = 0.25x
+1. 先把每個小數寫成分數，令計算保持準確。
+   (1/2)x - 1 = (1/4)x
+2. 兩邊同時乘以 4，消去分母。
+   2x - 4 = x
+3. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   2x - x = 4
+4. 合併同類項：把係數相加。
+   x = 4
+5. 驗算：把 x = 4 代入原方程，左右兩邊相等。
+   0.5*4 - 1 = 1;  0.25*4 = 1"
+`;
+
+exports[`T3 golden solutions > 0=x-9 1`] = `
+"0 = x - 9
+1. Swap the two sides so that the unknown is on the left.
+   x - 9 = 0
+2. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   x = 9
+3. Check: substitute x = 9 into the original equation. Both sides are equal.
+   0 = 0;  9 - 9 = 0"
+`;
+
+exports[`T3 golden solutions > 0=x-9 2`] = `
+"0 = x - 9
+1. 把左右兩邊對調，令未知數在左邊。
+   x - 9 = 0
+2. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   x = 9
+3. 驗算：把 x = 9 代入原方程，左右兩邊相等。
+   0 = 0;  9 - 9 = 0"
+`;
+
+exports[`T3 golden solutions > 1.2x+0.3=0.9 1`] = `
+"1.2x + 0.3 = 0.9
+1. Write each decimal as a fraction so that the arithmetic stays exact.
+   (6/5)x + 3/10 = 9/10
+2. Multiply both sides by 10 to clear the fractions.
+   12x + 3 = 9
+3. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   12x = 9 - 3
+4. Subtract: 9 - 3 = 6.
+   12x = 6
+5. Divide both sides by 12.
+   x = 1/2
+6. Check: substitute x = 1/2 into the original equation. Both sides are equal.
+   1.2(1/2) + 0.3 = 9/10;  0.9 = 9/10"
+`;
+
+exports[`T3 golden solutions > 1.2x+0.3=0.9 2`] = `
+"1.2x + 0.3 = 0.9
+1. 先把每個小數寫成分數，令計算保持準確。
+   (6/5)x + 3/10 = 9/10
+2. 兩邊同時乘以 10，消去分母。
+   12x + 3 = 9
+3. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   12x = 9 - 3
+4. 相減：9 - 3 = 6。
+   12x = 6
+5. 兩邊同時除以 12。
+   x = 1/2
+6. 驗算：把 x = 1/2 代入原方程，左右兩邊相等。
+   1.2(1/2) + 0.3 = 9/10;  0.9 = 9/10"
+`;
+
+exports[`T3 golden solutions > 1/2+x=3/4 1`] = `
+"1/2 + x = 3/4
+1. Write the terms in descending powers of x.
+   x + 1/2 = 3/4
+2. Multiply both sides by 4 to clear the fractions.
+   4x + 2 = 3
+3. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   4x = 3 - 2
+4. Subtract: 3 - 2 = 1.
+   4x = 1
+5. Divide both sides by 4.
+   x = 1/4
+6. Check: substitute x = 1/4 into the original equation. Both sides are equal.
+   1/2 + 1/4 = 3/4;  3/4 = 3/4"
+`;
+
+exports[`T3 golden solutions > 1/2+x=3/4 2`] = `
+"1/2 + x = 3/4
+1. 按 x 的降冪排列各項。
+   x + 1/2 = 3/4
+2. 兩邊同時乘以 4，消去分母。
+   4x + 2 = 3
+3. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   4x = 3 - 2
+4. 相減：3 - 2 = 1。
+   4x = 1
+5. 兩邊同時除以 4。
+   x = 1/4
+6. 驗算：把 x = 1/4 代入原方程，左右兩邊相等。
+   1/2 + 1/4 = 3/4;  3/4 = 3/4"
+`;
+
+exports[`T3 golden solutions > 2(3x-1)-4=5(x+1) 1`] = `
+"2(3x - 1) - 4 = 5(x + 1)
+1. Multiply each term in the bracket by 2.
+   2(3x) - 2*1 - 4 = 5(x + 1)
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   6x - 2 - 4 = 5(x + 1)
+3. Combine like terms by adding their coefficients.
+   6x - 6 = 5(x + 1)
+4. Multiply each term in the bracket by 5.
+   6x - 6 = 5x + 5*1
+5. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   6x - 6 = 5x + 5
+6. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   6x - 5x = 5 + 6
+7. Combine like terms by adding their coefficients.
+   x = 5 + 6
+8. Add: 5 + 6 = 11.
+   x = 11
+9. Check: substitute x = 11 into the original equation. Both sides are equal.
+   2(3*11 - 1) - 4 = 60;  5(11 + 1) = 60"
+`;
+
+exports[`T3 golden solutions > 2(3x-1)-4=5(x+1) 2`] = `
+"2(3x - 1) - 4 = 5(x + 1)
+1. 把括號內每一項都乘以 2。
+   2(3x) - 2*1 - 4 = 5(x + 1)
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   6x - 2 - 4 = 5(x + 1)
+3. 合併同類項：把係數相加。
+   6x - 6 = 5(x + 1)
+4. 把括號內每一項都乘以 5。
+   6x - 6 = 5x + 5*1
+5. 化簡每一項：數字相乘，相同字母的指數相加。
+   6x - 6 = 5x + 5
+6. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   6x - 5x = 5 + 6
+7. 合併同類項：把係數相加。
+   x = 5 + 6
+8. 相加：5 + 6 = 11。
+   x = 11
+9. 驗算：把 x = 11 代入原方程，左右兩邊相等。
+   2(3*11 - 1) - 4 = 60;  5(11 + 1) = 60"
+`;
+
+exports[`T3 golden solutions > 2(x+1)=2x+2 1`] = `
+"2(x + 1) = 2x + 2
+1. Multiply each term in the bracket by 2.
+   2x + 2*1 = 2x + 2
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   2x + 2 = 2x + 2
+3. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   2x - 2x = 2 - 2
+4. Combine like terms by adding their coefficients.
+   0 = 2 - 2
+5. Subtract: 2 - 2 = 0.
+   0 = 0
+6. This statement is true for every value of x, so every real number is a solution.
+   Every real number is a solution."
+`;
+
+exports[`T3 golden solutions > 2(x+1)=2x+2 2`] = `
+"2(x + 1) = 2x + 2
+1. 把括號內每一項都乘以 2。
+   2x + 2*1 = 2x + 2
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   2x + 2 = 2x + 2
+3. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   2x - 2x = 2 - 2
+4. 合併同類項：把係數相加。
+   0 = 2 - 2
+5. 相減：2 - 2 = 0。
+   0 = 0
+6. 無論 x 是甚麼值，這個式子都成立，所以所有實數都是解。
+   所有實數都是解。"
+`;
+
+exports[`T3 golden solutions > 2(x+3)=5x-4 1`] = `
+"2(x + 3) = 5x - 4
+1. Multiply each term in the bracket by 2.
+   2x + 2*3 = 5x - 4
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   2x + 6 = 5x - 4
+3. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   2x - 5x = -4 - 6
+4. Combine like terms by adding their coefficients.
+   -3x = -4 - 6
+5. Subtract: -4 - 6 = -10.
+   -3x = -10
+6. Divide both sides by -3.
+   x = 10/3
+7. Check: substitute x = 10/3 into the original equation. Both sides are equal.
+   2(10/3 + 3) = 38/3;  5(10/3) - 4 = 38/3"
+`;
+
+exports[`T3 golden solutions > 2(x+3)=5x-4 2`] = `
+"2(x + 3) = 5x - 4
+1. 把括號內每一項都乘以 2。
+   2x + 2*3 = 5x - 4
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   2x + 6 = 5x - 4
+3. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   2x - 5x = -4 - 6
+4. 合併同類項：把係數相加。
+   -3x = -4 - 6
+5. 相減：-4 - 6 = -10。
+   -3x = -10
+6. 兩邊同時除以 -3。
+   x = 10/3
+7. 驗算：把 x = 10/3 代入原方程，左右兩邊相等。
+   2(10/3 + 3) = 38/3;  5(10/3) - 4 = 38/3"
+`;
+
+exports[`T3 golden solutions > 2x+1/3=5/6 1`] = `
+"2x + 1/3 = 5/6
+1. Multiply both sides by 6 to clear the fractions.
+   12x + 2 = 5
+2. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   12x = 5 - 2
+3. Subtract: 5 - 2 = 3.
+   12x = 3
+4. Divide both sides by 12.
+   x = 1/4
+5. Check: substitute x = 1/4 into the original equation. Both sides are equal.
+   2(1/4) + 1/3 = 5/6;  5/6 = 5/6"
+`;
+
+exports[`T3 golden solutions > 2x+1/3=5/6 2`] = `
+"2x + 1/3 = 5/6
+1. 兩邊同時乘以 6，消去分母。
+   12x + 2 = 5
+2. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   12x = 5 - 2
+3. 相減：5 - 2 = 3。
+   12x = 3
+4. 兩邊同時除以 12。
+   x = 1/4
+5. 驗算：把 x = 1/4 代入原方程，左右兩邊相等。
+   2(1/4) + 1/3 = 5/6;  5/6 = 5/6"
+`;
+
+exports[`T3 golden solutions > 2x/5-1/2=x/10 1`] = `
+"2x/5 - 1/2 = x/10
+1. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   (2/5)x - 1/2 = x/10
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   (2/5)x - 1/2 = (1/10)x
+3. Multiply both sides by 10 to clear the fractions.
+   4x - 5 = x
+4. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   4x - x = 5
+5. Combine like terms by adding their coefficients.
+   3x = 5
+6. Divide both sides by 3.
+   x = 5/3
+7. Check: substitute x = 5/3 into the original equation. Both sides are equal.
+   2(5/3)/5 - 1/2 = 1/6;  5/3/10 = 1/6"
+`;
+
+exports[`T3 golden solutions > 2x/5-1/2=x/10 2`] = `
+"2x/5 - 1/2 = x/10
+1. 化簡每一項：數字相乘，相同字母的指數相加。
+   (2/5)x - 1/2 = x/10
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   (2/5)x - 1/2 = (1/10)x
+3. 兩邊同時乘以 10，消去分母。
+   4x - 5 = x
+4. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   4x - x = 5
+5. 合併同類項：把係數相加。
+   3x = 5
+6. 兩邊同時除以 3。
+   x = 5/3
+7. 驗算：把 x = 5/3 代入原方程，左右兩邊相等。
+   2(5/3)/5 - 1/2 = 1/6;  5/3/10 = 1/6"
+`;
+
+exports[`T3 golden solutions > 2x=8 1`] = `
+"2x = 8
+1. Divide both sides by 2.
+   x = 4
+2. Check: substitute x = 4 into the original equation. Both sides are equal.
+   2*4 = 8;  8 = 8"
+`;
+
+exports[`T3 golden solutions > 2x=8 2`] = `
+"2x = 8
+1. 兩邊同時除以 2。
+   x = 4
+2. 驗算：把 x = 4 代入原方程，左右兩邊相等。
+   2*4 = 8;  8 = 8"
+`;
+
+exports[`T3 golden solutions > 3(x+2)-(x-1)=2(x+5) 1`] = `
+"3(x + 2) - (x - 1) = 2(x + 5)
+1. Multiply each term in the bracket by 3.
+   3x + 3*2 - (x - 1) = 2(x + 5)
+2. Remove the brackets. A minus sign in front of a bracket changes the sign of every term inside it.
+   3x + 3*2 - x + 1 = 2(x + 5)
+3. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   3x + 6 - x + 1 = 2(x + 5)
+4. Put like terms next to each other, in descending powers.
+   3x - x + 6 + 1 = 2(x + 5)
+5. Combine like terms by adding their coefficients.
+   2x + 7 = 2(x + 5)
+6. Multiply each term in the bracket by 2.
+   2x + 7 = 2x + 2*5
+7. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   2x + 7 = 2x + 10
+8. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   2x - 2x = 10 - 7
+9. Combine like terms by adding their coefficients.
+   0 = 10 - 7
+10. Subtract: 10 - 7 = 3.
+   0 = 3
+11. This statement is false for every value of x, so the equation has no solution.
+   There is no real solution."
+`;
+
+exports[`T3 golden solutions > 3(x+2)-(x-1)=2(x+5) 2`] = `
+"3(x + 2) - (x - 1) = 2(x + 5)
+1. 把括號內每一項都乘以 3。
+   3x + 3*2 - (x - 1) = 2(x + 5)
+2. 去括號。括號前面是負號時，括號內每一項都要變號。
+   3x + 3*2 - x + 1 = 2(x + 5)
+3. 化簡每一項：數字相乘，相同字母的指數相加。
+   3x + 6 - x + 1 = 2(x + 5)
+4. 把同類項排在一起，並按降冪排列。
+   3x - x + 6 + 1 = 2(x + 5)
+5. 合併同類項：把係數相加。
+   2x + 7 = 2(x + 5)
+6. 把括號內每一項都乘以 2。
+   2x + 7 = 2x + 2*5
+7. 化簡每一項：數字相乘，相同字母的指數相加。
+   2x + 7 = 2x + 10
+8. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   2x - 2x = 10 - 7
+9. 合併同類項：把係數相加。
+   0 = 10 - 7
+10. 相減：10 - 7 = 3。
+   0 = 3
+11. 無論 x 是甚麼值，這個式子都不成立，所以方程無解。
+   沒有實數解。"
+`;
+
+exports[`T3 golden solutions > 3(x-2)-2(x+1)=0 1`] = `
+"3(x - 2) - 2(x + 1) = 0
+1. Multiply each term in the bracket by 3.
+   3x - 3*2 - 2(x + 1) = 0
+2. Multiply each term in the bracket by 2.
+   3x - 3*2 - (2x + 2*1) = 0
+3. Remove the brackets. A minus sign in front of a bracket changes the sign of every term inside it.
+   3x - 3*2 - 2x - 2*1 = 0
+4. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   3x - 6 - 2x - 2 = 0
+5. Put like terms next to each other, in descending powers.
+   3x - 2x - 6 - 2 = 0
+6. Combine like terms by adding their coefficients.
+   x - 8 = 0
+7. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   x = 8
+8. Check: substitute x = 8 into the original equation. Both sides are equal.
+   3(8 - 2) - 2(8 + 1) = 0;  0 = 0"
+`;
+
+exports[`T3 golden solutions > 3(x-2)-2(x+1)=0 2`] = `
+"3(x - 2) - 2(x + 1) = 0
+1. 把括號內每一項都乘以 3。
+   3x - 3*2 - 2(x + 1) = 0
+2. 把括號內每一項都乘以 2。
+   3x - 3*2 - (2x + 2*1) = 0
+3. 去括號。括號前面是負號時，括號內每一項都要變號。
+   3x - 3*2 - 2x - 2*1 = 0
+4. 化簡每一項：數字相乘，相同字母的指數相加。
+   3x - 6 - 2x - 2 = 0
+5. 把同類項排在一起，並按降冪排列。
+   3x - 2x - 6 - 2 = 0
+6. 合併同類項：把係數相加。
+   x - 8 = 0
+7. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   x = 8
+8. 驗算：把 x = 8 代入原方程，左右兩邊相等。
+   3(8 - 2) - 2(8 + 1) = 0;  0 = 0"
+`;
+
+exports[`T3 golden solutions > 3=x 1`] = `
+"3 = x
+1. Swap the two sides so that the unknown is on the left.
+   x = 3
+2. Check: substitute x = 3 into the original equation. Both sides are equal.
+   3 = 3;  3 = 3"
+`;
+
+exports[`T3 golden solutions > 3=x 2`] = `
+"3 = x
+1. 把左右兩邊對調，令未知數在左邊。
+   x = 3
+2. 驗算：把 x = 3 代入原方程，左右兩邊相等。
+   3 = 3;  3 = 3"
+`;
+
+exports[`T3 golden solutions > 3x+5=20 1`] = `
+"3x + 5 = 20
+1. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   3x = 20 - 5
+2. Subtract: 20 - 5 = 15.
+   3x = 15
+3. Divide both sides by 3.
+   x = 5
+4. Check: substitute x = 5 into the original equation. Both sides are equal.
+   3*5 + 5 = 20;  20 = 20"
+`;
+
+exports[`T3 golden solutions > 3x+5=20 2`] = `
+"3x + 5 = 20
+1. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   3x = 20 - 5
+2. 相減：20 - 5 = 15。
+   3x = 15
+3. 兩邊同時除以 3。
+   x = 5
+4. 驗算：把 x = 5 代入原方程，左右兩邊相等。
+   3*5 + 5 = 20;  20 = 20"
+`;
+
+exports[`T3 golden solutions > 3x=2x+5 1`] = `
+"3x = 2x + 5
+1. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   3x - 2x = 5
+2. Combine like terms by adding their coefficients.
+   x = 5
+3. Check: substitute x = 5 into the original equation. Both sides are equal.
+   3*5 = 15;  2*5 + 5 = 15"
+`;
+
+exports[`T3 golden solutions > 3x=2x+5 2`] = `
+"3x = 2x + 5
+1. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   3x - 2x = 5
+2. 合併同類項：把係數相加。
+   x = 5
+3. 驗算：把 x = 5 代入原方程，左右兩邊相等。
+   3*5 = 15;  2*5 + 5 = 15"
+`;
+
+exports[`T3 golden solutions > 3x-3=3(x-1) 1`] = `
+"3x - 3 = 3(x - 1)
+1. Multiply each term in the bracket by 3.
+   3x - 3 = 3x - 3*1
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   3x - 3 = 3x - 3
+3. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   3x - 3x = -3 + 3
+4. Combine like terms by adding their coefficients.
+   0 = -3 + 3
+5. Add: -3 + 3 = 0.
+   0 = 0
+6. This statement is true for every value of x, so every real number is a solution.
+   Every real number is a solution."
+`;
+
+exports[`T3 golden solutions > 3x-3=3(x-1) 2`] = `
+"3x - 3 = 3(x - 1)
+1. 把括號內每一項都乘以 3。
+   3x - 3 = 3x - 3*1
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   3x - 3 = 3x - 3
+3. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   3x - 3x = -3 + 3
+4. 合併同類項：把係數相加。
+   0 = -3 + 3
+5. 相加：-3 + 3 = 0。
+   0 = 0
+6. 無論 x 是甚麼值，這個式子都成立，所以所有實數都是解。
+   所有實數都是解。"
+`;
+
+exports[`T3 golden solutions > 4x=6 1`] = `
+"4x = 6
+1. Divide both sides by 4.
+   x = 3/2
+2. Check: substitute x = 3/2 into the original equation. Both sides are equal.
+   4(3/2) = 6;  6 = 6"
+`;
+
+exports[`T3 golden solutions > 4x=6 2`] = `
+"4x = 6
+1. 兩邊同時除以 4。
+   x = 3/2
+2. 驗算：把 x = 3/2 代入原方程，左右兩邊相等。
+   4(3/2) = 6;  6 = 6"
+`;
+
+exports[`T3 golden solutions > 4x-3=2x+9 1`] = `
+"4x - 3 = 2x + 9
+1. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   4x - 2x = 9 + 3
+2. Combine like terms by adding their coefficients.
+   2x = 9 + 3
+3. Add: 9 + 3 = 12.
+   2x = 12
+4. Divide both sides by 2.
+   x = 6
+5. Check: substitute x = 6 into the original equation. Both sides are equal.
+   4*6 - 3 = 21;  2*6 + 9 = 21"
+`;
+
+exports[`T3 golden solutions > 4x-3=2x+9 2`] = `
+"4x - 3 = 2x + 9
+1. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   4x - 2x = 9 + 3
+2. 合併同類項：把係數相加。
+   2x = 9 + 3
+3. 相加：9 + 3 = 12。
+   2x = 12
+4. 兩邊同時除以 2。
+   x = 6
+5. 驗算：把 x = 6 代入原方程，左右兩邊相等。
+   4*6 - 3 = 21;  2*6 + 9 = 21"
+`;
+
+exports[`T3 golden solutions > 5(2x-1)=3(x+4) 1`] = `
+"5(2x - 1) = 3(x + 4)
+1. Multiply each term in the bracket by 5.
+   5(2x) - 5*1 = 3(x + 4)
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   10x - 5 = 3(x + 4)
+3. Multiply each term in the bracket by 3.
+   10x - 5 = 3x + 3*4
+4. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   10x - 5 = 3x + 12
+5. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   10x - 3x = 12 + 5
+6. Combine like terms by adding their coefficients.
+   7x = 12 + 5
+7. Add: 12 + 5 = 17.
+   7x = 17
+8. Divide both sides by 7.
+   x = 17/7
+9. Check: substitute x = 17/7 into the original equation. Both sides are equal.
+   5(2(17/7) - 1) = 135/7;  3(17/7 + 4) = 135/7"
+`;
+
+exports[`T3 golden solutions > 5(2x-1)=3(x+4) 2`] = `
+"5(2x - 1) = 3(x + 4)
+1. 把括號內每一項都乘以 5。
+   5(2x) - 5*1 = 3(x + 4)
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   10x - 5 = 3(x + 4)
+3. 把括號內每一項都乘以 3。
+   10x - 5 = 3x + 3*4
+4. 化簡每一項：數字相乘，相同字母的指數相加。
+   10x - 5 = 3x + 12
+5. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   10x - 3x = 12 + 5
+6. 合併同類項：把係數相加。
+   7x = 12 + 5
+7. 相加：12 + 5 = 17。
+   7x = 17
+8. 兩邊同時除以 7。
+   x = 17/7
+9. 驗算：把 x = 17/7 代入原方程，左右兩邊相等。
+   5(2(17/7) - 1) = 135/7;  3(17/7 + 4) = 135/7"
+`;
+
+exports[`T3 golden solutions > 5=2x+1 1`] = `
+"5 = 2x + 1
+1. Swap the two sides so that the unknown is on the left.
+   2x + 1 = 5
+2. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   2x = 5 - 1
+3. Subtract: 5 - 1 = 4.
+   2x = 4
+4. Divide both sides by 2.
+   x = 2
+5. Check: substitute x = 2 into the original equation. Both sides are equal.
+   5 = 5;  2*2 + 1 = 5"
+`;
+
+exports[`T3 golden solutions > 5=2x+1 2`] = `
+"5 = 2x + 1
+1. 把左右兩邊對調，令未知數在左邊。
+   2x + 1 = 5
+2. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   2x = 5 - 1
+3. 相減：5 - 1 = 4。
+   2x = 4
+4. 兩邊同時除以 2。
+   x = 2
+5. 驗算：把 x = 2 代入原方程，左右兩邊相等。
+   5 = 5;  2*2 + 1 = 5"
+`;
+
+exports[`T3 golden solutions > 6x=-4 1`] = `
+"6x = -4
+1. Divide both sides by 6.
+   x = -2/3
+2. Check: substitute x = -2/3 into the original equation. Both sides are equal.
+   6(-2/3) = -4;  -4 = -4"
+`;
+
+exports[`T3 golden solutions > 6x=-4 2`] = `
+"6x = -4
+1. 兩邊同時除以 6。
+   x = -2/3
+2. 驗算：把 x = -2/3 代入原方程，左右兩邊相等。
+   6(-2/3) = -4;  -4 = -4"
+`;
+
+exports[`T3 golden solutions > 7-2x=1 1`] = `
+"7 - 2x = 1
+1. Write the terms in descending powers of x.
+   -2x + 7 = 1
+2. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   -2x = 1 - 7
+3. Subtract: 1 - 7 = -6.
+   -2x = -6
+4. Divide both sides by -2.
+   x = 3
+5. Check: substitute x = 3 into the original equation. Both sides are equal.
+   7 - 2*3 = 1;  1 = 1"
+`;
+
+exports[`T3 golden solutions > 7-2x=1 2`] = `
+"7 - 2x = 1
+1. 按 x 的降冪排列各項。
+   -2x + 7 = 1
+2. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   -2x = 1 - 7
+3. 相減：1 - 7 = -6。
+   -2x = -6
+4. 兩邊同時除以 -2。
+   x = 3
+5. 驗算：把 x = 3 代入原方程，左右兩邊相等。
+   7 - 2*3 = 1;  1 = 1"
+`;
+
+exports[`T3 golden solutions > 7x-2=7x-2 1`] = `
+"7x - 2 = 7x - 2
+1. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   7x - 7x = -2 + 2
+2. Combine like terms by adding their coefficients.
+   0 = -2 + 2
+3. Add: -2 + 2 = 0.
+   0 = 0
+4. This statement is true for every value of x, so every real number is a solution.
+   Every real number is a solution."
+`;
+
+exports[`T3 golden solutions > 7x-2=7x-2 2`] = `
+"7x - 2 = 7x - 2
+1. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   7x - 7x = -2 + 2
+2. 合併同類項：把係數相加。
+   0 = -2 + 2
+3. 相加：-2 + 2 = 0。
+   0 = 0
+4. 無論 x 是甚麼值，這個式子都成立，所以所有實數都是解。
+   所有實數都是解。"
+`;
+
+exports[`T3 golden solutions > 8-x=3x 1`] = `
+"8 - x = 3x
+1. Write the terms in descending powers of x.
+   -x + 8 = 3x
+2. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   -x - 3x = -8
+3. Combine like terms by adding their coefficients.
+   -4x = -8
+4. Divide both sides by -4.
+   x = 2
+5. Check: substitute x = 2 into the original equation. Both sides are equal.
+   8 - 2 = 6;  3*2 = 6"
+`;
+
+exports[`T3 golden solutions > 8-x=3x 2`] = `
+"8 - x = 3x
+1. 按 x 的降冪排列各項。
+   -x + 8 = 3x
+2. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   -x - 3x = -8
+3. 合併同類項：把係數相加。
+   -4x = -8
+4. 兩邊同時除以 -4。
+   x = 2
+5. 驗算：把 x = 2 代入原方程，左右兩邊相等。
+   8 - 2 = 6;  3*2 = 6"
+`;
+
+exports[`T3 golden solutions > 10-3(x+2)=x 1`] = `
+"10 - 3(x + 2) = x
+1. Multiply each term in the bracket by 3.
+   10 - (3x + 3*2) = x
+2. Remove the brackets. A minus sign in front of a bracket changes the sign of every term inside it.
+   10 - 3x - 3*2 = x
+3. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   10 - 3x - 6 = x
+4. Put like terms next to each other, in descending powers.
+   -3x + 10 - 6 = x
+5. Combine like terms by adding their coefficients.
+   -3x + 4 = x
+6. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   -3x - x = -4
+7. Combine like terms by adding their coefficients.
+   -4x = -4
+8. Divide both sides by -4.
+   x = 1
+9. Check: substitute x = 1 into the original equation. Both sides are equal.
+   10 - 3(1 + 2) = 1;  1 = 1"
+`;
+
+exports[`T3 golden solutions > 10-3(x+2)=x 2`] = `
+"10 - 3(x + 2) = x
+1. 把括號內每一項都乘以 3。
+   10 - (3x + 3*2) = x
+2. 去括號。括號前面是負號時，括號內每一項都要變號。
+   10 - 3x - 3*2 = x
+3. 化簡每一項：數字相乘，相同字母的指數相加。
+   10 - 3x - 6 = x
+4. 把同類項排在一起，並按降冪排列。
+   -3x + 10 - 6 = x
+5. 合併同類項：把係數相加。
+   -3x + 4 = x
+6. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   -3x - x = -4
+7. 合併同類項：把係數相加。
+   -4x = -4
+8. 兩邊同時除以 -4。
+   x = 1
+9. 驗算：把 x = 1 代入原方程，左右兩邊相等。
+   10 - 3(1 + 2) = 1;  1 = 1"
+`;
+
+exports[`T3 golden solutions > 12=3(x-1) 1`] = `
+"12 = 3(x - 1)
+1. Multiply each term in the bracket by 3.
+   12 = 3x - 3*1
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   12 = 3x - 3
+3. Swap the two sides so that the unknown is on the left.
+   3x - 3 = 12
+4. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   3x = 12 + 3
+5. Add: 12 + 3 = 15.
+   3x = 15
+6. Divide both sides by 3.
+   x = 5
+7. Check: substitute x = 5 into the original equation. Both sides are equal.
+   12 = 12;  3(5 - 1) = 12"
+`;
+
+exports[`T3 golden solutions > 12=3(x-1) 2`] = `
+"12 = 3(x - 1)
+1. 把括號內每一項都乘以 3。
+   12 = 3x - 3*1
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   12 = 3x - 3
+3. 把左右兩邊對調，令未知數在左邊。
+   3x - 3 = 12
+4. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   3x = 12 + 3
+5. 相加：12 + 3 = 15。
+   3x = 15
+6. 兩邊同時除以 3。
+   x = 5
+7. 驗算：把 x = 5 代入原方程，左右兩邊相等。
+   12 = 12;  3(5 - 1) = 12"
+`;
+
+exports[`T3 golden solutions > x+1=x+2 1`] = `
+"x + 1 = x + 2
+1. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   x - x = 2 - 1
+2. Combine like terms by adding their coefficients.
+   0 = 2 - 1
+3. Subtract: 2 - 1 = 1.
+   0 = 1
+4. This statement is false for every value of x, so the equation has no solution.
+   There is no real solution."
+`;
+
+exports[`T3 golden solutions > x+1=x+2 2`] = `
+"x + 1 = x + 2
+1. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   x - x = 2 - 1
+2. 合併同類項：把係數相加。
+   0 = 2 - 1
+3. 相減：2 - 1 = 1。
+   0 = 1
+4. 無論 x 是甚麼值，這個式子都不成立，所以方程無解。
+   沒有實數解。"
+`;
+
+exports[`T3 golden solutions > x+3=7 1`] = `
+"x + 3 = 7
+1. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   x = 7 - 3
+2. Subtract: 7 - 3 = 4.
+   x = 4
+3. Check: substitute x = 4 into the original equation. Both sides are equal.
+   4 + 3 = 7;  7 = 7"
+`;
+
+exports[`T3 golden solutions > x+3=7 2`] = `
+"x + 3 = 7
+1. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   x = 7 - 3
+2. 相減：7 - 3 = 4。
+   x = 4
+3. 驗算：把 x = 4 代入原方程，左右兩邊相等。
+   4 + 3 = 7;  7 = 7"
+`;
+
+exports[`T3 golden solutions > x/2=3 1`] = `
+"x/2 = 3
+1. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   (1/2)x = 3
+2. Multiply both sides by 2 to clear the fractions.
+   x = 6
+3. Check: substitute x = 6 into the original equation. Both sides are equal.
+   6/2 = 3;  3 = 3"
+`;
+
+exports[`T3 golden solutions > x/2=3 2`] = `
+"x/2 = 3
+1. 化簡每一項：數字相乘，相同字母的指數相加。
+   (1/2)x = 3
+2. 兩邊同時乘以 2，消去分母。
+   x = 6
+3. 驗算：把 x = 6 代入原方程，左右兩邊相等。
+   6/2 = 3;  3 = 3"
+`;
+
+exports[`T3 golden solutions > x/3+1=x/2 1`] = `
+"x/3 + 1 = x/2
+1. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   (1/3)x + 1 = x/2
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   (1/3)x + 1 = (1/2)x
+3. Multiply both sides by 6 to clear the fractions.
+   2x + 6 = 3x
+4. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   2x - 3x = -6
+5. Combine like terms by adding their coefficients.
+   -x = -6
+6. Multiply both sides by -1.
+   x = 6
+7. Check: substitute x = 6 into the original equation. Both sides are equal.
+   6/3 + 1 = 3;  6/2 = 3"
+`;
+
+exports[`T3 golden solutions > x/3+1=x/2 2`] = `
+"x/3 + 1 = x/2
+1. 化簡每一項：數字相乘，相同字母的指數相加。
+   (1/3)x + 1 = x/2
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   (1/3)x + 1 = (1/2)x
+3. 兩邊同時乘以 6，消去分母。
+   2x + 6 = 3x
+4. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   2x - 3x = -6
+5. 合併同類項：把係數相加。
+   -x = -6
+6. 兩邊同時乘以 -1。
+   x = 6
+7. 驗算：把 x = 6 代入原方程，左右兩邊相等。
+   6/3 + 1 = 3;  6/2 = 3"
+`;
+
+exports[`T3 golden solutions > x/4-x/6=1 1`] = `
+"x/4 - x/6 = 1
+1. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   (1/4)x - (1/6)x = 1
+2. Combine like terms by adding their coefficients.
+   (1/12)x = 1
+3. Multiply both sides by 12 to clear the fractions.
+   x = 12
+4. Check: substitute x = 12 into the original equation. Both sides are equal.
+   12/4 - 12/6 = 1;  1 = 1"
+`;
+
+exports[`T3 golden solutions > x/4-x/6=1 2`] = `
+"x/4 - x/6 = 1
+1. 化簡每一項：數字相乘，相同字母的指數相加。
+   (1/4)x - (1/6)x = 1
+2. 合併同類項：把係數相加。
+   (1/12)x = 1
+3. 兩邊同時乘以 12，消去分母。
+   x = 12
+4. 驗算：把 x = 12 代入原方程，左右兩邊相等。
+   12/4 - 12/6 = 1;  1 = 1"
+`;
+
+exports[`T3 golden solutions > x=3 1`] = `
+"x = 3
+1. Check: substitute x = 3 into the original equation. Both sides are equal.
+   3 = 3;  3 = 3"
+`;
+
+exports[`T3 golden solutions > x=3 2`] = `
+"x = 3
+1. 驗算：把 x = 3 代入原方程，左右兩邊相等。
+   3 = 3;  3 = 3"
+`;
+
+exports[`T3 golden solutions > x^2+2x=x^2+1 1`] = `
+"x^2 + 2x = x^2 + 1
+1. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   x^2 + 2x - x^2 = 1
+2. Put like terms next to each other, in descending powers.
+   x^2 - x^2 + 2x = 1
+3. Combine like terms by adding their coefficients.
+   2x = 1
+4. Divide both sides by 2.
+   x = 1/2
+5. Check: substitute x = 1/2 into the original equation. Both sides are equal.
+   (1/2)^2 + 2(1/2) = 5/4;  (1/2)^2 + 1 = 5/4"
+`;
+
+exports[`T3 golden solutions > x^2+2x=x^2+1 2`] = `
+"x^2 + 2x = x^2 + 1
+1. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   x^2 + 2x - x^2 = 1
+2. 把同類項排在一起，並按降冪排列。
+   x^2 - x^2 + 2x = 1
+3. 合併同類項：把係數相加。
+   2x = 1
+4. 兩邊同時除以 2。
+   x = 1/2
+5. 驗算：把 x = 1/2 代入原方程，左右兩邊相等。
+   (1/2)^2 + 2(1/2) = 5/4;  (1/2)^2 + 1 = 5/4"
+`;
+
+exports[`T3 golden solutions > x-(2-x)=4 1`] = `
+"x - (2 - x) = 4
+1. Remove the brackets. A minus sign in front of a bracket changes the sign of every term inside it.
+   x - 2 + x = 4
+2. Put like terms next to each other, in descending powers.
+   x + x - 2 = 4
+3. Combine like terms by adding their coefficients.
+   2x - 2 = 4
+4. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   2x = 4 + 2
+5. Add: 4 + 2 = 6.
+   2x = 6
+6. Divide both sides by 2.
+   x = 3
+7. Check: substitute x = 3 into the original equation. Both sides are equal.
+   3 - (2 - 3) = 4;  4 = 4"
+`;
+
+exports[`T3 golden solutions > x-(2-x)=4 2`] = `
+"x - (2 - x) = 4
+1. 去括號。括號前面是負號時，括號內每一項都要變號。
+   x - 2 + x = 4
+2. 把同類項排在一起，並按降冪排列。
+   x + x - 2 = 4
+3. 合併同類項：把係數相加。
+   2x - 2 = 4
+4. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   2x = 4 + 2
+5. 相加：4 + 2 = 6。
+   2x = 6
+6. 兩邊同時除以 2。
+   x = 3
+7. 驗算：把 x = 3 代入原方程，左右兩邊相等。
+   3 - (2 - 3) = 4;  4 = 4"
+`;
+
+exports[`T3 golden solutions > x-5=-2 1`] = `
+"x - 5 = -2
+1. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   x = -2 + 5
+2. Add: -2 + 5 = 3.
+   x = 3
+3. Check: substitute x = 3 into the original equation. Both sides are equal.
+   3 - 5 = -2;  -2 = -2"
+`;
+
+exports[`T3 golden solutions > x-5=-2 2`] = `
+"x - 5 = -2
+1. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   x = -2 + 5
+2. 相加：-2 + 5 = 3。
+   x = 3
+3. 驗算：把 x = 3 代入原方程，左右兩邊相等。
+   3 - 5 = -2;  -2 = -2"
+`;

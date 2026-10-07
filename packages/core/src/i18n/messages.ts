@@ -83,6 +83,20 @@ export const en = {
   'poly.order-degree': 'Write the terms in descending order of degree.',
   'poly.group': 'Put like terms next to each other, in descending powers.',
   'poly.combine': 'Combine like terms by adding their coefficients.',
+  // ---- equations ----
+  'eq.multiply-lcd': 'Multiply both sides by {lcd} to clear the fractions.',
+  'eq.swap': 'Swap the two sides so that the unknown is on the left.',
+  'eq.move-terms':
+    'Move the terms with {x} to the left and the numbers to the right. A term changes its sign when it moves to the other side.',
+  'eq.divide': 'Divide both sides by {a}.',
+  'eq.negate': 'Multiply both sides by -1.',
+  'eq.no-solution':
+    'This statement is false for every value of {x}, so the equation has no solution.',
+  'eq.all-solutions':
+    'This statement is true for every value of {x}, so every real number is a solution.',
+  'eq.check': 'Check: substitute {value} into the original equation. Both sides are equal.',
+  'eq.check-pair':
+    'Check: substitute {value} and {value2} into both original equations. Both sides of each are equal.',
   // ---- states and answers ----
   'state.or': 'or',
   'state.and': 'and',
@@ -154,6 +168,15 @@ export const zhHK: Record<MessageKey, string> = {
   'poly.order-degree': '按次數由高至低排列各項。',
   'poly.group': '把同類項排在一起，並按降冪排列。',
   'poly.combine': '合併同類項：把係數相加。',
+  'eq.multiply-lcd': '兩邊同時乘以 {lcd}，消去分母。',
+  'eq.swap': '把左右兩邊對調，令未知數在左邊。',
+  'eq.move-terms': '把含 {x} 的項移到左邊，數字移到右邊。項移到另一邊時要變號。',
+  'eq.divide': '兩邊同時除以 {a}。',
+  'eq.negate': '兩邊同時乘以 -1。',
+  'eq.no-solution': '無論 {x} 是甚麼值，這個式子都不成立，所以方程無解。',
+  'eq.all-solutions': '無論 {x} 是甚麼值，這個式子都成立，所以所有實數都是解。',
+  'eq.check': '驗算：把 {value} 代入原方程，左右兩邊相等。',
+  'eq.check-pair': '驗算：把 {value} 及 {value2} 代入兩條原方程，每條的左右兩邊都相等。',
   'state.or': '或',
   'state.and': '及',
   'state.none': '沒有實數解。',

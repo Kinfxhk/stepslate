@@ -24,7 +24,7 @@ export type State =
 /** A path from a state to a highlighted subtree, e.g. ['lhs', 'a', 'b']. */
 export type Path = readonly (string | number)[];
 
-export type ParamValue = Expr | string | number;
+export type ParamValue = Expr | Equation | string | number;
 
 export interface Explanation {
   readonly key: MessageKey;

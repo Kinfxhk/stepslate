@@ -13,6 +13,7 @@ import { classify, type ProblemType } from './classify';
 import { Run, StopTooLarge, StopUnverified, type StepTamper } from './run';
 import { solveArithmetic } from './t1';
 import { solvePolynomial } from './t2';
+import { solveLinear } from './t3';
 
 export type Status = 'solved' | 'unsupported' | 'error' | 'unverified';
 
@@ -91,6 +92,7 @@ const STRATEGIES: Partial<Record<ProblemType, Strategy>> = {
   T2: (run, p, vars) => {
     if (p.kind === 'expr') solvePolynomial(run, p.expr, vars);
   },
+  T3: solveLinear,
 };
 
 /** Register a strategy (used by later modules). */
