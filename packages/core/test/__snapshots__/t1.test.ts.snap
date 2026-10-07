@@ -1,0 +1,773 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`T1 golden solutions > ((1+2)*(3-1))^2/4 1`] = `
+"((1 + 2)(3 - 1))^2/4
+1. Add: 1 + 2 = 3.
+   (3(3 - 1))^2/4
+2. Subtract: 3 - 1 = 2.
+   (3*2)^2/4
+3. Multiply: 3*2 = 6.
+   6^2/4
+4. Work out the power: 6^2 = 36.
+   36/4
+5. This fraction is a whole number: 36/4 = 9.
+   9"
+`;
+
+exports[`T1 golden solutions > ((1+2)*(3-1))^2/4 2`] = `
+"((1 + 2)(3 - 1))^2/4
+1. 相加：1 + 2 = 3。
+   (3(3 - 1))^2/4
+2. 相減：3 - 1 = 2。
+   (3*2)^2/4
+3. 相乘：3*2 = 6。
+   6^2/4
+4. 計算乘方：6^2 = 36。
+   36/4
+5. 這個分數是整數：36/4 = 9。
+   9"
+`;
+
+exports[`T1 golden solutions > (-2)^3 1`] = `
+"(-2)^3
+1. Work out the power: (-2)^3 = -8.
+   -8"
+`;
+
+exports[`T1 golden solutions > (-2)^3 2`] = `
+"(-2)^3
+1. 計算乘方：(-2)^3 = -8。
+   -8"
+`;
+
+exports[`T1 golden solutions > (-2/3)^3 1`] = `
+"(-2/3)^3
+1. Work out the power: (-2/3)^3 = -8/27.
+   -8/27"
+`;
+
+exports[`T1 golden solutions > (-2/3)^3 2`] = `
+"(-2/3)^3
+1. 計算乘方：(-2/3)^3 = -8/27。
+   -8/27"
+`;
+
+exports[`T1 golden solutions > (-6)/4 1`] = `
+"(-6)/4
+1. Write the division as a fraction: (-6)/4 = -6/4.
+   -6/4"
+`;
+
+exports[`T1 golden solutions > (-6)/4 2`] = `
+"(-6)/4
+1. 把除法寫成分數：(-6)/4 = -6/4。
+   -6/4"
+`;
+
+exports[`T1 golden solutions > (1+2)^3 1`] = `
+"(1 + 2)^3
+1. Add: 1 + 2 = 3.
+   3^3
+2. Work out the power: 3^3 = 27.
+   27"
+`;
+
+exports[`T1 golden solutions > (1+2)^3 2`] = `
+"(1 + 2)^3
+1. 相加：1 + 2 = 3。
+   3^3
+2. 計算乘方：3^3 = 27。
+   27"
+`;
+
+exports[`T1 golden solutions > (1/2)^2 1`] = `
+"(1/2)^2
+1. Work out the power: (1/2)^2 = 1/4.
+   1/4"
+`;
+
+exports[`T1 golden solutions > (1/2)^2 2`] = `
+"(1/2)^2
+1. 計算乘方：(1/2)^2 = 1/4。
+   1/4"
+`;
+
+exports[`T1 golden solutions > (2/3)/(4/9) 1`] = `
+"2/3/(4/9)
+1. Dividing by 4/9 is the same as multiplying by its reciprocal, 9/4.
+   (2/3)(9/4)
+2. Multiply the numerators together and the denominators together: (2/3)(9/4) = 18/12.
+   18/12
+3. Simplify 18/12: divide the top and bottom by 6 to get 3/2.
+   3/2"
+`;
+
+exports[`T1 golden solutions > (2/3)/(4/9) 2`] = `
+"2/3/(4/9)
+1. 除以 4/9 等於乘以它的倒數 9/4。
+   (2/3)(9/4)
+2. 分子乘分子，分母乘分母：(2/3)(9/4) = 18/12。
+   18/12
+3. 約簡 18/12：分子和分母同時除以 6，得 3/2。
+   3/2"
+`;
+
+exports[`T1 golden solutions > (3/4)/6 1`] = `
+"3/4/6
+1. Dividing by 6 is the same as multiplying by its reciprocal, 1/6.
+   (3/4)(1/6)
+2. Multiply the numerators together and the denominators together: (3/4)(1/6) = 3/24.
+   3/24
+3. Simplify 3/24: divide the top and bottom by 3 to get 1/8.
+   1/8"
+`;
+
+exports[`T1 golden solutions > (3/4)/6 2`] = `
+"3/4/6
+1. 除以 6 等於乘以它的倒數 1/6。
+   (3/4)(1/6)
+2. 分子乘分子，分母乘分母：(3/4)(1/6) = 3/24。
+   3/24
+3. 約簡 3/24：分子和分母同時除以 3，得 1/8。
+   1/8"
+`;
+
+exports[`T1 golden solutions > -(-3) 1`] = `
+"-(-3)
+1. Two minus signs cancel out: -(-3) = 3.
+   3"
+`;
+
+exports[`T1 golden solutions > -(-3) 2`] = `
+"-(-3)
+1. 兩個負號互相抵消：-(-3) = 3。
+   3"
+`;
+
+exports[`T1 golden solutions > -(1/2-3/4) 1`] = `
+"-(1/2 - 3/4)
+1. Write both numbers as fractions with the common denominator 4.
+   -(2/4 - 3/4)
+2. The denominators are both 4, so subtract the numerators: 2/4 - 3/4 = -1/4.
+   -(-1/4)
+3. Two minus signs cancel out: -(-1/4) = 1/4.
+   1/4"
+`;
+
+exports[`T1 golden solutions > -(1/2-3/4) 2`] = `
+"-(1/2 - 3/4)
+1. 把兩個數通分，寫成分母為 4 的分數。
+   -(2/4 - 3/4)
+2. 分母都是 4，所以分子相減：2/4 - 3/4 = -1/4。
+   -(-1/4)
+3. 兩個負號互相抵消：-(-1/4) = 1/4。
+   1/4"
+`;
+
+exports[`T1 golden solutions > -1/2*4 1`] = `
+"-1/2*4
+1. Multiply the numerators together and the denominators together: 1/2*4 = 4/2.
+   -4/2"
+`;
+
+exports[`T1 golden solutions > -1/2*4 2`] = `
+"-1/2*4
+1. 分子乘分子，分母乘分母：1/2*4 = 4/2。
+   -4/2"
+`;
+
+exports[`T1 golden solutions > -2^2 1`] = `
+"-2^2
+1. Work out the power: 2^2 = 4.
+   -4"
+`;
+
+exports[`T1 golden solutions > -2^2 2`] = `
+"-2^2
+1. 計算乘方：2^2 = 4。
+   -4"
+`;
+
+exports[`T1 golden solutions > -3*-4 1`] = `
+"-3(-4)
+1. Multiply: 3(-4) = -12.
+   -(-12)
+2. Two minus signs cancel out: -(-12) = 12.
+   12"
+`;
+
+exports[`T1 golden solutions > -3*-4 2`] = `
+"-3(-4)
+1. 相乘：3(-4) = -12。
+   -(-12)
+2. 兩個負號互相抵消：-(-12) = 12。
+   12"
+`;
+
+exports[`T1 golden solutions > 0.1+0.2 1`] = `
+"0.1 + 0.2
+1. Write each decimal as a fraction so that the arithmetic stays exact.
+   1/10 + 1/5
+2. Write both numbers as fractions with the common denominator 10.
+   1/10 + 2/10
+3. The denominators are both 10, so add the numerators: 1/10 + 2/10 = 3/10.
+   3/10
+4. Write the answer as a decimal: 3/10 = 0.3.
+   0.3"
+`;
+
+exports[`T1 golden solutions > 0.1+0.2 2`] = `
+"0.1 + 0.2
+1. 先把每個小數寫成分數，令計算保持準確。
+   1/10 + 1/5
+2. 把兩個數通分，寫成分母為 10 的分數。
+   1/10 + 2/10
+3. 分母都是 10，所以分子相加：1/10 + 2/10 = 3/10。
+   3/10
+4. 把答案寫成小數：3/10 = 0.3。
+   0.3"
+`;
+
+exports[`T1 golden solutions > 0.5+0.25 1`] = `
+"0.5 + 0.25
+1. Write each decimal as a fraction so that the arithmetic stays exact.
+   1/2 + 1/4
+2. Write both numbers as fractions with the common denominator 4.
+   2/4 + 1/4
+3. The denominators are both 4, so add the numerators: 2/4 + 1/4 = 3/4.
+   3/4
+4. Write the answer as a decimal: 3/4 = 0.75.
+   0.75"
+`;
+
+exports[`T1 golden solutions > 0.5+0.25 2`] = `
+"0.5 + 0.25
+1. 先把每個小數寫成分數，令計算保持準確。
+   1/2 + 1/4
+2. 把兩個數通分，寫成分母為 4 的分數。
+   2/4 + 1/4
+3. 分母都是 4，所以分子相加：2/4 + 1/4 = 3/4。
+   3/4
+4. 把答案寫成小數：3/4 = 0.75。
+   0.75"
+`;
+
+exports[`T1 golden solutions > 0.75-1 1`] = `
+"0.75 - 1
+1. Write each decimal as a fraction so that the arithmetic stays exact.
+   3/4 - 1
+2. Write both numbers as fractions with the common denominator 4.
+   3/4 - 4/4
+3. The denominators are both 4, so subtract the numerators: 3/4 - 4/4 = -1/4.
+   -1/4
+4. Write the answer as a decimal: -1/4 = -0.25.
+   -0.25"
+`;
+
+exports[`T1 golden solutions > 0.75-1 2`] = `
+"0.75 - 1
+1. 先把每個小數寫成分數，令計算保持準確。
+   3/4 - 1
+2. 把兩個數通分，寫成分母為 4 的分數。
+   3/4 - 4/4
+3. 分母都是 4，所以分子相減：3/4 - 4/4 = -1/4。
+   -1/4
+4. 把答案寫成小數：-1/4 = -0.25。
+   -0.25"
+`;
+
+exports[`T1 golden solutions > 0/7 1`] = `
+"0/7
+1. This fraction is a whole number: 0/7 = 0.
+   0"
+`;
+
+exports[`T1 golden solutions > 0/7 2`] = `
+"0/7
+1. 這個分數是整數：0/7 = 0。
+   0"
+`;
+
+exports[`T1 golden solutions > 1+2 1`] = `
+"1 + 2
+1. Add: 1 + 2 = 3.
+   3"
+`;
+
+exports[`T1 golden solutions > 1+2 2`] = `
+"1 + 2
+1. 相加：1 + 2 = 3。
+   3"
+`;
+
+exports[`T1 golden solutions > 1.2*5 1`] = `
+"1.2*5
+1. Write each decimal as a fraction so that the arithmetic stays exact.
+   6/5*5
+2. Multiply the numerators together and the denominators together: 6/5*5 = 30/5.
+   30/5
+3. This fraction is a whole number: 30/5 = 6.
+   6"
+`;
+
+exports[`T1 golden solutions > 1.2*5 2`] = `
+"1.2*5
+1. 先把每個小數寫成分數，令計算保持準確。
+   6/5*5
+2. 分子乘分子，分母乘分母：6/5*5 = 30/5。
+   30/5
+3. 這個分數是整數：30/5 = 6。
+   6"
+`;
+
+exports[`T1 golden solutions > 1/2+1/3+1/6 1`] = `
+"1/2 + 1/3 + 1/6
+1. Write both numbers as fractions with the common denominator 6.
+   3/6 + 2/6 + 1/6
+2. The denominators are both 6, so add the numerators: 3/6 + 2/6 = 5/6.
+   5/6 + 1/6
+3. The denominators are both 6, so add the numerators: 5/6 + 1/6 = 6/6.
+   6/6
+4. This fraction is a whole number: 6/6 = 1.
+   1"
+`;
+
+exports[`T1 golden solutions > 1/2+1/3+1/6 2`] = `
+"1/2 + 1/3 + 1/6
+1. 把兩個數通分，寫成分母為 6 的分數。
+   3/6 + 2/6 + 1/6
+2. 分母都是 6，所以分子相加：3/6 + 2/6 = 5/6。
+   5/6 + 1/6
+3. 分母都是 6，所以分子相加：5/6 + 1/6 = 6/6。
+   6/6
+4. 這個分數是整數：6/6 = 1。
+   1"
+`;
+
+exports[`T1 golden solutions > 1/2+1/4 1`] = `
+"1/2 + 1/4
+1. Write both numbers as fractions with the common denominator 4.
+   2/4 + 1/4
+2. The denominators are both 4, so add the numerators: 2/4 + 1/4 = 3/4.
+   3/4"
+`;
+
+exports[`T1 golden solutions > 1/2+1/4 2`] = `
+"1/2 + 1/4
+1. 把兩個數通分，寫成分母為 4 的分數。
+   2/4 + 1/4
+2. 分母都是 4，所以分子相加：2/4 + 1/4 = 3/4。
+   3/4"
+`;
+
+exports[`T1 golden solutions > 1/2+3/4 1`] = `
+"1/2 + 3/4
+1. Write both numbers as fractions with the common denominator 4.
+   2/4 + 3/4
+2. The denominators are both 4, so add the numerators: 2/4 + 3/4 = 5/4.
+   5/4"
+`;
+
+exports[`T1 golden solutions > 1/2+3/4 2`] = `
+"1/2 + 3/4
+1. 把兩個數通分，寫成分母為 4 的分數。
+   2/4 + 3/4
+2. 分母都是 4，所以分子相加：2/4 + 3/4 = 5/4。
+   5/4"
+`;
+
+exports[`T1 golden solutions > 1/3+0.5 1`] = `
+"1/3 + 0.5
+1. Write each decimal as a fraction so that the arithmetic stays exact.
+   1/3 + 1/2
+2. Write both numbers as fractions with the common denominator 6.
+   2/6 + 3/6
+3. The denominators are both 6, so add the numerators: 2/6 + 3/6 = 5/6.
+   5/6"
+`;
+
+exports[`T1 golden solutions > 1/3+0.5 2`] = `
+"1/3 + 0.5
+1. 先把每個小數寫成分數，令計算保持準確。
+   1/3 + 1/2
+2. 把兩個數通分，寫成分母為 6 的分數。
+   2/6 + 3/6
+3. 分母都是 6，所以分子相加：2/6 + 3/6 = 5/6。
+   5/6"
+`;
+
+exports[`T1 golden solutions > 2*(3+4) 1`] = `
+"2(3 + 4)
+1. Add: 3 + 4 = 7.
+   2*7
+2. Multiply: 2*7 = 14.
+   14"
+`;
+
+exports[`T1 golden solutions > 2*(3+4) 2`] = `
+"2(3 + 4)
+1. 相加：3 + 4 = 7。
+   2*7
+2. 相乘：2*7 = 14。
+   14"
+`;
+
+exports[`T1 golden solutions > 2*3+(4+5) 1`] = `
+"2*3 + (4 + 5)
+1. Add: 4 + 5 = 9.
+   2*3 + 9
+2. Multiply: 2*3 = 6.
+   6 + 9
+3. Add: 6 + 9 = 15.
+   15"
+`;
+
+exports[`T1 golden solutions > 2*3+(4+5) 2`] = `
+"2*3 + (4 + 5)
+1. 相加：4 + 5 = 9。
+   2*3 + 9
+2. 相乘：2*3 = 6。
+   6 + 9
+3. 相加：6 + 9 = 15。
+   15"
+`;
+
+exports[`T1 golden solutions > 2*3+4 1`] = `
+"2*3 + 4
+1. Multiply: 2*3 = 6.
+   6 + 4
+2. Add: 6 + 4 = 10.
+   10"
+`;
+
+exports[`T1 golden solutions > 2*3+4 2`] = `
+"2*3 + 4
+1. 相乘：2*3 = 6。
+   6 + 4
+2. 相加：6 + 4 = 10。
+   10"
+`;
+
+exports[`T1 golden solutions > 2.5/0.5 1`] = `
+"2.5/0.5
+1. Write each decimal as a fraction so that the arithmetic stays exact.
+   5/2/(1/2)
+2. Dividing by 1/2 is the same as multiplying by its reciprocal, 2.
+   5/2*2
+3. Multiply the numerators together and the denominators together: 5/2*2 = 10/2.
+   10/2
+4. This fraction is a whole number: 10/2 = 5.
+   5"
+`;
+
+exports[`T1 golden solutions > 2.5/0.5 2`] = `
+"2.5/0.5
+1. 先把每個小數寫成分數，令計算保持準確。
+   5/2/(1/2)
+2. 除以 1/2 等於乘以它的倒數 2。
+   5/2*2
+3. 分子乘分子，分母乘分母：5/2*2 = 10/2。
+   10/2
+4. 這個分數是整數：10/2 = 5。
+   5"
+`;
+
+exports[`T1 golden solutions > 2/3*9/4 1`] = `
+"2/3*9/4
+1. Multiply the numerators together and the denominators together: 2/3*9 = 18/3.
+   18/3/4
+2. This fraction is a whole number: 18/3 = 6.
+   6/4
+3. Simplify 6/4: divide the top and bottom by 2 to get 3/2.
+   3/2"
+`;
+
+exports[`T1 golden solutions > 2/3*9/4 2`] = `
+"2/3*9/4
+1. 分子乘分子，分母乘分母：2/3*9 = 18/3。
+   18/3/4
+2. 這個分數是整數：18/3 = 6。
+   6/4
+3. 約簡 6/4：分子和分母同時除以 2，得 3/2。
+   3/2"
+`;
+
+exports[`T1 golden solutions > 2/3-3/4 1`] = `
+"2/3 - 3/4
+1. Write both numbers as fractions with the common denominator 12.
+   8/12 - 9/12
+2. The denominators are both 12, so subtract the numerators: 8/12 - 9/12 = -1/12.
+   -1/12"
+`;
+
+exports[`T1 golden solutions > 2/3-3/4 2`] = `
+"2/3 - 3/4
+1. 把兩個數通分，寫成分母為 12 的分數。
+   8/12 - 9/12
+2. 分母都是 12，所以分子相減：8/12 - 9/12 = -1/12。
+   -1/12"
+`;
+
+exports[`T1 golden solutions > 2^4-3^2 1`] = `
+"2^4 - 3^2
+1. Work out the power: 2^4 = 16.
+   16 - 3^2
+2. Work out the power: 3^2 = 9.
+   16 - 9
+3. Subtract: 16 - 9 = 7.
+   7"
+`;
+
+exports[`T1 golden solutions > 2^4-3^2 2`] = `
+"2^4 - 3^2
+1. 計算乘方：2^4 = 16。
+   16 - 3^2
+2. 計算乘方：3^2 = 9。
+   16 - 9
+3. 相減：16 - 9 = 7。
+   7"
+`;
+
+exports[`T1 golden solutions > 2-(3-(4-5)) 1`] = `
+"2 - (3 - (4 - 5))
+1. Subtract: 4 - 5 = -1.
+   2 - (3 - (-1))
+2. Subtracting a negative number is the same as adding: 3 - (-1) = 3 + 1.
+   2 - (3 + 1)
+3. Add: 3 + 1 = 4.
+   2 - 4
+4. Subtract: 2 - 4 = -2.
+   -2"
+`;
+
+exports[`T1 golden solutions > 2-(3-(4-5)) 2`] = `
+"2 - (3 - (4 - 5))
+1. 相減：4 - 5 = -1。
+   2 - (3 - (-1))
+2. 減一個負數等於加上它：3 - (-1) = 3 + 1。
+   2 - (3 + 1)
+3. 相加：3 + 1 = 4。
+   2 - 4
+4. 相減：2 - 4 = -2。
+   -2"
+`;
+
+exports[`T1 golden solutions > 3*2/5 1`] = `
+"3*2/5
+1. Multiply: 3*2 = 6.
+   6/5"
+`;
+
+exports[`T1 golden solutions > 3*2/5 2`] = `
+"3*2/5
+1. 相乘：3*2 = 6。
+   6/5"
+`;
+
+exports[`T1 golden solutions > 3-1/2 1`] = `
+"3 - 1/2
+1. Write both numbers as fractions with the common denominator 2.
+   6/2 - 1/2
+2. The denominators are both 2, so subtract the numerators: 6/2 - 1/2 = 5/2.
+   5/2"
+`;
+
+exports[`T1 golden solutions > 3-1/2 2`] = `
+"3 - 1/2
+1. 把兩個數通分，寫成分母為 2 的分數。
+   6/2 - 1/2
+2. 分母都是 2，所以分子相減：6/2 - 1/2 = 5/2。
+   5/2"
+`;
+
+exports[`T1 golden solutions > 3-5*(2-7) 1`] = `
+"3 - 5(2 - 7)
+1. Subtract: 2 - 7 = -5.
+   3 - 5(-5)
+2. Multiply: 5(-5) = -25.
+   3 - (-25)
+3. Subtracting a negative number is the same as adding: 3 - (-25) = 3 + 25.
+   3 + 25
+4. Add: 3 + 25 = 28.
+   28"
+`;
+
+exports[`T1 golden solutions > 3-5*(2-7) 2`] = `
+"3 - 5(2 - 7)
+1. 相減：2 - 7 = -5。
+   3 - 5(-5)
+2. 相乘：5(-5) = -25。
+   3 - (-25)
+3. 減一個負數等於加上它：3 - (-25) = 3 + 25。
+   3 + 25
+4. 相加：3 + 25 = 28。
+   28"
+`;
+
+exports[`T1 golden solutions > 4*(1/2+1/4)-1 1`] = `
+"4(1/2 + 1/4) - 1
+1. Write both numbers as fractions with the common denominator 4.
+   4(2/4 + 1/4) - 1
+2. The denominators are both 4, so add the numerators: 2/4 + 1/4 = 3/4.
+   4(3/4) - 1
+3. Multiply the numerators together and the denominators together: 4(3/4) = 12/4.
+   12/4 - 1
+4. This fraction is a whole number: 12/4 = 3.
+   3 - 1
+5. Subtract: 3 - 1 = 2.
+   2"
+`;
+
+exports[`T1 golden solutions > 4*(1/2+1/4)-1 2`] = `
+"4(1/2 + 1/4) - 1
+1. 把兩個數通分，寫成分母為 4 的分數。
+   4(2/4 + 1/4) - 1
+2. 分母都是 4，所以分子相加：2/4 + 1/4 = 3/4。
+   4(3/4) - 1
+3. 分子乘分子，分母乘分母：4(3/4) = 12/4。
+   12/4 - 1
+4. 這個分數是整數：12/4 = 3。
+   3 - 1
+5. 相減：3 - 1 = 2。
+   2"
+`;
+
+exports[`T1 golden solutions > 5/6+1/6 1`] = `
+"5/6 + 1/6
+1. The denominators are both 6, so add the numerators: 5/6 + 1/6 = 6/6.
+   6/6
+2. This fraction is a whole number: 6/6 = 1.
+   1"
+`;
+
+exports[`T1 golden solutions > 5/6+1/6 2`] = `
+"5/6 + 1/6
+1. 分母都是 6，所以分子相加：5/6 + 1/6 = 6/6。
+   6/6
+2. 這個分數是整數：6/6 = 1。
+   1"
+`;
+
+exports[`T1 golden solutions > 5^0+1 1`] = `
+"5^0 + 1
+1. Work out the power: 5^0 = 1.
+   1 + 1
+2. Add: 1 + 1 = 2.
+   2"
+`;
+
+exports[`T1 golden solutions > 5^0+1 2`] = `
+"5^0 + 1
+1. 計算乘方：5^0 = 1。
+   1 + 1
+2. 相加：1 + 1 = 2。
+   2"
+`;
+
+exports[`T1 golden solutions > 6/(1/2) 1`] = `
+"6/(1/2)
+1. Dividing by 1/2 is the same as multiplying by its reciprocal, 2.
+   6*2
+2. Multiply: 6*2 = 12.
+   12"
+`;
+
+exports[`T1 golden solutions > 6/(1/2) 2`] = `
+"6/(1/2)
+1. 除以 1/2 等於乘以它的倒數 2。
+   6*2
+2. 相乘：6*2 = 12。
+   12"
+`;
+
+exports[`T1 golden solutions > 6/4 1`] = `
+"6/4
+1. Simplify 6/4: divide the top and bottom by 2 to get 3/2.
+   3/2"
+`;
+
+exports[`T1 golden solutions > 6/4 2`] = `
+"6/4
+1. 約簡 6/4：分子和分母同時除以 2，得 3/2。
+   3/2"
+`;
+
+exports[`T1 golden solutions > 7/1 1`] = `
+"7/1
+1. This fraction is a whole number: 7/1 = 7.
+   7"
+`;
+
+exports[`T1 golden solutions > 7/1 2`] = `
+"7/1
+1. 這個分數是整數：7/1 = 7。
+   7"
+`;
+
+exports[`T1 golden solutions > 7-10 1`] = `
+"7 - 10
+1. Subtract: 7 - 10 = -3.
+   -3"
+`;
+
+exports[`T1 golden solutions > 7-10 2`] = `
+"7 - 10
+1. 相減：7 - 10 = -3。
+   -3"
+`;
+
+exports[`T1 golden solutions > 8/(-12) 1`] = `
+"8/(-12)
+1. Write the division as a fraction: 8/(-12) = -8/12.
+   -8/12"
+`;
+
+exports[`T1 golden solutions > 8/(-12) 2`] = `
+"8/(-12)
+1. 把除法寫成分數：8/(-12) = -8/12。
+   -8/12"
+`;
+
+exports[`T1 golden solutions > 10-(4-3) 1`] = `
+"10 - (4 - 3)
+1. Subtract: 4 - 3 = 1.
+   10 - 1
+2. Subtract: 10 - 1 = 9.
+   9"
+`;
+
+exports[`T1 golden solutions > 10-(4-3) 2`] = `
+"10 - (4 - 3)
+1. 相減：4 - 3 = 1。
+   10 - 1
+2. 相減：10 - 1 = 9。
+   9"
+`;
+
+exports[`T1 golden solutions > 10-4-3 1`] = `
+"10 - 4 - 3
+1. Subtract: 10 - 4 = 6.
+   6 - 3
+2. Subtract: 6 - 3 = 3.
+   3"
+`;
+
+exports[`T1 golden solutions > 10-4-3 2`] = `
+"10 - 4 - 3
+1. 相減：10 - 4 = 6。
+   6 - 3
+2. 相減：6 - 3 = 3。
+   3"
+`;
+
+exports[`T1 golden solutions > 12/4 1`] = `
+"12/4
+1. This fraction is a whole number: 12/4 = 3.
+   3"
+`;
+
+exports[`T1 golden solutions > 12/4 2`] = `
+"12/4
+1. 這個分數是整數：12/4 = 3。
+   3"
+`;

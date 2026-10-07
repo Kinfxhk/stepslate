@@ -26,6 +26,55 @@ export const en = {
   // ---- warnings ----
   'warn.ambiguous-division':
     'Read as (a/b)·x: the division happens first. If you meant x in the denominator, write a/(bx).',
+  // ---- T1 arithmetic ----
+  'arith.decimals': 'Write each decimal as a fraction so that the arithmetic stays exact.',
+  'arith.reduce': 'Simplify {before}: divide the top and bottom by {g} to get {after}.',
+  'arith.reduce-to-integer': 'This fraction is a whole number: {before} = {after}.',
+  'arith.double-negative': 'Two minus signs cancel out: {before} = {after}.',
+  'arith.power': 'Work out the power: {before} = {after}.',
+  'arith.multiply': 'Multiply: {before} = {after}.',
+  'arith.multiply-fractions':
+    'Multiply the numerators together and the denominators together: {before} = {after}.',
+  'arith.divide-as-fraction': 'Write the division as a fraction: {before} = {after}.',
+  'arith.divide-by-fraction':
+    'Dividing by {divisor} is the same as multiplying by its reciprocal, {reciprocal}.',
+  'arith.add-negative': 'Adding a negative number is the same as subtracting: {before} = {after}.',
+  'arith.subtract-negative':
+    'Subtracting a negative number is the same as adding: {before} = {after}.',
+  'arith.add': 'Add: {before} = {after}.',
+  'arith.subtract': 'Subtract: {before} = {after}.',
+  'arith.common-denominator': 'Write both numbers as fractions with the common denominator {lcd}.',
+  'arith.add-fractions':
+    'The denominators are both {d}, so add the numerators: {before} = {after}.',
+  'arith.subtract-fractions':
+    'The denominators are both {d}, so subtract the numerators: {before} = {after}.',
+  'arith.to-decimal': 'Write the answer as a decimal: {before} = {after}.',
+  // ---- problem checks ----
+  'unsupported.root':
+    'Square roots in the question are not supported yet (planned for a later version).',
+  'unsupported.pm': 'The ± sign can only be used in answers.',
+  'unsupported.var-denominator':
+    'An unknown in a denominator (a fractional equation) is not supported yet.',
+  'unsupported.exponent': 'Exponents must be whole numbers from 0 to {max}.',
+  'unsupported.degree':
+    'The degree is too high. StepSlate simplifies up to degree {max} and solves equations up to degree 2.',
+  'unsupported.equation-vars':
+    'One equation with {n} unknowns cannot be solved on its own. Separate two equations with ";".',
+  'unsupported.system': 'StepSlate solves systems of two linear equations in two unknowns.',
+  'unsupported.no-unknown':
+    'This equation has no unknown to solve for. To work out a calculation, type it without "=".',
+  'unsupported.too-many-vars': 'Simplifying is supported for at most two unknowns.',
+  'error.div-zero': 'The question divides by zero, which is undefined.',
+  'error.too-large': 'The numbers grow too large for StepSlate. Please try a smaller problem.',
+  'error.unverified':
+    'StepSlate could not verify the next step, so it stops here instead of showing an unchecked step. Please report this problem.',
+  // ---- states and answers ----
+  'state.or': 'or',
+  'state.and': 'and',
+  'state.none': 'There is no real solution.',
+  'state.all': 'Every real number is a solution.',
+  'state.infinite': 'Infinitely many solutions: every pair satisfying {eq}.',
+  'answer.label': 'Answer',
 } as const;
 
 export type MessageKey = keyof typeof en;
@@ -33,21 +82,57 @@ export type MessageKey = keyof typeof en;
 export const zhHK: Record<MessageKey, string> = {
   'parse.empty': '請先輸入題目，例如 2(x+3)=5x-4。',
   'parse.too-long': '輸入太長（最多 {max} 個字元）。',
-  'parse.too-complex': '題目太複雜，步步解暫時處理唔到（最多 {max} 個部分）。',
-  'parse.unexpected-char': '步步解唔明白「{char}」呢個字元。',
-  'parse.unexpected-token': '呢度唔應該出現「{text}」。',
-  'parse.unexpected-end': '輸入未完：最後一個運算符號後面欠咗嘢。',
-  'parse.unclosed-paren': '有一個「(」冇閂括號。',
-  'parse.unmatched-paren': '有一個「)」搵唔到對應嘅「(」。',
+  'parse.too-complex': '題目太複雜，步步解暫時未能處理（最多 {max} 個部分）。',
+  'parse.unexpected-char': '步步解不明白「{char}」這個字元。',
+  'parse.unexpected-token': '這裏不應出現「{text}」。',
+  'parse.unexpected-end': '輸入未完：最後一個運算符號後面缺少內容。',
+  'parse.unclosed-paren': '有一個「(」沒有對應的「)」。',
+  'parse.unmatched-paren': '有一個「)」找不到對應的「(」。',
   'parse.number-too-long': '每個數字最多 {max} 位。',
-  'parse.bad-number': '「{text}」唔係有效數字。',
+  'parse.bad-number': '「{text}」不是有效的數字。',
   'parse.number-after-operand':
-    '數字唔可以直接跟喺呢度。乘法請用 *，次方請用 ^（例如 x*2 或 x^2）。',
+    '數字不可以直接跟在這裏。乘法請用 *，乘方請用 ^（例如 x*2 或 x^2）。',
   'parse.too-many-equals': '一條方程只可以有一個「=」。',
   'parse.too-many-equations': '最多支援 {max} 條方程。',
-  'parse.empty-side': '方程其中一邊係空嘅。',
-  'parse.mixed-separators': '用「;」分隔嘅每一部分都必須係有「=」嘅方程。',
-  'warn.ambiguous-division': '理解為 (a/b)·x：先做除法。如果你想 x 喺分母，請寫成 a/(bx)。',
+  'parse.empty-side': '方程其中一邊是空的。',
+  'parse.mixed-separators': '用「;」分隔的每一部分都必須是含「=」的方程。',
+  'warn.ambiguous-division': '理解為 (a/b)·x：先做除法。如果想 x 在分母，請寫成 a/(bx)。',
+  'arith.decimals': '先把每個小數寫成分數，令計算保持準確。',
+  'arith.reduce': '約簡 {before}：分子和分母同時除以 {g}，得 {after}。',
+  'arith.reduce-to-integer': '這個分數是整數：{before} = {after}。',
+  'arith.double-negative': '兩個負號互相抵消：{before} = {after}。',
+  'arith.power': '計算乘方：{before} = {after}。',
+  'arith.multiply': '相乘：{before} = {after}。',
+  'arith.multiply-fractions': '分子乘分子，分母乘分母：{before} = {after}。',
+  'arith.divide-as-fraction': '把除法寫成分數：{before} = {after}。',
+  'arith.divide-by-fraction': '除以 {divisor} 等於乘以它的倒數 {reciprocal}。',
+  'arith.add-negative': '加一個負數等於減去它：{before} = {after}。',
+  'arith.subtract-negative': '減一個負數等於加上它：{before} = {after}。',
+  'arith.add': '相加：{before} = {after}。',
+  'arith.subtract': '相減：{before} = {after}。',
+  'arith.common-denominator': '把兩個數通分，寫成分母為 {lcd} 的分數。',
+  'arith.add-fractions': '分母都是 {d}，所以分子相加：{before} = {after}。',
+  'arith.subtract-fractions': '分母都是 {d}，所以分子相減：{before} = {after}。',
+  'arith.to-decimal': '把答案寫成小數：{before} = {after}。',
+  'unsupported.root': '暫時未支援題目中出現開方（計劃於之後版本加入）。',
+  'unsupported.pm': '「±」只可以在答案中使用。',
+  'unsupported.var-denominator': '暫時未支援分母含未知數的題目（分式方程）。',
+  'unsupported.exponent': '指數必須是 0 至 {max} 的整數。',
+  'unsupported.degree': '次數太高。步步解可化簡最高 {max} 次的多項式，並解最高二次的方程。',
+  'unsupported.equation-vars': '一條含 {n} 個未知數的方程不能單獨求解。請用「;」分隔兩條方程。',
+  'unsupported.system': '步步解可解兩個未知數的二元一次聯立方程。',
+  'unsupported.no-unknown': '這條方程沒有未知數可解。如要計算數值，請輸入不含「=」的算式。',
+  'unsupported.too-many-vars': '化簡最多支援兩個未知數。',
+  'error.div-zero': '題目出現除以零，這是沒有定義的。',
+  'error.too-large': '數字變得太大，步步解未能處理。請試較小的題目。',
+  'error.unverified':
+    '步步解未能驗證下一步，因此在這裏停止，而不會顯示未經檢查的步驟。請報告這個問題。',
+  'state.or': '或',
+  'state.and': '及',
+  'state.none': '沒有實數解。',
+  'state.all': '所有實數都是解。',
+  'state.infinite': '有無限多組解：所有滿足 {eq} 的數對。',
+  'answer.label': '答案',
 };
 
 export const MESSAGES: Record<Lang, Record<MessageKey, string>> = { en, 'zh-HK': zhHK };
