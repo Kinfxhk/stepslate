@@ -1,6 +1,6 @@
 {
   "name": "@stepslate/cli",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "description": "StepSlate command line (plain-text steps) and loopback static server.",
   "license": "AGPL-3.0-or-later",

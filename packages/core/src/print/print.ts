@@ -165,6 +165,8 @@ function latexInner(e: Expr, opts: LatexOptions): string {
       const rNeedsParens = needsParens(e, e.b, 'b');
       const r = rNeedsParens ? paren(L(e.b)) : L(e.b);
       const numeric = !hasVar(e.a) && !hasVar(e.b);
+      // a coefficient times a root, written together: 2√3
+      if (e.implicit && e.a.k === 'num' && e.b.k === 'sqrt') return `${l}${r}`;
       if ((!rNeedsParens && startsWithDigit(e.b)) || numeric) return `${l} \\times ${r}`;
       if (!e.implicit) return `${l} \\cdot ${r}`; // written as a product: x·x, 1·x
       if (e.b.k === 'sqrt' && e.a.k !== 'num') return `${l} \\cdot ${r}`;
