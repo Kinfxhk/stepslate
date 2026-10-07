@@ -6,7 +6,7 @@ import type { Lang } from '@stepslate/core';
 import { UI, ui, type UiKey } from './i18n';
 import { loadSettings, saveSettings } from './settings';
 import { SolveView } from './solve-view';
-import { PracticeView } from './practice-view';
+import { PracticeView, questionFromHash } from './practice-view';
 
 const settings = loadSettings();
 const solveView = new SolveView();
@@ -70,7 +70,12 @@ for (const b of document.querySelectorAll<HTMLButtonElement>('nav.tabs button'))
   b.addEventListener('click', () => showView(b.dataset.view ?? 'solve'));
 
 applySettings();
-if (!solveView.loadFromHash()) solveView.refresh();
+const practiceLink = questionFromHash(location.hash);
+if (practiceLink) {
+  practiceView.open(practiceLink.type, practiceLink.level, practiceLink.seed);
+  showView('practice');
+  solveView.refresh();
+} else if (!solveView.loadFromHash()) solveView.refresh();
 
 if ('serviceWorker' in navigator && import.meta.env.PROD && location.protocol !== 'file:') {
   window.addEventListener('load', () => {

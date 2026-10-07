@@ -9,17 +9,15 @@ import {
   ParseError,
   problemLatex,
   solve,
-  stateLatex,
   t,
-  toLatex,
   type Lang,
   type Solution,
   type State,
-  type Step,
 } from '@stepslate/core';
-import { ruleKey, ui } from './i18n';
+import { ui } from './i18n';
 import { explanationElement, mathElement, renderMath } from './math';
 import { hashForProblem, problemFromHash } from './share';
+import { stateElement, stepElement } from './steps-render';
 
 export const EXAMPLES = [
   '1/2 + 3/4 * 2',
@@ -243,7 +241,7 @@ export class SolveView {
     const solved = sol.status === 'solved';
     // When solving stopped early, show what was verified so far all at once.
     if (!solved) this.shown = total;
-    sol.steps.slice(0, this.shown).forEach((st, i) => list.append(this.stepElement(st, i)));
+    sol.steps.slice(0, this.shown).forEach((st, i) => list.append(stepElement(st, i, this.lang)));
     const count = $('step-count');
     count.textContent =
       total === 0
@@ -265,72 +263,6 @@ export class SolveView {
     if (!keepScroll) $('share-status').textContent = '';
   }
 
-  private stepElement(st: Step, i: number): HTMLElement {
-    const li = document.createElement('li');
-    li.className = 'step';
-    li.tabIndex = -1;
-    li.dataset.rule = st.rule;
-    const head = document.createElement('div');
-    head.className = 'step-head';
-    const num = document.createElement('span');
-    num.className = 'num';
-    num.textContent = String(i + 1);
-    const rule = document.createElement('span');
-    rule.className = 'rule';
-    rule.textContent = ui(this.lang, ruleKey(st.rule));
-    const badge = document.createElement('span');
-    badge.className = 'badge';
-    badge.textContent = `✓ ${ui(this.lang, 'steps.verified')}`;
-    badge.title = ui(this.lang, 'steps.verifiedTitle');
-    head.append(num, rule, badge);
-    li.append(head, explanationElement(st.explain, this.lang));
-    const body = document.createElement('div');
-    body.className = 'step-math';
-    if (st.info?.kind === 'substitute') {
-      const table = document.createElement('div');
-      table.className = 'check-rows';
-      for (const r of st.info.rows) {
-        const row = document.createElement('div');
-        row.className = 'check-row';
-        const l = mathElement(`${toLatex(r.lhs)} = ${toLatex(r.lhsValue)}`);
-        const rr = mathElement(`${toLatex(r.rhs)} = ${toLatex(r.rhsValue)}`);
-        const lab1 = document.createElement('span');
-        lab1.className = 'muted';
-        lab1.textContent = ui(this.lang, 'check.lhs');
-        const lab2 = document.createElement('span');
-        lab2.className = 'muted';
-        lab2.textContent = ui(this.lang, 'check.rhs');
-        row.append(lab1, l, lab2, rr);
-        table.append(row);
-      }
-      body.append(table);
-    } else if (st.info?.kind === 'discriminant') {
-      body.append(
-        mathElement(
-          `\\Delta = ${toLatex(st.info.working)} = ${toLatex(st.info.value)}`,
-          true,
-          'div',
-        ),
-      );
-    } else {
-      body.append(this.stateElement(st.after, st.highlight));
-    }
-    li.append(body);
-    return li;
-  }
-
-  private stateElement(s: State, highlight?: Step['highlight']): HTMLElement {
-    const latex = stateLatex(s, {
-      ...(highlight ? { highlight } : {}),
-      orWord: ui(this.lang, 'answer.or'),
-    });
-    if (latex !== undefined) return mathElement(latex, true, 'div');
-    const p = document.createElement('p');
-    p.className = 'state-text';
-    p.textContent = s.kind === 'none' ? t(this.lang, 'state.none') : t(this.lang, 'state.all');
-    return p;
-  }
-
   private renderAnswer(sol: Solution): void {
     const box = $('answer-math');
     box.replaceChildren();
@@ -349,7 +281,7 @@ export class SolveView {
       box.append(p, mathElement(equationLatex(final.eq), true, 'div'));
       return;
     }
-    box.append(this.stateElement(final));
+    box.append(stateElement(final, this.lang));
   }
 
   private async share(): Promise<void> {
