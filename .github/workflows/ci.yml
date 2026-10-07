@@ -82,3 +82,38 @@ jobs:
 
       - name: Browser tests (solve flow, language, offline, no external requests, axe-core)
         run: npm run test:e2e
+
+  docker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Build container image
+        run: docker build --pull -t stepslate:ci .
+
+      - name: Run container and wait for the health endpoint
+        run: |
+          set -euo pipefail
+          docker run -d --name stepslate-ci -p 127.0.0.1:4873:4873 stepslate:ci
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:4873/healthz; then
+              echo "Container is healthy."
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "Container did not become healthy in time." >&2
+          docker logs stepslate-ci >&2
+          exit 1
+
+      - name: Home page is served (HTTP 200)
+        run: |
+          set -euo pipefail
+          code=$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:4873/)
+          echo "HTTP $code"
+          test "$code" = 200
+
+      - name: Container logs
+        if: always()
+        run: docker logs stepslate-ci || true
