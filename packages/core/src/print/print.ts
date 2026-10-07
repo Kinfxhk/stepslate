@@ -66,10 +66,12 @@ export function toText(e: Expr): string {
       const l = wrap(e, e.a, 'a');
       const r = wrap(e, e.b, 'b');
       // Juxtapose when unambiguous: 2x, 3(x+1), (x+1)(x-1), xy. A fraction on the left
-      // gets brackets so "(1/2)x" is not misread.
+      // gets brackets so "(1/2)x" is not misread. Explicit products (x*x) stay explicit.
       const leftFraction = e.a.k === 'div';
       const rightStartsWithLetterOrBracket = /^[a-zA-Z(]/.test(r) && !r.startsWith('sqrt');
       if (rightStartsWithLetterOrBracket && !/\d\.$/.test(l)) {
+        if (!e.implicit && hasVar(e.a) && hasVar(e.b) && !r.startsWith('(') && !l.endsWith(')'))
+          return `${l}*${r}`;
         return leftFraction && !l.startsWith('(') ? `(${l})${r}` : `${l}${r}`;
       }
       return `${l}*${r}`;
@@ -158,8 +160,9 @@ function latexInner(e: Expr, opts: LatexOptions): string {
       const l = wrap(e, e.a, 'a');
       const rNeedsParens = needsParens(e, e.b, 'b');
       const r = rNeedsParens ? paren(L(e.b)) : L(e.b);
-      if ((!rNeedsParens && startsWithDigit(e.b)) || (!hasVar(e.a) && !hasVar(e.b)))
-        return `${l} \\times ${r}`;
+      const numeric = !hasVar(e.a) && !hasVar(e.b);
+      if ((!rNeedsParens && startsWithDigit(e.b)) || numeric) return `${l} \\times ${r}`;
+      if (!e.implicit) return `${l} \\cdot ${r}`; // written as a product: x·x, 1·x
       if (e.b.k === 'sqrt' && e.a.k !== 'num') return `${l} \\cdot ${r}`;
       return `${l}${r}`;
     }

@@ -1,0 +1,817 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`T2 golden solutions > (-x)^3 1`] = `
+"(-x)^3
+1. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   -x^3"
+`;
+
+exports[`T2 golden solutions > (-x)^3 2`] = `
+"(-x)^3
+1. 化簡每一項：數字相乘，相同字母的指數相加。
+   -x^3"
+`;
+
+exports[`T2 golden solutions > (1/2)x+1/3x 1`] = `
+"(1/2)x + (1/3)x
+1. Combine like terms by adding their coefficients.
+   (5/6)x"
+`;
+
+exports[`T2 golden solutions > (1/2)x+1/3x 2`] = `
+"(1/2)x + (1/3)x
+1. 合併同類項：把係數相加。
+   (5/6)x"
+`;
+
+exports[`T2 golden solutions > (2x+1)^2 1`] = `
+"(2x + 1)^2
+1. Write the power as a repeated product: (2x + 1)^2 = (2x + 1)(2x + 1).
+   (2x + 1)(2x + 1)
+2. Multiply every term in the first bracket by every term in the second.
+   2x(2x) + 2x*1 + 1(2x) + 1*1
+3. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   4x^2 + 2x + 2x + 1
+4. Combine like terms by adding their coefficients.
+   4x^2 + 4x + 1"
+`;
+
+exports[`T2 golden solutions > (2x+1)^2 2`] = `
+"(2x + 1)^2
+1. 把乘方寫成連乘：(2x + 1)^2 = (2x + 1)(2x + 1)。
+   (2x + 1)(2x + 1)
+2. 把第一個括號的每一項，乘以第二個括號的每一項。
+   2x(2x) + 2x*1 + 1(2x) + 1*1
+3. 化簡每一項：數字相乘，相同字母的指數相加。
+   4x^2 + 2x + 2x + 1
+4. 合併同類項：把係數相加。
+   4x^2 + 4x + 1"
+`;
+
+exports[`T2 golden solutions > (2x-1)(x+3)-x(x-2) 1`] = `
+"(2x - 1)(x + 3) - x(x - 2)
+1. Multiply every term in the first bracket by every term in the second.
+   2x*x + 2x*3 - 1x - 1*3 - x(x - 2)
+2. Multiply each term in the bracket by x.
+   2x*x + 2x*3 - 1x - 1*3 - (x*x - x*2)
+3. Remove the brackets. A minus sign in front of a bracket changes the sign of every term inside it.
+   2x*x + 2x*3 - 1x - 1*3 - x*x + x*2
+4. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   2x^2 + 6x - x - 3 - x^2 + 2x
+5. Put like terms next to each other, in descending powers.
+   2x^2 - x^2 + 6x - x + 2x - 3
+6. Combine like terms by adding their coefficients.
+   x^2 + 7x - 3"
+`;
+
+exports[`T2 golden solutions > (2x-1)(x+3)-x(x-2) 2`] = `
+"(2x - 1)(x + 3) - x(x - 2)
+1. 把第一個括號的每一項，乘以第二個括號的每一項。
+   2x*x + 2x*3 - 1x - 1*3 - x(x - 2)
+2. 把括號內每一項都乘以 x。
+   2x*x + 2x*3 - 1x - 1*3 - (x*x - x*2)
+3. 去括號。括號前面是負號時，括號內每一項都要變號。
+   2x*x + 2x*3 - 1x - 1*3 - x*x + x*2
+4. 化簡每一項：數字相乘，相同字母的指數相加。
+   2x^2 + 6x - x - 3 - x^2 + 2x
+5. 把同類項排在一起，並按降冪排列。
+   2x^2 - x^2 + 6x - x + 2x - 3
+6. 合併同類項：把係數相加。
+   x^2 + 7x - 3"
+`;
+
+exports[`T2 golden solutions > (2x-3)(x+4) 1`] = `
+"(2x - 3)(x + 4)
+1. Multiply every term in the first bracket by every term in the second.
+   2x*x + 2x*4 - 3x - 3*4
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   2x^2 + 8x - 3x - 12
+3. Combine like terms by adding their coefficients.
+   2x^2 + 5x - 12"
+`;
+
+exports[`T2 golden solutions > (2x-3)(x+4) 2`] = `
+"(2x - 3)(x + 4)
+1. 把第一個括號的每一項，乘以第二個括號的每一項。
+   2x*x + 2x*4 - 3x - 3*4
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   2x^2 + 8x - 3x - 12
+3. 合併同類項：把係數相加。
+   2x^2 + 5x - 12"
+`;
+
+exports[`T2 golden solutions > (3x)^2 1`] = `
+"(3x)^2
+1. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   9x^2"
+`;
+
+exports[`T2 golden solutions > (3x)^2 2`] = `
+"(3x)^2
+1. 化簡每一項：數字相乘，相同字母的指數相加。
+   9x^2"
+`;
+
+exports[`T2 golden solutions > (4x-2)/2 1`] = `
+"(4x - 2)/2
+1. Divide each term in the bracket by 2.
+   4x/2 - 2/2
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   2x - 1"
+`;
+
+exports[`T2 golden solutions > (4x-2)/2 2`] = `
+"(4x - 2)/2
+1. 把括號內每一項都除以 2。
+   4x/2 - 2/2
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   2x - 1"
+`;
+
+exports[`T2 golden solutions > (x+1)(x+2) 1`] = `
+"(x + 1)(x + 2)
+1. Multiply every term in the first bracket by every term in the second.
+   x*x + x*2 + 1x + 1*2
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   x^2 + 2x + x + 2
+3. Combine like terms by adding their coefficients.
+   x^2 + 3x + 2"
+`;
+
+exports[`T2 golden solutions > (x+1)(x+2) 2`] = `
+"(x + 1)(x + 2)
+1. 把第一個括號的每一項，乘以第二個括號的每一項。
+   x*x + x*2 + 1x + 1*2
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   x^2 + 2x + x + 2
+3. 合併同類項：把係數相加。
+   x^2 + 3x + 2"
+`;
+
+exports[`T2 golden solutions > (x+1)(x-1) 1`] = `
+"(x + 1)(x - 1)
+1. Multiply every term in the first bracket by every term in the second.
+   x*x - x*1 + 1x - 1*1
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   x^2 - x + x - 1
+3. Combine like terms by adding their coefficients.
+   x^2 - 1"
+`;
+
+exports[`T2 golden solutions > (x+1)(x-1) 2`] = `
+"(x + 1)(x - 1)
+1. 把第一個括號的每一項，乘以第二個括號的每一項。
+   x*x - x*1 + 1x - 1*1
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   x^2 - x + x - 1
+3. 合併同類項：把係數相加。
+   x^2 - 1"
+`;
+
+exports[`T2 golden solutions > (x+1)/2+x/3 1`] = `
+"(x + 1)/2 + x/3
+1. Divide each term in the bracket by 2.
+   x/2 + 1/2 + x/3
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   (1/2)x + 1/2 + (1/3)x
+3. Put like terms next to each other, in descending powers.
+   (1/2)x + (1/3)x + 1/2
+4. Combine like terms by adding their coefficients.
+   (5/6)x + 1/2"
+`;
+
+exports[`T2 golden solutions > (x+1)/2+x/3 2`] = `
+"(x + 1)/2 + x/3
+1. 把括號內每一項都除以 2。
+   x/2 + 1/2 + x/3
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   (1/2)x + 1/2 + (1/3)x
+3. 把同類項排在一起，並按降冪排列。
+   (1/2)x + (1/3)x + 1/2
+4. 合併同類項：把係數相加。
+   (5/6)x + 1/2"
+`;
+
+exports[`T2 golden solutions > (x+1)^2 1`] = `
+"(x + 1)^2
+1. Write the power as a repeated product: (x + 1)^2 = (x + 1)(x + 1).
+   (x + 1)(x + 1)
+2. Multiply every term in the first bracket by every term in the second.
+   x*x + x*1 + 1x + 1*1
+3. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   x^2 + x + x + 1
+4. Combine like terms by adding their coefficients.
+   x^2 + 2x + 1"
+`;
+
+exports[`T2 golden solutions > (x+1)^2 2`] = `
+"(x + 1)^2
+1. 把乘方寫成連乘：(x + 1)^2 = (x + 1)(x + 1)。
+   (x + 1)(x + 1)
+2. 把第一個括號的每一項，乘以第二個括號的每一項。
+   x*x + x*1 + 1x + 1*1
+3. 化簡每一項：數字相乘，相同字母的指數相加。
+   x^2 + x + x + 1
+4. 合併同類項：把係數相加。
+   x^2 + 2x + 1"
+`;
+
+exports[`T2 golden solutions > (x+1)^4 1`] = `
+"(x + 1)^4
+1. Write the power as a repeated product: (x + 1)^4 = (x + 1)(x + 1)(x + 1)(x + 1).
+   (x + 1)(x + 1)(x + 1)(x + 1)
+2. Multiply every term in the first bracket by every term in the second.
+   (x*x + x*1 + 1x + 1*1)(x + 1)(x + 1)
+3. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   (x^2 + x + x + 1)(x + 1)(x + 1)
+4. Combine like terms by adding their coefficients.
+   (x^2 + 2x + 1)(x + 1)(x + 1)
+5. Multiply every term in the first bracket by every term in the second.
+   (x^2*x + x^2*1 + 2x*x + 2x*1 + 1x + 1*1)(x + 1)
+6. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   (x^3 + x^2 + 2x^2 + 2x + x + 1)(x + 1)
+7. Combine like terms by adding their coefficients.
+   (x^3 + 3x^2 + 3x + 1)(x + 1)
+8. Multiply every term in the first bracket by every term in the second.
+   x^3*x + x^3*1 + 3x^2*x + 3x^2*1 + 3x*x + 3x*1 + 1x + 1*1
+9. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   x^4 + x^3 + 3x^3 + 3x^2 + 3x^2 + 3x + x + 1
+10. Combine like terms by adding their coefficients.
+   x^4 + 4x^3 + 6x^2 + 4x + 1"
+`;
+
+exports[`T2 golden solutions > (x+1)^4 2`] = `
+"(x + 1)^4
+1. 把乘方寫成連乘：(x + 1)^4 = (x + 1)(x + 1)(x + 1)(x + 1)。
+   (x + 1)(x + 1)(x + 1)(x + 1)
+2. 把第一個括號的每一項，乘以第二個括號的每一項。
+   (x*x + x*1 + 1x + 1*1)(x + 1)(x + 1)
+3. 化簡每一項：數字相乘，相同字母的指數相加。
+   (x^2 + x + x + 1)(x + 1)(x + 1)
+4. 合併同類項：把係數相加。
+   (x^2 + 2x + 1)(x + 1)(x + 1)
+5. 把第一個括號的每一項，乘以第二個括號的每一項。
+   (x^2*x + x^2*1 + 2x*x + 2x*1 + 1x + 1*1)(x + 1)
+6. 化簡每一項：數字相乘，相同字母的指數相加。
+   (x^3 + x^2 + 2x^2 + 2x + x + 1)(x + 1)
+7. 合併同類項：把係數相加。
+   (x^3 + 3x^2 + 3x + 1)(x + 1)
+8. 把第一個括號的每一項，乘以第二個括號的每一項。
+   x^3*x + x^3*1 + 3x^2*x + 3x^2*1 + 3x*x + 3x*1 + 1x + 1*1
+9. 化簡每一項：數字相乘，相同字母的指數相加。
+   x^4 + x^3 + 3x^3 + 3x^2 + 3x^2 + 3x + x + 1
+10. 合併同類項：把係數相加。
+   x^4 + 4x^3 + 6x^2 + 4x + 1"
+`;
+
+exports[`T2 golden solutions > (x+2)^3 1`] = `
+"(x + 2)^3
+1. Write the power as a repeated product: (x + 2)^3 = (x + 2)(x + 2)(x + 2).
+   (x + 2)(x + 2)(x + 2)
+2. Multiply every term in the first bracket by every term in the second.
+   (x*x + x*2 + 2x + 2*2)(x + 2)
+3. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   (x^2 + 2x + 2x + 4)(x + 2)
+4. Combine like terms by adding their coefficients.
+   (x^2 + 4x + 4)(x + 2)
+5. Multiply every term in the first bracket by every term in the second.
+   x^2*x + x^2*2 + 4x*x + 4x*2 + 4x + 4*2
+6. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   x^3 + 2x^2 + 4x^2 + 8x + 4x + 8
+7. Combine like terms by adding their coefficients.
+   x^3 + 6x^2 + 12x + 8"
+`;
+
+exports[`T2 golden solutions > (x+2)^3 2`] = `
+"(x + 2)^3
+1. 把乘方寫成連乘：(x + 2)^3 = (x + 2)(x + 2)(x + 2)。
+   (x + 2)(x + 2)(x + 2)
+2. 把第一個括號的每一項，乘以第二個括號的每一項。
+   (x*x + x*2 + 2x + 2*2)(x + 2)
+3. 化簡每一項：數字相乘，相同字母的指數相加。
+   (x^2 + 2x + 2x + 4)(x + 2)
+4. 合併同類項：把係數相加。
+   (x^2 + 4x + 4)(x + 2)
+5. 把第一個括號的每一項，乘以第二個括號的每一項。
+   x^2*x + x^2*2 + 4x*x + 4x*2 + 4x + 4*2
+6. 化簡每一項：數字相乘，相同字母的指數相加。
+   x^3 + 2x^2 + 4x^2 + 8x + 4x + 8
+7. 合併同類項：把係數相加。
+   x^3 + 6x^2 + 12x + 8"
+`;
+
+exports[`T2 golden solutions > (x+y)^2 1`] = `
+"(x + y)^2
+1. Write the power as a repeated product: (x + y)^2 = (x + y)(x + y).
+   (x + y)(x + y)
+2. Multiply every term in the first bracket by every term in the second.
+   x*x + x*y + y*x + y*y
+3. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   x^2 + xy + xy + y^2
+4. Combine like terms by adding their coefficients.
+   x^2 + 2xy + y^2"
+`;
+
+exports[`T2 golden solutions > (x+y)^2 2`] = `
+"(x + y)^2
+1. 把乘方寫成連乘：(x + y)^2 = (x + y)(x + y)。
+   (x + y)(x + y)
+2. 把第一個括號的每一項，乘以第二個括號的每一項。
+   x*x + x*y + y*x + y*y
+3. 化簡每一項：數字相乘，相同字母的指數相加。
+   x^2 + xy + xy + y^2
+4. 合併同類項：把係數相加。
+   x^2 + 2xy + y^2"
+`;
+
+exports[`T2 golden solutions > (x^2+1)(x^2-1) 1`] = `
+"(x^2 + 1)(x^2 - 1)
+1. Multiply every term in the first bracket by every term in the second.
+   x^2*x^2 - x^2*1 + 1x^2 - 1*1
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   x^4 - x^2 + x^2 - 1
+3. Combine like terms by adding their coefficients.
+   x^4 - 1"
+`;
+
+exports[`T2 golden solutions > (x^2+1)(x^2-1) 2`] = `
+"(x^2 + 1)(x^2 - 1)
+1. 把第一個括號的每一項，乘以第二個括號的每一項。
+   x^2*x^2 - x^2*1 + 1x^2 - 1*1
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   x^4 - x^2 + x^2 - 1
+3. 合併同類項：把係數相加。
+   x^4 - 1"
+`;
+
+exports[`T2 golden solutions > (x^2+x)(x-1) 1`] = `
+"(x^2 + x)(x - 1)
+1. Multiply every term in the first bracket by every term in the second.
+   x^2*x - x^2*1 + x*x - x*1
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   x^3 - x^2 + x^2 - x
+3. Combine like terms by adding their coefficients.
+   x^3 - x"
+`;
+
+exports[`T2 golden solutions > (x^2+x)(x-1) 2`] = `
+"(x^2 + x)(x - 1)
+1. 把第一個括號的每一項，乘以第二個括號的每一項。
+   x^2*x - x^2*1 + x*x - x*1
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   x^3 - x^2 + x^2 - x
+3. 合併同類項：把係數相加。
+   x^3 - x"
+`;
+
+exports[`T2 golden solutions > (x-2)^3 1`] = `
+"(x - 2)^3
+1. Write the power as a repeated product: (x - 2)^3 = (x - 2)(x - 2)(x - 2).
+   (x - 2)(x - 2)(x - 2)
+2. Multiply every term in the first bracket by every term in the second.
+   (x*x - x*2 - 2x + 2*2)(x - 2)
+3. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   (x^2 - 2x - 2x + 4)(x - 2)
+4. Combine like terms by adding their coefficients.
+   (x^2 - 4x + 4)(x - 2)
+5. Multiply every term in the first bracket by every term in the second.
+   x^2*x - x^2*2 - 4x*x + 4x*2 + 4x - 4*2
+6. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   x^3 - 2x^2 - 4x^2 + 8x + 4x - 8
+7. Combine like terms by adding their coefficients.
+   x^3 - 6x^2 + 12x - 8"
+`;
+
+exports[`T2 golden solutions > (x-2)^3 2`] = `
+"(x - 2)^3
+1. 把乘方寫成連乘：(x - 2)^3 = (x - 2)(x - 2)(x - 2)。
+   (x - 2)(x - 2)(x - 2)
+2. 把第一個括號的每一項，乘以第二個括號的每一項。
+   (x*x - x*2 - 2x + 2*2)(x - 2)
+3. 化簡每一項：數字相乘，相同字母的指數相加。
+   (x^2 - 2x - 2x + 4)(x - 2)
+4. 合併同類項：把係數相加。
+   (x^2 - 4x + 4)(x - 2)
+5. 把第一個括號的每一項，乘以第二個括號的每一項。
+   x^2*x - x^2*2 - 4x*x + 4x*2 + 4x - 4*2
+6. 化簡每一項：數字相乘，相同字母的指數相加。
+   x^3 - 2x^2 - 4x^2 + 8x + 4x - 8
+7. 合併同類項：把係數相加。
+   x^3 - 6x^2 + 12x - 8"
+`;
+
+exports[`T2 golden solutions > (x-3)^2 1`] = `
+"(x - 3)^2
+1. Write the power as a repeated product: (x - 3)^2 = (x - 3)(x - 3).
+   (x - 3)(x - 3)
+2. Multiply every term in the first bracket by every term in the second.
+   x*x - x*3 - 3x + 3*3
+3. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   x^2 - 3x - 3x + 9
+4. Combine like terms by adding their coefficients.
+   x^2 - 6x + 9"
+`;
+
+exports[`T2 golden solutions > (x-3)^2 2`] = `
+"(x - 3)^2
+1. 把乘方寫成連乘：(x - 3)^2 = (x - 3)(x - 3)。
+   (x - 3)(x - 3)
+2. 把第一個括號的每一項，乘以第二個括號的每一項。
+   x*x - x*3 - 3x + 3*3
+3. 化簡每一項：數字相乘，相同字母的指數相加。
+   x^2 - 3x - 3x + 9
+4. 合併同類項：把係數相加。
+   x^2 - 6x + 9"
+`;
+
+exports[`T2 golden solutions > (x-y)(x+y) 1`] = `
+"(x - y)(x + y)
+1. Multiply every term in the first bracket by every term in the second.
+   x*x + x*y - y*x - y*y
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   x^2 + xy - xy - y^2
+3. Combine like terms by adding their coefficients.
+   x^2 - y^2"
+`;
+
+exports[`T2 golden solutions > (x-y)(x+y) 2`] = `
+"(x - y)(x + y)
+1. 把第一個括號的每一項，乘以第二個括號的每一項。
+   x*x + x*y - y*x - y*y
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   x^2 + xy - xy - y^2
+3. 合併同類項：把係數相加。
+   x^2 - y^2"
+`;
+
+exports[`T2 golden solutions > -(x^2-2x+1) 1`] = `
+"-(x^2 - 2x + 1)
+1. Remove the brackets. A minus sign in front of a bracket changes the sign of every term inside it.
+   -x^2 + 2x - 1"
+`;
+
+exports[`T2 golden solutions > -(x^2-2x+1) 2`] = `
+"-(x^2 - 2x + 1)
+1. 去括號。括號前面是負號時，括號內每一項都要變號。
+   -x^2 + 2x - 1"
+`;
+
+exports[`T2 golden solutions > -(x-3)+2x 1`] = `
+"-(x - 3) + 2x
+1. Remove the brackets. A minus sign in front of a bracket changes the sign of every term inside it.
+   -x + 3 + 2x
+2. Put like terms next to each other, in descending powers.
+   -x + 2x + 3
+3. Combine like terms by adding their coefficients.
+   x + 3"
+`;
+
+exports[`T2 golden solutions > -(x-3)+2x 2`] = `
+"-(x - 3) + 2x
+1. 去括號。括號前面是負號時，括號內每一項都要變號。
+   -x + 3 + 2x
+2. 把同類項排在一起，並按降冪排列。
+   -x + 2x + 3
+3. 合併同類項：把係數相加。
+   x + 3"
+`;
+
+exports[`T2 golden solutions > -3(x-4) 1`] = `
+"-3(x - 4)
+1. Multiply each term in the bracket by -3.
+   -3x + 3*4
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   -3x + 12"
+`;
+
+exports[`T2 golden solutions > -3(x-4) 2`] = `
+"-3(x - 4)
+1. 把括號內每一項都乘以 -3。
+   -3x + 3*4
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   -3x + 12"
+`;
+
+exports[`T2 golden solutions > 0.5x+1.5x 1`] = `
+"0.5x + 1.5x
+1. Write each decimal as a fraction so that the arithmetic stays exact.
+   (1/2)x + (3/2)x
+2. Combine like terms by adding their coefficients.
+   2x"
+`;
+
+exports[`T2 golden solutions > 0.5x+1.5x 2`] = `
+"0.5x + 1.5x
+1. 先把每個小數寫成分數，令計算保持準確。
+   (1/2)x + (3/2)x
+2. 合併同類項：把係數相加。
+   2x"
+`;
+
+exports[`T2 golden solutions > 2(3+4)x 1`] = `
+"2(3 + 4)x
+1. Add: 3 + 4 = 7.
+   2*7x
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   14x"
+`;
+
+exports[`T2 golden solutions > 2(3+4)x 2`] = `
+"2(3 + 4)x
+1. 相加：3 + 4 = 7。
+   2*7x
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   14x"
+`;
+
+exports[`T2 golden solutions > 2(x+1)-3(x-2) 1`] = `
+"2(x + 1) - 3(x - 2)
+1. Multiply each term in the bracket by 2.
+   2x + 2*1 - 3(x - 2)
+2. Multiply each term in the bracket by 3.
+   2x + 2*1 - (3x - 3*2)
+3. Remove the brackets. A minus sign in front of a bracket changes the sign of every term inside it.
+   2x + 2*1 - 3x + 3*2
+4. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   2x + 2 - 3x + 6
+5. Put like terms next to each other, in descending powers.
+   2x - 3x + 2 + 6
+6. Combine like terms by adding their coefficients.
+   -x + 8"
+`;
+
+exports[`T2 golden solutions > 2(x+1)-3(x-2) 2`] = `
+"2(x + 1) - 3(x - 2)
+1. 把括號內每一項都乘以 2。
+   2x + 2*1 - 3(x - 2)
+2. 把括號內每一項都乘以 3。
+   2x + 2*1 - (3x - 3*2)
+3. 去括號。括號前面是負號時，括號內每一項都要變號。
+   2x + 2*1 - 3x + 3*2
+4. 化簡每一項：數字相乘，相同字母的指數相加。
+   2x + 2 - 3x + 6
+5. 把同類項排在一起，並按降冪排列。
+   2x - 3x + 2 + 6
+6. 合併同類項：把係數相加。
+   -x + 8"
+`;
+
+exports[`T2 golden solutions > 2(x+3) 1`] = `
+"2(x + 3)
+1. Multiply each term in the bracket by 2.
+   2x + 2*3
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   2x + 6"
+`;
+
+exports[`T2 golden solutions > 2(x+3) 2`] = `
+"2(x + 3)
+1. 把括號內每一項都乘以 2。
+   2x + 2*3
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   2x + 6"
+`;
+
+exports[`T2 golden solutions > 2(x+y)-(x-y) 1`] = `
+"2(x + y) - (x - y)
+1. Multiply each term in the bracket by 2.
+   2x + 2y - (x - y)
+2. Remove the brackets. A minus sign in front of a bracket changes the sign of every term inside it.
+   2x + 2y - x + y
+3. Put like terms next to each other, in descending powers.
+   2x - x + 2y + y
+4. Combine like terms by adding their coefficients.
+   x + 3y"
+`;
+
+exports[`T2 golden solutions > 2(x+y)-(x-y) 2`] = `
+"2(x + y) - (x - y)
+1. 把括號內每一項都乘以 2。
+   2x + 2y - (x - y)
+2. 去括號。括號前面是負號時，括號內每一項都要變號。
+   2x + 2y - x + y
+3. 把同類項排在一起，並按降冪排列。
+   2x - x + 2y + y
+4. 合併同類項：把係數相加。
+   x + 3y"
+`;
+
+exports[`T2 golden solutions > 2x(3x-5) 1`] = `
+"2x(3x - 5)
+1. Multiply each term in the bracket by 2x.
+   2x(3x) - 2x*5
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   6x^2 - 10x"
+`;
+
+exports[`T2 golden solutions > 2x(3x-5) 2`] = `
+"2x(3x - 5)
+1. 把括號內每一項都乘以 2x。
+   2x(3x) - 2x*5
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   6x^2 - 10x"
+`;
+
+exports[`T2 golden solutions > 2x*3x 1`] = `
+"2x*3x
+1. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   6x^2"
+`;
+
+exports[`T2 golden solutions > 2x*3x 2`] = `
+"2x*3x
+1. 化簡每一項：數字相乘，相同字母的指數相加。
+   6x^2"
+`;
+
+exports[`T2 golden solutions > 3-2(x+1) 1`] = `
+"3 - 2(x + 1)
+1. Multiply each term in the bracket by 2.
+   3 - (2x + 2*1)
+2. Remove the brackets. A minus sign in front of a bracket changes the sign of every term inside it.
+   3 - 2x - 2*1
+3. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   3 - 2x - 2
+4. Put like terms next to each other, in descending powers.
+   -2x + 3 - 2
+5. Combine like terms by adding their coefficients.
+   -2x + 1"
+`;
+
+exports[`T2 golden solutions > 3-2(x+1) 2`] = `
+"3 - 2(x + 1)
+1. 把括號內每一項都乘以 2。
+   3 - (2x + 2*1)
+2. 去括號。括號前面是負號時，括號內每一項都要變號。
+   3 - 2x - 2*1
+3. 化簡每一項：數字相乘，相同字母的指數相加。
+   3 - 2x - 2
+4. 把同類項排在一起，並按降冪排列。
+   -2x + 3 - 2
+5. 合併同類項：把係數相加。
+   -2x + 1"
+`;
+
+exports[`T2 golden solutions > 3x+2x^2-x+5 1`] = `
+"3x + 2x^2 - x + 5
+1. Put like terms next to each other, in descending powers.
+   2x^2 + 3x - x + 5
+2. Combine like terms by adding their coefficients.
+   2x^2 + 2x + 5"
+`;
+
+exports[`T2 golden solutions > 3x+2x^2-x+5 2`] = `
+"3x + 2x^2 - x + 5
+1. 把同類項排在一起，並按降冪排列。
+   2x^2 + 3x - x + 5
+2. 合併同類項：把係數相加。
+   2x^2 + 2x + 5"
+`;
+
+exports[`T2 golden solutions > 3x+2y-x+4y 1`] = `
+"3x + 2y - x + 4y
+1. Put like terms next to each other, in descending powers.
+   3x - x + 2y + 4y
+2. Combine like terms by adding their coefficients.
+   2x + 6y"
+`;
+
+exports[`T2 golden solutions > 3x+2y-x+4y 2`] = `
+"3x + 2y - x + 4y
+1. 把同類項排在一起，並按降冪排列。
+   3x - x + 2y + 4y
+2. 合併同類項：把係數相加。
+   2x + 6y"
+`;
+
+exports[`T2 golden solutions > 4x-7x 1`] = `
+"4x - 7x
+1. Combine like terms by adding their coefficients.
+   -3x"
+`;
+
+exports[`T2 golden solutions > 4x-7x 2`] = `
+"4x - 7x
+1. 合併同類項：把係數相加。
+   -3x"
+`;
+
+exports[`T2 golden solutions > 5-x+3x-2 1`] = `
+"5 - x + 3x - 2
+1. Put like terms next to each other, in descending powers.
+   -x + 3x + 5 - 2
+2. Combine like terms by adding their coefficients.
+   2x + 3"
+`;
+
+exports[`T2 golden solutions > 5-x+3x-2 2`] = `
+"5 - x + 3x - 2
+1. 把同類項排在一起，並按降冪排列。
+   -x + 3x + 5 - 2
+2. 合併同類項：把係數相加。
+   2x + 3"
+`;
+
+exports[`T2 golden solutions > 6x^2/3 1`] = `
+"6x^2/3
+1. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   2x^2"
+`;
+
+exports[`T2 golden solutions > 6x^2/3 2`] = `
+"6x^2/3
+1. 化簡每一項：數字相乘，相同字母的指數相加。
+   2x^2"
+`;
+
+exports[`T2 golden solutions > 7 1`] = `"7"`;
+
+exports[`T2 golden solutions > 7 2`] = `"7"`;
+
+exports[`T2 golden solutions > x(x+1) 1`] = `
+"x(x + 1)
+1. Multiply each term in the bracket by x.
+   x*x + x*1
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   x^2 + x"
+`;
+
+exports[`T2 golden solutions > x(x+1) 2`] = `
+"x(x + 1)
+1. 把括號內每一項都乘以 x。
+   x*x + x*1
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   x^2 + x"
+`;
+
+exports[`T2 golden solutions > x(x+1)(x+2) 1`] = `
+"x(x + 1)(x + 2)
+1. Multiply each term in the bracket by x.
+   (x*x + x*1)(x + 2)
+2. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   (x^2 + x)(x + 2)
+3. Multiply every term in the first bracket by every term in the second.
+   x^2*x + x^2*2 + x*x + x*2
+4. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   x^3 + 2x^2 + x^2 + 2x
+5. Combine like terms by adding their coefficients.
+   x^3 + 3x^2 + 2x"
+`;
+
+exports[`T2 golden solutions > x(x+1)(x+2) 2`] = `
+"x(x + 1)(x + 2)
+1. 把括號內每一項都乘以 x。
+   (x*x + x*1)(x + 2)
+2. 化簡每一項：數字相乘，相同字母的指數相加。
+   (x^2 + x)(x + 2)
+3. 把第一個括號的每一項，乘以第二個括號的每一項。
+   x^2*x + x^2*2 + x*x + x*2
+4. 化簡每一項：數字相乘，相同字母的指數相加。
+   x^3 + 2x^2 + x^2 + 2x
+5. 合併同類項：把係數相加。
+   x^3 + 3x^2 + 2x"
+`;
+
+exports[`T2 golden solutions > x*x*x 1`] = `
+"x*x*x
+1. Simplify each term: multiply the numbers, and add the powers of the same letter.
+   x^3"
+`;
+
+exports[`T2 golden solutions > x*x*x 2`] = `
+"x*x*x
+1. 化簡每一項：數字相乘，相同字母的指數相加。
+   x^3"
+`;
+
+exports[`T2 golden solutions > x^2+x+1 1`] = `"x^2 + x + 1"`;
+
+exports[`T2 golden solutions > x^2+x+1 2`] = `"x^2 + x + 1"`;
+
+exports[`T2 golden solutions > x^2-x^2 1`] = `
+"x^2 - x^2
+1. Combine like terms by adding their coefficients.
+   0"
+`;
+
+exports[`T2 golden solutions > x^2-x^2 2`] = `
+"x^2 - x^2
+1. 合併同類項：把係數相加。
+   0"
+`;
+
+exports[`T2 golden solutions > x-(2x-(3x-4)) 1`] = `
+"x - (2x - (3x - 4))
+1. Remove the brackets. A minus sign in front of a bracket changes the sign of every term inside it.
+   x - 2x + 3x - 4
+2. Combine like terms by adding their coefficients.
+   2x - 4"
+`;
+
+exports[`T2 golden solutions > x-(2x-(3x-4)) 2`] = `
+"x - (2x - (3x - 4))
+1. 去括號。括號前面是負號時，括號內每一項都要變號。
+   x - 2x + 3x - 4
+2. 合併同類項：把係數相加。
+   2x - 4"
+`;

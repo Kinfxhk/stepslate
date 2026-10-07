@@ -76,4 +76,30 @@ export function maxBits(e: Expr): number {
   return m;
 }
 
+/** Paths of the smallest subtrees of `after` that differ from `before`. */
+export function diffPaths(before: Expr, after: Expr, path: Side[] = []): Side[][] {
+  if (exprEqualLoose(before, after)) return [];
+  if (before.k !== after.k || before.k === 'num' || before.k === 'var') return [path];
+  const kids: Side[] = 'b' in after ? ['a', 'b'] : ['a'];
+  const out: Side[][] = [];
+  for (const s of kids)
+    out.push(
+      ...diffPaths((before as { a: Expr; b: Expr })[s], (after as { a: Expr; b: Expr })[s], [
+        ...path,
+        s,
+      ]),
+    );
+  return out.length > 3 ? [path] : out;
+}
+
+function exprEqualLoose(x: Expr, y: Expr): boolean {
+  if (x.k !== y.k) return false;
+  if (x.k === 'num') return x.v.eq((y as typeof x).v);
+  if (x.k === 'var') return x.name === (y as typeof x).name;
+  const xa = x as { a: Expr; b?: Expr };
+  const ya = y as { a: Expr; b?: Expr };
+  if (!exprEqualLoose(xa.a, ya.a)) return false;
+  return xa.b === undefined || exprEqualLoose(xa.b, ya.b!);
+}
+
 export { Rational };

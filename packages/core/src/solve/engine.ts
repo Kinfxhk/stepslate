@@ -12,6 +12,7 @@ import { solutionSet1, solutionSet2 } from '../verify/oracle';
 import { classify, type ProblemType } from './classify';
 import { Run, StopTooLarge, StopUnverified, type StepTamper } from './run';
 import { solveArithmetic } from './t1';
+import { solvePolynomial } from './t2';
 
 export type Status = 'solved' | 'unsupported' | 'error' | 'unverified';
 
@@ -86,6 +87,9 @@ type Strategy = (run: Run, problem: Problem, vars: readonly string[]) => void;
 const STRATEGIES: Partial<Record<ProblemType, Strategy>> = {
   T1: (run, p) => {
     if (p.kind === 'expr') solveArithmetic(run, p.expr);
+  },
+  T2: (run, p, vars) => {
+    if (p.kind === 'expr') solvePolynomial(run, p.expr, vars);
   },
 };
 

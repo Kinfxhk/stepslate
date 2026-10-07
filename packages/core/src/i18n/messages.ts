@@ -68,6 +68,21 @@ export const en = {
   'error.too-large': 'The numbers grow too large for StepSlate. Please try a smaller problem.',
   'error.unverified':
     'StepSlate could not verify the next step, so it stops here instead of showing an unchecked step. Please report this problem.',
+  // ---- T2 polynomials ----
+  'poly.power-to-product': 'Write the power as a repeated product: {before} = {after}.',
+  'poly.distribute': 'Multiply each term in the bracket by {factor}.',
+  'poly.expand-brackets': 'Multiply every term in the first bracket by every term in the second.',
+  'poly.expand-brackets-negative':
+    'Multiply every term in the first bracket by every term in the second, then change every sign because of the minus in front.',
+  'poly.divide-terms': 'Divide each term in the bracket by {d}.',
+  'poly.remove-brackets':
+    'Remove the brackets. A minus sign in front of a bracket changes the sign of every term inside it.',
+  'poly.simplify-terms':
+    'Simplify each term: multiply the numbers, and add the powers of the same letter.',
+  'poly.order': 'Write the terms in descending powers of {x}.',
+  'poly.order-degree': 'Write the terms in descending order of degree.',
+  'poly.group': 'Put like terms next to each other, in descending powers.',
+  'poly.combine': 'Combine like terms by adding their coefficients.',
   // ---- states and answers ----
   'state.or': 'or',
   'state.and': 'and',
@@ -127,6 +142,18 @@ export const zhHK: Record<MessageKey, string> = {
   'error.too-large': '數字變得太大，步步解未能處理。請試較小的題目。',
   'error.unverified':
     '步步解未能驗證下一步，因此在這裏停止，而不會顯示未經檢查的步驟。請報告這個問題。',
+  'poly.power-to-product': '把乘方寫成連乘：{before} = {after}。',
+  'poly.distribute': '把括號內每一項都乘以 {factor}。',
+  'poly.expand-brackets': '把第一個括號的每一項，乘以第二個括號的每一項。',
+  'poly.expand-brackets-negative':
+    '把第一個括號的每一項乘以第二個括號的每一項；因前面有負號，所有項都要變號。',
+  'poly.divide-terms': '把括號內每一項都除以 {d}。',
+  'poly.remove-brackets': '去括號。括號前面是負號時，括號內每一項都要變號。',
+  'poly.simplify-terms': '化簡每一項：數字相乘，相同字母的指數相加。',
+  'poly.order': '按 {x} 的降冪排列各項。',
+  'poly.order-degree': '按次數由高至低排列各項。',
+  'poly.group': '把同類項排在一起，並按降冪排列。',
+  'poly.combine': '合併同類項：把係數相加。',
   'state.or': '或',
   'state.and': '及',
   'state.none': '沒有實數解。',
