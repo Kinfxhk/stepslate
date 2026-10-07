@@ -9,3 +9,4 @@ export * from './i18n/index';
 export * from './state';
 export * from './verify/index';
 export * from './solve/index';
+export * from './practice/index';
