@@ -22,7 +22,7 @@ function sourceLink(): Plugin {
   const tag = `v${rootPkg.version}`;
   const url = `${rootPkg.repository.url.replace(/\.git$/, '')}/tree/${tag}`;
   return {
-    name: 'stepslate-source-link',
+    name: 'sumstair-source-link',
     transformIndexHtml(html) {
       const linked = html.replace(/(id="source-link"\s+href=")[^"]*(")/, `$1${url}$2`);
       const versioned = linked.replace(
@@ -55,7 +55,7 @@ function listFiles(dir: string): string[] {
 }
 
 /**
- * KaTeX font families that StepSlate's output actually uses (numbers, italic letters,
+ * KaTeX font families that Sumstair's output actually uses (numbers, italic letters,
  * brackets, fractions, roots, ±, Δ). Measured by rendering every golden problem and the
  * practice view; the e2e test "every KaTeX font the solver uses is pre-cached" keeps
  * this list honest. Other families stay in the build and load on demand when online.
@@ -67,7 +67,7 @@ const KATEX_FONTS_USED = /KaTeX_(Main-Regular|Math-Italic|Size[1-4]-Regular)-/;
  * - KaTeX's .ttf and .woff fonts: every browser that can run the service worker uses
  *   the .woff2 files (listed first in KaTeX's CSS), so the older formats would only
  *   triple the download for students on mobile data;
- * - .woff2 families that StepSlate never uses (see KATEX_FONTS_USED);
+ * - .woff2 families that Sumstair never uses (see KATEX_FONTS_USED);
  * - the social preview image, which only link-preview crawlers fetch.
  */
 function precached(file: string): boolean {
@@ -82,17 +82,17 @@ function precached(file: string): boolean {
  */
 function offline(): Plugin {
   return {
-    name: 'stepslate-offline',
+    name: 'sumstair-offline',
     apply: 'build',
     generateBundle(_opts, bundle) {
       this.emitFile({
         type: 'asset',
-        fileName: 'licenses/StepSlate-LICENSE.txt',
+        fileName: 'licenses/Sumstair-LICENSE.txt',
         source: readFileSync(join(here, '../../LICENSE'), 'utf8'),
       });
       const files = [
         ...Object.keys(bundle),
-        'licenses/StepSlate-LICENSE.txt',
+        'licenses/Sumstair-LICENSE.txt',
         ...listFiles(publicDir).map((p) => relative(publicDir, p).split('\\').join('/')),
       ]
         .filter((f) => !f.endsWith('.map') && precached(f))
@@ -108,7 +108,7 @@ function offline(): Plugin {
       const urls = ['./', ...unique.map((f) => `./${f}`)];
       const sw = `// SPDX-License-Identifier: AGPL-3.0-or-later
 // Generated at build time: pre-caches the whole site so it works offline.
-const CACHE = 'stepslate-${version}';
+const CACHE = 'sumstair-${version}';
 const URLS = ${JSON.stringify(urls)};
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE).then((c) => c.addAll(URLS)).then(() => self.skipWaiting()));
@@ -116,7 +116,7 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys()
-      .then((keys) => Promise.all(keys.filter((k) => k.startsWith('stepslate-') && k !== CACHE).map((k) => caches.delete(k))))
+      .then((keys) => Promise.all(keys.filter((k) => k.startsWith('sumstair-') && k !== CACHE).map((k) => caches.delete(k))))
       .then(() => self.clients.claim()),
   );
 });
@@ -144,8 +144,8 @@ export default defineConfig({
   base: './',
   plugins: [sourceLink(), offline()],
   define: {
-    __STEPSLATE_REPO__: JSON.stringify(rootPkg.repository.url.replace(/\.git$/, '')),
-    __STEPSLATE_VERSION__: JSON.stringify(`v${rootPkg.version}`),
+    __SUMSTAIR_REPO__: JSON.stringify(rootPkg.repository.url.replace(/\.git$/, '')),
+    __SUMSTAIR_VERSION__: JSON.stringify(`v${rootPkg.version}`),
   },
   build: {
     target: 'es2022',

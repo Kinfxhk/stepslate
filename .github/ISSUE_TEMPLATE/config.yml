@@ -2,8 +2,8 @@
 blank_issues_enabled: true
 contact_links:
   - name: Questions and ideas (Discussions)
-    url: https://github.com/Kinfxhk/stepslate/discussions
-    about: Ask how to use StepSlate or share ideas.
+    url: https://github.com/Kinfxhk/sumstair/discussions
+    about: Ask how to use Sumstair or share ideas.
   - name: Security problem or code-of-conduct report
-    url: https://github.com/Kinfxhk/stepslate/security/advisories/new
+    url: https://github.com/Kinfxhk/sumstair/security/advisories/new
     about: Report privately; only the maintainers can see it.

@@ -1,6 +1,6 @@
 # Third-party notices
 
-StepSlate is licensed under AGPL-3.0-or-later. The core engine
+Sumstair is licensed under AGPL-3.0-or-later. The core engine
 (`packages/core`) has **no runtime dependencies**: the exact rational and surd
 arithmetic, parser, step rules and verifier are original code written for this
 project. The browser UI uses the third-party components below. The full
@@ -19,7 +19,7 @@ enforces an AGPL-3.0-compatible allowlist in CI.
 - Licence: MIT. `Copyright (c) 2013-2020 Khan Academy and other contributors`.
   The full licence text is shipped with the UI at `licenses/katex-LICENSE.txt`.
 - **Fonts.** The KaTeX npm package bundles the KaTeX font files
-  (`dist/fonts/KaTeX_*.woff2` etc.), which StepSlate serves from its own origin
+  (`dist/fonts/KaTeX_*.woff2` etc.), which Sumstair serves from its own origin
   (never from a CDN). Licence check (2026-10-08):
   - The KaTeX repository's root `LICENSE` (MIT, quoted above) covers the
     repository, which contains the same font files under `fonts/`.
@@ -34,4 +34,4 @@ enforces an AGPL-3.0-compatible allowlist in CI.
 
 Vite, Vitest, fast-check, Playwright, axe-core (`@axe-core/playwright`,
 MPL-2.0), ESLint, Prettier, TypeScript and tsx are used only to build and test
-StepSlate. MPL-2.0 is accepted for development tooling only.
+Sumstair. MPL-2.0 is accepted for development tooling only.

@@ -11,7 +11,7 @@ import {
   equationText,
   type Explanation,
   type Lang,
-} from '@stepslate/core';
+} from '@sumstair/core';
 
 const OPTIONS = {
   output: 'htmlAndMathml',

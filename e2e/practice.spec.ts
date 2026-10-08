@@ -32,7 +32,7 @@ test('practice: wrong answer, hint, right answer, progress saved and cleared', a
   await expect(page.locator('#practice-progress')).toContainText('Correct: 1 of 1');
   await page.locator('#practice-clear').click();
   await expect(page.locator('#practice-progress')).toContainText('Correct: 0 of 0');
-  expect(await page.evaluate(() => localStorage.getItem('stepslate.practice.v1'))).toBeNull();
+  expect(await page.evaluate(() => localStorage.getItem('sumstair.practice.v1'))).toBeNull();
 });
 
 test('practice: every type generates a question; full solution can be revealed', async ({

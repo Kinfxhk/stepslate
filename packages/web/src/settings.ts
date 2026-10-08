@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // Display settings, stored only in this browser.
 
-import type { Lang } from '@stepslate/core';
+import type { Lang } from '@sumstair/core';
 
 export interface Settings {
   lang: Lang;
@@ -9,7 +9,7 @@ export interface Settings {
   large: boolean;
 }
 
-const KEY = 'stepslate.settings.v1';
+const KEY = 'sumstair.settings.v1';
 
 function defaults(): Settings {
   const zh = (navigator.languages ?? [navigator.language]).some((l) => /^zh/i.test(l));

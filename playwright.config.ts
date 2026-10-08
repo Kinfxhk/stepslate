@@ -24,7 +24,7 @@ export default defineConfig({
   webServer: {
     command: 'node_modules/.bin/tsx packages/cli/src/serve.ts',
     url: `http://127.0.0.1:${PORT}/healthz`,
-    env: { STEPSLATE_PORT: String(PORT) },
+    env: { SUMSTAIR_PORT: String(PORT) },
     reuseExistingServer: false,
     timeout: 30_000,
   },

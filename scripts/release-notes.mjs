@@ -14,7 +14,7 @@ const next = rest.slice(1).search(/^## \[|^\[[^\]]+\]: /m);
 const body = (next < 0 ? rest : rest.slice(0, next + 1)).split('\n').slice(1).join('\n').trim();
 
 const lines = [body, ''];
-const sumFile = `release/stepslate-site-v${version}.zip.sha256`;
+const sumFile = `release/sumstair-site-v${version}.zip.sha256`;
 if (existsSync(sumFile)) {
   lines.push(
     '### Static site download',
@@ -30,9 +30,9 @@ if (existsSync(sumFile)) {
 lines.push(
   '### Please note',
   '',
-  'StepSlate is an educational tool. Every displayed step is checked by an exact verifier, but software can have bugs: verify important answers yourself.',
-  'StepSlate is an independent project and is not affiliated with any other maths app, publisher or exam board.',
+  'Sumstair is an educational tool. Every displayed step is checked by an exact verifier, but software can have bugs: verify important answers yourself.',
+  'Sumstair is an independent project and is not affiliated with any other maths app, publisher or exam board.',
   '',
-  'If StepSlate helps you, you can support it at https://buymeacoffee.com/kinfxhk',
+  'If Sumstair helps you, you can support it at https://buymeacoffee.com/kinfxhk',
 );
 process.stdout.write(lines.join('\n') + '\n');

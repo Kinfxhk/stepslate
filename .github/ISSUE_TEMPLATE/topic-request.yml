@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 name: Topic request
-description: Ask for a kind of problem StepSlate cannot solve yet.
+description: Ask for a kind of problem Sumstair cannot solve yet.
 title: 'Topic request: '
 labels: ['topic request']
 body:

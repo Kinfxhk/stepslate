@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // UI strings (English and Traditional Chinese, Hong Kong written style). Explanations of
-// the maths steps live in @stepslate/core (i18n/messages.ts).
+// the maths steps live in @sumstair/core (i18n/messages.ts).
 
-import type { Lang } from '@stepslate/core';
+import type { Lang } from '@sumstair/core';
 
 const en = {
   'a11y.skip': 'Skip to the problem box',
@@ -22,8 +22,8 @@ const en = {
   'kbd.backspace': 'Delete',
   'examples.label': 'Examples:',
   'preview.label': 'I read this as',
-  'preview.empty': 'Type a problem above. StepSlate shows how it reads it before solving.',
-  'preview.error': 'StepSlate cannot read this yet.',
+  'preview.empty': 'Type a problem above. Sumstair shows how it reads it before solving.',
+  'preview.error': 'Sumstair cannot read this yet.',
   'preview.type.T1': 'Arithmetic',
   'preview.type.T2': 'Simplify an expression',
   'preview.type.T3': 'Linear equation',
@@ -54,7 +54,7 @@ const en = {
   'footer.licences': 'Licences',
   'footer.coffee': 'Buy me a coffee',
   'footer.independent':
-    'StepSlate is an independent open-source project, not affiliated with any other maths app, publisher or exam board.',
+    'Sumstair is an independent open-source project, not affiliated with any other maths app, publisher or exam board.',
   'rule.decimals': 'Decimals to fractions',
   'rule.arithmetic': 'Arithmetic',
   'rule.expand': 'Expand',
@@ -97,7 +97,7 @@ const en = {
   'practice.reveal': 'Show full solution',
   'practice.correct': 'Correct!',
   'practice.wrong': 'Not quite. Try again or look at the next step.',
-  'practice.unreadable': 'StepSlate cannot read this answer. Check the format.',
+  'practice.unreadable': 'Sumstair cannot read this answer. Check the format.',
   'practice.noHint': 'No more steps: compare with the full solution.',
   'practice.progress': 'Correct: {correct} of {total} attempted',
   'practice.clear': 'Clear progress',

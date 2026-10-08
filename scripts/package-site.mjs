@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // SPDX-License-Identifier: AGPL-3.0-or-later
-// Package the built static site into release/stepslate-site-v<version>.zip (with licence
+// Package the built static site into release/sumstair-site-v<version>.zip (with licence
 // files), plus a SHA-256 checksum. Run `npm run build` first. No extra dependencies:
 // a minimal ZIP writer (deflate via node:zlib).
 
@@ -21,19 +21,19 @@ const walk = (dir) =>
     .sort()
     .flatMap((n) => (statSync(join(dir, n)).isDirectory() ? walk(join(dir, n)) : [join(dir, n)]));
 
-const prefix = `stepslate-site-v${version}/`;
+const prefix = `sumstair-site-v${version}/`;
 const entries = [
   ...walk(dist).map((f) => [prefix + relative(dist, f).split('\\').join('/'), readFileSync(f)]),
   ...['LICENSE', 'NOTICE', 'THIRD_PARTY_NOTICES.md'].map((f) => [prefix + f, readFileSync(f)]),
   [
     prefix + 'README.txt',
     Buffer.from(
-      `StepSlate ${version} - static site\n\n` +
+      `Sumstair ${version} - static site\n\n` +
         'Serve this folder with any static web server (for offline use it must be served\n' +
         'over http://localhost or https so the service worker can register), e.g.\n' +
         '  python3 -m http.server 8080 --bind 127.0.0.1\n' +
         'then open http://127.0.0.1:8080/\n\n' +
-        'Licence: AGPL-3.0-or-later (see LICENSE). Source: https://github.com/Kinfxhk/stepslate\n' +
+        'Licence: AGPL-3.0-or-later (see LICENSE). Source: https://github.com/Kinfxhk/sumstair\n' +
         'Educational tool: verify important answers yourself.\n',
     ),
   ],
@@ -88,8 +88,8 @@ end.writeUInt32LE(offset, 16);
 const zip = Buffer.concat([...locals, ...centrals, end]);
 
 mkdirSync('release', { recursive: true });
-const out = `release/stepslate-site-v${version}.zip`;
+const out = `release/sumstair-site-v${version}.zip`;
 writeFileSync(out, zip);
 const sum = createHash('sha256').update(zip).digest('hex');
-writeFileSync(`${out}.sha256`, `${sum}  stepslate-site-v${version}.zip\n`);
+writeFileSync(`${out}.sha256`, `${sum}  sumstair-site-v${version}.zip\n`);
 console.info(`wrote ${out} (${entries.length} files, ${zip.length} bytes)\nsha256 ${sum}`);

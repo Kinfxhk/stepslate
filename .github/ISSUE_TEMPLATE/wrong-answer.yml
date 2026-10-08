@@ -2,7 +2,7 @@
 # Field ids (problem, shown, version) are filled in by the app's "Report a wrong answer"
 # link (packages/web/src/report.ts). Keep them in sync.
 name: Wrong answer or wrong step
-description: StepSlate showed a step or an answer that is wrong (or refused a problem it should solve).
+description: Sumstair showed a step or an answer that is wrong (or refused a problem it should solve).
 title: 'Wrong answer: '
 labels: ['wrong answer']
 body:
@@ -16,14 +16,14 @@ body:
     id: problem
     attributes:
       label: Problem as typed
-      description: Exactly what you typed into StepSlate.
+      description: Exactly what you typed into Sumstair.
       placeholder: 2(x+3)=5x-4
     validations:
       required: true
   - type: textarea
     id: shown
     attributes:
-      label: What StepSlate showed
+      label: What Sumstair showed
       description: The steps or message (filled in automatically when you use the link in the app).
       render: text
     validations:

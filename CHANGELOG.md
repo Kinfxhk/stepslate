@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to StepSlate are listed here. The format follows
+All notable changes to Sumstair are listed here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses
 [Semantic Versioning](https://semver.org/).
 
@@ -29,4 +29,4 @@ First release.
 - Command line solver (`npm run solve`), loopback static server (`npm start`),
   Dockerfile, CI (check, e2e, docker), GitHub Pages workflow, static-site zip.
 
-[0.1.0]: https://github.com/Kinfxhk/stepslate/releases/tag/v0.1.0
+[0.1.0]: https://github.com/Kinfxhk/sumstair/releases/tag/v0.1.0

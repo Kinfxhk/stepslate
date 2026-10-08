@@ -1,6 +1,6 @@
 {
-  "name": "StepSlate · 步步解",
-  "short_name": "StepSlate",
+  "name": "Sumstair · 步步解",
+  "short_name": "Sumstair",
   "description": "Free, offline step-by-step maths solver. Every step is checked by an exact verifier. Educational use only.",
   "start_url": "./",
   "scope": "./",

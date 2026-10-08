@@ -13,7 +13,7 @@ import {
   type Lang,
   type Solution,
   type State,
-} from '@stepslate/core';
+} from '@sumstair/core';
 import { ui } from './i18n';
 import { explanationElement, mathElement, renderMath } from './math';
 import { hashForProblem, problemFromHash } from './share';
@@ -265,10 +265,7 @@ export class SolveView {
     if (!keepScroll) $('share-status').textContent = '';
     // A plain link: GitHub's form opens only when the user clicks, and nothing is sent
     // until they submit it there.
-    $('report-link').setAttribute(
-      'href',
-      reportUrl(__STEPSLATE_REPO__, __STEPSLATE_VERSION__, sol),
-    );
+    $('report-link').setAttribute('href', reportUrl(__SUMSTAIR_REPO__, __SUMSTAIR_VERSION__, sol));
   }
 
   private renderAnswer(sol: Solution): void {

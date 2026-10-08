@@ -1,13 +1,13 @@
 {
-  "name": "stepslate-monorepo",
+  "name": "sumstair-monorepo",
   "private": true,
   "version": "0.1.0",
-  "description": "StepSlate (步步解): free, offline, open-source step-by-step maths solver where every step is machine-verified. Educational only.",
+  "description": "Sumstair (步步解): free, offline, open-source step-by-step maths solver where every step is machine-verified. Educational only.",
   "license": "AGPL-3.0-or-later",
-  "homepage": "https://kinfxhk.github.io/stepslate/",
+  "homepage": "https://kinfxhk.github.io/sumstair/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Kinfxhk/stepslate"
+    "url": "https://github.com/Kinfxhk/sumstair"
   },
   "type": "module",
   "workspaces": [
@@ -19,8 +19,8 @@
     "node": ">=22"
   },
   "scripts": {
-    "dev": "npm run dev -w @stepslate/web",
-    "build": "npm run build -w @stepslate/web",
+    "dev": "npm run dev -w @sumstair/web",
+    "build": "npm run build -w @sumstair/web",
     "start": "npm run build && npm run serve",
     "serve": "tsx packages/cli/src/serve.ts",
     "solve": "tsx packages/cli/src/solve.ts",

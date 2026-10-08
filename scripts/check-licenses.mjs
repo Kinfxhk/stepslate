@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // SPDX-License-Identifier: AGPL-3.0-or-later
 //
-// Dependency licence gate. StepSlate is AGPL-3.0-or-later, so every dependency we
+// Dependency licence gate. Sumstair is AGPL-3.0-or-later, so every dependency we
 // ship must be compatible with (A)GPLv3. Uses `npm query` (no extra tooling needed).
 // Fails on unknown, missing or non-allowlisted licences.
 
@@ -61,7 +61,7 @@ const failures = [];
 const counts = new Map();
 let checked = 0;
 for (const p of pkgs) {
-  if (p.name?.startsWith('@stepslate/') || p.location === '') continue; // our own code
+  if (p.name?.startsWith('@sumstair/') || p.location === '') continue; // our own code
   const id = `${p.name}@${p.version}`;
   const lic = normalise(p.license);
   checked++;

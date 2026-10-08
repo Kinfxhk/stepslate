@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
-# StepSlate container image: builds the static site and serves it with a tiny Node
+# Sumstair container image: builds the static site and serves it with a tiny Node
 # server (no other runtime dependencies). Publish the port on the host loopback, e.g.
-#   docker build -t stepslate . && docker run --rm -p 127.0.0.1:4873:4873 stepslate
+#   docker build -t sumstair . && docker run --rm -p 127.0.0.1:4873:4873 sumstair
 # then open http://127.0.0.1:4873/
 
 FROM node:22-bookworm-slim AS build
@@ -23,9 +23,9 @@ COPY --from=build /app/packages/cli/src/serve.ts ./serve.ts
 COPY --from=build /app/LICENSE /app/NOTICE /app/THIRD_PARTY_NOTICES.md ./
 # Inside the container the server listens on all interfaces so the port can be
 # forwarded; keep the published port on 127.0.0.1 unless you mean to share it.
-ENV STEPSLATE_DIST=/app/site \
-    STEPSLATE_HOST=0.0.0.0 \
-    STEPSLATE_PORT=4873
+ENV SUMSTAIR_DIST=/app/site \
+    SUMSTAIR_HOST=0.0.0.0 \
+    SUMSTAIR_PORT=4873
 USER node
 EXPOSE 4873
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s \

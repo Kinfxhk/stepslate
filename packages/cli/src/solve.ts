@@ -2,7 +2,7 @@
 // Command line: print verified steps as plain text.
 //   npm run solve -- "2(x+3)=5x-4"          (English)
 //   npm run solve -- --lang zh-HK "1/2+3/4"
-import { solutionText, solve, type Lang } from '@stepslate/core';
+import { solutionText, solve, type Lang } from '@sumstair/core';
 
 const args = process.argv.slice(2);
 let lang: Lang = 'en';

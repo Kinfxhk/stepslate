@@ -16,7 +16,7 @@ const page = await browser.newPage({
 });
 await page.addInitScript(() =>
   localStorage.setItem(
-    'stepslate.settings.v1',
+    'sumstair.settings.v1',
     JSON.stringify({ lang: 'en', theme: 'light', large: false }),
   ),
 );

@@ -1,5 +1,5 @@
-StepSlate (步步解)
-Copyright (C) 2026 StepSlate contributors
+Sumstair (步步解)
+Copyright (C) 2026 Sumstair contributors
 
 This program is free software: you can redistribute it and/or modify it under
 the terms of the GNU Affero General Public License as published by the Free
@@ -10,11 +10,11 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY
 WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
 PARTICULAR PURPOSE.
 
-StepSlate is an educational tool for learning and checking your own work. Every
+Sumstair is an educational tool for learning and checking your own work. Every
 displayed step is checked by an automatic verifier, but software can still have
 bugs: verify important answers yourself and do not use it to cheat in tests.
 
-StepSlate is an independent project. It is not affiliated with, endorsed by, or
+Sumstair is an independent project. It is not affiliated with, endorsed by, or
 sponsored by any other maths-solver product, company, publisher or exam board.
 All product names are trademarks of their respective owners.
 

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // Rendering of verified steps and states (shared by the solver and practice pages).
 
-import { stateLatex, t, toLatex, type Lang, type State, type Step } from '@stepslate/core';
+import { stateLatex, t, toLatex, type Lang, type State, type Step } from '@sumstair/core';
 import { ruleKey, ui } from './i18n';
 import { explanationElement, mathElement } from './math';
 

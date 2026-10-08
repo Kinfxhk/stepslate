@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // User-facing strings for the engine (errors, warnings, step explanations).
-// Written originally for StepSlate. Placeholders use {name}. Every key must exist in
+// Written originally for Sumstair. Placeholders use {name}. Every key must exist in
 // both languages (enforced by i18n.test.ts).
 
 export type Lang = 'en' | 'zh-HK';
@@ -9,8 +9,8 @@ export const en = {
   // ---- parse errors ----
   'parse.empty': 'Type a problem first, for example 2(x+3)=5x-4.',
   'parse.too-long': 'That input is too long (maximum {max} characters).',
-  'parse.too-complex': 'That problem is too complex for StepSlate (maximum {max} parts).',
-  'parse.unexpected-char': 'StepSlate does not understand the character "{char}".',
+  'parse.too-complex': 'That problem is too complex for Sumstair (maximum {max} parts).',
+  'parse.unexpected-char': 'Sumstair does not understand the character "{char}".',
   'parse.unexpected-token': 'Unexpected "{text}" here.',
   'parse.unexpected-end': 'The input ends too early: something is missing after the last operator.',
   'parse.unclosed-paren': 'A bracket "(" is never closed.',
@@ -71,10 +71,10 @@ export const en = {
   'unsupported.exponent-arith':
     'In calculations, exponents must be whole numbers from -{max} to {max}. With unknowns, exponents can be 0 to 4.',
   'unsupported.degree':
-    'The degree is too high. StepSlate simplifies up to degree {max} and solves equations up to degree 2.',
+    'The degree is too high. Sumstair simplifies up to degree {max} and solves equations up to degree 2.',
   'unsupported.equation-vars':
     'One equation with {n} unknowns cannot be solved on its own. Separate two equations with ";".',
-  'unsupported.system': 'StepSlate solves systems of two linear equations in two unknowns.',
+  'unsupported.system': 'Sumstair solves systems of two linear equations in two unknowns.',
   'unsupported.no-unknown':
     'This equation has no unknown to solve for. To work out a calculation, type it without "=".',
   'unsupported.too-many-vars': 'Simplifying is supported for at most two unknowns.',
@@ -85,9 +85,9 @@ export const en = {
   'command.simplify-needs-expression':
     '"simplify" works on an expression without "=". To solve an equation, type it without "simplify" or use "solve".',
   'error.div-zero': 'The question divides by zero, which is undefined.',
-  'error.too-large': 'The numbers grow too large for StepSlate. Please try a smaller problem.',
+  'error.too-large': 'The numbers grow too large for Sumstair. Please try a smaller problem.',
   'error.unverified':
-    'StepSlate could not verify the next step, so it stops here instead of showing an unchecked step. Please report this problem.',
+    'Sumstair could not verify the next step, so it stops here instead of showing an unchecked step. Please report this problem.',
   // ---- T2 polynomials ----
   'poly.power-to-product': 'Write the power as a repeated product: {before} = {after}.',
   'poly.distribute': 'Multiply each term in the bracket by {factor}.',

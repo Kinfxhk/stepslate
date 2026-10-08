@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // Tiny static file server for the built web UI (packages/web/dist). Listens on loopback
-// by default. Usage: npm start   (or STEPSLATE_PORT=4873 npm run serve)
+// by default. Usage: npm start   (or SUMSTAIR_PORT=4873 npm run serve)
 
 import { createReadStream, existsSync, statSync } from 'node:fs';
 import { createServer } from 'node:http';
@@ -8,10 +8,10 @@ import { extname, join, normalize, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = resolve(
-  process.env.STEPSLATE_DIST ?? fileURLToPath(new URL('../../web/dist', import.meta.url)),
+  process.env.SUMSTAIR_DIST ?? fileURLToPath(new URL('../../web/dist', import.meta.url)),
 );
-const port = Number(process.env.STEPSLATE_PORT ?? 4873);
-const host = process.env.STEPSLATE_HOST ?? '127.0.0.1';
+const port = Number(process.env.SUMSTAIR_PORT ?? 4873);
+const host = process.env.SUMSTAIR_HOST ?? '127.0.0.1';
 
 const TYPES: Record<string, string> = {
   '.html': 'text/html; charset=utf-8',
@@ -80,7 +80,5 @@ const server = createServer((req, res) => {
 });
 
 server.listen(port, host, () => {
-  console.info(
-    `StepSlate is running at http://${host === '0.0.0.0' ? '127.0.0.1' : host}:${port}/`,
-  );
+  console.info(`Sumstair is running at http://${host === '0.0.0.0' ? '127.0.0.1' : host}:${port}/`);
 });

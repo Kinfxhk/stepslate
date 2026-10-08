@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // SPDX-License-Identifier: AGPL-3.0-or-later
 //
-// Repository hygiene gate for StepSlate:
+// Repository hygiene gate for Sumstair:
 //  - required notice files and README statements exist;
 //  - the web UI never loads anything from another origin (no CDN, fonts, analytics);
 //  - competitor product names never appear in UI or explanation strings (no branding);
@@ -38,7 +38,7 @@ if (existsSync('README.md')) {
   const readme = read('README.md');
   const needles = {
     'https://buymeacoffee.com/kinfxhk': 'Buy Me a Coffee link',
-    'https://github.com/Kinfxhk/stepslate': 'repository link',
+    'https://github.com/Kinfxhk/sumstair': 'repository link',
     'educational tool': 'English educational disclaimer',
     verify: 'advice to verify answers',
     教育用途: 'Chinese educational disclaimer',
@@ -70,7 +70,7 @@ for (const f of UI_FILES) {
 
 // --- The web UI must not load third-party resources. ---------------------------------------
 const ALLOWED_LINKS = [
-  'https://github.com/Kinfxhk/stepslate',
+  'https://github.com/Kinfxhk/sumstair',
   'https://buymeacoffee.com/kinfxhk',
   'https://www.gnu.org/licenses/',
 ];

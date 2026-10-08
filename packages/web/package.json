@@ -1,8 +1,8 @@
 {
-  "name": "@stepslate/web",
+  "name": "@sumstair/web",
   "version": "0.1.0",
   "private": true,
-  "description": "StepSlate browser UI (static, offline-capable).",
+  "description": "Sumstair browser UI (static, offline-capable).",
   "license": "AGPL-3.0-or-later",
   "type": "module",
   "scripts": {
@@ -10,7 +10,7 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@stepslate/core": "*",
+    "@sumstair/core": "*",
     "katex": "^0.19.0"
   },
   "devDependencies": {

@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-// StepSlate web entry: settings, language, views, offline support.
+// Sumstair web entry: settings, language, views, offline support.
 
 import './styles.css';
-import type { Lang } from '@stepslate/core';
+import type { Lang } from '@sumstair/core';
 import { UI, ui, type UiKey } from './i18n';
 import { loadSettings, saveSettings } from './settings';
 import { SolveView } from './solve-view';
@@ -24,7 +24,7 @@ function applyI18n(lang: Lang): void {
   const toggle = document.getElementById('lang-toggle')!;
   toggle.textContent = ui(lang, 'settings.lang');
   toggle.setAttribute('lang', lang === 'en' ? 'zh-Hant' : 'en');
-  document.title = lang === 'zh-HK' ? '步步解 · StepSlate' : 'StepSlate · 步步解';
+  document.title = lang === 'zh-HK' ? '步步解 · Sumstair' : 'Sumstair · 步步解';
 }
 
 function applySettings(): void {

@@ -1,26 +1,31 @@
-# StepSlate (步步解)
+# Sumstair (步步解)
 
-**StepSlate** is a free, open-source, offline **step-by-step maths solver** for
+**Sumstair** is a free, open-source, offline **step-by-step maths solver** for
 secondary-school algebra. Type a problem and see every step with a short
 explanation, in English or Traditional Chinese. **Every step is checked by an
 independent exact verifier before it is shown**; a step that cannot be verified
 is never displayed. No account, no ads, no tracking, no subscription.
 
-![StepSlate solving x² − 4x + 1 = 0 step by step](docs/screenshot.png)
+![Sumstair solving x² − 4x + 1 = 0 step by step](docs/screenshot.png)
 
-- Try it online (GitHub Pages): <https://kinfxhk.github.io/stepslate/>
-- Repository: <https://github.com/Kinfxhk/stepslate>
+- Try it online (GitHub Pages): <https://kinfxhk.github.io/sumstair/>
+- Repository: <https://github.com/Kinfxhk/sumstair>
 - Licence: [AGPL-3.0-or-later](LICENSE)
 - Support the project: <https://buymeacoffee.com/kinfxhk>
 
+> **Renamed in v0.2.0:** this project was called **StepSlate** until October 2026.
+> The English name changed because an unrelated, announced app uses the old name;
+> the Chinese name 步步解 is unchanged. Old repository links redirect here; the old
+> GitHub Pages address no longer works, so please use the link above.
+
 ## Disclaimer
 
-StepSlate is an **educational tool** for learning and for checking your own
+Sumstair is an **educational tool** for learning and for checking your own
 work. Each step is machine-verified with exact arithmetic, but software can
 still contain bugs: **verify important answers yourself**, and do not use
-StepSlate to cheat in tests or exams. It is not a substitute for a teacher.
+Sumstair to cheat in tests or exams. It is not a substitute for a teacher.
 
-StepSlate is an independent project and is **not affiliated with, endorsed by,
+Sumstair is an independent project and is **not affiliated with, endorsed by,
 or sponsored by** any other maths-solver product, company, publisher or exam
 board.
 
@@ -70,29 +75,29 @@ must accept it before it is recorded:
   set;
 - check steps: the substitution and every displayed value are recomputed.
 
-If the verifier rejects a step, StepSlate stops and says so instead of showing
+If the verifier rejects a step, Sumstair stops and says so instead of showing
 it. Property-based tests (fast-check) and mutation tests (deliberately broken
 steps must be rejected) cover the engine.
 
 ## Use it
 
-- **Online:** <https://kinfxhk.github.io/stepslate/> (works offline after the first
+- **Online:** <https://kinfxhk.github.io/sumstair/> (works offline after the first
   visit).
-- **Offline / self-hosted:** download `stepslate-site-v0.1.0.zip` from the
+- **Offline / self-hosted:** download `sumstair-site-v0.1.0.zip` from the
   release, unzip, and serve the folder with any static server on localhost.
 - **Docker:**
 
   ```sh
-  docker build -t stepslate .
-  docker run --rm -p 127.0.0.1:4873:4873 stepslate
+  docker build -t sumstair .
+  docker run --rm -p 127.0.0.1:4873:4873 sumstair
   # open http://127.0.0.1:4873/
   ```
 
 - **From source** (Node.js 22 or later):
 
   ```sh
-  git clone https://github.com/Kinfxhk/stepslate.git
-  cd stepslate
+  git clone https://github.com/Kinfxhk/sumstair.git
+  cd sumstair
   npm ci
   npm start            # builds and serves on http://127.0.0.1:4873/
   npm run solve -- "x^2-5x+6=0"            # plain-text steps in the terminal
@@ -116,7 +121,7 @@ npm run dev          # Vite dev server on http://127.0.0.1:4874/
 npm run check        # lint, format, typecheck, unit/property/golden tests,
                      # licence allowlist, repository hygiene, secret scan (gitleaks)
 PW_CHROMIUM_PATH=/usr/bin/google-chrome npm run test:e2e   # browser tests
-npm run package:site # release/stepslate-site-v<version>.zip
+npm run package:site # release/sumstair-site-v<version>.zip
 ```
 
 Layout: `packages/core` (exact numbers, parser, step rules, verifier, practice
@@ -131,7 +136,7 @@ pre-filled GitHub issue that you check and send yourself; nothing is sent
 automatically) or open an issue. Everyone taking part follows the
 [Code of Conduct](CODE_OF_CONDUCT.md).
 
-**How it is made:** StepSlate is written with AI coding agents working under the
+**How it is made:** Sumstair is written with AI coding agents working under the
 maintainer's direction. That is why the project leans so hard on machine
 checking: an independent verifier must accept every step, and golden, property
 and mutation tests, a licence allowlist, a hygiene check and a secret scan run on
@@ -142,7 +147,7 @@ responsibility, and disclose AI use in the pull request.
 
 ## Commitments
 
-StepSlate will **never** have:
+Sumstair will **never** have:
 
 - **ads**;
 - **tracking or analytics** of any kind, not even "anonymous";
@@ -154,7 +159,7 @@ sharing their changes. Donations are optional and change nothing in the app.
 
 ## Licence
 
-StepSlate is free software: you can redistribute it and/or modify it under the
+Sumstair is free software: you can redistribute it and/or modify it under the
 terms of the GNU Affero General Public License, version 3 or (at your option)
 any later version. If you run a modified version for other people over a
 network, you must offer them its source code (the footer "Source code" link
@@ -165,10 +170,14 @@ does this for the original). Third-party components are listed in
 
 ## 繁體中文
 
-**步步解（StepSlate）** 是一個免費、開源、可離線使用的**數學逐步解題器**，適用於中學代數。
+**步步解（Sumstair）** 是一個免費、開源、可離線使用的**數學逐步解題器**，適用於中學代數。
 輸入題目，即可看到每一步及簡短解釋（繁體中文或英文）。
 **每一步在顯示前都會經獨立的精確驗證器檢查**；未能驗證的步驟一律不會顯示。
 毋須帳戶，沒有廣告、追蹤或訂閱。
+
+> **v0.2.0 起改名：** 本項目的英文名稱在 2026 年 10 月前為 **StepSlate**。由於有一個無關、已公佈的
+> app 使用舊名，故更改英文名稱；中文名稱「步步解」不變。舊 repo 連結會自動轉到這裏，但舊的
+> GitHub Pages 網址已不能使用，請改用上面的新網址。
 
 ### 免責聲明
 
@@ -195,9 +204,9 @@ does this for the original). Third-party components are listed in
 
 ### 使用方法
 
-- 網上版：<https://kinfxhk.github.io/stepslate/>（首次載入後可離線使用）。
-- 自架／離線：下載 release 中的 `stepslate-site-v0.1.0.zip`，解壓後以任何靜態伺服器在本機提供。
-- Docker：`docker build -t stepslate .`，再 `docker run --rm -p 127.0.0.1:4873:4873 stepslate`。
+- 網上版：<https://kinfxhk.github.io/sumstair/>（首次載入後可離線使用）。
+- 自架／離線：下載 release 中的 `sumstair-site-v0.1.0.zip`，解壓後以任何靜態伺服器在本機提供。
+- Docker：`docker build -t sumstair .`，再 `docker run --rm -p 127.0.0.1:4873:4873 sumstair`。
 - 原始碼（Node.js 22 或以上）：`npm ci`，然後 `npm start`，開啟 <http://127.0.0.1:4873/>。
 
 ### 私隱
@@ -233,6 +242,6 @@ GitHub issue，由你自己檢查後提交（不會自動傳送任何資料）�
 （AGPL-3.0-or-later）。如你修改後透過網絡提供予他人使用，須向使用者提供相應原始碼。
 第三方元件見 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
-- 網上版（GitHub Pages）：<https://kinfxhk.github.io/stepslate/>
-- 原始碼：<https://github.com/Kinfxhk/stepslate>
+- 網上版（GitHub Pages）：<https://kinfxhk.github.io/sumstair/>
+- 原始碼：<https://github.com/Kinfxhk/sumstair>
 - 支持項目：<https://buymeacoffee.com/kinfxhk>

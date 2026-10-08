@@ -9,7 +9,7 @@ body:
       value: |
         UI strings are in packages/web/src/i18n.ts and step explanations in
         packages/core/src/i18n/messages.ts. Every translation must be your own writing
-        (translated from StepSlate's own English text), not copied from another app.
+        (translated from Sumstair's own English text), not copied from another app.
   - type: dropdown
     id: kind
     attributes:

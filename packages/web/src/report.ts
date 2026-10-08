@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-// "Report a wrong answer": build a pre-filled GitHub "new issue" link. StepSlate sends
+// "Report a wrong answer": build a pre-filled GitHub "new issue" link. Sumstair sends
 // nothing itself: the link only opens GitHub's form, where the user reads, edits and
 // submits (or abandons) the report. No tracking, no automatic sending.
 
-import { solutionText, type Solution } from '@stepslate/core';
+import { solutionText, type Solution } from '@sumstair/core';
 
 /** Issue form in .github/ISSUE_TEMPLATE/; its field ids match the parameters below. */
 export const REPORT_TEMPLATE = 'wrong-answer.yml';

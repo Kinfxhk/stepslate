@@ -2,9 +2,9 @@
 
 ## Project licence: AGPL-3.0-or-later
 
-Chosen so that anyone who modifies StepSlate and offers it to others as a hosted
+Chosen so that anyone who modifies Sumstair and offers it to others as a hosted
 (network) service must publish their source code under the same licence. This
-keeps worked solutions free and makes it hard to wrap StepSlate into a closed,
+keeps worked solutions free and makes it hard to wrap Sumstair into a closed,
 paid "unlock the steps" subscription, which is the opposite of the project's
 goal.
 

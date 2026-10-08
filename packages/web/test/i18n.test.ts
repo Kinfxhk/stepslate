@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 import { describe, expect, it } from 'vitest';
-import { MESSAGES, solve } from '@stepslate/core';
+import { MESSAGES, solve } from '@sumstair/core';
 import { ruleKey, UI } from '../src/i18n';
 import { MAX_TRANSCRIPT, REPORT_TEMPLATE, reportUrl } from '../src/report';
 import { problemFromHash, hashForProblem } from '../src/share';

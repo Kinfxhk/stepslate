@@ -63,7 +63,7 @@ test('footer links to the source of this exact version (AGPL section 13)', async
   const href = await page.locator('#source-link').getAttribute('href');
   const version = (await page.locator('#app-version').textContent())?.trim();
   expect(version).toMatch(/^v\d+\.\d+\.\d+/);
-  expect(href).toBe(`https://github.com/Kinfxhk/stepslate/tree/${version}`);
+  expect(href).toBe(`https://github.com/Kinfxhk/sumstair/tree/${version}`);
 });
 
 test('link previews: Open Graph / Twitter tags and a same-site 1200×630 image', async ({
@@ -89,7 +89,7 @@ test('report link: pre-filled GitHub issue, opened only by the user', async ({ p
   const link = page.locator('#report-link');
   await expect(link).toBeVisible();
   const href = new URL((await link.getAttribute('href'))!);
-  expect(`${href.origin}${href.pathname}`).toBe('https://github.com/Kinfxhk/stepslate/issues/new');
+  expect(`${href.origin}${href.pathname}`).toBe('https://github.com/Kinfxhk/sumstair/issues/new');
   expect(href.searchParams.get('template')).toBe('wrong-answer.yml');
   expect(href.searchParams.get('problem')).toBe('x^2-5x+6=0');
   expect(href.searchParams.get('version')).toMatch(/^v\d+\.\d+\.\d+/);

@@ -1,11 +1,11 @@
-# Contributing to StepSlate
+# Contributing to Sumstair
 
-Thank you for helping. StepSlate exists so that every student can see full
+Thank you for helping. Sumstair exists so that every student can see full
 worked solutions for free, offline and without an account. Correctness and legal
 cleanliness matter as much as features.
 
 Everyone taking part follows the [Code of Conduct](CODE_OF_CONDUCT.md). Questions
-and ideas go to [Discussions](https://github.com/Kinfxhk/stepslate/discussions);
+and ideas go to [Discussions](https://github.com/Kinfxhk/sumstair/discussions);
 wrong answers, topic requests and translations have their own issue forms.
 
 ## Clean-room rule (mandatory)
@@ -30,7 +30,7 @@ wrong answers, topic requests and translations have their own issue forms.
 
 ## AI-assisted development
 
-**How this project is made:** StepSlate is written with AI coding agents working
+**How this project is made:** Sumstair is written with AI coding agents working
 under the maintainer's direction. Most of the code, tests and documentation in
 this repository were drafted that way and then checked by the same gates that
 apply to every contribution: the clean-room rules above, the independent

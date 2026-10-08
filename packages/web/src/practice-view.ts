@@ -11,13 +11,13 @@ import {
   type Level,
   type ProblemType,
   type Question,
-} from '@stepslate/core';
+} from '@sumstair/core';
 import { ui, type UiKey } from './i18n';
 import { mathElement } from './math';
 import { stepElement } from './steps-render';
 
 const TYPES: ProblemType[] = ['T1', 'T2', 'T3', 'T4', 'T5'];
-const STORE = 'stepslate.practice.v1';
+const STORE = 'sumstair.practice.v1';
 
 interface Progress {
   attempted: number;

@@ -2,5 +2,5 @@
 /// <reference types="vite/client" />
 
 /** Repository URL and version from the root package.json (set in vite.config.ts). */
-declare const __STEPSLATE_REPO__: string;
-declare const __STEPSLATE_VERSION__: string;
+declare const __SUMSTAIR_REPO__: string;
+declare const __SUMSTAIR_VERSION__: string;
