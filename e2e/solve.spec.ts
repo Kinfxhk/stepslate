@@ -143,6 +143,57 @@ test('KaTeX outputs MathML for screen readers', async ({ page }) => {
   expect(await page.locator('#step-list math').count()).toBeGreaterThan(3);
 });
 
+test('offline pre-cache is small: woff2 fonts only, under 700 kB in total', async ({ request }) => {
+  const sw = await (await request.get('/sw.js')).text();
+  const urls = JSON.parse(/const URLS = (.*);/.exec(sw)![1]!) as string[];
+  expect(urls.some((u) => /\.(ttf|woff)$/.test(u))).toBe(false);
+  expect(urls.some((u) => u.endsWith('.woff2'))).toBe(true);
+  let total = Buffer.byteLength(sw);
+  for (const u of urls) {
+    const res = await request.get(u.replace(/^\.\//, '/'));
+    expect(res.ok(), u).toBe(true);
+    total += (await res.body()).length;
+  }
+  console.info(`offline pre-cache: ${urls.length} files, ${total} bytes`);
+  expect(total).toBeLessThan(700_000);
+});
+
+test('every KaTeX font the solver uses is pre-cached', async ({ page, request }) => {
+  const sw = await (await request.get('/sw.js')).text();
+  const cached = (JSON.parse(/const URLS = (.*);/.exec(sw)![1]!) as string[]).map((u) =>
+    u.replace(/^\.\//, ''),
+  );
+  const used = new Set<string>();
+  page.on('request', (r) => {
+    const m = /assets\/(KaTeX_[^/?#]+)$/.exec(new URL(r.url()).pathname);
+    if (m) used.add(`assets/${m[1]}`);
+  });
+  await page.goto('/');
+  // one problem of each kind, covering fractions, powers, roots, ±, Δ and systems
+  for (const q of [
+    '1/2+3/4*2-(2/3)^2',
+    '0.25^-2+2^10',
+    '(x+2)^2-(x-1)(x+3)',
+    '(2x-1)/3=(x+2)/4',
+    'x^2-4x+1=0',
+    '2x^2+3x-2=0',
+    'x^2+x+1=0',
+    '3x^2=5',
+    '2x+y=7; x-y=2',
+    'x+y=1; 2x+2y=2',
+  ]) {
+    await page.locator('#problem').fill(q);
+    await page.locator('#solve-btn').click();
+    if (await page.locator('#all-btn').isVisible()) await page.locator('#all-btn').click();
+    await expect(page.locator('#answer')).toBeVisible();
+  }
+  await page.locator('#lang-toggle').click();
+  await page.locator('[data-view="practice"]').click();
+  await page.evaluate(() => document.fonts.ready);
+  expect(used.size).toBeGreaterThan(0);
+  for (const f of used) expect(cached, `${f} is used but not pre-cached`).toContain(f);
+});
+
 test('works offline after the first visit (service worker)', async ({ page, context }) => {
   await page.goto('/');
   await page.evaluate(async () => {

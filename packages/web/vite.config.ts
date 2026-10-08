@@ -42,8 +42,30 @@ function listFiles(dir: string): string[] {
 }
 
 /**
+ * KaTeX font families that StepSlate's output actually uses (numbers, italic letters,
+ * brackets, fractions, roots, ±, Δ). Measured by rendering every golden problem and the
+ * practice view; the e2e test "every KaTeX font the solver uses is pre-cached" keeps
+ * this list honest. Other families stay in the build and load on demand when online.
+ */
+const KATEX_FONTS_USED = /KaTeX_(Main-Regular|Math-Italic|Size[1-4]-Regular)-/;
+
+/**
+ * Files that are built but not pre-cached for offline use:
+ * - KaTeX's .ttf and .woff fonts: every browser that can run the service worker uses
+ *   the .woff2 files (listed first in KaTeX's CSS), so the older formats would only
+ *   triple the download for students on mobile data;
+ * - .woff2 families that StepSlate never uses (see KATEX_FONTS_USED);
+ * - the social preview image, which only link-preview crawlers fetch.
+ */
+function precached(file: string): boolean {
+  if (/\.(ttf|woff)$/.test(file)) return false;
+  if (file.endsWith('.woff2')) return KATEX_FONTS_USED.test(file);
+  return file !== 'social-card.png';
+}
+
+/**
  * Offline support without extra dependencies: after the build, emit a small service worker
- * that pre-caches every file of the site (same origin only) and the root licence text.
+ * that pre-caches the site (same origin only) and the root licence text.
  */
 function offline(): Plugin {
   return {
@@ -60,7 +82,7 @@ function offline(): Plugin {
         'licenses/StepSlate-LICENSE.txt',
         ...listFiles(publicDir).map((p) => relative(publicDir, p).split('\\').join('/')),
       ]
-        .filter((f) => !f.endsWith('.map'))
+        .filter((f) => !f.endsWith('.map') && precached(f))
         .sort();
       const unique = [...new Set(files)];
       const hash = createHash('sha256');
