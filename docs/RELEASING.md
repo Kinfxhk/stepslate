@@ -18,3 +18,7 @@ Maintainer checklist. Nothing here runs automatically.
    deploy to the `github-pages` environment (Settings → Environments → github-pages → deployment
    branches and tags). By default only `main` may deploy, so a release-triggered run is rejected.
 9. After the first push, confirm the CI jobs (check, e2e, docker) are green and the Pages site opens.
+10. One-time community setup: create the labels used by the issue forms (`wrong answer`,
+    `topic request`, `translation`); GitHub ignores labels that do not exist. Keep Discussions and
+    private vulnerability reporting enabled: `CODE_OF_CONDUCT.md`, `SECURITY.md` and
+    `.github/ISSUE_TEMPLATE/config.yml` point to them.

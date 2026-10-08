@@ -1,0 +1,37 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+name: Topic request
+description: Ask for a kind of problem StepSlate cannot solve yet.
+title: 'Topic request: '
+labels: ['topic request']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The planned order is in the roadmap (factorisation, linear inequalities, laws of
+        indices, surds, percentages, factorable higher-degree equations, fractional
+        equations, absolute value). Please check open requests first and add a 👍 there.
+        Use your own example problems, not ones copied from textbooks, exam papers or apps.
+  - type: input
+    id: topic
+    attributes:
+      label: Topic
+      placeholder: Linear inequalities
+    validations:
+      required: true
+  - type: textarea
+    id: examples
+    attributes:
+      label: Two or three example problems (your own)
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Which steps should be shown?
+      description: How would a teacher expect the working to look? Mention common mistakes the steps should prevent.
+  - type: input
+    id: level
+    attributes:
+      label: Level or year
+      placeholder: Secondary 2

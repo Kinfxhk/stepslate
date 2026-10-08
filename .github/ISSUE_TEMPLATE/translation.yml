@@ -1,0 +1,35 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+name: Translation
+description: Fix a translation or offer a new language.
+title: 'Translation: '
+labels: ['translation']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        UI strings are in packages/web/src/i18n.ts and step explanations in
+        packages/core/src/i18n/messages.ts. Every translation must be your own writing
+        (translated from StepSlate's own English text), not copied from another app.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is it about?
+      options:
+        - A wrong or unclear existing translation
+        - A new language
+    validations:
+      required: true
+  - type: input
+    id: language
+    attributes:
+      label: Language
+      placeholder: Traditional Chinese (Hong Kong)
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: For a fix, quote the current text and your suggestion. For a new language, say whether you can write and maintain it.
+    validations:
+      required: true

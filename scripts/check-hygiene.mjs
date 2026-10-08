@@ -24,6 +24,9 @@ for (const required of [
   'README.md',
   'CONTRIBUTING.md',
   'SECURITY.md',
+  'CODE_OF_CONDUCT.md',
+  '.github/pull_request_template.md',
+  '.github/ISSUE_TEMPLATE/wrong-answer.yml',
 ]) {
   if (!existsSync(required)) problems.push(`missing required file: ${required}`);
 }

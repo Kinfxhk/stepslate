@@ -8,3 +8,4 @@ package-lock.json
 test-results
 playwright-report
 packages/web/public/licenses
+CODE_OF_CONDUCT.md
