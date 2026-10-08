@@ -13,52 +13,7 @@ import {
   type Step,
 } from '../src/index';
 import { approx } from './approx';
-
-export const T5_GOLDEN = [
-  'x+y=5; x-y=1',
-  'x+y=10; x-y=2',
-  '2x+y=7; x-y=2',
-  '2x+3y=12; x-y=1',
-  '3x+2y=16; 5x-3y=14',
-  '4x-3y=1; 2x+5y=7',
-  '5x+2y=1; 3x+4y=9',
-  '2x-y=0; x+y=6',
-  'x-2y=-1; 3x+y=11',
-  'x=2; x+y=5',
-  'y=3; 2x-y=1',
-  'x=1; y=-2',
-  '2x=6; x+3y=9',
-  'y=2x+1; 3x+y=11',
-  'y=x-1; y=-x+5',
-  'x=3y; x+y=8',
-  '2(x+1)=y; 3x-2y=-5',
-  '3(x-y)=6; x+2y=8',
-  'x+y-3=0; 2x-y=0',
-  'x/2+y/3=2; x-y=-1',
-  'x/3-y/4=1; x+y=10',
-  '(x+y)/2=3; x-y=2',
-  '0.5x+y=3; x-0.2y=1',
-  '1.5x-y=2; x+0.5y=6',
-  'x+y=1; x-y=0',
-  '2x+4y=3; 3x-2y=1',
-  '7x+3y=1; 2x+5y=12',
-  '-x+y=4; x+y=2',
-  '6x-4y=2; 9x+2y=13',
-  '3y+2x=12; y-x=-1',
-  'x+y=2; 2x+2y=4',
-  'x+y=2; x+y=3',
-  '2x-y=1; 4x-2y=2',
-  '2x-y=1; 4x-2y=5',
-  '2x-4y=6; x-2y=3',
-  'a+b=10; a-b=4',
-  'm+2n=7; 2m-n=4',
-  'p=2q; p+q=9',
-  'x+2y=0; 3x-y=0',
-  '5x-y=3; 10x-2y=7',
-  'x-y=1; y-x=-1',
-  'x+y=1; 2x+2y=2',
-  '2x+4y=6; 3x+6y=9',
-];
+import { T5_GOLDEN } from './goldens';
 
 describe('T5 golden solutions', () => {
   it(`has at least 40 problems (${T5_GOLDEN.length})`, () =>

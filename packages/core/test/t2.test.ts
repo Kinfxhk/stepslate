@@ -15,51 +15,7 @@ import {
 import { nextPolyStep } from '../src/rules/poly';
 import { getAt, replaceAt, type Side } from '../src/rules/tree';
 import { differ } from './approx';
-
-export const T2_GOLDEN = [
-  '2(x+3)',
-  '-3(x-4)',
-  'x(x+1)',
-  '2x(3x-5)',
-  '(x+1)(x+2)',
-  '(x+1)(x-1)',
-  '(2x-3)(x+4)',
-  '(x+1)^2',
-  '(x-3)^2',
-  '(2x+1)^2',
-  '(x+2)^3',
-  '(x-2)^3',
-  '(x+1)^4',
-  '(x^2+1)(x^2-1)',
-  '3x+2x^2-x+5',
-  '4x-7x',
-  'x^2-x^2',
-  '5-x+3x-2',
-  '3-2(x+1)',
-  '-(x-3)+2x',
-  '2(x+1)-3(x-2)',
-  '(2x-1)(x+3)-x(x-2)',
-  'x(x+1)(x+2)',
-  '(x+1)/2+x/3',
-  '(4x-2)/2',
-  '0.5x+1.5x',
-  '2(3+4)x',
-  '2x*3x',
-  'x*x*x',
-  '(3x)^2',
-  '(-x)^3',
-  '-(x^2-2x+1)',
-  'x-(2x-(3x-4))',
-  '(x+y)^2',
-  '(x-y)(x+y)',
-  '3x+2y-x+4y',
-  '2(x+y)-(x-y)',
-  'x^2+x+1',
-  '7',
-  '(1/2)x+1/3x',
-  '(x^2+x)(x-1)',
-  '6x^2/3',
-];
+import { T2_GOLDEN } from './goldens';
 
 describe('T2 golden solutions', () => {
   it(`has at least 40 problems (${T2_GOLDEN.length})`, () =>
