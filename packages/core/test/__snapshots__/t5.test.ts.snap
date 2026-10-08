@@ -386,6 +386,30 @@ exports[`T5 golden solutions > 2x+4y=3; 3x-2y=1 2`] = `
    3(5/8) - 2(7/16) = 1;  1 = 1"
 `;
 
+exports[`T5 golden solutions > 2x+4y=6; 3x+6y=9 1`] = `
+"2x + 4y = 6; 3x + 6y = 9
+1. Multiply equation (1) by 3 and equation (2) by 2 so that the y terms have the same size.
+   6x + 12y = 18; 6x + 12y = 18
+2. Subtract equation (1) from equation (2) to eliminate y.
+   6x + 12y = 18; 0 = 0
+3. Divide both sides of equation (1) by 6.
+   x + 2y = 3; 0 = 0
+4. This statement is always true, so both equations describe the same line: there are infinitely many solutions.
+   Infinitely many solutions: every pair satisfying x + 2y = 3."
+`;
+
+exports[`T5 golden solutions > 2x+4y=6; 3x+6y=9 2`] = `
+"2x + 4y = 6; 3x + 6y = 9
+1. 方程 (1) 乘以 3，方程 (2) 乘以 2，令兩條方程中 y 項的係數大小相同。
+   6x + 12y = 18; 6x + 12y = 18
+2. 方程 (2) 減去方程 (1)，消去 y。
+   6x + 12y = 18; 0 = 0
+3. 方程 (1) 兩邊同時除以 6。
+   x + 2y = 3; 0 = 0
+4. 這個式子必定成立，即兩條方程代表同一條直線，所以有無限多組解。
+   有無限多組解：所有滿足 x + 2y = 3 的數對。"
+`;
+
 exports[`T5 golden solutions > 2x+y=7; x-y=2 1`] = `
 "2x + y = 7; x - y = 2
 1. Add equation (1) to equation (2) to eliminate y.
@@ -476,8 +500,10 @@ exports[`T5 golden solutions > 2x-4y=6; x-2y=3 1`] = `
    2x - 4y = 6; 2x - 4y = 6
 2. Subtract equation (1) from equation (2) to eliminate y.
    2x - 4y = 6; 0 = 0
-3. This statement is always true, so both equations describe the same line: there are infinitely many solutions.
-   Infinitely many solutions: every pair satisfying 2x - 4y = 6."
+3. Divide both sides of equation (1) by 2.
+   x - 2y = 3; 0 = 0
+4. This statement is always true, so both equations describe the same line: there are infinitely many solutions.
+   Infinitely many solutions: every pair satisfying x - 2y = 3."
 `;
 
 exports[`T5 golden solutions > 2x-4y=6; x-2y=3 2`] = `
@@ -486,8 +512,10 @@ exports[`T5 golden solutions > 2x-4y=6; x-2y=3 2`] = `
    2x - 4y = 6; 2x - 4y = 6
 2. 方程 (2) 減去方程 (1)，消去 y。
    2x - 4y = 6; 0 = 0
-3. 這個式子必定成立，即兩條方程代表同一條直線，所以有無限多組解。
-   有無限多組解：所有滿足 2x - 4y = 6 的數對。"
+3. 方程 (1) 兩邊同時除以 2。
+   x - 2y = 3; 0 = 0
+4. 這個式子必定成立，即兩條方程代表同一條直線，所以有無限多組解。
+   有無限多組解：所有滿足 x - 2y = 3 的數對。"
 `;
 
 exports[`T5 golden solutions > 2x-y=0; x+y=6 1`] = `
@@ -542,8 +570,10 @@ exports[`T5 golden solutions > 2x-y=1; 4x-2y=2 1`] = `
    4x - 2y = 2; 4x - 2y = 2
 2. Subtract equation (1) from equation (2) to eliminate y.
    4x - 2y = 2; 0 = 0
-3. This statement is always true, so both equations describe the same line: there are infinitely many solutions.
-   Infinitely many solutions: every pair satisfying 4x - 2y = 2."
+3. Divide both sides of equation (1) by 2.
+   2x - y = 1; 0 = 0
+4. This statement is always true, so both equations describe the same line: there are infinitely many solutions.
+   Infinitely many solutions: every pair satisfying 2x - y = 1."
 `;
 
 exports[`T5 golden solutions > 2x-y=1; 4x-2y=2 2`] = `
@@ -552,8 +582,10 @@ exports[`T5 golden solutions > 2x-y=1; 4x-2y=2 2`] = `
    4x - 2y = 2; 4x - 2y = 2
 2. 方程 (2) 減去方程 (1)，消去 y。
    4x - 2y = 2; 0 = 0
-3. 這個式子必定成立，即兩條方程代表同一條直線，所以有無限多組解。
-   有無限多組解：所有滿足 4x - 2y = 2 的數對。"
+3. 方程 (1) 兩邊同時除以 2。
+   2x - y = 1; 0 = 0
+4. 這個式子必定成立，即兩條方程代表同一條直線，所以有無限多組解。
+   有無限多組解：所有滿足 2x - y = 1 的數對。"
 `;
 
 exports[`T5 golden solutions > 2x-y=1; 4x-2y=5 1`] = `
@@ -1138,6 +1170,30 @@ exports[`T5 golden solutions > x+2y=0; 3x-y=0 2`] = `
    3*0 - 0 = 0;  0 = 0"
 `;
 
+exports[`T5 golden solutions > x+y=1; 2x+2y=2 1`] = `
+"x + y = 1; 2x + 2y = 2
+1. Multiply equation (1) by 2 so that the y terms have the same size.
+   2x + 2y = 2; 2x + 2y = 2
+2. Subtract equation (1) from equation (2) to eliminate y.
+   2x + 2y = 2; 0 = 0
+3. Divide both sides of equation (1) by 2.
+   x + y = 1; 0 = 0
+4. This statement is always true, so both equations describe the same line: there are infinitely many solutions.
+   Infinitely many solutions: every pair satisfying x + y = 1."
+`;
+
+exports[`T5 golden solutions > x+y=1; 2x+2y=2 2`] = `
+"x + y = 1; 2x + 2y = 2
+1. 方程 (1) 乘以 2，令兩條方程中 y 項的係數大小相同。
+   2x + 2y = 2; 2x + 2y = 2
+2. 方程 (2) 減去方程 (1)，消去 y。
+   2x + 2y = 2; 0 = 0
+3. 方程 (1) 兩邊同時除以 2。
+   x + y = 1; 0 = 0
+4. 這個式子必定成立，即兩條方程代表同一條直線，所以有無限多組解。
+   有無限多組解：所有滿足 x + y = 1 的數對。"
+`;
+
 exports[`T5 golden solutions > x+y=1; x-y=0 1`] = `
 "x + y = 1; x - y = 0
 1. Add equation (1) to equation (2) to eliminate y.
@@ -1186,8 +1242,10 @@ exports[`T5 golden solutions > x+y=2; 2x+2y=4 1`] = `
    2x + 2y = 4; 2x + 2y = 4
 2. Subtract equation (1) from equation (2) to eliminate y.
    2x + 2y = 4; 0 = 0
-3. This statement is always true, so both equations describe the same line: there are infinitely many solutions.
-   Infinitely many solutions: every pair satisfying 2x + 2y = 4."
+3. Divide both sides of equation (1) by 2.
+   x + y = 2; 0 = 0
+4. This statement is always true, so both equations describe the same line: there are infinitely many solutions.
+   Infinitely many solutions: every pair satisfying x + y = 2."
 `;
 
 exports[`T5 golden solutions > x+y=2; 2x+2y=4 2`] = `
@@ -1196,8 +1254,10 @@ exports[`T5 golden solutions > x+y=2; 2x+2y=4 2`] = `
    2x + 2y = 4; 2x + 2y = 4
 2. 方程 (2) 減去方程 (1)，消去 y。
    2x + 2y = 4; 0 = 0
-3. 這個式子必定成立，即兩條方程代表同一條直線，所以有無限多組解。
-   有無限多組解：所有滿足 2x + 2y = 4 的數對。"
+3. 方程 (1) 兩邊同時除以 2。
+   x + y = 2; 0 = 0
+4. 這個式子必定成立，即兩條方程代表同一條直線，所以有無限多組解。
+   有無限多組解：所有滿足 x + y = 2 的數對。"
 `;
 
 exports[`T5 golden solutions > x+y=2; x+y=3 1`] = `

@@ -4,7 +4,7 @@
 
 import type { Equation, Expr, Problem } from '../ast';
 import { eqn, mul, ratExpr, v } from '../ast';
-import { abs, lcm } from '../numbers/bigint';
+import { abs, gcd, lcm } from '../numbers/bigint';
 import { Rational } from '../numbers/rational';
 import { Surd } from '../numbers/surd';
 import { decimalsToFractions } from '../rules/arith';
@@ -196,8 +196,30 @@ function concludeIfDegenerate(run: Run, x: string, y: string): boolean {
   }
   const z = dead.indexOf(true);
   if (z >= 0) {
+    const live = 1 - z;
+    const r = rows[live]!;
+    // Reduce the surviving equation by the common factor of its coefficients first,
+    // e.g. 2x + 2y = 2 → x + y = 1, so the answer is stated in its simplest form.
+    if (r.a.isInteger() && r.b.isInteger() && r.c.isInteger()) {
+      const g = gcd(gcd(r.a.n, r.b.n), r.c.n);
+      if (g > 1n) {
+        const k = Rational.of(g);
+        const next = replaceEq(
+          run,
+          live,
+          rowEq({ a: r.a.div(k), b: r.b.div(k), c: r.c.div(k) }, x, y),
+        );
+        pushSys(
+          run,
+          next,
+          { key: 'sys.divide', params: { i: live + 1, a: ratExpr(k) } },
+          [['eqs', live]],
+          diag(live, R1.div(k)),
+        );
+      }
+    }
     run.push({
-      after: { kind: 'infinite', eq: cur[1 - z]! },
+      after: { kind: 'infinite', eq: eqs(run)[live]! },
       rule: 'sys.infinite',
       explain: { key: 'sys.infinite' },
     });

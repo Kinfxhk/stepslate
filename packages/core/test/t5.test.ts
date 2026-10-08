@@ -2,6 +2,7 @@
 import fc from 'fast-check';
 import { describe, expect, it } from 'vitest';
 import {
+  equationText,
   Rational,
   solutionText,
   solve,
@@ -55,6 +56,8 @@ export const T5_GOLDEN = [
   'x+2y=0; 3x-y=0',
   '5x-y=3; 10x-2y=7',
   'x-y=1; y-x=-1',
+  'x+y=1; 2x+2y=2',
+  '2x+4y=6; 3x+6y=9',
 ];
 
 describe('T5 golden solutions', () => {
@@ -85,6 +88,18 @@ describe('T5 golden solutions', () => {
     expect(ans('x+y=2; 2x+2y=4')).toBe('infinitely-many');
     expect(ans('2x-4y=6; x-2y=3')).toBe('infinitely-many');
     expect(solve('x=2; 2x=4').status).toBe('unsupported'); // only one unknown
+  });
+  it('states infinitely many solutions with the equation reduced by its common factor', () => {
+    const line = (s: string) => {
+      const a = solve(s).answer;
+      return a?.kind === 'infinitely-many' && a.state.kind === 'infinite'
+        ? equationText(a.state.eq)
+        : a?.kind;
+    };
+    expect(line('x+y=1; 2x+2y=2')).toBe('x + y = 1');
+    expect(line('2x+4y=6; 3x+6y=9')).toBe('x + 2y = 3');
+    expect(line('2x-4y=6; x-2y=3')).toBe('x - 2y = 3');
+    expect(line('x+y=2; 2x+2y=4')).toBe('x + y = 2');
   });
 });
 
@@ -185,6 +200,19 @@ describe('T5 properties', () => {
           const sol = solve(text);
           expect(sol.status, `${text}: ${sol.reason}`).toBe('solved');
           expect(sol.answer?.kind, text).toBe(shift === 0 ? 'infinitely-many' : 'no-solution');
+          const ans = sol.answer;
+          if (ans?.kind === 'infinitely-many' && ans.state.kind === 'infinite') {
+            // the stated line has whole-number coefficients with no common factor
+            const r = line(ans.state.eq, 'x', 'y');
+            const ints = [r.a, r.b, r.c].map((z) => Math.round(z));
+            ints.forEach((z, i) => expect(Math.abs(z - [r.a, r.b, r.c][i]!)).toBeLessThan(1e-9));
+            const g = ints.reduce((p, q) => {
+              let [u, w] = [Math.abs(p), Math.abs(q)];
+              while (w) [u, w] = [w, u % w];
+              return u;
+            }, 0);
+            expect(g, text).toBe(1);
+          }
         },
       ),
       { numRuns: 300 },
@@ -244,6 +272,17 @@ const MUTANTS: Mutant[] = [
         (q, j) => q !== (s.before as { eqs: readonly Equation[] }).eqs[j],
       );
       return i < 0 ? s : mapEq(s, i, (q) => ({ lhs: q.lhs, rhs: flipFirstOp(q.rhs) }));
+    },
+  },
+  {
+    name: 'dividing only the left side of an equation',
+    rules: ['sys.divide'],
+    mutate: (s) => {
+      if (s.after.kind !== 'system' || s.before.kind !== 'system') return s;
+      const i = s.after.eqs.findIndex(
+        (q, j) => q !== (s.before as { eqs: readonly Equation[] }).eqs[j],
+      );
+      return i < 0 ? s : mapEq(s, i, (q, b) => ({ lhs: q.lhs, rhs: b?.rhs ?? q.rhs }));
     },
   },
   {
