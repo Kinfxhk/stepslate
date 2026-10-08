@@ -3,7 +3,7 @@
 // accepts it. This module never imports the rule engine (packages/core/src/rules).
 
 import type { Equation, Expr, Problem } from '../ast';
-import { exprEqual, substitute, variables } from '../ast';
+import { dropNegZero, exprEqual, substitute, variables } from '../ast';
 import { Rational } from '../numbers/rational';
 import type { State, Step } from '../state';
 import { evalRational, evalSurd, Unverifiable } from './evaluate';
@@ -84,6 +84,9 @@ function verifySubstitution(step: Step, ctx: VerifyContext): VerifyResult {
       lhs = substitute(lhs, v, info.values[v]!);
       rhs = substitute(rhs, v, info.values[v]!);
     }
+    // The shown substitution may write -0 as 0 (same value); nothing else may differ.
+    lhs = dropNegZero(lhs);
+    rhs = dropNegZero(rhs);
     if (!exprEqual(lhs, row.lhs) || !exprEqual(rhs, row.rhs))
       return fail('substituted expression does not match the original equation');
     const lv = evalSurd(row.lhs, new Map());

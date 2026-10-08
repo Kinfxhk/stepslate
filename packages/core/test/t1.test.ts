@@ -62,6 +62,7 @@ export const T1_GOLDEN = [
   '2-(3-(4-5))',
   '-(1/2-3/4)',
   '4*(1/2+1/4)-1',
+  '3-(-0)',
 ];
 
 describe('T1 golden solutions', () => {

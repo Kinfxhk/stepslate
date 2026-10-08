@@ -2,7 +2,7 @@
 // "Check" steps: substitute the answer back into the original equation(s).
 
 import type { Equation, Expr } from '../ast';
-import { eqn, substitute, v } from '../ast';
+import { dropNegZero, eqn, substitute, v } from '../ast';
 import type { Surd } from '../numbers/surd';
 import { surdExpr } from '../rules/equation';
 import { evalSurd } from '../verify/evaluate';
@@ -22,6 +22,8 @@ export function pushCheck(
       lhs = substitute(lhs, name, e);
       rhs = substitute(rhs, name, e);
     }
+    lhs = dropNegZero(lhs);
+    rhs = dropNegZero(rhs);
     return {
       lhs,
       lhsValue: surdExpr(evalSurd(lhs, new Map())),

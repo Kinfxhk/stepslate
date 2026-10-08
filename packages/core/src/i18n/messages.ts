@@ -31,6 +31,7 @@ export const en = {
   'arith.reduce': 'Simplify {before}: divide the top and bottom by {g} to get {after}.',
   'arith.reduce-to-integer': 'This fraction is a whole number: {before} = {after}.',
   'arith.double-negative': 'Two minus signs cancel out: {before} = {after}.',
+  'arith.negative-zero': 'Zero has no sign, so minus zero is zero: {before} = {after}.',
   'arith.power': 'Work out the power: {before} = {after}.',
   'arith.multiply': 'Multiply: {before} = {after}.',
   'arith.multiply-fractions':
@@ -168,6 +169,7 @@ export const zhHK: Record<MessageKey, string> = {
   'arith.reduce': '約簡 {before}：分子和分母同時除以 {g}，得 {after}。',
   'arith.reduce-to-integer': '這個分數是整數：{before} = {after}。',
   'arith.double-negative': '兩個負號互相抵消：{before} = {after}。',
+  'arith.negative-zero': '零沒有正負之分，所以負零就是零：{before} = {after}。',
   'arith.power': '計算乘方：{before} = {after}。',
   'arith.multiply': '相乘：{before} = {after}。',
   'arith.multiply-fractions': '分子乘分子，分母乘分母：{before} = {after}。',

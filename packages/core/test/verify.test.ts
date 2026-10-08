@@ -8,6 +8,8 @@ import {
   problemVariables,
   Rational,
   solutionSet1,
+  solutionText,
+  solve,
   univariateCoefficients,
   verifyStep,
   type Problem,
@@ -79,5 +81,35 @@ describe('verifier: values and identities', () => {
     expect(vals('x+1=x+2')).toEqual([]);
     expect(vals('x=(5+-sqrt(13))/2')).toEqual(['5/2 - 1/2*sqrt(13)', '5/2 + 1/2*sqrt(13)']);
     expect(Rational.ONE.isOne()).toBe(true);
+  });
+});
+
+describe('verifier: substitution checks and -0', () => {
+  const checkStep = (input: string) => {
+    const sol = solve(input);
+    const st = sol.steps.find((s) => s.info?.kind === 'substitute');
+    if (!st || st.info?.kind !== 'substitute') throw new Error(`no check step for ${input}`);
+    return { st, info: st.info, ctx: ctxFor(input) };
+  };
+  it('shows 0 instead of -0 when a zero is substituted under a minus sign', () => {
+    for (const input of ['x=-x', '2x=-x', 'x^2=-x', '-x=3x']) {
+      const text = solutionText(solve(input), 'en');
+      expect(text, input).not.toMatch(/(^|[^\d.])-0(?![\d.])/m);
+    }
+  });
+  it('still rejects a shown substitution that differs by more than -0 → 0', () => {
+    const { st, info, ctx } = checkStep('2x=-x');
+    expect(verifyStep(st, ctx).ok).toBe(true);
+    // replace "2*0" by the value-equal but different "0": must be rejected
+    const rows = info.rows.map((r, i) => (i === 0 ? { ...r, lhs: parseExpr('0') } : r));
+    expect(verifyStep({ ...st, info: { ...info, rows } }, ctx).ok).toBe(false);
+    // replace "0" by "-0" on the right: also accepted only as the exact substitution
+    const rows2 = info.rows.map((r) => ({ ...r, rhs: parseExpr('1-1') }));
+    expect(verifyStep({ ...st, info: { ...info, rows: rows2 } }, ctx).ok).toBe(false);
+  });
+  it('explains a lone minus zero honestly', () => {
+    const sol = solve('3-(-0)');
+    expect(sol.steps[0]?.rule).toBe('arith.negative-zero');
+    expect(solve('-(-3)').steps[0]?.rule).toBe('arith.double-negative');
   });
 });

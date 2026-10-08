@@ -115,6 +115,31 @@ export function exprEqual(x: Expr, y: Expr): boolean {
   }
 }
 
+/**
+ * Write "-0" as "0" everywhere in e (value-preserving). Used for displayed substitutions,
+ * e.g. checking x = 0 in -x shows 0 rather than -0.
+ */
+export function dropNegZero(e: Expr): Expr {
+  switch (e.k) {
+    case 'num':
+    case 'var':
+      return e;
+    case 'neg': {
+      const a = dropNegZero(e.a);
+      return a.k === 'num' && a.v.isZero() ? a : a === e.a ? e : neg(a);
+    }
+    case 'sqrt': {
+      const a = dropNegZero(e.a);
+      return a === e.a ? e : sqrt(a);
+    }
+    default: {
+      const a = dropNegZero(e.a);
+      const b = dropNegZero(e.b);
+      return a === e.a && b === e.b ? e : ({ ...e, a, b } as Expr);
+    }
+  }
+}
+
 /** Replace every occurrence of variable `name` by `value`. */
 export function substitute(e: Expr, name: string, value: Expr): Expr {
   switch (e.k) {

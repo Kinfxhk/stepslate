@@ -59,6 +59,7 @@ export const T3_GOLDEN = [
   '8-x=3x',
   'x/4-x/6=1',
   '3(x+2)-(x-1)=2(x+5)',
+  'x=-x',
 ];
 
 describe('T3 golden solutions', () => {

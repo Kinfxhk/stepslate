@@ -608,6 +608,22 @@ exports[`T1 golden solutions > 3*2/5 2`] = `
    6/5"
 `;
 
+exports[`T1 golden solutions > 3-(-0) 1`] = `
+"3 - (-0)
+1. Zero has no sign, so minus zero is zero: -0 = 0.
+   3 - 0
+2. Subtract: 3 - 0 = 3.
+   3"
+`;
+
+exports[`T1 golden solutions > 3-(-0) 2`] = `
+"3 - (-0)
+1. 零沒有正負之分，所以負零就是零：-0 = 0。
+   3 - 0
+2. 相減：3 - 0 = 3。
+   3"
+`;
+
 exports[`T1 golden solutions > 3-1/2 1`] = `
 "3 - 1/2
 1. Write both numbers as fractions with the common denominator 2.

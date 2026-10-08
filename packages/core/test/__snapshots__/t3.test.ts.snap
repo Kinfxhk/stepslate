@@ -1140,6 +1140,30 @@ exports[`T3 golden solutions > x/4-x/6=1 2`] = `
    12/4 - 12/6 = 1;  1 = 1"
 `;
 
+exports[`T3 golden solutions > x=-x 1`] = `
+"x = -x
+1. Move the terms with x to the left and the numbers to the right. A term changes its sign when it moves to the other side.
+   x + x = 0
+2. Combine like terms by adding their coefficients.
+   2x = 0
+3. Divide both sides by 2.
+   x = 0
+4. Check: substitute x = 0 into the original equation. Both sides are equal.
+   0 = 0;  0 = 0"
+`;
+
+exports[`T3 golden solutions > x=-x 2`] = `
+"x = -x
+1. 把含 x 的項移到左邊，數字移到右邊。項移到另一邊時要變號。
+   x + x = 0
+2. 合併同類項：把係數相加。
+   2x = 0
+3. 兩邊同時除以 2。
+   x = 0
+4. 驗算：把 x = 0 代入原方程，左右兩邊相等。
+   0 = 0;  0 = 0"
+`;
+
 exports[`T3 golden solutions > x=3 1`] = `
 "x = 3
 1. Check: substitute x = 3 into the original equation. Both sides are equal.

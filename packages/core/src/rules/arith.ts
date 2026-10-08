@@ -131,7 +131,11 @@ function opDrafts(root: Expr, c: Candidate): Draft[] {
   });
   if (c.group === 0) {
     if (e.k === 'neg') {
-      const inner = e.a.k === 'neg' ? e.a.a : num(0);
+      if (e.a.k !== 'neg') {
+        const zero = num(0);
+        return [at(zero, 'arith.negative-zero', 'arith.negative-zero', { before: e, after: zero })];
+      }
+      const inner = e.a.a;
       return [
         at(inner, 'arith.double-negative', 'arith.double-negative', { before: e, after: inner }),
       ];
