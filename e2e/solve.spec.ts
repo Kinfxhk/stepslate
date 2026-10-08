@@ -66,6 +66,22 @@ test('footer links to the source of this exact version (AGPL section 13)', async
   expect(href).toBe(`https://github.com/Kinfxhk/stepslate/tree/${version}`);
 });
 
+test('link previews: Open Graph / Twitter tags and a same-site 1200×630 image', async ({
+  page,
+  request,
+}) => {
+  await page.goto('/');
+  const meta = (sel: string) => page.locator(`meta[${sel}]`).getAttribute('content');
+  expect(await meta('property="og:title"')).toContain('步步解');
+  expect(await meta('name="twitter:card"')).toBe('summary_large_image');
+  const image = await meta('property="og:image"');
+  expect(image).toMatch(/^https:\/\/.+\/social-card\.png$/);
+  expect(await meta('name="twitter:image"')).toBe(image);
+  const png = await (await request.get('/social-card.png')).body();
+  expect(png.subarray(1, 4).toString()).toBe('PNG');
+  expect([png.readUInt32BE(16), png.readUInt32BE(20)]).toEqual([1200, 630]);
+});
+
 test('language switch translates the UI and the explanations', async ({ page }) => {
   await page.goto('/');
   await page.locator('#problem').fill('x^2-5x+6=0');

@@ -9,12 +9,14 @@ const here = fileURLToPath(new URL('.', import.meta.url));
 const publicDir = join(here, 'public');
 const rootPkg = JSON.parse(readFileSync(join(here, '../../package.json'), 'utf8')) as {
   version: string;
+  homepage: string;
   repository: { url: string };
 };
 
 /**
  * AGPL section 13: point the footer "Source code" link at the exact version tag
  * (for example https://github.com/<owner>/<repo>/tree/v0.1.0) and show the version.
+ * Also make the link-preview (Open Graph / Twitter) URLs absolute.
  */
 function sourceLink(): Plugin {
   const tag = `v${rootPkg.version}`;
@@ -29,7 +31,18 @@ function sourceLink(): Plugin {
       );
       if (!linked.includes(url) || !versioned.includes(`>${tag}<`))
         throw new Error('index.html: could not inject the source link / version');
-      return versioned;
+      // Link-preview crawlers need absolute URLs; the image itself is served by the site.
+      const home = rootPkg.homepage.endsWith('/') ? rootPkg.homepage : `${rootPkg.homepage}/`;
+      let previews = 0;
+      const out = versioned.replace(
+        /(<meta (?:property|name)="(?:og|twitter):(?:url|image)" content=")\.\/([^"]*")/g,
+        (_m, head: string, rest: string) => {
+          previews++;
+          return `${head}${home}${rest}`;
+        },
+      );
+      if (previews !== 3) throw new Error('index.html: expected og:url, og:image, twitter:image');
+      return out;
     },
   };
 }
