@@ -16,7 +16,7 @@ import { ui, type UiKey } from './i18n';
 import { mathElement } from './math';
 import { stepElement } from './steps-render';
 
-const TYPES: ProblemType[] = ['T1', 'T2', 'T3', 'T4', 'T5'];
+const TYPES: ProblemType[] = ['T1', 'T2', 'T3', 'T4', 'T5', 'T6'];
 const STORE = 'sumstair.practice.v1';
 
 interface Progress {
@@ -54,7 +54,7 @@ function randomSeed(): number {
 export function questionFromHash(
   hash: string,
 ): { type: ProblemType; level: Level; seed: number } | undefined {
-  const m = /^#practice=(T[1-5])-([123])-(\d{1,10})$/.exec(hash);
+  const m = /^#practice=(T[1-6])-([123])-(\d{1,10})$/.exec(hash);
   if (!m) return undefined;
   return { type: m[1] as ProblemType, level: Number(m[2]) as Level, seed: Number(m[3]) % 2 ** 31 };
 }

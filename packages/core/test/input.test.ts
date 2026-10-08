@@ -100,11 +100,11 @@ describe('optional commands: factor, simplify, solve', () => {
       expect(sol.steps.some((s) => s.rule === 'eq.factorise')).toBe(true);
     }
   });
-  it('"factor" on an expression says honestly that it is planned', () => {
+  it('"factor" on an expression factorises it', () => {
     const sol = solve('factor x^2-5x+6');
-    expect(sol.status).toBe('unsupported');
-    expect(sol.message?.key).toBe('unsupported.factor');
-    expect(solutionText(sol, 'en')).toContain('x^2-5x+6=0');
+    expect(sol.status, sol.reason).toBe('solved');
+    expect(sol.type).toBe('T6');
+    expect(sol.answer?.kind === 'expression' && sol.answer.expr).toBeTruthy();
   });
   it('a command that does not fit the problem gets a specific message', () => {
     expect(solve('solve 2x+3').message?.key).toBe('command.solve-needs-equation');

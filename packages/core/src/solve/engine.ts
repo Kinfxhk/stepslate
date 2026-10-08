@@ -17,6 +17,7 @@ import { solvePolynomial } from './t2';
 import { solveLinear } from './t3';
 import { solveQuadratic } from './t4';
 import { solveSystem } from './t5';
+import { solveFactorise } from './t6';
 
 export type Status = 'solved' | 'unsupported' | 'error' | 'unverified';
 
@@ -70,7 +71,8 @@ function answerFor(run: Run, type: ProblemType, vars: readonly string[]): Answer
   const s = run.state;
   if (type === 'T1' && s.kind === 'expr')
     return { kind: 'value', value: evalRational(s.expr, new Map()), expr: s.expr };
-  if (type === 'T2' && s.kind === 'expr') return { kind: 'expression', expr: s.expr };
+  if ((type === 'T2' || type === 'T6') && s.kind === 'expr')
+    return { kind: 'expression', expr: s.expr };
   if (type === 'T3' || type === 'T4') {
     const x = vars[0]!;
     const set = solutionSet1(s, x);
@@ -100,6 +102,7 @@ const STRATEGIES: Partial<Record<ProblemType, Strategy>> = {
   T3: solveLinear,
   T4: solveQuadratic,
   T5: solveSystem,
+  T6: solveFactorise,
 };
 
 /** Register a strategy (used by later modules). */

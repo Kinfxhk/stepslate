@@ -12,7 +12,7 @@ import { evalRational, Unverifiable } from '../verify/evaluate';
 import { degreeBound, linearForm, univariateCoefficients } from '../verify/poly';
 import { walk } from '../rules/tree';
 
-export type ProblemType = 'T1' | 'T2' | 'T3' | 'T4' | 'T5';
+export type ProblemType = 'T1' | 'T2' | 'T3' | 'T4' | 'T5' | 'T6';
 
 export type Classification =
   | { readonly ok: true; readonly type: ProblemType; readonly vars: readonly string[] }
@@ -141,7 +141,6 @@ function structural(e: Expr, arithmetic: boolean): Classification | null {
 
 /** Check that an optional command fits the problem ("solve" needs an equation, ...). */
 function commandCheck(command: Command | undefined, p: Problem): Classification | null {
-  if (command === 'factor' && p.kind === 'expr') return unsupported({ key: 'unsupported.factor' });
   if (command === 'solve' && p.kind === 'expr')
     return error({ key: 'command.solve-needs-equation' });
   if (command === 'simplify' && p.kind !== 'expr')
@@ -173,8 +172,12 @@ export function classify(p: Problem, command?: Command): Classification {
   }
   const vars = problemVariables(p);
   if (p.kind === 'expr') {
-    if (vars.length === 0) return { ok: true, type: 'T1', vars };
+    if (vars.length === 0) {
+      if (command === 'factor') return unsupported({ key: 'unsupported.factor' });
+      return { ok: true, type: 'T1', vars };
+    }
     if (vars.length > 2) return unsupported({ key: 'unsupported.too-many-vars' });
+    if (command === 'factor') return { ok: true, type: 'T6', vars };
     return { ok: true, type: 'T2', vars };
   }
   if (p.kind === 'equation') {

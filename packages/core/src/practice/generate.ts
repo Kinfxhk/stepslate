@@ -150,6 +150,37 @@ function t4(r: Rng, level: Level): string {
   }
 }
 
+function t6(r: Rng, level: Level): string {
+  const a = r.int(1, level === 1 ? 1 : 4);
+  const p = r.nz(level === 3 ? 6 : 5);
+  const q = r.nz(level === 3 ? 6 : 5);
+  if (level === 1)
+    return `factor ${polyText([
+      [1, 'x^2'],
+      [-(p + q), 'x'],
+      [p * q, ''],
+    ])}`;
+  if (level === 2)
+    return `factor ${polyText([
+      [a, 'x^2'],
+      [-(a * q + p), 'x'],
+      [p * q, ''],
+    ])}`;
+  return r.pick([
+    () =>
+      `factor ${polyText([
+        [1, 'x^2'],
+        [-(p * p), ''],
+      ])}`,
+    () =>
+      `factor ${polyText([
+        [1, 'x^2'],
+        [2 * p, 'x'],
+        [p * p, ''],
+      ])}`,
+    () => `factor ${p}x^2 + ${p * q}x`,
+  ])();
+}
 function t5(r: Rng, level: Level): string {
   const x = r.nz(6);
   const y = r.nz(6);
@@ -174,6 +205,7 @@ const GENERATORS: Record<ProblemType, (r: Rng, level: Level) => string> = {
   T3: t3,
   T4: t4,
   T5: t5,
+  T6: t6,
 };
 
 function acceptable(type: ProblemType, sol: Solution): boolean {
@@ -183,6 +215,11 @@ function acceptable(type: ProblemType, sol: Solution): boolean {
   if (type === 'T3') return a?.kind === 'roots' && a.values.length === 1;
   if (type === 'T4') return a?.kind === 'roots';
   if (type === 'T5') return a?.kind === 'pair';
+  if (type === 'T6')
+    return (
+      a?.kind === 'expression' &&
+      sol.steps.some((st) => st.rule.startsWith('factor.') && st.rule !== 'factor.none')
+    );
   return true;
 }
 
@@ -201,6 +238,7 @@ export function generateQuestion(type: ProblemType, level: Level, seed: number):
     T3: '2x + 3 = 7',
     T4: 'x^2 - 5x + 6 = 0',
     T5: 'x + y = 5; x - y = 1',
+    T6: 'factor x^2 - 5x + 6',
   }[type];
   return { type, level, seed, input, solution: solve(input) };
 }
