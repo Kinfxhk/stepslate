@@ -43,8 +43,15 @@ theme, large text, keyboard operation, MathML for screen readers, print styles,
 share links (the problem is stored after `#`, which browsers never send to a
 server) and **offline use** after the first visit.
 
+Input is forgiving: `×`, `÷`, `−`, full-width characters typed with a Chinese
+input method (`２ｘ＋３＝７`) and superscripts (`x²`, `2⁻¹`) are understood, and you
+may start with `solve`, `simplify` or `factor` (for example `solve 2x+3=7`). Topics
+that are not supported yet (such as `sin`, `log`, `ln` or `abs`) get a clear
+"not supported yet" message instead of being misread as letters.
+
 Input limits keep the browser responsive: at most 200 characters, 9-digit
-numbers, 6 decimal places, exponents up to 4.
+numbers, 6 decimal places; exponents from -20 to 20 in calculations and up to 4
+with unknowns.
 
 ## How the checking works
 
@@ -69,8 +76,8 @@ steps must be rejected) cover the engine.
 
 ## Use it
 
-- **Online:** a GitHub Pages build will be linked from the repository once it is
-  published.
+- **Online:** <https://kinfxhk.github.io/stepslate/> (works offline after the first
+  visit).
 - **Offline / self-hosted:** download `stepslate-site-v0.1.0.zip` from the
   release, unzip, and serve the folder with any static server on localhost.
 - **Docker:**
@@ -151,6 +158,9 @@ does this for the original). Third-party components are listed in
 - 四則運算（分數、小數、指數）、化簡多項式（最多兩個字母、最高四次）、一元一次方程、
   一元二次方程（有理根時因式分解，否則用二次公式並以根式精確表示；Δ < 0 時無實根）、
   二元一次聯立方程（消元法；可判斷無解或無限多解）。
+- 輸入寬鬆：接受 `×`、`÷`、`−`、中文輸入法的全形字元（例如 `２ｘ＋３＝７`）及上標（`x²`、`2⁻¹`），
+  亦可在題目前加 `solve`、`simplify` 或 `factor`。未支援的課題（例如 `sin`、`log`、`ln`、`abs`）
+  會清楚說明「暫時未支援」，不會誤當作字母。計算時指數可為 -20 至 20，含未知數時最高 4 次。
 - 「我理解為」預覽（遇到 `1/2x` 一類有歧義的寫法會提示）、逐步顯示或顯示全部、
   高亮變動部分、方程題最後一步把答案代回原式驗算。
 - 練習模式：程式生成題目，接受任何等價寫法（例如 `0.5` 與 `1/2`），可逐步提示；
@@ -160,6 +170,7 @@ does this for the original). Third-party components are listed in
 
 ### 使用方法
 
+- 網上版：<https://kinfxhk.github.io/stepslate/>（首次載入後可離線使用）。
 - 自架／離線：下載 release 中的 `stepslate-site-v0.1.0.zip`，解壓後以任何靜態伺服器在本機提供。
 - Docker：`docker build -t stepslate .`，再 `docker run --rm -p 127.0.0.1:4873:4873 stepslate`。
 - 原始碼（Node.js 22 或以上）：`npm ci`，然後 `npm start`，開啟 <http://127.0.0.1:4873/>。
