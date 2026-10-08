@@ -29,8 +29,12 @@ export function degreeBound(e: Expr): number {
     case 'pow': {
       if (degreeBound(e.b) !== 0) throw new Unverifiable('variable exponent');
       const k = evalRational(e.b, new Map());
-      if (!k.isInteger() || k.n < 0n || k.n > 8n) throw new Unverifiable('bad exponent');
-      return degreeBound(e.a) * Number(k.n);
+      if (!k.isInteger()) throw new Unverifiable('bad exponent');
+      const base = degreeBound(e.a);
+      // a power of a constant is a constant (its size is checked when it is evaluated)
+      if (base === 0) return 0;
+      if (k.n < 0n || k.n > 8n) throw new Unverifiable('bad exponent');
+      return base * Number(k.n);
     }
     case 'sqrt':
       if (degreeBound(e.a) !== 0) throw new Unverifiable('variable under a root');

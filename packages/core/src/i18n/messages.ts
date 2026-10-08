@@ -42,6 +42,8 @@ export const en = {
   'arith.double-negative': 'Two minus signs cancel out: {before} = {after}.',
   'arith.negative-zero': 'Zero has no sign, so minus zero is zero: {before} = {after}.',
   'arith.power': 'Work out the power: {before} = {after}.',
+  'arith.negative-power':
+    'A negative exponent means the reciprocal of the positive power: {before} = {after}.',
   'arith.multiply': 'Multiply: {before} = {after}.',
   'arith.multiply-fractions':
     'Multiply the numerators together and the denominators together: {before} = {after}.',
@@ -66,6 +68,8 @@ export const en = {
   'unsupported.var-denominator':
     'An unknown in a denominator (a fractional equation) is not supported yet.',
   'unsupported.exponent': 'Exponents must be whole numbers from 0 to {max}.',
+  'unsupported.exponent-arith':
+    'In calculations, exponents must be whole numbers from -{max} to {max}. With unknowns, exponents can be 0 to 4.',
   'unsupported.degree':
     'The degree is too high. StepSlate simplifies up to degree {max} and solves equations up to degree 2.',
   'unsupported.equation-vars':
@@ -191,6 +195,7 @@ export const zhHK: Record<MessageKey, string> = {
   'arith.double-negative': '兩個負號互相抵消：{before} = {after}。',
   'arith.negative-zero': '零沒有正負之分，所以負零就是零：{before} = {after}。',
   'arith.power': '計算乘方：{before} = {after}。',
+  'arith.negative-power': '負指數即是正指數乘方的倒數：{before} = {after}。',
   'arith.multiply': '相乘：{before} = {after}。',
   'arith.multiply-fractions': '分子乘分子，分母乘分母：{before} = {after}。',
   'arith.divide-as-fraction': '把除法寫成分數：{before} = {after}。',
@@ -207,6 +212,8 @@ export const zhHK: Record<MessageKey, string> = {
   'unsupported.pm': '「±」只可以在答案中使用。',
   'unsupported.var-denominator': '暫時未支援分母含未知數的題目（分式方程）。',
   'unsupported.exponent': '指數必須是 0 至 {max} 的整數。',
+  'unsupported.exponent-arith':
+    '計算數值時，指數必須是 -{max} 至 {max} 的整數；含未知數時，指數可以是 0 至 4。',
   'unsupported.degree': '次數太高。步步解可化簡最高 {max} 次的多項式，並解最高二次的方程。',
   'unsupported.equation-vars': '一條含 {n} 個未知數的方程不能單獨求解。請用「;」分隔兩條方程。',
   'unsupported.system': '步步解可解兩個未知數的二元一次聯立方程。',

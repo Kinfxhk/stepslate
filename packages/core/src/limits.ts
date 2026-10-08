@@ -13,8 +13,13 @@ export const LIMITS = {
   maxDecimalPlaces: 6,
   /** Maximum expression-tree nodes in one input. */
   maxNodes: 150,
-  /** Largest allowed exponent (exponents must be whole numbers 0..maxExponent). */
+  /** Largest allowed exponent with unknowns (exponents must be whole numbers 0..maxExponent). */
   maxExponent: 4,
+  /**
+   * Largest exponent size in pure arithmetic (no unknowns): whole numbers from
+   * -maxArithmeticExponent to maxArithmeticExponent. Results are still capped by maxBits.
+   */
+  maxArithmeticExponent: 20,
   /** Largest polynomial degree after expansion. */
   maxDegree: 4,
   /** Maximum equations in a system. */

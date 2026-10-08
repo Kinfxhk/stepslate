@@ -4,7 +4,7 @@
 // the verifier checks every step.
 
 import type { Expr } from '../ast';
-import { add, div, mul, neg, num, ratExpr, sub } from '../ast';
+import { add, div, mul, neg, num, pow, ratExpr, sub } from '../ast';
 import type { MessageKey } from '../i18n/messages';
 import { gcd, lcm } from '../numbers/bigint';
 import { needsParens } from '../print/print';
@@ -152,7 +152,17 @@ function opDrafts(root: Expr, c: Candidate): Draft[] {
     ];
   }
   if (e.k === 'pow') {
-    const k = Number((e.b as { v: { n: bigint } }).v.n);
+    if (e.b.k === 'neg') {
+      // a^(-k) = 1/a^k; for a fraction p/q, (q/p)^k
+      const k = e.b.a;
+      const base = e.a;
+      const one = isInt(k) && k.v.isOne();
+      let after: Expr;
+      if (isSignedInt(base)) after = div(num(1), one ? base : pow(base, k));
+      else after = one ? reciprocal(base) : pow(reciprocal(base), k);
+      return [at(after, 'arith.negative-power', 'arith.negative-power', { before: e, after })];
+    }
+    const k = Number(atomValue(e.b).n);
     const value = ratExpr(atomValue(e.a).pow(k));
     return [at(value, 'arith.power', 'arith.power', { before: e, after: value })];
   }

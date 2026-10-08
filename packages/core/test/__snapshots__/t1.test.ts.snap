@@ -28,6 +28,38 @@ exports[`T1 golden solutions > ((1+2)*(3-1))^2/4 2`] = `
    9"
 `;
 
+exports[`T1 golden solutions > (-1/2)^-1 1`] = `
+"(-1/2)^(-1)
+1. A negative exponent means the reciprocal of the positive power: (-1/2)^(-1) = -2.
+   -2"
+`;
+
+exports[`T1 golden solutions > (-1/2)^-1 2`] = `
+"(-1/2)^(-1)
+1. 負指數即是正指數乘方的倒數：(-1/2)^(-1) = -2。
+   -2"
+`;
+
+exports[`T1 golden solutions > (-2)^-3 1`] = `
+"(-2)^(-3)
+1. A negative exponent means the reciprocal of the positive power: (-2)^(-3) = 1/(-2)^3.
+   1/(-2)^3
+2. Work out the power: (-2)^3 = -8.
+   1/(-8)
+3. Write the division as a fraction: 1/(-8) = -1/8.
+   -1/8"
+`;
+
+exports[`T1 golden solutions > (-2)^-3 2`] = `
+"(-2)^(-3)
+1. 負指數即是正指數乘方的倒數：(-2)^(-3) = 1/(-2)^3。
+   1/(-2)^3
+2. 計算乘方：(-2)^3 = -8。
+   1/(-8)
+3. 把除法寫成分數：1/(-8) = -1/8。
+   -1/8"
+`;
+
 exports[`T1 golden solutions > (-2)^3 1`] = `
 "(-2)^3
 1. Work out the power: (-2)^3 = -8.
@@ -114,6 +146,22 @@ exports[`T1 golden solutions > (2/3)/(4/9) 2`] = `
    18/12
 3. 約簡 18/12：分子和分母同時除以 6，得 3/2。
    3/2"
+`;
+
+exports[`T1 golden solutions > (2/3)^-2 1`] = `
+"(2/3)^(-2)
+1. A negative exponent means the reciprocal of the positive power: (2/3)^(-2) = (3/2)^2.
+   (3/2)^2
+2. Work out the power: (3/2)^2 = 9/4.
+   9/4"
+`;
+
+exports[`T1 golden solutions > (2/3)^-2 2`] = `
+"(2/3)^(-2)
+1. 負指數即是正指數乘方的倒數：(2/3)^(-2) = (3/2)^2。
+   (3/2)^2
+2. 計算乘方：(3/2)^2 = 9/4。
+   9/4"
 `;
 
 exports[`T1 golden solutions > (3/4)/6 1`] = `
@@ -258,6 +306,26 @@ exports[`T1 golden solutions > 0.5+0.25 2`] = `
    3/4
 4. 把答案寫成小數：3/4 = 0.75。
    0.75"
+`;
+
+exports[`T1 golden solutions > 0.5^-2 1`] = `
+"0.5^(-2)
+1. Write each decimal as a fraction so that the arithmetic stays exact.
+   (1/2)^(-2)
+2. A negative exponent means the reciprocal of the positive power: (1/2)^(-2) = 2^2.
+   2^2
+3. Work out the power: 2^2 = 4.
+   4"
+`;
+
+exports[`T1 golden solutions > 0.5^-2 2`] = `
+"0.5^(-2)
+1. 先把每個小數寫成分數，令計算保持準確。
+   (1/2)^(-2)
+2. 負指數即是正指數乘方的倒數：(1/2)^(-2) = 2^2。
+   2^2
+3. 計算乘方：2^2 = 4。
+   4"
 `;
 
 exports[`T1 golden solutions > 0.75-1 1`] = `
@@ -552,6 +620,34 @@ exports[`T1 golden solutions > 2/3-3/4 2`] = `
    -1/12"
 `;
 
+exports[`T1 golden solutions > 2^-1 1`] = `
+"2^(-1)
+1. A negative exponent means the reciprocal of the positive power: 2^(-1) = 1/2.
+   1/2"
+`;
+
+exports[`T1 golden solutions > 2^-1 2`] = `
+"2^(-1)
+1. 負指數即是正指數乘方的倒數：2^(-1) = 1/2。
+   1/2"
+`;
+
+exports[`T1 golden solutions > 2^-3 1`] = `
+"2^(-3)
+1. A negative exponent means the reciprocal of the positive power: 2^(-3) = 1/2^3.
+   1/2^3
+2. Work out the power: 2^3 = 8.
+   1/8"
+`;
+
+exports[`T1 golden solutions > 2^-3 2`] = `
+"2^(-3)
+1. 負指數即是正指數乘方的倒數：2^(-3) = 1/2^3。
+   1/2^3
+2. 計算乘方：2^3 = 8。
+   1/8"
+`;
+
 exports[`T1 golden solutions > 2^4-3^2 1`] = `
 "2^4 - 3^2
 1. Work out the power: 2^4 = 16.
@@ -570,6 +666,38 @@ exports[`T1 golden solutions > 2^4-3^2 2`] = `
    16 - 9
 3. 相減：16 - 9 = 7。
    7"
+`;
+
+exports[`T1 golden solutions > 2^5 1`] = `
+"2^5
+1. Work out the power: 2^5 = 32.
+   32"
+`;
+
+exports[`T1 golden solutions > 2^5 2`] = `
+"2^5
+1. 計算乘方：2^5 = 32。
+   32"
+`;
+
+exports[`T1 golden solutions > 2^20-2^19 1`] = `
+"2^20 - 2^19
+1. Work out the power: 2^20 = 1048576.
+   1048576 - 2^19
+2. Work out the power: 2^19 = 524288.
+   1048576 - 524288
+3. Subtract: 1048576 - 524288 = 524288.
+   524288"
+`;
+
+exports[`T1 golden solutions > 2^20-2^19 2`] = `
+"2^20 - 2^19
+1. 計算乘方：2^20 = 1048576。
+   1048576 - 2^19
+2. 計算乘方：2^19 = 524288。
+   1048576 - 524288
+3. 相減：1048576 - 524288 = 524288。
+   524288"
 `;
 
 exports[`T1 golden solutions > 2-(3-(4-5)) 1`] = `
@@ -606,6 +734,34 @@ exports[`T1 golden solutions > 3*2/5 2`] = `
 "3*2/5
 1. 相乘：3*2 = 6。
    6/5"
+`;
+
+exports[`T1 golden solutions > 3^-2+3^-1 1`] = `
+"3^(-2) + 3^(-1)
+1. A negative exponent means the reciprocal of the positive power: 3^(-2) = 1/3^2.
+   1/3^2 + 3^(-1)
+2. Work out the power: 3^2 = 9.
+   1/9 + 3^(-1)
+3. A negative exponent means the reciprocal of the positive power: 3^(-1) = 1/3.
+   1/9 + 1/3
+4. Write both numbers as fractions with the common denominator 9.
+   1/9 + 3/9
+5. The denominators are both 9, so add the numerators: 1/9 + 3/9 = 4/9.
+   4/9"
+`;
+
+exports[`T1 golden solutions > 3^-2+3^-1 2`] = `
+"3^(-2) + 3^(-1)
+1. 負指數即是正指數乘方的倒數：3^(-2) = 1/3^2。
+   1/3^2 + 3^(-1)
+2. 計算乘方：3^2 = 9。
+   1/9 + 3^(-1)
+3. 負指數即是正指數乘方的倒數：3^(-1) = 1/3。
+   1/9 + 1/3
+4. 把兩個數通分，寫成分母為 9 的分數。
+   1/9 + 3/9
+5. 分母都是 9，所以分子相加：1/9 + 3/9 = 4/9。
+   4/9"
 `;
 
 exports[`T1 golden solutions > 3-(-0) 1`] = `
@@ -790,6 +946,34 @@ exports[`T1 golden solutions > 8/(-12) 2`] = `
    -8/12
 2. 約簡 8/12：分子和分母同時除以 4，得 2/3。
    -2/3"
+`;
+
+exports[`T1 golden solutions > 10^-6 1`] = `
+"10^(-6)
+1. A negative exponent means the reciprocal of the positive power: 10^(-6) = 1/10^6.
+   1/10^6
+2. Work out the power: 10^6 = 1000000.
+   1/1000000"
+`;
+
+exports[`T1 golden solutions > 10^-6 2`] = `
+"10^(-6)
+1. 負指數即是正指數乘方的倒數：10^(-6) = 1/10^6。
+   1/10^6
+2. 計算乘方：10^6 = 1000000。
+   1/1000000"
+`;
+
+exports[`T1 golden solutions > 10^10 1`] = `
+"10^10
+1. Work out the power: 10^10 = 10000000000.
+   10000000000"
+`;
+
+exports[`T1 golden solutions > 10^10 2`] = `
+"10^10
+1. 計算乘方：10^10 = 10000000000。
+   10000000000"
 `;
 
 exports[`T1 golden solutions > 10-(4-3) 1`] = `

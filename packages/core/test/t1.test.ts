@@ -3,6 +3,7 @@ import fc from 'fast-check';
 import { describe, expect, it } from 'vitest';
 import {
   evalRational,
+  parseProblem,
   parseExpr,
   Rational,
   solutionText,
@@ -78,6 +79,65 @@ describe('T1 properties', () => {
       }),
       { numRuns: 1500 },
     );
+  });
+});
+
+describe('T1 powers in pure arithmetic', () => {
+  const base = fc.oneof(
+    fc.integer({ min: -12, max: 12 }).map(String),
+    fc
+      .tuple(fc.integer({ min: 1, max: 9 }), fc.integer({ min: 2, max: 9 }), fc.boolean())
+      .map(([n, d, minus]) => `(${minus ? '-' : ''}${n}/${d})`),
+  );
+  it('a^k for whole k from -20 to 20: verified steps, exact value or a polite refusal', () => {
+    fc.assert(
+      fc.property(base, fc.integer({ min: -20, max: 20 }), (b, k) => {
+        const input = `${b.startsWith('-') ? `(${b})` : b}^${k < 0 ? `(${k})` : k}`;
+        const sol = solve(input);
+        expect(sol.status, input).not.toBe('unverified');
+        const problem = parseProblem(input).problem;
+        const value = (() => {
+          try {
+            return evalRational(
+              problem.kind === 'expr' ? problem.expr : (null as never),
+              new Map(),
+            );
+          } catch {
+            return undefined;
+          }
+        })();
+        if (value === undefined) {
+          // 0^(negative): division by zero
+          expect(sol.message?.key, input).toBe('error.div-zero');
+          return;
+        }
+        if (sol.status !== 'solved') {
+          expect(sol.message?.key, input).toBe('error.too-large');
+          return;
+        }
+        const ctx = { problem, vars: [] };
+        for (const st of sol.steps) expect(verifyStep(st, ctx).ok).toBe(true);
+        if (sol.answer?.kind !== 'value') throw new Error('no value');
+        expect(sol.answer.value.eq(value), input).toBe(true);
+      }),
+      { numRuns: 1500 },
+    );
+  });
+  it('limits: exponent size, division by zero and huge results are refused politely', () => {
+    expect(solve('2^21').message?.key).toBe('unsupported.exponent-arith');
+    expect(solve('2^-21').message?.key).toBe('unsupported.exponent-arith');
+    expect(solve('2^0.5').message?.key).toBe('unsupported.exponent-arith');
+    expect(solve('2^(1+1)').message?.key).toBe('unsupported.exponent-arith');
+    expect(solve('0^-1').message?.key).toBe('error.div-zero');
+    expect(solve('1/(0^-2)').message?.key).toBe('error.div-zero');
+    expect(solve('999999999^20').message?.key).toBe('error.too-large');
+    const t0 = performance.now();
+    expect(solve('((((9^20)^20)^20)^20)^20').message?.key).toBe('error.too-large');
+    expect(performance.now() - t0).toBeLessThan(1000);
+    // with unknowns the old limit (0..4) still applies
+    expect(solve('x^5').message?.key).toBe('unsupported.exponent');
+    expect(solve('x+2^5').message?.key).toBe('unsupported.exponent');
+    expect(solve('x^-1=2').message?.key).toBe('unsupported.exponent');
   });
 });
 
@@ -159,6 +219,30 @@ const MUTANTS: Mutant[] = [
       const orig = getAt(s.before.expr, h.path);
       if (orig.k !== 'pow') return s;
       return withNode(s, h.path, { k: 'mul', a: orig.a, b: orig.b });
+    },
+  },
+  {
+    name: 'negative exponent: dropping the reciprocal',
+    rule: 'arith.negative-power',
+    mutate: (s) => {
+      if (s.before.kind !== 'expr') return s;
+      const h = nodeAtHighlight(s);
+      if (!h) return s;
+      const orig = getAt(s.before.expr, h.path);
+      if (orig.k !== 'pow' || orig.b.k !== 'neg') return s;
+      return withNode(s, h.path, { k: 'pow', a: orig.a, b: orig.b.a });
+    },
+  },
+  {
+    name: 'negative exponent: making the result negative instead',
+    rule: 'arith.negative-power',
+    mutate: (s) => {
+      if (s.before.kind !== 'expr') return s;
+      const h = nodeAtHighlight(s);
+      if (!h) return s;
+      const orig = getAt(s.before.expr, h.path);
+      if (orig.k !== 'pow' || orig.b.k !== 'neg') return s;
+      return withNode(s, h.path, { k: 'neg', a: { k: 'pow', a: orig.a, b: orig.b.a } });
     },
   },
   {
