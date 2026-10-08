@@ -125,7 +125,32 @@ KaTeX), `packages/cli` (terminal solver and a loopback static server).
 
 Contributions are welcome under the rules in [CONTRIBUTING.md](CONTRIBUTING.md):
 clean-room work only (no code, text or screenshots from other solvers), every
-new rule must pass the verifier, and commits are signed off (DCO).
+new rule must pass the verifier, and commits are signed off (DCO). Found a wrong
+step or answer? Use the **Report a wrong answer** link under the steps (it opens a
+pre-filled GitHub issue that you check and send yourself; nothing is sent
+automatically) or open an issue. Everyone taking part follows the
+[Code of Conduct](CODE_OF_CONDUCT.md).
+
+**How it is made:** StepSlate is written with AI coding agents working under the
+maintainer's direction. That is why the project leans so hard on machine
+checking: an independent verifier must accept every step, and golden, property
+and mutation tests, a licence allowlist, a hygiene check and a secret scan run on
+every change. Contributors may use AI tools too, under the
+[AI-assisted development policy](CONTRIBUTING.md#ai-assisted-development):
+review every line, never reproduce other solvers' code or text, take DCO
+responsibility, and disclose AI use in the pull request.
+
+## Commitments
+
+StepSlate will **never** have:
+
+- **ads**;
+- **tracking or analytics** of any kind, not even "anonymous";
+- **paid unlocking of steps**, subscriptions, daily limits or accounts.
+
+Every step stays free for everyone. The code stays open source under
+AGPL-3.0-or-later, so nobody can turn it into a closed paid service without
+sharing their changes. Donations are optional and change nothing in the app.
 
 ## Licence
 
@@ -181,6 +206,26 @@ does this for the original). Third-party components are listed in
 及自動測試強制）。設定及練習進度只儲存在瀏覽器的 localStorage。
 若使用 GitHub Pages 版本，檔案由 GitHub 託管，GitHub 或會保留其存取紀錄；
 如不希望這樣，可自架或使用離線壓縮檔。
+
+### 承諾
+
+步步解**永遠不會**加入：
+
+- **廣告**；
+- 任何形式的**追蹤或分析工具**（即使聲稱「匿名」也不會）；
+- **付費解鎖步驟**、訂閱、每日次數限制或帳戶。
+
+每一步都永遠免費。程式碼以 AGPL-3.0-or-later 開源，任何人都不能把它改成封閉的收費服務而不公開修改。
+捐款純屬自願，不會改變程式任何功能。
+
+### 開發方式及參與
+
+步步解由 AI 編程助手在維護者指示下撰寫。正因如此，項目非常依賴機器檢查：每一步都要經獨立驗證器接受，
+每次修改都要通過標準答案測試、性質測試、變異測試、授權白名單、項目規範檢查及密鑰掃描。
+歡迎貢獻，但須遵守 [CONTRIBUTING.md](CONTRIBUTING.md)：只可自行撰寫（不可抄襲其他解題器的程式碼、文字或截圖），
+如使用 AI 工具，必須逐行審閱、不可要求 AI 重現其他解題器的程式碼或文字、為整份貢獻負 DCO 責任，並在
+pull request 註明曾使用 AI。發現步驟或答案有錯？可按步驟下方的「回報錯誤答案」，會開啟一個預先填好的
+GitHub issue，由你自己檢查後提交（不會自動傳送任何資料）。
 
 ### 授權
 

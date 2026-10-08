@@ -4,6 +4,10 @@ Thank you for helping. StepSlate exists so that every student can see full
 worked solutions for free, offline and without an account. Correctness and legal
 cleanliness matter as much as features.
 
+Everyone taking part follows the [Code of Conduct](CODE_OF_CONDUCT.md). Questions
+and ideas go to [Discussions](https://github.com/Kinfxhk/stepslate/discussions);
+wrong answers, topic requests and translations have their own issue forms.
+
 ## Clean-room rule (mandatory)
 
 1. **Do not copy code, UI, text or assets** from any commercial or closed-source
@@ -21,8 +25,37 @@ cleanliness matter as much as features.
    factual comparisons in documentation, never in the UI or explanation strings
    (`npm run check:hygiene` enforces this).
 5. **Third-party code** must be an npm dependency under an AGPL-3.0-compatible
-   licence. Do not paste snippets of unknown origin, including from Q&A sites or
-   AI tools.
+   licence. Do not paste snippets of unknown origin, for example from Q&A sites.
+   AI-assisted work is allowed only under the policy below.
+
+## AI-assisted development
+
+**How this project is made:** StepSlate is written with AI coding agents working
+under the maintainer's direction. Most of the code, tests and documentation in
+this repository were drafted that way and then checked by the same gates that
+apply to every contribution: the clean-room rules above, the independent
+verifier, golden, property and mutation tests, the licence allowlist, the
+hygiene check and the secret scan. We say this openly because a policy that
+pretended otherwise would be useless.
+
+You may use AI tools for your contribution too, on these conditions:
+
+1. **Review it yourself.** Read every line you submit and be able to explain why
+   it is correct. You are responsible for it exactly as if you had typed it. Check
+   golden-test expectations by hand; do not let a tool write both a rule and the
+   expected answers without your own check.
+2. **No reproduction of other work.** Do not ask an AI tool to reproduce,
+   translate or paraphrase code, explanation text, UI, problem sets or
+   screenshots from other solvers, textbooks or exam papers, and do not paste such
+   material into prompts. If a tool tells you its output matches existing code
+   (or shows a licence or attribution), do not use that output.
+3. **DCO covers all of it.** Your sign-off (below) certifies that you have the
+   right to submit the whole contribution, including AI-assisted parts.
+4. **Disclose it.** Say in the pull request which AI tools you used and for what.
+   The pull request template asks for this. Disclosure is not a mark against a
+   contribution; it helps reviewers know where to look harder.
+5. **The gates do not move.** AI-assisted or not, every rule needs golden,
+   property and mutation tests, and the verifier is never weakened.
 
 ## Correctness rule
 

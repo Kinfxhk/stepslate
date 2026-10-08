@@ -43,6 +43,8 @@ if (existsSync('README.md')) {
     verify: 'advice to verify answers',
     教育用途: 'Chinese educational disclaimer',
     'not affiliated': 'not-affiliated statement',
+    '## Commitments': 'public commitments section (no ads, tracking or paid steps)',
+    'AI coding agents': 'honest statement of how the project is made',
   };
   for (const [needle, what] of Object.entries(needles))
     if (!readme.includes(needle)) problems.push(`README.md lacks the ${what} ("${needle}")`);
