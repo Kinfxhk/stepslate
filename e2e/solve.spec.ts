@@ -82,6 +82,22 @@ test('link previews: Open Graph / Twitter tags and a same-site 1200×630 image',
   expect([png.readUInt32BE(16), png.readUInt32BE(20)]).toEqual([1200, 630]);
 });
 
+test('report link: pre-filled GitHub issue, opened only by the user', async ({ page, baseURL }) => {
+  const external = trackExternal(page, baseURL!);
+  await page.goto('/#q=' + encodeURIComponent('x^2-5x+6=0'));
+  await expect(page.locator('#steps-card')).toBeVisible();
+  const link = page.locator('#report-link');
+  await expect(link).toBeVisible();
+  const href = new URL((await link.getAttribute('href'))!);
+  expect(`${href.origin}${href.pathname}`).toBe('https://github.com/Kinfxhk/stepslate/issues/new');
+  expect(href.searchParams.get('template')).toBe('wrong-answer.yml');
+  expect(href.searchParams.get('problem')).toBe('x^2-5x+6=0');
+  expect(href.searchParams.get('version')).toMatch(/^v\d+\.\d+\.\d+/);
+  await expect(link).toHaveAttribute('target', '_blank');
+  await expect(link).toHaveAttribute('rel', /noopener/);
+  expect(external).toEqual([]); // nothing is contacted unless the user clicks
+});
+
 test('language switch translates the UI and the explanations', async ({ page }) => {
   await page.goto('/');
   await page.locator('#problem').fill('x^2-5x+6=0');

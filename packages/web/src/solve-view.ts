@@ -18,6 +18,7 @@ import { ui } from './i18n';
 import { explanationElement, mathElement, renderMath } from './math';
 import { hashForProblem, problemFromHash } from './share';
 import { stateElement, stepElement } from './steps-render';
+import { reportUrl } from './report';
 
 export const EXAMPLES = [
   '1/2 + 3/4 * 2',
@@ -262,6 +263,12 @@ export class SolveView {
       this.renderAnswer(sol);
     }
     if (!keepScroll) $('share-status').textContent = '';
+    // A plain link: GitHub's form opens only when the user clicks, and nothing is sent
+    // until they submit it there.
+    $('report-link').setAttribute(
+      'href',
+      reportUrl(__STEPSLATE_REPO__, __STEPSLATE_VERSION__, sol),
+    );
   }
 
   private renderAnswer(sol: Solution): void {

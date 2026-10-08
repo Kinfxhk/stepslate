@@ -46,6 +46,8 @@ const en = {
     'Link copied. The problem is stored after the # in the address, so it is never sent to a server.',
   'share.manual': 'Copy the address from the address bar to share this problem.',
   'print.button': 'Print',
+  'report.link': 'Report a wrong answer',
+  'report.note': 'Opens a pre-filled GitHub issue. Nothing is sent until you submit it there.',
   'footer.disclaimer':
     'Educational tool. Always check the answers yourself and ask a teacher if you are unsure.',
   'footer.source': 'Source code (AGPL-3.0-or-later)',
@@ -147,6 +149,8 @@ const zhHK: Record<UiKey, string> = {
   'share.copied': '已複製連結。題目儲存在網址 # 之後，不會傳送到伺服器。',
   'share.manual': '請從網址列複製網址以分享這條題目。',
   'print.button': '列印',
+  'report.link': '回報錯誤答案',
+  'report.note': '會開啟一個預先填好的 GitHub issue；你在那裏按提交之前，不會傳送任何資料。',
   'footer.disclaimer': '教育用途工具。請自行核對答案；如有疑問，請請教老師。',
   'footer.source': '原始碼（AGPL-3.0-or-later）',
   'footer.licences': '授權條款',

@@ -143,6 +143,10 @@ export default defineConfig({
   root: here,
   base: './',
   plugins: [sourceLink(), offline()],
+  define: {
+    __STEPSLATE_REPO__: JSON.stringify(rootPkg.repository.url.replace(/\.git$/, '')),
+    __STEPSLATE_VERSION__: JSON.stringify(`v${rootPkg.version}`),
+  },
   build: {
     target: 'es2022',
     sourcemap: false,
