@@ -64,6 +64,47 @@ jobs:
       - name: Secret scan
         run: npm run check:secrets
 
+  windows:
+    # Students and teachers often run the offline copy on Windows: check that the code,
+    # tests, build and CLI behave the same there (paths, line endings, Unicode input).
+    # The secret scan and Docker build run on Linux only.
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Format check (LF line endings via .gitattributes)
+        run: npm run format:check
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Unit + property + golden tests
+        run: npm test
+
+      - name: Repository hygiene
+        run: npm run check:hygiene
+
+      - name: Build the web app
+        run: npm run build
+
+      - name: CLI smoke test (full-width input, node.exe called directly so no cmd.exe quoting)
+        shell: pwsh
+        run: |
+          $out = node --import tsx packages/cli/src/solve.ts "２(x+3)=5x−4" | Out-String
+          Write-Output $out
+          if ($out -notmatch 'x = 10/3') { throw 'CLI did not print x = 10/3' }
+
   e2e:
     runs-on: ubuntu-latest
     timeout-minutes: 20

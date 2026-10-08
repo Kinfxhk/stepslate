@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# LF everywhere (also on Windows checkouts) so formatting, snapshots and hashes match.
+* text=auto eol=lf
+*.png binary
+*.ico binary
+*.woff2 binary
+*.zip binary
