@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // Entry point: parse → classify → strategy → verified steps → answer.
 
-import type { Expr, Problem } from '../ast';
+import type { Expr, Problem, Rel } from '../ast';
 import type { Rational } from '../numbers/rational';
 import type { Surd } from '../numbers/surd';
 import { ParseError, type ParseWarning } from '../parse/errors';
@@ -9,7 +9,7 @@ import type { Command } from '../parse/lexer';
 import { parseProblem } from '../parse/parser';
 import type { Explanation, State, Step } from '../state';
 import { evalRational } from '../verify/evaluate';
-import { solutionSet1, solutionSet2 } from '../verify/oracle';
+import { solutionSet1, solutionSet2, solutionSetIneq } from '../verify/oracle';
 import { classify, type ProblemType } from './classify';
 import { Run, StopTooLarge, StopUnverified, type StepTamper } from './run';
 import { solveArithmetic } from './t1';
@@ -18,6 +18,7 @@ import { solveLinear } from './t3';
 import { solveQuadratic } from './t4';
 import { solveSystem } from './t5';
 import { solveFactorise } from './t6';
+import { solveLinearInequality } from './t7';
 
 export type Status = 'solved' | 'unsupported' | 'error' | 'unverified';
 
@@ -36,6 +37,12 @@ export type Answer =
       readonly kind: 'infinitely-many';
       readonly vars: readonly [string, string];
       readonly state: State;
+    }
+  | {
+      readonly kind: 'interval';
+      readonly variable: string;
+      readonly rel: Rel;
+      readonly bound: Rational;
     };
 
 export interface Solution {
@@ -59,11 +66,18 @@ export interface SolveOptions {
   readonly tamper?: StepTamper;
   /** Optional command typed before the problem. */
   readonly command?: Command;
+  /**
+   * Quadratic method. `formula` (the default) factorises rational roots and otherwise
+   * uses the quadratic formula. `square` completes the square instead. Both paths are
+   * checked by the same verifier.
+   */
+  readonly quadratic?: 'formula' | 'square';
 }
 
 function initialState(p: Problem): State {
   if (p.kind === 'expr') return { kind: 'expr', expr: p.expr };
   if (p.kind === 'equation') return { kind: 'equation', eq: p.eq };
+  if (p.kind === 'inequality') return { kind: 'inequality', lhs: p.lhs, rhs: p.rhs, rel: p.rel };
   return { kind: 'system', eqs: p.eqs };
 }
 
@@ -79,6 +93,13 @@ function answerFor(run: Run, type: ProblemType, vars: readonly string[]): Answer
     if (set.kind === 'all') return { kind: 'all-real', variable: x };
     if (set.values.length === 0) return { kind: 'no-solution' };
     return { kind: 'roots', variable: x, values: set.values };
+  }
+  if (type === 'T7') {
+    const x = vars[0] ?? 'x';
+    const set = solutionSetIneq(s, x);
+    if (set.kind === 'all') return { kind: 'all-real', variable: x };
+    if (set.kind === 'none') return { kind: 'no-solution' };
+    return { kind: 'interval', variable: x, rel: set.rel, bound: set.bound };
   }
   if (type === 'T5') {
     const [x, y] = vars as [string, string];
@@ -103,6 +124,7 @@ const STRATEGIES: Partial<Record<ProblemType, Strategy>> = {
   T4: solveQuadratic,
   T5: solveSystem,
   T6: solveFactorise,
+  T7: solveLinearInequality,
 };
 
 /** Register a strategy (used by later modules). */
@@ -124,7 +146,12 @@ export function solveProblem(problem: Problem, input = '', opts: SolveOptions = 
       steps: [],
       message: { key: 'unsupported.system' },
     };
-  const run = new Run({ problem, vars: c.vars }, initialState(problem), opts.tamper);
+  const run = new Run(
+    { problem, vars: c.vars },
+    initialState(problem),
+    opts.tamper,
+    opts.quadratic ?? 'formula',
+  );
   try {
     strategy(run, problem, c.vars);
   } catch (e) {

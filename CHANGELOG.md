@@ -4,6 +4,49 @@ All notable changes to Sumstair (called StepSlate before 0.2.0) are listed here.
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses
 [Semantic Versioning](https://semver.org/).
 
+## [0.3.0] - 2026-10-08
+
+### Added
+
+- Linear inequalities in one unknown (`2x + 3 < 11`, `<=`, `>=`, and the signs ≤ ≥).
+  Each step is a sound transformation: the same solution set, and a non-zero constant
+  multiple of the previous difference. Dividing by a negative number flips the sign.
+  A step that changes the solution set, including a missed flip, is not shown.
+  Quadratic inequalities are refused rather than guessed. The answer can be drawn as a
+  number line; the drawing is a picture of the checked bound, not a step.
+- Completing the square as an optional second method for quadratic equations (the
+  checkbox "Completing the square"). The default path is unchanged (factorise rational
+  roots, otherwise the quadratic formula). The square-root step uses the same
+  solution-set check as the existing square-root path. Simultaneous equations still
+  finish by a verified back-substitution after elimination.
+- Factorising an expression (`factor x^2 - 5x + 6`): common factor, difference of
+  squares, perfect square, cross method, grouping, and exact division by a rational
+  root. Every step is a polynomial identity.
+- Practice questions for inequalities and factorising. A factored answer that matches
+  the checked factorisation is accepted; an unexpanded product is still rejected when
+  the question asked for a simplified polynomial.
+- The page says, in English and Traditional Chinese, that every step is checked before
+  it is shown and that the app stays free (no account, no ads, no paid steps).
+- `navigator.storage.persist()` on load, with a visible status (kept, not kept, or
+  unsupported). A dismissible reminder offers a JSON backup of settings and practice
+  progress after a few local changes. The file is built in the browser. No network.
+- An independent Python oracle (`npm run oracle`, sympy 1.13.1) that recomputes
+  solution sets and polynomial identities for hundreds of random inequalities,
+  completing-the-square solutions, factorisations and linear equations. It runs in CI
+  on Linux before the release is tagged.
+
+### Not in this version
+
+- Radical simplification and index laws beyond the integer powers already checked in
+  arithmetic and polynomials. The verifier is exact over the rationals. Treating a
+  general surd identity as a checked step would be a new trust boundary, so it waits.
+- Word-problem templates. A sentence such as "let the number be x" is not a polynomial
+  identity. Putting it in the step list would show prose the verifier does not check.
+- Photo input. Camera capture and handwriting recognition are a licensing and design
+  problem, not a small verified step.
+- Quadratic inequalities. The solution set is not one half-line, and this version does
+  not pretend otherwise.
+
 ## [0.2.0] - 2026-10-08
 
 ### Changed
@@ -75,5 +118,6 @@ First release.
 - Command line solver (`npm run solve`), loopback static server (`npm start`),
   Dockerfile, CI (check, e2e, docker), GitHub Pages workflow, static-site zip.
 
+[0.3.0]: https://github.com/Kinfxhk/sumstair/releases/tag/v0.3.0
 [0.2.0]: https://github.com/Kinfxhk/sumstair/releases/tag/v0.2.0
 [0.1.0]: https://github.com/Kinfxhk/sumstair/releases/tag/v0.1.0

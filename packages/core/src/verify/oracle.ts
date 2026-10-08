@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // Direct solvers ("oracles") used only for checking: closed formulas, no step logic.
 
-import type { Equation, Expr } from '../ast';
+import type { Equation, Expr, Rel } from '../ast';
 import { Rational } from '../numbers/rational';
 import { Surd } from '../numbers/surd';
 import type { State } from '../state';
@@ -34,11 +34,21 @@ function dedupe(values: Surd[]): Surd[] {
 /** Real solution set of one equation in the unknown x (degree <= 2, or x = value). */
 export function solveEquation1(eq: Equation, x: string): SolSet1 {
   if (containsRootOrPm(eq.lhs) || containsRootOrPm(eq.rhs)) {
-    const [side, other] =
-      eq.lhs.k === 'var' && eq.lhs.name === x ? [eq.lhs, eq.rhs] : [eq.rhs, eq.lhs];
-    if (!(side.k === 'var' && side.name === x) || hasVariable(other))
+    // Roots and ± are allowed only as "linear = constant" (x = ±√k, or x + h = ±√k).
+    if (containsRootOrPm(eq.lhs) && containsRootOrPm(eq.rhs))
+      throw new Unverifiable('roots are only allowed on one side');
+    const linExpr = containsRootOrPm(eq.rhs) ? eq.lhs : eq.rhs;
+    const constExpr = containsRootOrPm(eq.rhs) ? eq.rhs : eq.lhs;
+    if (hasVariable(constExpr))
       throw new Unverifiable('roots are only allowed in "x = value" form');
-    return { kind: 'finite', values: dedupe(expandPm(other).map((b) => evalSurd(b, new Map()))) };
+    const coeff = univariateCoefficients(linExpr, x);
+    if (coeff.length !== 2) throw new Unverifiable('roots are only allowed in "x = value" form');
+    const [c0, a] = coeff as [Rational, Rational];
+    if (a.isZero()) throw new Unverifiable('roots are only allowed in "x = value" form');
+    const values = expandPm(constExpr).map((b) =>
+      evalSurd(b, new Map()).sub(Surd.rational(c0)).div(Surd.rational(a)),
+    );
+    return { kind: 'finite', values: dedupe(values) };
   }
   const p = univariateCoefficients({ k: 'sub', a: eq.lhs, b: eq.rhs }, x);
   const deg = p.length - 1;
@@ -83,6 +93,62 @@ export function sameSet1(p: SolSet1, q: SolSet1): boolean {
   if (p.kind === 'all') return true;
   const qv = (q as { values: readonly Surd[] }).values;
   return p.values.length === qv.length && p.values.every((v, i) => v.eq(qv[i]!));
+}
+
+// ---- linear inequalities -------------------------------------------------------------
+
+export type IneqSet =
+  | { readonly kind: 'all' }
+  | { readonly kind: 'none' }
+  | { readonly kind: 'half'; readonly rel: Rel; readonly bound: Rational };
+
+export function flipRel(rel: Rel): Rel {
+  switch (rel) {
+    case '<':
+      return '>';
+    case '<=':
+      return '>=';
+    case '>':
+      return '<';
+    case '>=':
+      return '<=';
+  }
+}
+
+function relHolds(rel: Rel, value: Rational): boolean {
+  const s = value.sign();
+  if (rel === '<') return s > 0;
+  if (rel === '<=') return s >= 0;
+  if (rel === '>') return s < 0;
+  return s <= 0;
+}
+
+/** Solution set of a linear inequality (lhs rel rhs) in the unknown x. */
+export function solveInequality(lhs: Expr, rhs: Expr, rel: Rel, x: string): IneqSet {
+  if (containsRootOrPm(lhs) || containsRootOrPm(rhs))
+    throw new Unverifiable('roots are not allowed in an inequality');
+  const coeff = univariateCoefficients({ k: 'sub', a: lhs, b: rhs }, x);
+  if (coeff.length - 1 > 1) throw new Unverifiable('degree above 1');
+  if (coeff.length === 1)
+    return relHolds(rel, coeff[0]!.neg()) ? { kind: 'all' } : { kind: 'none' };
+  // a x + b rel 0, with coeff = [b, a] of (lhs - rhs).
+  const b = coeff[0]!;
+  const a = coeff[1]!;
+  if (a.isZero()) return relHolds(rel, b.neg()) ? { kind: 'all' } : { kind: 'none' };
+  return { kind: 'half', rel: a.sign() < 0 ? flipRel(rel) : rel, bound: b.neg().div(a) };
+}
+
+export function solutionSetIneq(s: State, x: string): IneqSet {
+  if (s.kind === 'inequality') return solveInequality(s.lhs, s.rhs, s.rel, x);
+  if (s.kind === 'none') return { kind: 'none' };
+  if (s.kind === 'all') return { kind: 'all' };
+  throw new Unverifiable(`not an inequality state: ${s.kind}`);
+}
+
+export function sameIneq(p: IneqSet, q: IneqSet): boolean {
+  if (p.kind !== q.kind) return false;
+  if (p.kind === 'half' && q.kind === 'half') return p.rel === q.rel && p.bound.eq(q.bound);
+  return true;
 }
 
 // ---- systems of two linear equations -----------------------------------------------------

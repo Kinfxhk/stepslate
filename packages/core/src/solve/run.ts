@@ -28,6 +28,8 @@ function stateExprs(s: State): Expr[] {
     case 'equation':
     case 'infinite':
       return [s.eq.lhs, s.eq.rhs];
+    case 'inequality':
+      return [s.lhs, s.rhs];
     case 'or':
     case 'system':
       return s.eqs.flatMap((q) => [q.lhs, q.rhs]);
@@ -44,6 +46,8 @@ export class Run {
     readonly ctx: VerifyContext,
     initial: State,
     private readonly tamper?: StepTamper,
+    /** Quadratic method. The default keeps the factor / formula path. */
+    readonly quadratic: 'formula' | 'square' = 'formula',
   ) {
     this.state = initial;
   }

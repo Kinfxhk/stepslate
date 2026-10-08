@@ -15,7 +15,8 @@ const en = {
   'solve.heading': 'Solve a problem',
   'input.label': 'Type a sum, an expression or an equation',
   'input.placeholder': 'e.g. 2(x+3)=5x-4',
-  'input.help': 'Use ^ for powers, / for fractions and ; between two equations.',
+  'input.help':
+    'Use ^ for powers, / for fractions, < <= > >= for inequalities, and ; between two equations.',
   'input.solve': 'Solve',
   'input.clear': 'Clear',
   'kbd.label': 'Maths keyboard',
@@ -30,6 +31,11 @@ const en = {
   'preview.type.T4': 'Quadratic equation',
   'preview.type.T5': 'Simultaneous linear equations',
   'preview.type.T6': 'Factorise',
+  'preview.type.T7': 'Linear inequality',
+  'promise.line':
+    'Every step is checked before it is shown. Always free: no account, no ads, no paid steps.',
+  'method.square': 'Completing the square (quadratics)',
+
   'steps.title': 'Steps',
   'steps.next': 'Next step',
   'steps.all': 'Show all steps',
@@ -94,6 +100,16 @@ const en = {
   'practice.answerHelp.T4': 'Roots separated by commas, e.g. 2, 3 (or "none")',
   'practice.answerHelp.T5': 'e.g. x = 3, y = 2',
   'practice.answerHelp.T6': 'A product, e.g. (x - 2)(x - 3)',
+  'practice.answerHelp.T7': 'e.g. x < 4 or x >= -1/2',
+  'storage.persisted': 'Saved in this browser (storage kept).',
+  'storage.denied': 'Saved in this browser. This browser may clear site data.',
+  'storage.unsupported': 'Saved in this browser only.',
+  'backup.body':
+    'Your practice progress is only in this browser. Download a backup so you can keep it.',
+  'backup.save': 'Download backup',
+  'backup.dismiss': 'Not now',
+  'rule.square': 'Completing the square',
+
   'practice.check': 'Check answer',
   'practice.hint': 'Show next step',
   'practice.reveal': 'Show full solution',
@@ -121,7 +137,7 @@ const zhHK: Record<UiKey, string> = {
   'solve.heading': '解題',
   'input.label': '輸入算式、代數式或方程',
   'input.placeholder': '例如 2(x+3)=5x-4',
-  'input.help': '用 ^ 表示次方，用 / 表示分數，兩條方程之間用 ; 分隔。',
+  'input.help': '用 ^ 表示次方，用 / 表示分數，用 <、<=、>、>= 表示不等式，兩條方程之間用 ; 分隔。',
   'input.solve': '解題',
   'input.clear': '清除',
   'kbd.label': '數學鍵盤',
@@ -136,6 +152,10 @@ const zhHK: Record<UiKey, string> = {
   'preview.type.T4': '一元二次方程',
   'preview.type.T5': '二元一次聯立方程',
   'preview.type.T6': '因式分解',
+  'preview.type.T7': '一元一次不等式',
+  'promise.line': '每一步都先核對，才會顯示。一直免費：不用帳戶、沒有廣告、沒有付費步驟。',
+  'method.square': '二次方程用配方法',
+
   'steps.title': '步驟',
   'steps.next': '下一步',
   'steps.all': '顯示所有步驟',
@@ -197,6 +217,14 @@ const zhHK: Record<UiKey, string> = {
   'practice.answerHelp.T4': '各根以逗號分隔，例如 2, 3（無實根請輸入「none」）',
   'practice.answerHelp.T5': '例如 x = 3, y = 2',
   'practice.answerHelp.T6': '一個乘積，例如 (x - 2)(x - 3)',
+  'practice.answerHelp.T7': '例如 x < 4 或 x >= -1/2',
+  'storage.persisted': '已存在這個瀏覽器（已要求保留儲存空間）。',
+  'storage.denied': '已存在這個瀏覽器。瀏覽器仍可能清除網站資料。',
+  'storage.unsupported': '只存在這個瀏覽器。',
+  'backup.body': '練習進度只存在這個瀏覽器。下載備份，以免清除資料後遺失。',
+  'backup.save': '下載備份',
+  'backup.dismiss': '暫時不用',
+  'rule.square': '配方',
   'practice.check': '核對答案',
   'practice.hint': '顯示下一步',
   'practice.reveal': '顯示完整解法',
@@ -231,7 +259,8 @@ export function ruleKey(rule: string): UiKey {
     return 'rule.order';
   if (rule === 'poly.combine') return 'rule.combine';
   if (rule.endsWith('multiply-lcd')) return 'rule.clear';
-  if (rule === 'eq.swap') return 'rule.swap';
+  if (rule.endsWith('swap')) return 'rule.swap';
+  if (rule.startsWith('eq.complete')) return 'rule.square';
   if (rule.endsWith('move-terms') || rule === 'eq.move-all-left') return 'rule.move';
   if (/divide|negate/.test(rule)) return 'rule.divide';
   if (rule.startsWith('sys.scale')) return 'rule.multiply';

@@ -199,6 +199,20 @@ function t5(r: Rng, level: Level): string {
   }
 }
 
+function t7(r: Rng, level: Level): string {
+  const rel = r.pick(['<', '<=', '>', '>='] as const);
+  const a = r.nz(level === 1 ? 4 : level === 2 ? 7 : 9);
+  const bound = r.int(-5, 5);
+  const extra = level === 1 ? r.int(0, 4) : r.int(-6, 6);
+  // a x + extra rel (a*bound + extra)  has solution x rel bound when a > 0, flipped when a < 0.
+  const rhs = a * bound + extra;
+  const left = polyText([
+    [a, 'x'],
+    [extra, ''],
+  ]);
+  return `${left} ${rel} ${rhs}`;
+}
+
 const GENERATORS: Record<ProblemType, (r: Rng, level: Level) => string> = {
   T1: t1,
   T2: t2,
@@ -206,6 +220,7 @@ const GENERATORS: Record<ProblemType, (r: Rng, level: Level) => string> = {
   T4: t4,
   T5: t5,
   T6: t6,
+  T7: t7,
 };
 
 function acceptable(type: ProblemType, sol: Solution): boolean {
@@ -215,6 +230,7 @@ function acceptable(type: ProblemType, sol: Solution): boolean {
   if (type === 'T3') return a?.kind === 'roots' && a.values.length === 1;
   if (type === 'T4') return a?.kind === 'roots';
   if (type === 'T5') return a?.kind === 'pair';
+  if (type === 'T7') return a?.kind === 'interval';
   if (type === 'T6')
     return (
       a?.kind === 'expression' &&
@@ -239,6 +255,7 @@ export function generateQuestion(type: ProblemType, level: Level, seed: number):
     T4: 'x^2 - 5x + 6 = 0',
     T5: 'x + y = 5; x - y = 1',
     T6: 'factor x^2 - 5x + 6',
+    T7: '2x + 3 < 11',
   }[type];
   return { type, level, seed, input, solution: solve(input) };
 }

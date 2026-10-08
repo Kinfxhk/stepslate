@@ -5,6 +5,7 @@ import {
   classify,
   equationLatex,
   equationText,
+  toText,
   parseProblem,
   ParseError,
   problemLatex,
@@ -17,6 +18,7 @@ import {
 import { ui } from './i18n';
 import { explanationElement, mathElement, renderMath } from './math';
 import { hashForProblem, problemFromHash } from './share';
+import { numberLine } from './number-line';
 import { stateElement, stepElement } from './steps-render';
 import { reportUrl } from './report';
 
@@ -27,6 +29,7 @@ export const EXAMPLES = [
   'x^2 - 5x + 6 = 0',
   'x^2 - 4x + 1 = 0',
   '2x + y = 7; x - y = 2',
+  '2x + 3 < 11',
 ];
 
 const KEYS: readonly { label: string; insert: string; aria?: string }[] = [
@@ -41,6 +44,8 @@ const KEYS: readonly { label: string; insert: string; aria?: string }[] = [
   { label: '−', insert: '-', aria: '-' },
   { label: '×', insert: '*', aria: '*' },
   { label: '=', insert: '=' },
+  { label: '<', insert: '<' },
+  { label: '≤', insert: '<=', aria: '<=' },
   { label: ';', insert: '; ' },
 ];
 
@@ -48,6 +53,7 @@ const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as 
 
 export class SolveView {
   private lang: Lang = 'en';
+  private square = false;
   private solution: Solution | undefined;
   private shown = 0;
   private previewTimer: number | undefined;
@@ -80,6 +86,12 @@ export class SolveView {
     this.buildKeyboard();
     this.buildExamples();
     window.addEventListener('hashchange', () => this.loadFromHash());
+  }
+
+  setSquare(on: boolean): void {
+    const changed = this.square !== on;
+    this.square = on;
+    if (changed && this.input.value.trim()) this.solveNow(false);
   }
 
   setLang(lang: Lang): void {
@@ -207,7 +219,7 @@ export class SolveView {
     const text = this.input.value;
     this.updatePreview();
     if (text.trim() === '') return;
-    this.solution = solve(text);
+    this.solution = solve(text, this.square ? { quadratic: 'square' } : {});
     this.shown = 0;
     if (updateHash) history.replaceState(null, '', hashForProblem(text));
     this.renderSteps();
@@ -287,6 +299,7 @@ export class SolveView {
       return;
     }
     box.append(stateElement(final, this.lang));
+    if (final.kind === 'inequality') box.append(numberLine(final.rel, toText(final.rhs)));
   }
 
   private async share(): Promise<void> {

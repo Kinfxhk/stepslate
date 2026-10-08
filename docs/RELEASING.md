@@ -2,7 +2,7 @@
 
 Maintainer checklist. Nothing here runs automatically.
 
-1. `npm ci && npm run check` (tests, type check, lint, licence allowlist, hygiene, gitleaks).
+1. `npm ci && npm run check` (tests, type check, lint, licence allowlist, hygiene, gitleaks), then `npm run oracle`.
 2. `PW_CHROMIUM_PATH=/path/to/chrome npm run test:e2e` several times in a row; all runs must pass.
 3. Clean-copy test: `git clone <repo> /tmp/ss && cd /tmp/ss && npm ci && npm start`, then open
    http://127.0.0.1:4873/ and check `/healthz`.

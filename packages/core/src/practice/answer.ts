@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // Answer checking by mathematical equivalence (0.5 = 1/2, "x = 2" = "2", roots in any order).
 
-import type { Expr } from '../ast';
+import type { Expr, Rel } from '../ast';
 import { hasVar, variables } from '../ast';
 import type { Rational } from '../numbers/rational';
 import type { Surd } from '../numbers/surd';
@@ -57,23 +57,31 @@ function sameSet(a: readonly Surd[], b: readonly Surd[]): boolean {
   return key(a) === key(b);
 }
 
-/** A simplified expression: no bracketed sums left to expand, no more terms than needed. */
-function looksSimplified(e: Expr, target: Expr): boolean {
-  let bracketed = false;
-  const visit = (n: Expr, top: boolean): void => {
-    if (n.k === 'num' || n.k === 'var') return;
-    if (!top && isSumLike(n)) bracketed = true;
-    if (n.k === 'add' || n.k === 'sub') {
-      visit(n.a, top);
-      visit(n.b, false);
+/**
+ * No more bracketed sums, and no more terms, than the target answer.
+ * A factored answer keeps sums inside the brackets; an expanded answer does not,
+ * so typing the unexpanded form back is still wrong.
+ */
+function countBracketed(e: Expr): number {
+  let n = 0;
+  const visit = (node: Expr, top: boolean): void => {
+    if (node.k === 'num' || node.k === 'var') return;
+    if (!top && isSumLike(node)) n++;
+    if (node.k === 'add' || node.k === 'sub') {
+      visit(node.a, top);
+      visit(node.b, false);
       return;
     }
-    if (n.k === 'neg') return visit(n.a, top);
-    visit(n.a, false);
-    if ('b' in n) visit(n.b, false);
+    if (node.k === 'neg') return visit(node.a, top);
+    visit(node.a, false);
+    if ('b' in node) visit(node.b, false);
   };
   visit(e, true);
-  return !bracketed && flatten(e).length <= flatten(target).length;
+  return n;
+}
+
+function looksSimplified(e: Expr, target: Expr): boolean {
+  return countBracketed(e) <= countBracketed(target) && flatten(e).length <= flatten(target).length;
 }
 
 export function checkAnswer(sol: Solution, text: string): Verdict {
@@ -114,6 +122,11 @@ export function checkAnswer(sol: Solution, text: string): Verdict {
       return ALL.test(input) ? 'correct' : 'wrong';
     case 'infinitely-many':
       return INFINITE.test(input) ? 'correct' : 'wrong';
+    case 'interval': {
+      const got = readInterval(input, answer.variable);
+      if (!got) return 'unreadable';
+      return got.rel === answer.rel && got.bound.eq(answer.bound) ? 'correct' : 'wrong';
+    }
     case 'pair': {
       const [x, y] = answer.vars;
       const parts = input.split(/,|;|\band\b|及/i).map((p) => p.trim());
@@ -162,5 +175,24 @@ export function answerText(sol: Solution): string {
       return 'infinitely many';
     case 'pair':
       return `${a.vars[0]} = ${a.values[0].toString()}, ${a.vars[1]} = ${a.values[1].toString()}`;
+    case 'interval':
+      return `${a.variable} ${a.rel} ${a.bound.toString()}`;
+  }
+}
+
+function readInterval(text: string, name: string): { rel: Rel; bound: Rational } | undefined {
+  const norm = text
+    .trim()
+    .replace(/\u2264/g, '<=')
+    .replace(/\u2265/g, '>=');
+  const m = /^(?:([a-zA-Z])\s*)?(<=|>=|<|>)\s*(.+)$/.exec(norm);
+  if (!m) return undefined;
+  if (m[1] && m[1] !== name) return undefined;
+  const e = parse(m[3]!);
+  if (!e || hasVar(e)) return undefined;
+  try {
+    return { rel: m[2] as Rel, bound: evalRational(e, new Map()) };
+  } catch {
+    return undefined;
   }
 }

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // Solution states and steps shared by the rule engine and the verifier.
 
-import type { Equation, Expr } from './ast';
+import type { Equation, Expr, Rel } from './ast';
 import type { MessageKey } from './i18n/messages';
 import type { Rational } from './numbers/rational';
 
@@ -10,6 +10,8 @@ export type State =
   | { readonly kind: 'expr'; readonly expr: Expr }
   /** One equation in one unknown. */
   | { readonly kind: 'equation'; readonly eq: Equation }
+  /** One linear inequality in one unknown. */
+  | { readonly kind: 'inequality'; readonly lhs: Expr; readonly rhs: Expr; readonly rel: Rel }
   /** Equations joined by "or" (for example after factorising). */
   | { readonly kind: 'or'; readonly eqs: readonly Equation[] }
   /** Simultaneous equations (joined by "and"). */

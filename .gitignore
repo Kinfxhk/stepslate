@@ -11,3 +11,5 @@ release/
 .vitest/
 test-results/
 playwright-report/
+.venv/
+tools/oracle/.venv/

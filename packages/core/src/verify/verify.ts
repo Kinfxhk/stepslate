@@ -2,12 +2,21 @@
 // The independent step verifier. A step is shown to the user only if verifyStep()
 // accepts it. This module never imports the rule engine (packages/core/src/rules).
 
-import type { Equation, Expr, Problem } from '../ast';
+import type { Equation, Expr, Problem, Rel } from '../ast';
 import { dropNegZero, exprEqual, substitute, variables } from '../ast';
 import { Rational } from '../numbers/rational';
 import type { State, Step } from '../state';
 import { evalRational, evalSurd, Unverifiable } from './evaluate';
-import { linearRow, sameSet1, sameSet2, solutionSet1, solutionSet2 } from './oracle';
+import {
+  flipRel,
+  linearRow,
+  sameIneq,
+  sameSet1,
+  sameSet2,
+  solutionSet1,
+  solutionSet2,
+  solutionSetIneq,
+} from './oracle';
 import { constantMultiple, identical, univariateCoefficients } from './poly';
 
 export type VerifyResult = { readonly ok: true } | { readonly ok: false; readonly reason: string };
@@ -26,6 +35,11 @@ const ONE_VAR = new Set(['equation', 'or', 'none', 'all']);
 const SYSTEM = new Set(['system', 'none', 'infinite', 'all']);
 
 const diff = (q: Equation): Expr => ({ k: 'sub', a: q.lhs, b: q.rhs });
+const diffIneq = (s: { lhs: Expr; rhs: Expr; rel: Rel }): Expr => ({
+  k: 'sub',
+  a: s.lhs,
+  b: s.rhs,
+});
 
 export function stateVars(s: State): string[] {
   const out = new Set<string>();
@@ -35,7 +49,10 @@ export function stateVars(s: State): string[] {
   };
   if (s.kind === 'expr') variables(s.expr, out);
   else if (s.kind === 'equation' || s.kind === 'infinite') addEq(s.eq);
-  else if (s.kind === 'or' || s.kind === 'system') s.eqs.forEach(addEq);
+  else if (s.kind === 'inequality') {
+    variables(s.lhs, out);
+    variables(s.rhs, out);
+  } else if (s.kind === 'or' || s.kind === 'system') s.eqs.forEach(addEq);
   return [...out].sort();
 }
 
@@ -52,6 +69,10 @@ export function sameState(p: State, q: State): boolean {
     case 'system': {
       const o = q as typeof p;
       return p.eqs.length === o.eqs.length && p.eqs.every((e, i) => eqEq(e, o.eqs[i]!));
+    }
+    case 'inequality': {
+      const o = q as typeof p;
+      return p.rel === o.rel && exprEqual(p.lhs, o.lhs) && exprEqual(p.rhs, o.rhs);
     }
     default:
       return true;
@@ -138,6 +159,31 @@ function verifyInner(step: Step, ctx: VerifyContext): VerifyResult {
         : fail('value changed');
     }
     return identical(before.expr, after.expr, vars) ? ok : fail('not an identity');
+  }
+
+  if (ctx.problem.kind === 'inequality') {
+    const x = ctx.vars[0] ?? 'x';
+    const ineqState = (k: string) => k === 'inequality' || k === 'none' || k === 'all';
+    if (!ineqState(before.kind) || !ineqState(after.kind))
+      return fail(`cannot go from ${before.kind} to ${after.kind}`);
+    for (const s of [before, after])
+      if (stateVars(s).some((v) => v !== x)) return fail('unexpected unknown');
+    if (!sameIneq(solutionSetIneq(before, x), solutionSetIneq(after, x)))
+      return fail('solution set changed');
+    if (
+      before.kind === 'inequality' &&
+      after.kind === 'inequality' &&
+      step.check !== 'solution-set'
+    ) {
+      const c = constantMultiple(diffIneq(after), diffIneq(before), [x]);
+      if (!c) return fail('not a non-zero constant multiple of the previous inequality');
+      const flipped = flipRel(before.rel) === after.rel;
+      if (c.sign() > 0 && before.rel !== after.rel)
+        return fail('inequality sign changed without a negative multiplier');
+      if (c.sign() < 0 && !flipped)
+        return fail('a negative multiplier must flip the inequality sign');
+    }
+    return ok;
   }
 
   const systemProblem = ctx.problem.kind === 'system';

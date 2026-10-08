@@ -44,6 +44,15 @@ jobs:
       - name: Unit + property + golden tests
         run: npm test
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Independent sympy oracle
+        run: |
+          python -m pip install -r tools/oracle/requirements.txt
+          SUMSTAIR_PYTHON=python npm run oracle
+
       - name: Dependency licence check (AGPL-3.0 compatible allowlist)
         run: npm run check:licenses
 

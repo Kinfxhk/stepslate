@@ -411,3 +411,67 @@ select,
     break-inside: avoid;
   }
 }
+
+.promise {
+  margin: 0.75rem auto 0;
+  max-width: 52rem;
+  padding: 0 1rem;
+  text-align: center;
+  font-weight: 650;
+  color: var(--ink);
+}
+.backup[hidden] {
+  display: none;
+}
+.backup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  max-width: 52rem;
+  margin: 0.6rem auto 0;
+  padding: 0.6rem 0.8rem;
+  background: var(--hl);
+  color: var(--hl-ink);
+  border-radius: var(--radius);
+}
+.backup p {
+  margin: 0;
+  flex: 1 1 16rem;
+}
+.method {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+  margin-top: 0.55rem;
+}
+.number-line {
+  display: block;
+  width: min(100%, 280px);
+  height: auto;
+  margin-top: 0.4rem;
+}
+.number-line .axis {
+  stroke: var(--muted);
+  stroke-width: 1.5;
+}
+.number-line .ray {
+  stroke: var(--accent);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+.number-line .dot {
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+.number-line .dot.open {
+  fill: var(--panel);
+}
+.number-line .dot.filled {
+  fill: var(--accent);
+}
+.number-line .bound {
+  fill: var(--ink);
+  font-size: 13px;
+  text-anchor: middle;
+}

@@ -1,7 +1,7 @@
 {
   "name": "sumstair-monorepo",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Sumstair (步步解): free, offline, open-source step-by-step maths solver where every step is machine-verified. Educational only.",
   "license": "AGPL-3.0-or-later",
   "homepage": "https://kinfxhk.github.io/sumstair/",
@@ -37,6 +37,7 @@
     "check:licenses": "node scripts/check-licenses.mjs",
     "check:secrets": "bash scripts/secret-scan.sh",
     "check:hygiene": "node scripts/check-hygiene.mjs",
+    "oracle": "bash tools/oracle/run.sh",
     "check": "npm run lint && npm run format:check && npm run typecheck && npm test && npm run check:licenses && npm run check:hygiene && npm run check:secrets",
     "release:notes": "node scripts/release-notes.mjs"
   },

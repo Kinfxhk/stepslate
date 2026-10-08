@@ -18,6 +18,10 @@ export type TokenType =
   | ')'
   | '='
   | ';'
+  | '<'
+  | '<='
+  | '>'
+  | '>='
   | '±'
   | 'end';
 
@@ -176,6 +180,19 @@ export function tokenize(input: string): Token[] {
       out.push({ type: '^', pos: start, text: '^' });
       if (minus) out.push({ type: '-', pos: start, text: '-' });
       out.push({ type: 'num', pos: start, text: digits });
+      continue;
+    }
+    if (c === '<' || c === '>') {
+      const eq = input[i + 1] === '=';
+      const type = (eq ? `${c}=` : c) as TokenType;
+      out.push({ type, pos: i, text: eq ? `${c}=` : c });
+      i += eq ? 2 : 1;
+      continue;
+    }
+    if (c === '≤' || c === '≥') {
+      const type: TokenType = c === '≤' ? '<=' : '>=';
+      out.push({ type, pos: i, text: c });
+      i++;
       continue;
     }
     const t = SINGLE[c];

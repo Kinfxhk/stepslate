@@ -3,7 +3,7 @@
 // rational, otherwise use the quadratic formula (exact surds). Every step is verified.
 
 import type { Expr, Problem } from '../ast';
-import { div, eqn, exprEqual, mul, neg, num, pm, pow, ratExpr, sqrt, sub, v } from '../ast';
+import { add, div, eqn, exprEqual, mul, neg, num, pm, pow, ratExpr, sqrt, sub, v } from '../ast';
 import { abs, gcd, isqrt, squareFreeParts } from '../numbers/bigint';
 import { Rational } from '../numbers/rational';
 import { Surd } from '../numbers/surd';
@@ -94,7 +94,9 @@ function tryFactorised(
 export function solveQuadratic(run: Run, problem: Problem, vars: readonly string[]): void {
   if (problem.kind !== 'equation') return;
   const x = vars[0]!;
-  if (tryFactorised(run, problem, x)) return;
+  // Completing the square is an alternative to factorising, so do not take the
+  // zero-product shortcut when that method was asked for.
+  if (run.quadratic !== 'square' && tryFactorised(run, problem, x)) return;
   convertDecimals(run);
   simplifyEquationSides(run, vars);
   let cur = sides(run);
@@ -164,6 +166,10 @@ export function solveQuadratic(run: Run, problem: Problem, vars: readonly string
   }
 
   const D = b * b - 4n * a * c;
+  if (run.quadratic === 'square') {
+    completeSquarePath(run, problem, x, a, b, c);
+    return;
+  }
   const s = D >= 0n ? isqrt(D) : -1n;
   if (s >= 0n && s * s === D) factorPath(run, problem, x, a, b, D, s);
   else formulaPath(run, problem, x, a, b, c, D);
@@ -393,4 +399,145 @@ function formulaPath(
   const coef = Rational.of(k, 2n * a);
   pushCheck(run, [problem.eq], { [x]: Surd.of(base, coef.neg(), m) });
   pushCheck(run, [problem.eq], { [x]: Surd.of(base, coef, m) });
+}
+
+function shifted(x: string, h: Rational): Expr {
+  if (h.isZero()) return v(x);
+  if (h.sign() < 0) return sub(v(x), ratExpr(h.neg()));
+  return add(v(x), ratExpr(h));
+}
+
+function polyOf(x: string, terms: readonly (readonly [Rational, number])[]): Expr {
+  const ms: Mono[] = [];
+  for (const [c, k] of terms) {
+    if (c.isZero()) continue;
+    ms.push({ c, p: k === 0 ? new Map() : new Map([[x, k]]) });
+  }
+  return ms.length === 0 ? ZERO : monosExpr(ms);
+}
+
+/**
+ * ax^2 + bx + c = 0 by completing the square. Steps before the square root are
+ * polynomial identities (constant multiples). The square-root step uses the same
+ * solution-set check as the existing "take square roots" path.
+ */
+function completeSquarePath(
+  run: Run,
+  problem: Extract<Problem, { kind: 'equation' }>,
+  x: string,
+  a: bigint,
+  b: bigint,
+  c: bigint,
+): void {
+  const A = Rational.of(a);
+  const B = Rational.of(b).div(A);
+  const C = Rational.of(c).div(A);
+  const xe = v(x);
+  if (!A.isOne()) {
+    run.push({
+      after: scaleState(run, Rational.of(1n, a)),
+      rule: 'eq.divide',
+      explain: { key: 'eq.divide', params: { a: ratExpr(A) } },
+      highlight: [['lhs']],
+    });
+  }
+  if (!C.isZero()) {
+    run.push({
+      after: {
+        kind: 'equation',
+        eq: eqn(
+          polyOf(x, [
+            [B, 1],
+            [Rational.ONE, 2],
+          ]),
+          ratExpr(C.neg()),
+        ),
+      },
+      rule: 'eq.move-terms',
+      explain: { key: 'eq.move-terms', params: { x: xe } },
+      highlight: [['lhs'], ['rhs']],
+    });
+  }
+  const h = B.div(Rational.of(2));
+  const k = h.mul(h);
+  const rhs = k.sub(C);
+  run.push({
+    after: {
+      kind: 'equation',
+      eq: eqn(
+        polyOf(x, [
+          [k, 0],
+          [B, 1],
+          [Rational.ONE, 2],
+        ]),
+        ratExpr(rhs),
+      ),
+    },
+    rule: 'eq.complete-add',
+    explain: { key: 'eq.complete-add', params: { k: ratExpr(k), x: xe } },
+    highlight: [['lhs'], ['rhs']],
+  });
+  run.push({
+    after: { kind: 'equation', eq: eqn(pow(shifted(x, h), num(2)), ratExpr(rhs)) },
+    rule: 'eq.complete-square',
+    explain: { key: 'eq.complete-square', params: { h: ratExpr(h) } },
+    highlight: [['lhs']],
+  });
+  if (rhs.sign() < 0) {
+    run.push({
+      after: { kind: 'none' },
+      rule: 'eq.square-negative',
+      explain: { key: 'eq.square-negative' },
+    });
+    return;
+  }
+  if (rhs.isZero()) {
+    run.push({
+      after: { kind: 'equation', eq: eqn(shifted(x, h), ZERO) },
+      rule: 'eq.square-zero',
+      explain: { key: 'eq.square-zero' },
+      check: 'solution-set',
+      highlight: [['rhs']],
+    });
+    if (!h.isZero()) {
+      run.push({
+        after: { kind: 'equation', eq: eqn(xe, ratExpr(h.neg())) },
+        rule: 'eq.solve-factor',
+        explain: { key: 'eq.solve-factor' },
+        highlight: [['rhs']],
+      });
+    }
+    pushCheck(run, [problem.eq], { [x]: Surd.rational(h.neg()) });
+    return;
+  }
+  const rootExpr = sqrt(ratExpr(rhs));
+  run.push({
+    after: { kind: 'equation', eq: eqn(shifted(x, h), pm(ZERO, rootExpr)) },
+    rule: 'eq.square-root-both',
+    explain: { key: 'eq.square-root-both' },
+    check: 'solution-set',
+    highlight: [['rhs']],
+  });
+  const value = Surd.sqrt(rhs);
+  const simple = surdExpr(value);
+  const shown = exprEqual(simple, rootExpr) ? rootExpr : simple;
+  if (!exprEqual(simple, rootExpr)) {
+    run.push({
+      after: { kind: 'equation', eq: eqn(shifted(x, h), pm(ZERO, simple)) },
+      rule: 'eq.simplify-root',
+      explain: { key: 'eq.simplify-root', params: { from: rootExpr, to: simple } },
+      check: 'solution-set',
+      highlight: [['rhs']],
+    });
+  }
+  run.push({
+    after: { kind: 'equation', eq: eqn(xe, pm(ratExpr(h.neg()), shown)) },
+    rule: 'eq.complete-isolate',
+    explain: { key: 'eq.complete-isolate', params: { h: ratExpr(h), x: xe } },
+    check: 'solution-set',
+    highlight: [['lhs'], ['rhs']],
+  });
+  const base = Surd.rational(h.neg());
+  pushCheck(run, [problem.eq], { [x]: base.sub(value) });
+  pushCheck(run, [problem.eq], { [x]: base.add(value) });
 }

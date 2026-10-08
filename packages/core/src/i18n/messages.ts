@@ -168,6 +168,23 @@ export const en = {
   'state.none': 'There is no real solution.',
   'state.all': 'Every real number is a solution.',
   'state.infinite': 'Infinitely many solutions: every pair satisfying {eq}.',
+  'parse.too-many-relations': 'An inequality can only have one sign (<, <=, > or >=).',
+  'ineq.swap': 'Swap the two sides. Swapping flips the inequality sign.',
+  'ineq.move-terms':
+    'Move the terms with {x} to the left and the numbers to the right. A term changes sign when it moves. The inequality sign stays the same, because the same amount is added to both sides.',
+  'ineq.divide':
+    'Divide both sides by {a}. {a} is positive, so the inequality sign stays the same.',
+  'ineq.divide-negative':
+    'Divide both sides by {a}. {a} is negative, so the inequality sign flips.',
+  'ineq.all-solutions': 'This is true for every value of {x}, so every real number is a solution.',
+  'ineq.no-solution': 'This is false for every value of {x}, so there is no solution.',
+  'ineq.all-const': 'This statement is true, so every real number is a solution.',
+  'ineq.none-const': 'This statement is false, so there is no solution.',
+  'eq.complete-add': 'Add {k} to both sides. {k} is the square of half the coefficient of {x}.',
+  'eq.complete-square': 'The left side is a perfect square.',
+  'eq.complete-isolate': 'Subtract {h} from both sides so that {x} is on its own.',
+  'unsupported.quadratic-inequality':
+    'Only linear inequalities are solved here. Quadratic inequalities are not supported in this version.',
   'answer.label': 'Answer',
 } as const;
 
@@ -300,6 +317,20 @@ export const zhHK: Record<MessageKey, string> = {
   'state.none': '沒有實數解。',
   'state.all': '所有實數都是解。',
   'state.infinite': '有無限多組解：所有滿足 {eq} 的數對。',
+  'parse.too-many-relations': '一條不等式只能有一個符號（<、<=、> 或 >=）。',
+  'ineq.swap': '對調左右兩邊。對調時不等號要反過來。',
+  'ineq.move-terms':
+    '把含 {x} 的項移到左邊，數字移到右邊。項移到另一邊時要變號。因為兩邊加上同一個數，不等號維持不變。',
+  'ineq.divide': '兩邊同時除以 {a}。{a} 是正數，所以不等號維持不變。',
+  'ineq.divide-negative': '兩邊同時除以 {a}。{a} 是負數，所以不等號要反過來。',
+  'ineq.all-solutions': '無論 {x} 是甚麼值，這個式子都成立，所以所有實數都是解。',
+  'ineq.no-solution': '無論 {x} 是甚麼值，這個式子都不成立，所以沒有解。',
+  'ineq.all-const': '這個陳述成立，所以所有實數都是解。',
+  'ineq.none-const': '這個陳述不成立，所以沒有解。',
+  'eq.complete-add': '兩邊同時加上 {k}。{k} 是 {x} 的係數一半的平方。',
+  'eq.complete-square': '左邊是一個完全平方。',
+  'eq.complete-isolate': '兩邊同時減去 {h}，使 {x} 單獨留在左邊。',
+  'unsupported.quadratic-inequality': '這裡只解一次不等式。二次不等式在這個版本未支援。',
   'answer.label': '答案',
 };
 

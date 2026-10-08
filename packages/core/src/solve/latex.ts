@@ -2,7 +2,7 @@
 // LaTeX for states and problems (rendered by KaTeX in the web UI), with highlights.
 
 import type { Equation, Expr, Problem } from '../ast';
-import { equationLatex, toLatex } from '../print/print';
+import { equationLatex, inequalityLatex, toLatex } from '../print/print';
 import type { Path, State } from '../state';
 
 function exprAt(e: Expr, path: readonly (string | number)[]): Expr | undefined {
@@ -36,6 +36,7 @@ export function highlightNodes(s: State, paths: readonly Path[] = []): Set<Expr>
       const node = exprAt(s.expr, p);
       if (node) out.add(node);
     } else if (s.kind === 'equation' || s.kind === 'infinite') eqAt(s.eq, p, out);
+    else if (s.kind === 'inequality') eqAt(s, p, out);
     else if ((s.kind === 'or' || s.kind === 'system') && p[0] === 'eqs') {
       const q = s.eqs[Number(p[1])];
       if (q) eqAt(q, p.slice(2), out);
@@ -57,6 +58,8 @@ export function stateLatex(
     case 'equation':
     case 'infinite':
       return equationLatex(s.eq, L);
+    case 'inequality':
+      return inequalityLatex(s, L);
     case 'or':
       return s.eqs
         .map((q) => equationLatex(q, L))
@@ -71,5 +74,6 @@ export function stateLatex(
 export function problemLatex(p: Problem): string {
   if (p.kind === 'expr') return toLatex(p.expr);
   if (p.kind === 'equation') return equationLatex(p.eq);
+  if (p.kind === 'inequality') return inequalityLatex(p);
   return `\\begin{cases} ${p.eqs.map((q) => equationLatex(q)).join(' \\\\ ')} \\end{cases}`;
 }

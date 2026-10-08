@@ -29,15 +29,17 @@ Sumstair is an independent project and is **not affiliated with, endorsed by,
 or sponsored by** any other maths-solver product, company, publisher or exam
 board.
 
-## What it solves (v0.2)
+## What it solves (v0.3)
 
-| Type                                                  | Examples                                            | How                                                                                                                                         |
-| ----------------------------------------------------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| Arithmetic with fractions, decimals, powers           | `1/2 + 3/4 * 2`, `(2/3)^2 - 0.25`                   | one operation at a time, exact fractions                                                                                                    |
-| Simplifying polynomials (up to 2 letters, degree ≤ 4) | `3(2x - 1) - (x + 4)`, `(x + 2)^2 - (x - 1)(x + 3)` | expand, remove brackets, collect like terms                                                                                                 |
-| Linear equations                                      | `2(x + 3) = 5x - 4`, `x/3 + 1 = x/2`                | clear fractions, move terms, divide, check                                                                                                  |
-| Quadratic equations                                   | `x^2 - 5x + 6 = 0`, `x^2 - 4x + 1 = 0`, `3x^2 = 5`  | factorise when the roots are rational, otherwise the quadratic formula with exact square roots; "no real roots" when Δ < 0; check each root |
-| Two simultaneous linear equations                     | `2x + y = 7; x - y = 2`                             | elimination, back substitution, check; detects no / infinitely many solutions                                                               |
+| Type                                                  | Examples                                            | How                                                                                                                                                                         |
+| ----------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Arithmetic with fractions, decimals, powers           | `1/2 + 3/4 * 2`, `(2/3)^2 - 0.25`                   | one operation at a time, exact fractions                                                                                                                                    |
+| Simplifying polynomials (up to 2 letters, degree ≤ 4) | `3(2x - 1) - (x + 4)`, `(x + 2)^2 - (x - 1)(x + 3)` | expand, remove brackets, collect like terms                                                                                                                                 |
+| Linear equations                                      | `2(x + 3) = 5x - 4`, `x/3 + 1 = x/2`                | clear fractions, move terms, divide, check                                                                                                                                  |
+| Quadratic equations                                   | `x^2 - 5x + 6 = 0`, `x^2 - 4x + 1 = 0`, `3x^2 = 5`  | factorise when the roots are rational, otherwise the quadratic formula with exact square roots; optional completing the square; "no real roots" when Δ < 0; check each root |
+| Two simultaneous linear equations                     | `2x + y = 7; x - y = 2`                             | elimination, back substitution, check; detects no / infinitely many solutions                                                                                               |
+| Factorising an expression                             | `factor x^2 - 5x + 6`, `factor x^2 - y^2`           | common factor, difference of squares, perfect square, cross method, grouping; each step is an identity                                                                      |
+| Linear inequalities                                   | `2x + 3 < 11`, `-2x <= 4`                           | same moves as a linear equation; dividing by a negative number flips the sign; quadratic inequalities are refused                                                           |
 
 Other features: an **"I read this as"** preview (and a warning for ambiguous
 input such as `1/2x`), step-by-step reveal or show all, highlighting of what
@@ -70,6 +72,9 @@ must accept it before it is recorded:
 - equations: the new equation must be a non-zero constant multiple of the old one
   (rearranging, clearing fractions, dividing) **and** have the same solution set,
   found by a direct exact solver (rationals and square roots);
+- inequalities: the same solution set (a half-line, every real number, or none)
+  **and**, for a rearrangement, a non-zero constant multiple whose sign matches
+  whether the inequality sign flipped;
 - simultaneous equations: a row-operation matrix with non-zero determinant is
   attached to each step and checked coefficient by coefficient, plus the solution
   set;
@@ -77,13 +82,14 @@ must accept it before it is recorded:
 
 If the verifier rejects a step, Sumstair stops and says so instead of showing
 it. Property-based tests (fast-check) and mutation tests (deliberately broken
-steps must be rejected) cover the engine.
+steps must be rejected) cover the engine. `npm run oracle` checks the same steps
+again with sympy, which does not share the engine's code.
 
 ## Use it
 
 - **Online:** <https://kinfxhk.github.io/sumstair/> (works offline after the first
   visit).
-- **Offline / self-hosted:** download `sumstair-site-v0.2.0.zip` from the
+- **Offline / self-hosted:** download `sumstair-site-v0.3.0.zip` from the
   release, unzip, and serve the folder with any static server on localhost.
 - **Docker:**
 
@@ -187,11 +193,12 @@ does this for the original). Third-party components are listed in
 步步解是獨立項目，與任何其他解題產品、公司、出版社或考評機構**均無關連**，
 亦未獲其認可或贊助（not affiliated）。
 
-### 功能（v0.2）
+### 功能（v0.3）
 
-- 四則運算（分數、小數、指數）、化簡多項式（最多兩個字母、最高四次）、一元一次方程、
-  一元二次方程（有理根時因式分解，否則用二次公式並以根式精確表示；Δ < 0 時無實根）、
-  二元一次聯立方程（消元法；可判斷無解或無限多解）。
+- 四則運算（分數、小數、指數）、化簡多項式（最多兩個字母、最高四次）、因式分解、
+  一元一次方程、一元一次不等式（除以負數時不等號反轉；二次不等式會拒絕，不會亂猜）、
+  一元二次方程（有理根時因式分解，否則用二次公式並以根式精確表示；可改用配方法；Δ < 0 時無實根）、
+  二元一次聯立方程（消元法，再代入驗算；可判斷無解或無限多解）。
 - 輸入寬鬆：接受 `×`、`÷`、`−`、中文輸入法的全形字元（例如 `２ｘ＋３＝７`）及上標（`x²`、`2⁻¹`），
   亦可在題目前加 `solve`、`simplify` 或 `factor`。未支援的課題（例如 `sin`、`log`、`ln`、`abs`）
   會清楚說明「暫時未支援」，不會誤當作字母。計算時指數可為 -20 至 20，含未知數時最高 4 次。
@@ -201,11 +208,13 @@ does this for the original). Third-party components are listed in
   進度只儲存在瀏覽器，可一鍵清除。
 - 深淺色、大字、鍵盤操作、供讀屏軟件使用的 MathML、列印樣式、網址分享
   （題目放在 `#` 之後，不會傳送到伺服器）、首次載入後可離線使用。
+  頁面會嘗試要求瀏覽器保留本機資料，並顯示結果；練習幾題後可下載 JSON 備份，亦可關閉提示。
+  備份只在這部裝置產生，不會上傳。
 
 ### 使用方法
 
 - 網上版：<https://kinfxhk.github.io/sumstair/>（首次載入後可離線使用）。
-- 自架／離線：下載 release 中的 `sumstair-site-v0.2.0.zip`，解壓後以任何靜態伺服器在本機提供。
+- 自架／離線：下載 release 中的 `sumstair-site-v0.3.0.zip`，解壓後以任何靜態伺服器在本機提供。
 - Docker：`docker build -t sumstair .`，再 `docker run --rm -p 127.0.0.1:4873:4873 sumstair`。
 - 原始碼（Node.js 22 或以上）：`npm ci`，然後 `npm start`，開啟 <http://127.0.0.1:4873/>。
 

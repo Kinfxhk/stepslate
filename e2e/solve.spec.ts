@@ -256,3 +256,21 @@ for (const theme of ['light', 'dark'] as const) {
     expect(serious.map((v) => `${v.id}: ${v.help}`)).toEqual([]);
   });
 }
+
+test('inequality, completing the square, and the free-and-checked line', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('#backup-reminder')).toBeHidden();
+  await expect(page.locator('.promise')).toContainText('Every step is checked');
+  await expect(page.locator('.promise')).toContainText('Always free');
+  await expect(page.locator('#storage-status')).not.toBeEmpty();
+  await page.locator('#problem').fill('-2x < 4');
+  await page.locator('#solve-btn').click();
+  await page.locator('#all-btn').click();
+  await expect(page.locator('#step-list')).toContainText('flips');
+  await expect(page.locator('.number-line')).toBeVisible();
+  await page.locator('#square-method').check();
+  await page.locator('#problem').fill('x^2 + 4x + 1 = 0');
+  await page.locator('#solve-btn').click();
+  await page.locator('#all-btn').click();
+  await expect(page.locator('#step-list')).toContainText('Completing the square');
+});

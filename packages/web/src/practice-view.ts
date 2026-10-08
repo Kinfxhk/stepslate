@@ -12,11 +12,12 @@ import {
   type ProblemType,
   type Question,
 } from '@sumstair/core';
+import { noteActivity } from './backup';
 import { ui, type UiKey } from './i18n';
 import { mathElement } from './math';
 import { stepElement } from './steps-render';
 
-const TYPES: ProblemType[] = ['T1', 'T2', 'T3', 'T4', 'T5', 'T6'];
+const TYPES: ProblemType[] = ['T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
 const STORE = 'sumstair.practice.v1';
 
 interface Progress {
@@ -37,6 +38,7 @@ function loadProgress(): Progress {
 }
 
 function saveProgress(p: Progress): void {
+  noteActivity();
   try {
     localStorage.setItem(STORE, JSON.stringify(p));
   } catch {
@@ -54,7 +56,7 @@ function randomSeed(): number {
 export function questionFromHash(
   hash: string,
 ): { type: ProblemType; level: Level; seed: number } | undefined {
-  const m = /^#practice=(T[1-6])-([123])-(\d{1,10})$/.exec(hash);
+  const m = /^#practice=(T[1-7])-([123])-(\d{1,10})$/.exec(hash);
   if (!m) return undefined;
   return { type: m[1] as ProblemType, level: Number(m[2]) as Level, seed: Number(m[3]) % 2 ** 31 };
 }

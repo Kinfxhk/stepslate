@@ -6,6 +6,7 @@ import fc from 'fast-check';
 import { describe, expect, it } from 'vitest';
 import {
   equationText,
+  inequalityText,
   normaliseInput,
   ParseError,
   parseProblem,
@@ -19,6 +20,7 @@ import { T1_GOLDEN, T2_GOLDEN, T3_GOLDEN, T4_GOLDEN, T5_GOLDEN } from './goldens
 function problemText(p: Problem): string {
   if (p.kind === 'expr') return toText(p.expr);
   if (p.kind === 'equation') return equationText(p.eq);
+  if (p.kind === 'inequality') return inequalityText(p);
   return p.eqs.map(equationText).join('; ');
 }
 

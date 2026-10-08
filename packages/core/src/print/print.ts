@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // Printers: plain text (re-parsable), LaTeX (for KaTeX) and a canonical key.
 
-import type { Equation, Expr } from '../ast';
+import type { Equation, Expr, Rel } from '../ast';
 import { hasVar } from '../ast';
 
 /** Binding strength used to decide where brackets are needed. */
@@ -89,6 +89,13 @@ export function toText(e: Expr): string {
 
 export function equationText(q: Equation): string {
   return `${toText(q.lhs)} = ${toText(q.rhs)}`;
+}
+
+const REL_TEXT: Record<Rel, string> = { '<': '<', '<=': '<=', '>': '>', '>=': '>=' };
+const REL_LATEX: Record<Rel, string> = { '<': '<', '<=': '\\le', '>': '>', '>=': '\\ge' };
+
+export function inequalityText(q: { lhs: Expr; rhs: Expr; rel: Rel }): string {
+  return `${toText(q.lhs)} ${REL_TEXT[q.rel]} ${toText(q.rhs)}`;
 }
 
 // ---- canonical key ------------------------------------------------------------------
@@ -189,4 +196,11 @@ function latexInner(e: Expr, opts: LatexOptions): string {
 
 export function equationLatex(q: Equation, opts: LatexOptions = {}): string {
   return `${toLatex(q.lhs, opts)} = ${toLatex(q.rhs, opts)}`;
+}
+
+export function inequalityLatex(
+  q: { lhs: Expr; rhs: Expr; rel: Rel },
+  opts: LatexOptions = {},
+): string {
+  return `${toLatex(q.lhs, opts)} ${REL_LATEX[q.rel]} ${toLatex(q.rhs, opts)}`;
 }

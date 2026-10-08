@@ -6,7 +6,7 @@
 // as × and ÷ and is left-associative, so "1/2x" means (1/2)·x. Because that reading is
 // a common source of confusion, the parser reports an "ambiguous-division" warning.
 
-import type { Equation, Expr, Problem } from '../ast';
+import type { Equation, Expr, Problem, Rel } from '../ast';
 import { countNodes } from '../ast';
 import { LIMITS } from '../limits';
 import { Rational } from '../numbers/rational';
@@ -156,21 +156,28 @@ class Parser {
     throw new ParseError('unexpected-token', t.pos, { text: t.text });
   }
 
-  /** Parse one side of an equation (or a whole expression) up to a separator. */
+  /** Parse one side of an equation or inequality up to a separator. */
   side(): Expr {
     const t = this.peek();
-    if (t.type === '=' || t.type === ';' || t.type === 'end')
-      throw new ParseError('empty-side', t.pos);
+    if (isStop(t.type)) throw new ParseError('empty-side', t.pos);
     const e = this.expr(0);
     const after = this.peek();
     if (after.type === ')') throw new ParseError('unmatched-paren', after.pos);
-    if (after.type !== '=' && after.type !== ';' && after.type !== 'end')
+    if (!isStop(after.type))
       throw new ParseError('unexpected-token', after.pos, { text: after.text });
     return e;
   }
 }
 
-/** Parse a problem: an expression, an equation `a = b`, or a system `eq1; eq2`. */
+const STOPS = new Set(['=', ';', 'end', '<', '<=', '>', '>=']);
+function isStop(type: string): boolean {
+  return STOPS.has(type);
+}
+function isRel(type: string): type is Rel {
+  return type === '<' || type === '<=' || type === '>' || type === '>=';
+}
+
+/** Parse a problem: an expression, an equation `a = b`, an inequality `a < b`, or a system `eq1; eq2`. */
 export function parseProblem(input: string): ParseResult {
   if (input.trim() === '') throw new ParseError('empty', 0);
   const toks = tokenize(input);
@@ -183,11 +190,26 @@ export function parseProblem(input: string): ParseResult {
     if (p.peek().type === 'end')
       throw new ParseError('command-empty', first.pos, { word: command });
   }
-  const parts: { lhs: Expr; rhs?: Expr }[] = [];
+  const parts: { lhs: Expr; rhs?: Expr; rel?: Rel }[] = [];
   for (;;) {
     const lhs = p.side();
+    const next = p.peek();
+    if (isRel(next.type)) {
+      if (parts.length > 0) throw new ParseError('mixed-separators', next.pos);
+      p.next();
+      const rhs = p.side();
+      const after = p.peek();
+      if (after.type === '=' || isRel(after.type))
+        throw new ParseError('too-many-relations', after.pos);
+      if (after.type === ';') throw new ParseError('mixed-separators', after.pos);
+      if (after.type !== 'end')
+        throw new ParseError('unexpected-token', after.pos, { text: after.text });
+      p.next();
+      parts.push({ lhs, rhs, rel: next.type });
+      break;
+    }
     let rhs: Expr | undefined;
-    if (p.peek().type === '=') {
+    if (next.type === '=') {
       p.next();
       rhs = p.side();
       if (p.peek().type === '=') throw new ParseError('too-many-equals', p.peek().pos);
@@ -206,7 +228,10 @@ export function parseProblem(input: string): ParseResult {
     throw new ParseError('too-complex', 0, { max: String(LIMITS.maxNodes) });
 
   let problem: Problem;
-  if (parts.length === 1 && !parts[0]!.rhs) problem = { kind: 'expr', expr: parts[0]!.lhs };
+  const only = parts[0];
+  if (parts.length === 1 && only?.rel && only.rhs)
+    problem = { kind: 'inequality', lhs: only.lhs, rhs: only.rhs, rel: only.rel };
+  else if (parts.length === 1 && !only!.rhs) problem = { kind: 'expr', expr: only!.lhs };
   else if (parts.some((q) => !q.rhs)) throw new ParseError('mixed-separators', 0);
   else if (parts.length === 1) problem = { kind: 'equation', eq: parts[0] as Equation };
   else problem = { kind: 'system', eqs: parts as Equation[] };

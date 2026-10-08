@@ -23,9 +23,13 @@ export interface Equation {
   readonly rhs: Expr;
 }
 
+/** Inequality sign. `<=` is ≤ and `>=` is ≥. */
+export type Rel = '<' | '<=' | '>' | '>=';
+
 export type Problem =
   | { readonly kind: 'expr'; readonly expr: Expr }
   | { readonly kind: 'equation'; readonly eq: Equation }
+  | { readonly kind: 'inequality'; readonly lhs: Expr; readonly rhs: Expr; readonly rel: Rel }
   | { readonly kind: 'system'; readonly eqs: readonly Equation[] };
 
 // ---- constructors -------------------------------------------------------------------
@@ -85,7 +89,10 @@ export function variables(e: Expr, out: Set<string> = new Set()): Set<string> {
 export function problemVariables(p: Problem): string[] {
   const s = new Set<string>();
   if (p.kind === 'expr') variables(p.expr, s);
-  else
+  else if (p.kind === 'inequality') {
+    variables(p.lhs, s);
+    variables(p.rhs, s);
+  } else
     for (const q of p.kind === 'equation' ? [p.eq] : p.eqs) {
       variables(q.lhs, s);
       variables(q.rhs, s);

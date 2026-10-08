@@ -79,6 +79,18 @@
         </button>
       </div>
     </header>
+    <p class="promise" data-i18n="promise.line">
+      Every step is checked before it is shown. Always free: no account, no ads, no paid steps.
+    </p>
+    <div id="backup-reminder" class="backup" hidden>
+      <p data-i18n="backup.body">
+        Your practice progress is only in this browser. Download a backup so you can keep it.
+      </p>
+      <button type="button" id="backup-save" data-i18n="backup.save">Download backup</button>
+      <button type="button" class="ghost" id="backup-dismiss" data-i18n="backup.dismiss">
+        Not now
+      </button>
+    </div>
 
     <main id="main">
       <section class="view active" id="view-solve" aria-labelledby="h-solve">
@@ -108,8 +120,13 @@
             </button>
           </div>
           <p id="input-help" class="help" data-i18n="input.help">
-            Use ^ for powers, / for fractions and ; between two equations.
+            Use ^ for powers, / for fractions, &lt; &lt;= &gt; &gt;= for inequalities, and ; between
+            two equations.
           </p>
+          <label class="method" for="square-method">
+            <input type="checkbox" id="square-method" />
+            <span data-i18n="method.square">Completing the square (quadratics)</span>
+          </label>
           <div
             class="keyboard"
             role="group"
@@ -190,6 +207,7 @@
           >Source code (AGPL-3.0-or-later)</a
         >
         <span id="app-version" class="muted">dev</span>
+        <span id="storage-status" class="muted"></span>
         <span aria-hidden="true">·</span>
         <a href="./licenses/" data-i18n="footer.licences">Licences</a>
         <span aria-hidden="true">·</span>

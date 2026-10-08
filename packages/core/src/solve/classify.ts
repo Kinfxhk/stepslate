@@ -12,7 +12,7 @@ import { evalRational, Unverifiable } from '../verify/evaluate';
 import { degreeBound, linearForm, univariateCoefficients } from '../verify/poly';
 import { walk } from '../rules/tree';
 
-export type ProblemType = 'T1' | 'T2' | 'T3' | 'T4' | 'T5' | 'T6';
+export type ProblemType = 'T1' | 'T2' | 'T3' | 'T4' | 'T5' | 'T6' | 'T7';
 
 export type Classification =
   | { readonly ok: true; readonly type: ProblemType; readonly vars: readonly string[] }
@@ -27,6 +27,7 @@ const error = (message: Explanation): Classification => ({ ok: false, status: 'e
 
 function exprs(p: Problem): Expr[] {
   if (p.kind === 'expr') return [p.expr];
+  if (p.kind === 'inequality') return [p.lhs, p.rhs];
   const eqs: readonly Equation[] = p.kind === 'equation' ? [p.eq] : p.eqs;
   return eqs.flatMap((q) => [q.lhs, q.rhs]);
 }
@@ -179,6 +180,14 @@ export function classify(p: Problem, command?: Command): Classification {
     if (vars.length > 2) return unsupported({ key: 'unsupported.too-many-vars' });
     if (command === 'factor') return { ok: true, type: 'T6', vars };
     return { ok: true, type: 'T2', vars };
+  }
+  if (p.kind === 'inequality') {
+    if (vars.length > 1)
+      return unsupported({ key: 'unsupported.equation-vars', params: { n: vars.length } });
+    const x = vars[0] ?? 'x';
+    const coeffs = univariateCoefficients({ k: 'sub', a: p.lhs, b: p.rhs }, x);
+    if (coeffs.length - 1 > 1) return unsupported({ key: 'unsupported.quadratic-inequality' });
+    return { ok: true, type: 'T7', vars };
   }
   if (p.kind === 'equation') {
     if (vars.length === 0) return unsupported({ key: 'unsupported.no-unknown' });

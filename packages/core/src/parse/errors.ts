@@ -13,6 +13,7 @@ export type ParseErrorCode =
   | 'bad-number'
   | 'number-after-operand'
   | 'too-many-equals'
+  | 'too-many-relations'
   | 'too-many-equations'
   | 'empty-side'
   | 'mixed-separators'

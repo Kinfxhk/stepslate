@@ -12,7 +12,7 @@ import {
   type ProblemType,
 } from '../src/index';
 
-const TYPES: ProblemType[] = ['T1', 'T2', 'T3', 'T4', 'T5'];
+const TYPES: ProblemType[] = ['T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
 const LEVELS: Level[] = [1, 2, 3];
 
 describe('seeded generators', () => {
@@ -99,6 +99,11 @@ describe('answer equivalence', () => {
     ['x+y=5; x-y=1', '2, 3', 'wrong'],
     ['x+y=5; x-y=1', '3', 'unreadable'],
     ['x+y=2; 2x+2y=4', 'infinitely many', 'correct'],
+    ['2x + 3 < 11', 'x < 4', 'correct'],
+    ['2x + 3 < 11', 'x <= 4', 'wrong'],
+    ['-2x < 4', 'x > -2', 'correct'],
+    ['-2x < 4', 'x < -2', 'wrong'],
+    ['-2x <= 4', 'x ≥ -2', 'correct'],
   ];
   it.each(cases)('%s : %s → %s', (problem, answer, verdict) => {
     expect(checkAnswer(solve(problem), answer)).toBe(verdict);
@@ -115,6 +120,8 @@ describe('answer equivalence', () => {
           wrong = `${a.variable} = ${a.values.map((v) => `(${v.toString()}) + 1`).join(', ')}`;
         else if (a.kind === 'pair')
           wrong = `${a.vars[0]} = ${a.values[0].toString()}, ${a.vars[1]} = ${a.values[1].toString()} + 1`;
+        else if (a.kind === 'interval')
+          wrong = `${a.variable} ${a.rel === '<' ? '<=' : '<'} ${a.bound.toString()}`;
         else return;
         expect(checkAnswer(sol, wrong), wrong).not.toBe('correct');
       }),
