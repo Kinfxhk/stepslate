@@ -5,6 +5,7 @@ import type { Expr, Problem } from '../ast';
 import type { Rational } from '../numbers/rational';
 import type { Surd } from '../numbers/surd';
 import { ParseError, type ParseWarning } from '../parse/errors';
+import type { Command } from '../parse/lexer';
 import { parseProblem } from '../parse/parser';
 import type { Explanation, State, Step } from '../state';
 import { evalRational } from '../verify/evaluate';
@@ -55,6 +56,8 @@ export interface Solution {
 export interface SolveOptions {
   /** Test hook: alter each proposed step before verification (mutation testing). */
   readonly tamper?: StepTamper;
+  /** Optional command typed before the problem. */
+  readonly command?: Command;
 }
 
 function initialState(p: Problem): State {
@@ -106,7 +109,7 @@ export function registerStrategy(type: ProblemType, s: Strategy): void {
 
 export function solveProblem(problem: Problem, input = '', opts: SolveOptions = {}): Solution {
   const base = { input, problem, warnings: [] as ParseWarning[] };
-  const c = classify(problem);
+  const c = classify(problem, opts.command);
   if (!c.ok) return { ...base, status: c.status, vars: [], steps: [], message: c.message };
   const strategy = STRATEGIES[c.type];
   if (!strategy)
@@ -167,7 +170,8 @@ export function solve(input: string, opts: SolveOptions = {}): Solution {
     if (e instanceof ParseError)
       return {
         input,
-        status: 'error',
+        // a recognised but unsupported topic (sin, log, ...) is not the user's mistake
+        status: e.code.startsWith('unsupported-') ? 'unsupported' : 'error',
         vars: [],
         warnings: [],
         steps: [],
@@ -176,6 +180,10 @@ export function solve(input: string, opts: SolveOptions = {}): Solution {
       };
     throw e;
   }
-  const sol = solveProblem(parsed.problem, input, opts);
+  const sol = solveProblem(
+    parsed.problem,
+    input,
+    parsed.command ? { ...opts, command: parsed.command } : opts,
+  );
   return { ...sol, warnings: parsed.warnings };
 }

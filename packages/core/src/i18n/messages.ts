@@ -23,6 +23,15 @@ export const en = {
   'parse.too-many-equations': 'At most {max} equations are supported.',
   'parse.empty-side': 'One side of the equation is empty.',
   'parse.mixed-separators': 'Every part separated by ";" must be an equation with "=".',
+  'parse.unsupported-trig':
+    'Trigonometric functions such as {name} are not supported yet (planned for a later version).',
+  'parse.unsupported-log':
+    'Logarithms and exponential functions such as {name} are not supported yet (planned for a later version).',
+  'parse.unsupported-abs':
+    'Absolute value ({name}) is not supported yet (planned for a later version).',
+  'parse.command-position':
+    '"{word}" can only be written at the start, before the problem, for example "solve 2x+3=7".',
+  'parse.command-empty': 'Type a problem after "{word}".',
   // ---- warnings ----
   'warn.ambiguous-division':
     'Read as (a/b)·x: the division happens first. If you meant x in the denominator, write a/(bx).',
@@ -65,6 +74,12 @@ export const en = {
   'unsupported.no-unknown':
     'This equation has no unknown to solve for. To work out a calculation, type it without "=".',
   'unsupported.too-many-vars': 'Simplifying is supported for at most two unknowns.',
+  'unsupported.factor':
+    'Factorising an expression on its own is not supported yet (planned for the next version). To solve an equation by factorising, type it with "= 0", for example x^2-5x+6=0.',
+  'command.solve-needs-equation':
+    '"solve" needs an equation with "=", for example solve 2x+3=7. To work out or simplify an expression, type it without "solve".',
+  'command.simplify-needs-expression':
+    '"simplify" works on an expression without "=". To solve an equation, type it without "simplify" or use "solve".',
   'error.div-zero': 'The question divides by zero, which is undefined.',
   'error.too-large': 'The numbers grow too large for StepSlate. Please try a smaller problem.',
   'error.unverified':
@@ -164,6 +179,11 @@ export const zhHK: Record<MessageKey, string> = {
   'parse.too-many-equations': '最多支援 {max} 條方程。',
   'parse.empty-side': '方程其中一邊是空的。',
   'parse.mixed-separators': '用「;」分隔的每一部分都必須是含「=」的方程。',
+  'parse.unsupported-trig': '暫時未支援 {name} 等三角函數（計劃於之後版本加入）。',
+  'parse.unsupported-log': '暫時未支援 {name} 等對數及指數函數（計劃於之後版本加入）。',
+  'parse.unsupported-abs': '暫時未支援絕對值（{name}）（計劃於之後版本加入）。',
+  'parse.command-position': '「{word}」只可以寫在最前面，例如「solve 2x+3=7」。',
+  'parse.command-empty': '請在「{word}」後面輸入題目。',
   'warn.ambiguous-division': '理解為 (a/b)·x：先做除法。如果想 x 在分母，請寫成 a/(bx)。',
   'arith.decimals': '先把每個小數寫成分數，令計算保持準確。',
   'arith.reduce': '約簡 {before}：分子和分母同時除以 {g}，得 {after}。',
@@ -192,6 +212,12 @@ export const zhHK: Record<MessageKey, string> = {
   'unsupported.system': '步步解可解兩個未知數的二元一次聯立方程。',
   'unsupported.no-unknown': '這條方程沒有未知數可解。如要計算數值，請輸入不含「=」的算式。',
   'unsupported.too-many-vars': '化簡最多支援兩個未知數。',
+  'unsupported.factor':
+    '暫時未支援單獨把式子因式分解（計劃於下一個版本加入）。如要用因式分解解方程，請輸入「= 0」，例如 x^2-5x+6=0。',
+  'command.solve-needs-equation':
+    '「solve」需要一條含「=」的方程，例如 solve 2x+3=7。如要計算或化簡式子，請不要加「solve」。',
+  'command.simplify-needs-expression':
+    '「simplify」只適用於不含「=」的式子。如要解方程，請不要加「simplify」，或改用「solve」。',
   'error.div-zero': '題目出現除以零，這是沒有定義的。',
   'error.too-large': '數字變得太大，步步解未能處理。請試較小的題目。',
   'error.unverified':

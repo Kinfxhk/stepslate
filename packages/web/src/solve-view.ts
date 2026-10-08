@@ -166,9 +166,9 @@ export class SolveView {
       return;
     }
     try {
-      const { problem, warnings } = parseProblem(text);
+      const { problem, warnings, command } = parseProblem(text);
       box.append(mathElement(problemLatex(problem), true, 'div'));
-      const c = classify(problem);
+      const c = classify(problem, command);
       if (c.ok) status.append(ui(this.lang, `preview.type.${c.type}`));
       else {
         status.className = 'status warn';
@@ -185,7 +185,8 @@ export class SolveView {
       }
     } catch (e) {
       if (!(e instanceof ParseError)) throw e;
-      status.className = 'status error';
+      // A recognised but unsupported topic (sin, log, ...) is a notice, not a mistake.
+      status.className = e.code.startsWith('unsupported-') ? 'status warn' : 'status error';
       const head = document.createElement('strong');
       head.textContent = ui(this.lang, 'preview.error') + ' ';
       status.append(head, t(this.lang, `parse.${e.code}` as never, e.params));

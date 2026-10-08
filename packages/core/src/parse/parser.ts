@@ -11,7 +11,7 @@ import { countNodes } from '../ast';
 import { LIMITS } from '../limits';
 import { Rational } from '../numbers/rational';
 import { ParseError, type ParseWarning } from './errors';
-import { tokenize, type Token } from './lexer';
+import { tokenize, type Command, type Token } from './lexer';
 
 const BP_ADD = 10;
 const BP_NEG = 15;
@@ -21,10 +21,12 @@ const BP_POW = 30;
 export interface ParseResult {
   readonly problem: Problem;
   readonly warnings: readonly ParseWarning[];
+  /** Optional command typed before the problem ("factor", "simplify" or "solve"). */
+  readonly command?: Command;
 }
 
 class Parser {
-  private i = 0;
+  i = 0;
   readonly warnings: ParseWarning[] = [];
   /** Nodes that were written inside brackets by the user. */
   private readonly bracketed = new WeakSet<Expr>();
@@ -173,6 +175,14 @@ export function parseProblem(input: string): ParseResult {
   if (input.trim() === '') throw new ParseError('empty', 0);
   const toks = tokenize(input);
   const p = new Parser(toks);
+  let command: Command | undefined;
+  const first = toks[0]!;
+  if (first.type === 'cmd') {
+    command = first.text as Command;
+    p.i = 1;
+    if (p.peek().type === 'end')
+      throw new ParseError('command-empty', first.pos, { word: command });
+  }
   const parts: { lhs: Expr; rhs?: Expr }[] = [];
   for (;;) {
     const lhs = p.side();
@@ -200,7 +210,7 @@ export function parseProblem(input: string): ParseResult {
   else if (parts.some((q) => !q.rhs)) throw new ParseError('mixed-separators', 0);
   else if (parts.length === 1) problem = { kind: 'equation', eq: parts[0] as Equation };
   else problem = { kind: 'system', eqs: parts as Equation[] };
-  return { problem, warnings: p.warnings };
+  return command ? { problem, warnings: p.warnings, command } : { problem, warnings: p.warnings };
 }
 
 /** Parse a single expression (no "=" or ";"). */

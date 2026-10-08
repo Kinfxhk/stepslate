@@ -15,7 +15,12 @@ export type ParseErrorCode =
   | 'too-many-equals'
   | 'too-many-equations'
   | 'empty-side'
-  | 'mixed-separators';
+  | 'mixed-separators'
+  | 'unsupported-trig'
+  | 'unsupported-log'
+  | 'unsupported-abs'
+  | 'command-position'
+  | 'command-empty';
 
 /** A user-facing parse error with a character position (0-based) for highlighting. */
 export class ParseError extends Error {

@@ -5,6 +5,7 @@
 import type { Equation, Expr, Problem } from '../ast';
 import { hasVar, problemVariables } from '../ast';
 import { LIMITS } from '../limits';
+import type { Command } from '../parse/lexer';
 import type { Explanation } from '../state';
 import { evalRational, Unverifiable } from '../verify/evaluate';
 import { degreeBound, linearForm, univariateCoefficients } from '../verify/poly';
@@ -58,7 +59,19 @@ function structural(e: Expr): Classification | null {
   return problem;
 }
 
-export function classify(p: Problem): Classification {
+/** Check that an optional command fits the problem ("solve" needs an equation, ...). */
+function commandCheck(command: Command | undefined, p: Problem): Classification | null {
+  if (command === 'factor' && p.kind === 'expr') return unsupported({ key: 'unsupported.factor' });
+  if (command === 'solve' && p.kind === 'expr')
+    return error({ key: 'command.solve-needs-equation' });
+  if (command === 'simplify' && p.kind !== 'expr')
+    return error({ key: 'command.simplify-needs-expression' });
+  return null;
+}
+
+export function classify(p: Problem, command?: Command): Classification {
+  const c = commandCheck(command, p);
+  if (c) return c;
   for (const e of exprs(p)) {
     const s = structural(e);
     if (s) return s;
