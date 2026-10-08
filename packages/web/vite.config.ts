@@ -7,6 +7,32 @@ import { defineConfig, type Plugin } from 'vite';
 
 const here = fileURLToPath(new URL('.', import.meta.url));
 const publicDir = join(here, 'public');
+const rootPkg = JSON.parse(readFileSync(join(here, '../../package.json'), 'utf8')) as {
+  version: string;
+  repository: { url: string };
+};
+
+/**
+ * AGPL section 13: point the footer "Source code" link at the exact version tag
+ * (for example https://github.com/<owner>/<repo>/tree/v0.1.0) and show the version.
+ */
+function sourceLink(): Plugin {
+  const tag = `v${rootPkg.version}`;
+  const url = `${rootPkg.repository.url.replace(/\.git$/, '')}/tree/${tag}`;
+  return {
+    name: 'stepslate-source-link',
+    transformIndexHtml(html) {
+      const linked = html.replace(/(id="source-link"\s+href=")[^"]*(")/, `$1${url}$2`);
+      const versioned = linked.replace(
+        /<span id="app-version"([^>]*)>[^<]*<\/span>/,
+        `<span id="app-version"$1>${tag}</span>`,
+      );
+      if (!linked.includes(url) || !versioned.includes(`>${tag}<`))
+        throw new Error('index.html: could not inject the source link / version');
+      return versioned;
+    },
+  };
+}
 
 function listFiles(dir: string): string[] {
   return readdirSync(dir).flatMap((name) => {
@@ -81,7 +107,7 @@ self.addEventListener('fetch', (event) => {
 export default defineConfig({
   root: here,
   base: './',
-  plugins: [offline()],
+  plugins: [sourceLink(), offline()],
   build: {
     target: 'es2022',
     sourcemap: false,

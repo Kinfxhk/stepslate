@@ -4,6 +4,10 @@
   "version": "0.1.0",
   "description": "StepSlate (步步解): free, offline, open-source step-by-step maths solver where every step is machine-verified. Educational only.",
   "license": "AGPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kinfxhk/stepslate"
+  },
   "type": "module",
   "workspaces": [
     "packages/core",

@@ -13,9 +13,13 @@ goal.
   `0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0`).
 - Every source file carries `SPDX-License-Identifier: AGPL-3.0-or-later`.
 - **AGPL section 13:** the page footer always links to the source code
-  (repository and the exact version tag), so the GitHub Pages demo and anyone's
-  self-hosted copy offer the Corresponding Source by default. If you deploy a
-  modified version, point that link at your modified source.
+  of the exact version: at build time `packages/web/vite.config.ts` sets the
+  footer link to `<repository>/tree/v<version>` (repository URL and version from
+  the root `package.json`) and shows the version next to it; an e2e test checks
+  this. The GitHub Pages demo and anyone's self-hosted copy therefore offer the
+  Corresponding Source by default. If you deploy a modified version, change the
+  `repository` URL in `package.json` (or the link) to point at your modified
+  source.
 
 ## Compatibility of dependencies
 

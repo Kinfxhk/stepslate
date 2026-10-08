@@ -58,6 +58,14 @@ test('type → preview → step by step → show all → answer, with no externa
   expect(errors).toEqual([]); // includes Content-Security-Policy violations
 });
 
+test('footer links to the source of this exact version (AGPL section 13)', async ({ page }) => {
+  await page.goto('/');
+  const href = await page.locator('#source-link').getAttribute('href');
+  const version = (await page.locator('#app-version').textContent())?.trim();
+  expect(version).toMatch(/^v\d+\.\d+\.\d+/);
+  expect(href).toBe(`https://github.com/Kinfxhk/stepslate/tree/${version}`);
+});
+
 test('language switch translates the UI and the explanations', async ({ page }) => {
   await page.goto('/');
   await page.locator('#problem').fill('x^2-5x+6=0');
