@@ -1,7 +1,7 @@
 {
   "name": "sumstair-monorepo",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Sumstair (步步解): free, offline, open-source step-by-step maths solver where every step is machine-verified. Educational only.",
   "license": "AGPL-3.0-or-later",
   "homepage": "https://kinfxhk.github.io/sumstair/",

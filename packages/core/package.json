@@ -1,6 +1,6 @@
 {
   "name": "@sumstair/core",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Sumstair core engine: exact numbers, parser, step rules, independent verifier. Pure functions, zero runtime dependencies.",
   "license": "AGPL-3.0-or-later",

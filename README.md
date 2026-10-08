@@ -29,7 +29,7 @@ Sumstair is an independent project and is **not affiliated with, endorsed by,
 or sponsored by** any other maths-solver product, company, publisher or exam
 board.
 
-## What it solves (v0.1)
+## What it solves (v0.2)
 
 | Type                                                  | Examples                                            | How                                                                                                                                         |
 | ----------------------------------------------------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -83,7 +83,7 @@ steps must be rejected) cover the engine.
 
 - **Online:** <https://kinfxhk.github.io/sumstair/> (works offline after the first
   visit).
-- **Offline / self-hosted:** download `sumstair-site-v0.1.0.zip` from the
+- **Offline / self-hosted:** download `sumstair-site-v0.2.0.zip` from the
   release, unzip, and serve the folder with any static server on localhost.
 - **Docker:**
 
@@ -187,7 +187,7 @@ does this for the original). Third-party components are listed in
 步步解是獨立項目，與任何其他解題產品、公司、出版社或考評機構**均無關連**，
 亦未獲其認可或贊助（not affiliated）。
 
-### 功能（v0.1）
+### 功能（v0.2）
 
 - 四則運算（分數、小數、指數）、化簡多項式（最多兩個字母、最高四次）、一元一次方程、
   一元二次方程（有理根時因式分解，否則用二次公式並以根式精確表示；Δ < 0 時無實根）、
@@ -205,7 +205,7 @@ does this for the original). Third-party components are listed in
 ### 使用方法
 
 - 網上版：<https://kinfxhk.github.io/sumstair/>（首次載入後可離線使用）。
-- 自架／離線：下載 release 中的 `sumstair-site-v0.1.0.zip`，解壓後以任何靜態伺服器在本機提供。
+- 自架／離線：下載 release 中的 `sumstair-site-v0.2.0.zip`，解壓後以任何靜態伺服器在本機提供。
 - Docker：`docker build -t sumstair .`，再 `docker run --rm -p 127.0.0.1:4873:4873 sumstair`。
 - 原始碼（Node.js 22 或以上）：`npm ci`，然後 `npm start`，開啟 <http://127.0.0.1:4873/>。
 
